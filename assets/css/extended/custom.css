@@ -33,8 +33,8 @@
 
 /* 인용문 간격 */
 .post-content blockquote {
-    margin: 1.8em 0;
-    padding: 0.8em 1.2em;
+    margin: 1em 0;
+    padding: 0.5em 1em;
 }
 
 /* 코드 블록 간격 */

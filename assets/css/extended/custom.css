@@ -11,14 +11,14 @@
     margin-bottom: 0.8em;
     padding-bottom: 0.3em;
     border-bottom: 1px solid var(--border);
-    color: #2d8a56;
+    color: #e67e22;
 }
 
 .post-content h3 {
     font-size: 1.1em;
     margin-top: 1.8em;
     margin-bottom: 0.6em;
-    color: #2d8a56;
+    color: #e67e22;
 }
 
 /* 문단 간격 */
@@ -37,7 +37,7 @@
 .post-content blockquote {
     margin: 1.5em 0;
     padding: 0.8em 1.2em;
-    border-left: 3px solid #2d8a56;
+    border-left: 3px solid #e67e22;
 }
 
 /* 코드 블록 간격 */
@@ -63,9 +63,9 @@
 
 /* 링크 */
 .post-content a {
-    color: #2d8a56;
+    color: #e67e22;
 }
 
 .post-content a:hover {
-    color: #236e44;
+    color: #cf6d17;
 }

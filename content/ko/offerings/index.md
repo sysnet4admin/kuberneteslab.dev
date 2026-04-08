@@ -1,7 +1,6 @@
 ---
 title: "Offerings"
 layout: "single"
-url: "/offerings/"
 summary: "offerings"
 ShowToc: false
 ---

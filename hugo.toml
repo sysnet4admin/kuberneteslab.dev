@@ -1,8 +1,9 @@
 baseURL = 'https://kuberneteslab.dev/'
-languageCode = 'ko'
 title = 'KubernetesLab'
 theme = 'PaperMod'
 paginate = 10
+defaultContentLanguage = 'ko'
+defaultContentLanguageInSubdir = true
 
 [params]
   env = "production"
@@ -16,40 +17,76 @@ paginate = 10
   ShowCodeCopyButtons = true
   ShowToc = true
 
-  [params.homeInfoParams]
-    Title = "KubernetesLab"
-    Content = "Kubernetes & Cloud Native Research, Consulting, and Outsourcing"
-
   [[params.socialIcons]]
     name = "github"
     url = "https://github.com/sysnet4admin"
 
-[menu]
-  [[menu.main]]
-    identifier = "blog"
-    name = "Blog"
-    url = "/blog/"
-    weight = 10
-  [[menu.main]]
-    identifier = "categories"
-    name = "Categories"
-    url = "/categories/"
-    weight = 20
-  [[menu.main]]
-    identifier = "tags"
-    name = "Tags"
-    url = "/tags/"
-    weight = 30
-  [[menu.main]]
-    identifier = "offerings"
-    name = "Offerings"
-    url = "/offerings/"
-    weight = 40
-  [[menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "/about/"
-    weight = 50
+[languages]
+  [languages.ko]
+    languageName = "한국어"
+    languageCode = "ko"
+    weight = 1
+    [languages.ko.params]
+      homeInfoParams.Title = "KubernetesLab"
+      homeInfoParams.Content = "Kubernetes & Cloud Native 연구, 컨설팅, 교육"
+    [[languages.ko.menu.main]]
+      identifier = "blog"
+      name = "Blog"
+      url = "/ko/blog/"
+      weight = 10
+    [[languages.ko.menu.main]]
+      identifier = "categories"
+      name = "Categories"
+      url = "/ko/categories/"
+      weight = 20
+    [[languages.ko.menu.main]]
+      identifier = "tags"
+      name = "Tags"
+      url = "/ko/tags/"
+      weight = 30
+    [[languages.ko.menu.main]]
+      identifier = "offerings"
+      name = "Offerings"
+      url = "/ko/offerings/"
+      weight = 40
+    [[languages.ko.menu.main]]
+      identifier = "about"
+      name = "About"
+      url = "/ko/about/"
+      weight = 50
+
+  [languages.en]
+    languageName = "English"
+    languageCode = "en"
+    weight = 2
+    [languages.en.params]
+      homeInfoParams.Title = "KubernetesLab"
+      homeInfoParams.Content = "Kubernetes & Cloud Native Research, Consulting, and Training"
+    [[languages.en.menu.main]]
+      identifier = "blog"
+      name = "Blog"
+      url = "/en/blog/"
+      weight = 10
+    [[languages.en.menu.main]]
+      identifier = "categories"
+      name = "Categories"
+      url = "/en/categories/"
+      weight = 20
+    [[languages.en.menu.main]]
+      identifier = "tags"
+      name = "Tags"
+      url = "/en/tags/"
+      weight = 30
+    [[languages.en.menu.main]]
+      identifier = "offerings"
+      name = "Offerings"
+      url = "/en/offerings/"
+      weight = 40
+    [[languages.en.menu.main]]
+      identifier = "about"
+      name = "About"
+      url = "/en/about/"
+      weight = 50
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]

@@ -1,0 +1,33 @@
+.post-content h2 {
+    font-size: 1.4em;
+    margin-top: 2.5em;
+    margin-bottom: 0.8em;
+}
+
+.post-content h3 {
+    font-size: 1.15em;
+    margin-top: 2em;
+    margin-bottom: 0.6em;
+}
+
+.post-content p {
+    margin-bottom: 1.2em;
+    line-height: 1.8;
+}
+
+.post-content table {
+    margin: 1.5em 0;
+}
+
+.post-content blockquote {
+    margin: 1.5em 0;
+}
+
+.post-content pre {
+    margin: 1.5em 0;
+}
+
+.post-content ul,
+.post-content ol {
+    margin-bottom: 1.2em;
+}

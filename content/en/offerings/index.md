@@ -3,6 +3,8 @@ title: "Offerings"
 layout: "single"
 summary: "offerings"
 ShowToc: false
+build:
+  list: never
 ---
 
 ## Consulting

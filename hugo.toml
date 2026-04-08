@@ -25,6 +25,7 @@ defaultContentLanguageInSubdir = true
   [languages.ko]
     languageName = "한국어"
     languageCode = "ko"
+    contentDir = "content/ko"
     weight = 1
     [languages.ko.params]
       homeInfoParams.Title = "KubernetesLab"
@@ -58,6 +59,7 @@ defaultContentLanguageInSubdir = true
   [languages.en]
     languageName = "English"
     languageCode = "en"
+    contentDir = "content/en"
     weight = 2
     [languages.en.params]
       homeInfoParams.Title = "KubernetesLab"

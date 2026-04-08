@@ -1,0 +1,55 @@
+baseURL = 'https://kuberneteslab.dev/'
+languageCode = 'ko'
+title = 'KubernetesLab'
+theme = 'PaperMod'
+paginate = 10
+
+[params]
+  env = "production"
+  description = "Kubernetes & Cloud Native Research Lab"
+  author = "Hoon Jo"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+
+  [params.homeInfoParams]
+    Title = "KubernetesLab"
+    Content = "Kubernetes & Cloud Native Research, Consulting, and Outsourcing"
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/sysnet4admin"
+
+[menu]
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
+    weight = 10
+  [[menu.main]]
+    identifier = "categories"
+    name = "Categories"
+    url = "/categories/"
+    weight = 20
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 30
+  [[menu.main]]
+    identifier = "offerings"
+    name = "Offerings"
+    url = "/offerings/"
+    weight = 40
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 50
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

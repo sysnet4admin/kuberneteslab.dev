@@ -15,8 +15,8 @@ KubernetesLab은 현장에서 얻은 경험과 연구 결과를 공유하는 공
 ## 저서
 
 - [한 걸음 앞선 개발자가 지금 꼭 알아야 할 클로드 코드](https://product.kyobobook.co.kr/detail/S000217402731)
-- [우아하게 앤서블](https://product.kyobobook.co.kr/detail/S000001890851)
 - [컨테이너 인프라 환경 구축을 위한 쿠버네티스/도커](https://product.kyobobook.co.kr/detail/S000001834629)
+- [우아하게 앤서블](https://product.kyobobook.co.kr/detail/S000001890851)
 - [시스템/네트워크 관리자를 위한 파이썬 실무 프로그래밍](https://product.kyobobook.co.kr/detail/S000001766283)
 
 ## 강의

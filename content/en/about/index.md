@@ -15,8 +15,8 @@ KubernetesLab is where I share hands-on experience and research findings from th
 ## Books
 
 - [Claude Code for Developers One Step Ahead](https://product.kyobobook.co.kr/detail/S000217402731)
-- [Elegant Ansible](https://product.kyobobook.co.kr/detail/S000001890851)
 - [Container Infrastructure with Kubernetes/Docker](https://product.kyobobook.co.kr/detail/S000001834629)
+- [Elegant Ansible](https://product.kyobobook.co.kr/detail/S000001890851)
 - [Python Practical Programming for System/Network Administrators](https://product.kyobobook.co.kr/detail/S000001766283)
 
 ## Courses

@@ -9,9 +9,8 @@ build:
 
 ## Hoon Jo
 
-CNCF Ambassador, focused on practical applications and education of Kubernetes and Cloud Native technologies.
-
-KubernetesLab is where I share research findings and insights.
+CNCF Ambassador and Kubestronaut, focused on practical applications and education of Kubernetes and Cloud Native technologies. Author of multiple technical books, and an active speaker and program committee member at KubeCon and other global conferences.
+KubernetesLab is where I share hands-on experience and research findings from the field.
 
 ## Books
 

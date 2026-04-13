@@ -9,9 +9,9 @@ build:
 
 ## 조훈 (Hoon Jo)
 
-Megazone에서 Tech Evangelist / Cloud Native Engineer로 일하고 있으며, CNCF Ambassador로 활동하고 있습니다.
+CNCF Ambassador로 활동하고 있으며, Kubernetes와 Cloud Native 기술의 실무 적용과 교육에 관심이 많습니다.
 
-Kubernetes와 Cloud Native 기술의 실무 적용과 교육에 관심이 많고, KubernetesLab을 통해 연구 결과와 인사이트를 공유합니다.
+KubernetesLab을 통해 연구 결과와 인사이트를 공유합니다.
 
 ## 저서
 

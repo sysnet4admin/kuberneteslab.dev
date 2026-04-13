@@ -9,9 +9,9 @@ build:
 
 ## Hoon Jo
 
-Tech Evangelist / Cloud Native Engineer at Megazone, and CNCF Ambassador.
+CNCF Ambassador, focused on practical applications and education of Kubernetes and Cloud Native technologies.
 
-I focus on practical applications and education of Kubernetes and Cloud Native technologies. KubernetesLab is where I share research findings and insights.
+KubernetesLab is where I share research findings and insights.
 
 ## Books
 

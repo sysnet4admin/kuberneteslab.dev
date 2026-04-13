@@ -15,28 +15,24 @@ KubernetesLab is where I share research findings and insights.
 
 ## Books
 
-- Container Infrastructure with Kubernetes/Docker
-- Elegant Ansible
-- Python Practical Programming for System/Network Administrators
-- Claude Code for Developers One Step Ahead
+- [Container Infrastructure with Kubernetes/Docker](https://product.kyobobook.co.kr/detail/S000001834629)
+- [Elegant Ansible](https://product.kyobobook.co.kr/detail/S000001890851)
+- [Python Practical Programming for System/Network Administrators](https://product.kyobobook.co.kr/detail/S000001766283)
+- [Claude Code for Developers One Step Ahead](https://product.kyobobook.co.kr/detail/S000217402731)
 
 ## Courses
 
-- Kubernetes Starter
-- Learning Kubernetes with Pictures
-- Managing Diverse Environments with Ansible
-- Deep Dive into Ansible
-- Hands-on Prometheus
-- Hands-on Grafana
+- [Kubernetes Starter](https://url.kr/k8s)
+- [Learning Kubernetes with Pictures](https://url.kr/k8s-adv)
+- [Ansible](https://www.inflearn.com/roadmaps/45)
+- [Hands-on Prometheus](https://url.kr/prom)
+- [Hands-on Grafana](https://url.kr/graf)
 
 ## Certifications
 
-- CNCF Ambassador
-- Certified Kubernetes Administrator (CKA)
-- Certified Kubernetes Application Developer (CKAD)
-- Kubernetes Security Specialist (CKS)
-- CCIE Data Center (Cisco)
-- Google Cloud Certified Professional Cloud Architect
+- [CNCF Ambassador](https://www.credly.com/badges/4ede0d01-f499-4178-893f-a5cce941412e/public_url)
+- [Kubestronaut (CKA + CKAD + CKS + KCNA + KCSA)](https://www.credly.com/badges/31d3b041-71e9-4371-93be-6156f9c89397/public_url)
+- [CCIE Data Center (Cisco)](https://www.credly.com/users/hoon-jo/badges)
 - RHCE (Red Hat Certified Engineer)
 
 ## Open Source

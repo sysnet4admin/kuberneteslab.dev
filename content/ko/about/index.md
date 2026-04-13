@@ -15,28 +15,24 @@ KubernetesLab을 통해 연구 결과와 인사이트를 공유합니다.
 
 ## 저서
 
-- 컨테이너 인프라 환경 구축을 위한 쿠버네티스/도커
-- 우아하게 앤서블
-- 시스템/네트워크 관리자를 위한 파이썬 실무 프로그래밍
-- 한 걸음 앞선 개발자가 지금 꼭 알아야 할 클로드 코드
+- [컨테이너 인프라 환경 구축을 위한 쿠버네티스/도커](https://product.kyobobook.co.kr/detail/S000001834629)
+- [우아하게 앤서블](https://product.kyobobook.co.kr/detail/S000001890851)
+- [시스템/네트워크 관리자를 위한 파이썬 실무 프로그래밍](https://product.kyobobook.co.kr/detail/S000001766283)
+- [한 걸음 앞선 개발자가 지금 꼭 알아야 할 클로드 코드](https://product.kyobobook.co.kr/detail/S000217402731)
 
 ## 강의
 
-- 쉽게 시작하는 쿠버네티스
-- 그림으로 배우는 쿠버네티스
-- 다양한 환경을 앤서블로 관리하기
-- 앤서블을 깊이 있게 활용하기
-- 실습으로 배우는 프로메테우스
-- 실습으로 배우는 그라파나
+- [쉽게 시작하는 쿠버네티스](https://url.kr/k8s)
+- [그림으로 배우는 쿠버네티스](https://url.kr/k8s-adv)
+- [앤서블(Ansible)](https://www.inflearn.com/roadmaps/45)
+- [실습으로 배우는 프로메테우스](https://url.kr/prom)
+- [실습으로 배우는 그라파나](https://url.kr/graf)
 
 ## 자격
 
-- CNCF Ambassador
-- Certified Kubernetes Administrator (CKA)
-- Certified Kubernetes Application Developer (CKAD)
-- Kubernetes Security Specialist (CKS)
-- CCIE Data Center (Cisco)
-- Google Cloud Certified Professional Cloud Architect
+- [CNCF Ambassador](https://www.credly.com/badges/4ede0d01-f499-4178-893f-a5cce941412e/public_url)
+- [Kubestronaut (CKA + CKAD + CKS + KCNA + KCSA)](https://www.credly.com/badges/31d3b041-71e9-4371-93be-6156f9c89397/public_url)
+- [CCIE Data Center (Cisco)](https://www.credly.com/users/hoon-jo/badges)
 - RHCE (Red Hat Certified Engineer)
 
 ## 오픈소스

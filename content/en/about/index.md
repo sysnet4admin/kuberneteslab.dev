@@ -47,6 +47,12 @@ KubernetesLab is where I share hands-on experience and research findings from th
 - [LinkedIn](https://www.linkedin.com/in/hoonjo/)
 - [YouTube](https://www.youtube.com/HoonJo)
 
+**Past Writing**
+
+- [Blogspot](https://sysnet4admin.blogspot.com/) 2017~2022: K8s, Ansible, CKA prep
+- [GitBook/cloud](https://sysnet4admin.gitbook.io/cloud) 2022~2023: GCP, AWS, Azure tools
+- [GitBook/cncf](https://sysnet4admin.gitbook.io/cncf) 2021~2024: CNCF projects, service mesh, security
+
 ## Contact
 
-- hj@kuberneteslab.dev
+- contact@kuberneteslab.dev

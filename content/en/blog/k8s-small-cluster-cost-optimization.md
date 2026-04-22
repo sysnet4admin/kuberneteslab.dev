@@ -1,11 +1,11 @@
 ---
-title: "Cutting a Small Kubernetes Cluster Bill by 39%: A Dual-Cloud EKS + AKS Optimization Story"
+title: "Cutting a Small Kubernetes Cluster Bill by 48%: A Dual-Cloud EKS + AKS Optimization Story"
 date: 2026-04-16
 draft: false
 tags: ["kubernetes", "finops", "eks", "aks", "cost-optimization", "sre"]
 categories: ["Kubernetes", "FinOps"]
-description: "How monthly spend on a small production Kubernetes setup running on AWS EKS and Azure AKS was cut by 39% across six waste patterns: node downsizing, Ingress consolidation, right-sizing, monitoring tuning, add-on cleanup, and dev cluster scheduling. All production changes executed with zero downtime."
-summary: "$510 → $310/mo, $2,400/yr saved. Six high-impact waste patterns and a zero-downtime execution playbook for small K8s clusters."
+description: "How monthly spend on a small EKS + AKS setup was cut ~48% combined: 39% on production ($200/mo) and 61% on dev ($214/mo). Six waste patterns, all production changes executed with zero downtime."
+summary: "~$414/mo, ~$5,000/yr saved combined (~48%): 39% on production, 61% on dev. Six waste patterns and a zero-downtime execution playbook for small K8s clusters."
 ShowToc: true
 TocOpen: true
 mermaid: true
@@ -17,7 +17,13 @@ mermaid: true
 
 ## TL;DR
 
-A small production Kubernetes setup (EKS + AKS, about 10 apps, $510/mo) was trimmed by **$200/mo, $2,400/yr (39%)** through incremental optimization during normal operations.
+A small Kubernetes setup across two clouds was cut by a combined **~$414/mo, ~$5,000/yr (~48%)** through incremental optimization.
+
+| | Before | After | Savings |
+|---|---:|---:|---:|
+| Production (EKS + AKS, ~10 apps) | $510/mo | $310/mo | −$200 (39%) |
+| Dev cluster (AKS) | ~$352/mo | ~$138/mo | −$214 (61%) |
+| **Combined** | **~$862/mo** | **~$448/mo** | **~−$414 (~48%)** |
 
 The wins came from six patterns:
 
@@ -320,9 +326,7 @@ We redeployed the full stack twice during this work. All 38 alert rules and dash
 | **Monthly total** | **$510** | **$310** | **−$200** |
 | **Annual total** | **$6,120** | **$3,720** | **−$2,400** |
 
-**39% reduction** (production cluster baseline).
-
-Pattern 6 (dev cluster stop schedule) reduces an additional **~$214/mo** from a separate ~$352/mo baseline. Combined across both clusters: ~$414/mo, ~$5,000/yr.
+**39% reduction on production.** Adding the dev cluster stop schedule (Pattern 6) brings the combined total to **~48%**, ~$414/mo, ~$5,000/yr.
 
 **Qualitative wins**
 - Zero downtime (external health check: 0 interruptions)

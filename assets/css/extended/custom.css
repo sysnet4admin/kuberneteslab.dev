@@ -67,3 +67,26 @@
 .post-content a:hover {
     color: #2856b8;
 }
+
+/* 저자 카드 (포스트 본문 끝, 태그 위) */
+.post-author {
+    margin: 2.5em 0 1.5em;
+    padding: 1em 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.post-author-name {
+    font-size: 0.95em;
+    margin-bottom: 0.6em;
+    opacity: 0.85;
+}
+
+.post-author .social-icons {
+    padding: 0;
+}
+
+.post-author .social-icons a {
+    margin-right: 12px;
+    margin-left: 0;
+}

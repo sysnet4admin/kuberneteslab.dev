@@ -1,0 +1,7 @@
+{{- $author := .Params.author | default site.Params.author -}}
+{{- if and $author site.Params.socialIcons -}}
+<div class="post-author">
+    <div class="post-author-name">{{ i18n "written_by" }} <strong>{{ $author }}</strong></div>
+    {{ partial "social_icons.html" (dict "align" "left") }}
+</div>
+{{- end -}}

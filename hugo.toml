@@ -16,6 +16,7 @@ defaultContentLanguageInSubdir = true
   ShowBreadCrumbs = true
   ShowCodeCopyButtons = true
   ShowToc = true
+  UseHugoToc = true
 
   [[params.socialIcons]]
     name = "github"
@@ -98,3 +99,9 @@ defaultContentLanguageInSubdir = true
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+    ordered = false

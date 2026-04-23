@@ -27,19 +27,21 @@ KubernetesLab is where I share hands-on experience and research findings from th
 - [Hands-on Grafana](https://www.inflearn.com/course/%EC%8B%A4%EC%8A%B5%EC%9C%BC%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%EA%B7%B8%EB%9D%BC%ED%8C%8C%EB%82%98)
 - [How to Prepare for Kubernetes Certifications (CKA, CKAD, CKS)](https://www.inflearn.com/course/%EA%B3%B5%EC%9D%B8-%EC%BF%A0%EB%B2%84%EB%84%A4%ED%8B%B0%EC%8A%A4-%EA%B4%80%EB%A6%AC%EC%9E%90)
 - [Ansible](https://www.inflearn.com/course/%EC%95%A4%EC%84%9C%EB%B8%94ansible-%EA%B8%B0%EC%B4%88)
+- [SSF (Super Simple & Fast)](https://github.com/sysnet4admin/SSF): AI(Claude Code)-driven Kubernetes hands-on training
 
-## Certifications
+## Certifications & Awards
 
 - [CNCF Ambassador](https://www.credly.com/badges/4ede0d01-f499-4178-893f-a5cce941412e/public_url)
 - [Kubestronaut (CKA + CKAD + CKS + KCNA + KCSA)](https://www.credly.com/badges/31d3b041-71e9-4371-93be-6156f9c89397/public_url)
 - [CCIE Data Center (Cisco)](https://www.credly.com/badges/a735c2f7-7c92-46dc-a0bd-072db6d874dc/public_url)
 - RHCE (Red Hat Certified Engineer)
+- [Yes24 Developer of the Month — October 2025](https://event.yes24.com/template?EventNo=263676)
 
 ## Open Source
 
-- [kDbench](https://github.com/sysnet4admin/kDbench) — Kubernetes storage performance test
-- [kubeconn](https://github.com/sysnet4admin/kubeconn) — Pod container connection tool
-- [ctx-cleaner](https://github.com/sysnet4admin/ctx-cleaner) — Kubernetes context cleanup tool
+- [kDbench](https://github.com/sysnet4admin/kDbench): Kubernetes storage performance test
+- [kubeconn](https://github.com/sysnet4admin/kubeconn): Pod container connection tool
+- [ctx-cleaner](https://github.com/sysnet4admin/ctx-cleaner): Kubernetes context cleanup tool
 
 ## Links
 
@@ -47,12 +49,12 @@ KubernetesLab is where I share hands-on experience and research findings from th
 - [LinkedIn](https://www.linkedin.com/in/hoonjo/)
 - [YouTube](https://www.youtube.com/HoonJo)
 
-**Past Writing**
 
-- [Blogspot](https://sysnet4admin.blogspot.com/) 2017~2022: K8s, Ansible, CKA prep
-- [GitBook/cloud](https://sysnet4admin.gitbook.io/cloud) 2022~2023: GCP, AWS, Azure tools
-- [GitBook/cncf](https://sysnet4admin.gitbook.io/cncf) 2021~2024: CNCF projects, service mesh, security
+## Available for
 
-## Contact
+- Kubernetes/Cloud Native training (corporate, workshop)
+- Architecture review, technical advisory
+- Conference talks, panels, interviews
+- Open source collaboration
 
-- contact@kuberneteslab.dev
+contact@kuberneteslab.dev

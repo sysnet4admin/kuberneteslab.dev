@@ -53,14 +53,14 @@ defaultContentLanguageInSubdir = true
       url = "/ko/tags/"
       weight = 30
     [[languages.ko.menu.main]]
-      identifier = "offerings"
-      name = "Offerings"
-      url = "/ko/offerings/"
-      weight = 40
-    [[languages.ko.menu.main]]
       identifier = "about"
       name = "About"
       url = "/ko/about/"
+      weight = 40
+    [[languages.ko.menu.main]]
+      identifier = "archive"
+      name = "Archive"
+      url = "/ko/archive/"
       weight = 50
 
   [languages.en]
@@ -87,14 +87,14 @@ defaultContentLanguageInSubdir = true
       url = "/en/tags/"
       weight = 30
     [[languages.en.menu.main]]
-      identifier = "offerings"
-      name = "Offerings"
-      url = "/en/offerings/"
-      weight = 40
-    [[languages.en.menu.main]]
       identifier = "about"
       name = "About"
       url = "/en/about/"
+      weight = 40
+    [[languages.en.menu.main]]
+      identifier = "archive"
+      name = "Archive"
+      url = "/en/archive/"
       weight = 50
 
 [outputs]

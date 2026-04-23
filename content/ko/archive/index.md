@@ -1,5 +1,5 @@
 ---
-title: "Archive"
+title: "Archives"
 layout: "single"
 summary: "archive"
 ShowToc: false

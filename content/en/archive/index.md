@@ -23,12 +23,14 @@ build:
 | 2023 | KubeCon NA (Chicago) | Beyond Passwords: Keycloak's IAM + Security | [sched](https://kccncna2023.sched.com/event/1R2qR) · [YouTube](https://youtu.be/nRd0ejHADss) |
 | 2023 | OpenInfra Days Korea | Deploy 100 Nodes with 1GB Memory (w/ KWOK) | [event](https://2023.openinfradays.kr/session/57) |
 | 2022 | UbuCon Asia | K8s Container Environment with AppArmor | [event](https://2022.ubucon.asia/sessions/safe-kubenetes-environment-with-apparmor/) |
+| 2022 | HashiTalks 2022 | How to Build a Multi-Context Lab for Kubernetes | [YouTube](https://www.youtube.com/watch?v=6Ksyej9VlSM) |
+| 2021 | HashiTalks 2021 | Deploying Cisco NXOSv with Vagrant | [YouTube](https://www.youtube.com/watch?v=P499YqBUYhw) |
 
 All slides: [github.com/sysnet4admin/talks](https://github.com/sysnet4admin/talks)
 
 ## Writing
 
-- [Yozm IT](https://yozm.wishket.com/magazine/@sysnet4admin) — Kubernetes, CNCF, Cloud Native (14 articles, 2023~2025)
+- [Yozm IT](https://yozm.wishket.com/magazine/@sysnet4admin) — Kubernetes, CNCF, Cloud Native (35 articles, 2023~2025)
 - Microsoftware Issue 399 (Jan 2020): Ansible for Network Automation
 - Microsoftware Issue 400 (Apr 2020): What Does Development Mean for Infrastructure Engineers?
 - [FastCampus Interview](https://m.blog.naver.com/fastcampus/221090599608) (2017): Why Should Engineers Learn Programming?

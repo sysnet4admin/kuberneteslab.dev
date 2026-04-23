@@ -23,12 +23,14 @@ build:
 | 2023 | KubeCon NA (Chicago) | Beyond Passwords: Keycloak's IAM + Security | [sched](https://kccncna2023.sched.com/event/1R2qR) · [YouTube](https://youtu.be/nRd0ejHADss) |
 | 2023 | OpenInfra Days Korea | 1GB 메모리로 100개 노드 올리기 (w/ KWOK) | [event](https://2023.openinfradays.kr/session/57) |
 | 2022 | UbuCon Asia | K8s Container Environment with AppArmor | [event](https://2022.ubucon.asia/sessions/safe-kubenetes-environment-with-apparmor/) |
+| 2022 | HashiTalks 2022 | How to Build a Multi-Context Lab for Kubernetes | [YouTube](https://www.youtube.com/watch?v=6Ksyej9VlSM) |
+| 2021 | HashiTalks 2021 | Deploying Cisco NXOSv with Vagrant | [YouTube](https://www.youtube.com/watch?v=P499YqBUYhw) |
 
 전체 슬라이드: [github.com/sysnet4admin/talks](https://github.com/sysnet4admin/talks)
 
 ## 기고
 
-- [요즘IT](https://yozm.wishket.com/magazine/@sysnet4admin) — Kubernetes, CNCF, 클라우드 네이티브 (14편, 2023~2025)
+- [요즘IT](https://yozm.wishket.com/magazine/@sysnet4admin) — Kubernetes, CNCF, 클라우드 네이티브 (35편, 2023~2025)
 - 마이크로소프트웨어 399호 (2020-01): 네트워크 관리에 자동화를 불어넣는 앤서블
 - 마이크로소프트웨어 400호 (2020-04): 인프라 엔지니어에게 개발이란 어떤 의미일까
 - [FastCampus 인터뷰](https://m.blog.naver.com/fastcampus/221090599608) (2017): 엔지니어가 왜 프로그래밍을 배워야 하냐고요?

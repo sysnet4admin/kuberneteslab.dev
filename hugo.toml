@@ -101,6 +101,8 @@ defaultContentLanguageInSubdir = true
   home = ["HTML", "RSS", "JSON"]
 
 [markup]
+  [markup.goldmark.renderer]
+    unsafe = true
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 3

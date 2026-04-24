@@ -22,7 +22,7 @@ build:
 | 2024 | KubeCon China | Find Your Own Personal Tutor for K8s | [sched](https://kccncossaidevchn2024.sched.com/event/1eYZI) · [YouTube](https://youtu.be/xy7tJTIfyg8) |
 | 2023 | KubeCon NA (Chicago) | Beyond Passwords: Keycloak's IAM + Security | [sched](https://kccncna2023.sched.com/event/1R2qR) · [YouTube](https://youtu.be/nRd0ejHADss) |
 | 2023 | KCD Taiwan × COSCUP | Deploy 1 Thousand Pods on My Laptop (w/ KWOK) | [YouTube](https://www.youtube.com/watch?v=FB3LLR3vRdo) |
-| 2023 | OpenInfra Days Korea | Deploy 100 Nodes with 1GB Memory (w/ KWOK) | [event](https://2023.openinfradays.kr/session/57) · [YouTube](https://www.youtube.com/watch?v=XqeO2ZTNYII) |
+| 2023 | OpenInfra Days Korea | Deploy 100 Nodes with 1GB Memory (w/ KWOK) | [YouTube](https://www.youtube.com/watch?v=XqeO2ZTNYII) |
 | 2022 | UbuCon Asia | K8s Container Environment with AppArmor | [event](https://2022.ubucon.asia/sessions/safe-kubenetes-environment-with-apparmor/) · [YouTube](https://www.youtube.com/watch?v=BFnrd1OJkgk) |
 | 2022 | HashiTalks 2022 | How to Build a Multi-Context Lab for Kubernetes | [YouTube](https://www.youtube.com/watch?v=6Ksyej9VlSM) |
 | 2021 | HashiTalks 2021 | Deploying Cisco NXOSv with Vagrant | [YouTube](https://www.youtube.com/watch?v=P499YqBUYhw) |
@@ -31,26 +31,50 @@ build:
 | 2019 | Open Infra & Cloud Native Korea | Network Automation with Ansible | [YouTube](https://www.youtube.com/watch?v=7vGka5aUIWw) |
 
 <details>
-<summary>Webinars · Meetups · Other (16)</summary>
+<summary>Webinars (2)</summary>
 
 | Year | Title | Links |
 |------|-------|-------|
 | 2024 | Kubernetes 10th Anniversary Webinar: Past, Present and Future | [YouTube](https://www.youtube.com/watch?v=DEbuAkW0aCA) |
-| 2023 | KWOK Demo at OpenInfra Community Days | [YouTube](https://www.youtube.com/watch?v=TNJ4AQi7KhY) |
-| — | How Prometheus Automatically Collects Kubernetes Metrics | [YouTube](https://www.youtube.com/watch?v=47dl9vXdt4o) |
-| — | CNCF: Compare between MetalLB and Porter | [YouTube](https://www.youtube.com/watch?v=HwZ_yCQVRIQ) |
 | — | Kubernetes Fundamentals (Megazone Webinar) | [YouTube](https://www.youtube.com/watch?v=RsBeVyVtNps) |
-| — | Load Balancer On-Premises with MetalLB | [YouTube](https://www.youtube.com/watch?v=hJO1nxsB5uY) |
-| — | Load Balancer in Baremetal Kubernetes | [YouTube](https://www.youtube.com/watch?v=jNr4I7KmSi4) |
+
+</details>
+
+<details>
+<summary>Meetups · Events (3)</summary>
+
+| Year | Title | Links |
+|------|-------|-------|
+| 2023 | KWOK Demo at OpenInfra Community Days | [YouTube](https://www.youtube.com/watch?v=TNJ4AQi7KhY) |
 | — | Cloud Engineer Talks Cloud (Naver Cloud Tech Meetup) | [YouTube](https://www.youtube.com/watch?v=jE3Vgv_PpMk) |
 | — | GKE Dashboard (Google Next Recap Seoul) | [YouTube](https://www.youtube.com/watch?v=SKmhPcYp1M0) |
-| — | How to Become a Global Tech Ambassador (CNCF Ambassador) | [YouTube](https://www.youtube.com/watch?v=7CuWOC98AoU) |
+
+</details>
+
+<details>
+<summary>Tech Videos (6)</summary>
+
+| Year | Title | Links |
+|------|-------|-------|
+| — | How Prometheus Automatically Collects Kubernetes Metrics | [YouTube](https://www.youtube.com/watch?v=47dl9vXdt4o) |
+| — | CNCF: Compare between MetalLB and Porter | [YouTube](https://www.youtube.com/watch?v=HwZ_yCQVRIQ) |
+| — | Load Balancer On-Premises with MetalLB | [YouTube](https://www.youtube.com/watch?v=hJO1nxsB5uY) |
+| — | Load Balancer in Baremetal Kubernetes | [YouTube](https://www.youtube.com/watch?v=jNr4I7KmSi4) |
 | — | How to Prepare for CKA | [YouTube](https://www.youtube.com/watch?v=B2KkkYiZPEk) |
 | — | Why Does Kubernetes Need Backup? | [YouTube](https://www.youtube.com/watch?v=A6w5p8zfF3Q) |
-| 2020 | Microsoftware Interview (Issue 400) | [YouTube](https://www.youtube.com/watch?v=oSZ46AMOS-g) |
-| — | Do You Really Need Kubernetes? (Interview) | [YouTube](https://www.youtube.com/watch?v=m-EmnMFRgeQ) |
+
+</details>
+
+<details>
+<summary>Seminars · Interviews (5)</summary>
+
+| Year | Title | Links |
+|------|-------|-------|
+| — | How to Become a Global Tech Ambassador (CNCF Ambassador) | [YouTube](https://www.youtube.com/watch?v=7CuWOC98AoU) |
 | — | What Happens Under the Cloud? (Python for SRE) | [YouTube](https://www.youtube.com/watch?v=yAVOdaarXRo) |
 | — | Python for System/Network Engineers (Seminar) | [YouTube](https://www.youtube.com/watch?v=RqSlX4mUqU4) |
+| 2020 | Microsoftware Interview (Issue 400) | [YouTube](https://www.youtube.com/watch?v=oSZ46AMOS-g) |
+| — | Do You Really Need Kubernetes? (Interview) | [YouTube](https://www.youtube.com/watch?v=m-EmnMFRgeQ) |
 
 </details>
 

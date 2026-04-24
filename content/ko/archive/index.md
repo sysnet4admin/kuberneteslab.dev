@@ -22,7 +22,7 @@ build:
 | 2024 | KubeCon China | Find Your Own Personal Tutor for K8s | [sched](https://kccncossaidevchn2024.sched.com/event/1eYZI) · [YouTube](https://youtu.be/xy7tJTIfyg8) |
 | 2023 | KubeCon NA (Chicago) | Beyond Passwords: Keycloak's IAM + Security | [sched](https://kccncna2023.sched.com/event/1R2qR) · [YouTube](https://youtu.be/nRd0ejHADss) |
 | 2023 | KCD Taiwan × COSCUP | Deploy 1 Thousand Pods on My Laptop (w/ KWOK) | [YouTube](https://www.youtube.com/watch?v=FB3LLR3vRdo) |
-| 2023 | OpenInfra Days Korea | 1GB 메모리로 100개 노드 올리기 (w/ KWOK) | [event](https://2023.openinfradays.kr/session/57) · [YouTube](https://www.youtube.com/watch?v=XqeO2ZTNYII) |
+| 2023 | OpenInfra Days Korea | 1GB 메모리로 100개 노드 올리기 (w/ KWOK) | [YouTube](https://www.youtube.com/watch?v=XqeO2ZTNYII) |
 | 2022 | UbuCon Asia | K8s Container Environment with AppArmor | [event](https://2022.ubucon.asia/sessions/safe-kubenetes-environment-with-apparmor/) · [YouTube](https://www.youtube.com/watch?v=BFnrd1OJkgk) |
 | 2022 | HashiTalks 2022 | How to Build a Multi-Context Lab for Kubernetes | [YouTube](https://www.youtube.com/watch?v=6Ksyej9VlSM) |
 | 2021 | HashiTalks 2021 | Deploying Cisco NXOSv with Vagrant | [YouTube](https://www.youtube.com/watch?v=P499YqBUYhw) |
@@ -31,26 +31,50 @@ build:
 | 2019 | Open Infra & Cloud Native Korea | 앤서블을 통한 오픈네트워크 관리 자동화 | [YouTube](https://www.youtube.com/watch?v=7vGka5aUIWw) |
 
 <details>
-<summary>웨비나 · 밋업 · 기타 (16개)</summary>
+<summary>웨비나 (2)</summary>
 
 | 연도 | 제목 | 링크 |
 |------|------|------|
 | 2024 | [쿠버네티스 10주년 웨비나] 쿠버네티스의 과거와 현재 그리고 미래 | [YouTube](https://www.youtube.com/watch?v=DEbuAkW0aCA) |
-| 2023 | KWOK 데모 at OpenInfra Community Days | [YouTube](https://www.youtube.com/watch?v=TNJ4AQi7KhY) |
-| — | 프로메테우스는 어떻게 쿠버네티스 메트릭을 자동으로 가져올까요? | [YouTube](https://www.youtube.com/watch?v=47dl9vXdt4o) |
-| — | CNCF: Compare between MetalLB and Porter (EN) | [YouTube](https://www.youtube.com/watch?v=HwZ_yCQVRIQ) |
 | — | Kubernetes Fundamentals (메가존 웨비나) | [YouTube](https://www.youtube.com/watch?v=RsBeVyVtNps) |
-| — | 온프레미스에서도 로드밸런서를? (w/ MetalLB) | [YouTube](https://www.youtube.com/watch?v=hJO1nxsB5uY) |
-| — | Load Balancer in Baremetal Kubernetes | [YouTube](https://www.youtube.com/watch?v=jNr4I7KmSi4) |
+
+</details>
+
+<details>
+<summary>밋업 · 행사 (3)</summary>
+
+| 연도 | 제목 | 링크 |
+|------|------|------|
+| 2023 | KWOK 데모 at OpenInfra Community Days | [YouTube](https://www.youtube.com/watch?v=TNJ4AQi7KhY) |
 | — | 클라우드 엔지니어에게 클라우드를 묻다 (네이버클라우드 테크밋업) | [YouTube](https://www.youtube.com/watch?v=jE3Vgv_PpMk) |
 | — | GKE 현황 대시보드 (Google Next Recap Seoul) | [YouTube](https://www.youtube.com/watch?v=SKmhPcYp1M0) |
-| — | 3기 라이트 세미나 — CNCF 앰버서더 되는 법 | [YouTube](https://www.youtube.com/watch?v=7CuWOC98AoU) |
+
+</details>
+
+<details>
+<summary>기술 영상 (6)</summary>
+
+| 연도 | 제목 | 링크 |
+|------|------|------|
+| — | 프로메테우스는 어떻게 쿠버네티스 메트릭을 자동으로 가져올까요? | [YouTube](https://www.youtube.com/watch?v=47dl9vXdt4o) |
+| — | CNCF: Compare between MetalLB and Porter (EN) | [YouTube](https://www.youtube.com/watch?v=HwZ_yCQVRIQ) |
+| — | 온프레미스에서도 로드밸런서를? (w/ MetalLB) | [YouTube](https://www.youtube.com/watch?v=hJO1nxsB5uY) |
+| — | Load Balancer in Baremetal Kubernetes | [YouTube](https://www.youtube.com/watch?v=jNr4I7KmSi4) |
 | — | CKA 잘 준비하는 법 | [YouTube](https://www.youtube.com/watch?v=B2KkkYiZPEk) |
 | — | 왜 쿠버네티스에 백업이 필요할까요? | [YouTube](https://www.youtube.com/watch?v=A6w5p8zfF3Q) |
-| 2020 | 마이크로소프트웨어 마.필.톡 400호 특집 (인터뷰) | [YouTube](https://www.youtube.com/watch?v=oSZ46AMOS-g) |
-| — | 쿠버네티스 안 써도 되지 않나요? (인터뷰) | [YouTube](https://www.youtube.com/watch?v=m-EmnMFRgeQ) |
+
+</details>
+
+<details>
+<summary>세미나 · 인터뷰 (5)</summary>
+
+| 연도 | 제목 | 링크 |
+|------|------|------|
+| — | 3기 라이트 세미나 — CNCF 앰버서더 되는 법 | [YouTube](https://www.youtube.com/watch?v=7CuWOC98AoU) |
 | — | 구름(Cloud) 아래엔 어떤 일이 있을까요? (파이썬) | [YouTube](https://www.youtube.com/watch?v=yAVOdaarXRo) |
 | — | 제 4회 파이썬 격월 세미나 — 시스템/네트워크 엔지니어를 위한 파이썬 | [YouTube](https://www.youtube.com/watch?v=RqSlX4mUqU4) |
+| 2020 | 마이크로소프트웨어 마.필.톡 400호 특집 (인터뷰) | [YouTube](https://www.youtube.com/watch?v=oSZ46AMOS-g) |
+| — | 쿠버네티스 안 써도 되지 않나요? (인터뷰) | [YouTube](https://www.youtube.com/watch?v=m-EmnMFRgeQ) |
 
 </details>
 

@@ -60,7 +60,7 @@ defaultContentLanguageInSubdir = true
     [[languages.ko.menu.main]]
       identifier = "archive"
       name = "Archives"
-      url = "/ko/archive/"
+      url = "/ko/archives/"
       weight = 50
 
   [languages.en]
@@ -94,7 +94,7 @@ defaultContentLanguageInSubdir = true
     [[languages.en.menu.main]]
       identifier = "archive"
       name = "Archives"
-      url = "/en/archive/"
+      url = "/en/archives/"
       weight = 50
 
 [outputs]

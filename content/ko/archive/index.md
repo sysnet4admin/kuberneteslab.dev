@@ -16,7 +16,7 @@ build:
 | 2025 | KyvernoCon NA | CEL: Hidden Feature of Kyverno Playground | [sched](https://colocatedeventsna2025.sched.com/event/28D1M) · [YouTube](https://www.youtube.com/watch?v=b_p9Yjtp-bo) |
 | 2025 | KubeCon China (Hong Kong) | Policy as Code: Past, Present and Future | [sched](https://kccncchn2025.sched.com/event/1x5k8) · [YouTube](https://www.youtube.com/watch?v=6_Dh6xhqoys) |
 | 2025 | KubeCon EU (London) | K8s in Wonderland: Why? Many of Unknown Code | [sched](https://kccnceu2025.sched.com/event/1txFz) · [YouTube](https://youtu.be/GvIPSgt69Sg) |
-| 2025 | KCD Korea | 인공지능 에이전트로 관리하는 쿠버네티스 신세계 | [event](https://community.cncf.io/events/details/cncf-kcd-south-korea-presents-kcd-seoul-2025/) |
+| 2025 | KCD Seoul | 인공지능 에이전트로 관리하는 쿠버네티스 신세계 | [event](https://community.cncf.io/events/details/cncf-kcd-south-korea-presents-kcd-seoul-2025/) |
 | 2025 | OpenInfra Days Korea | Policy as Code의 과거 현재 그리고 미래 | [event](https://2025.openinfradays.kr/session/14) · [YouTube](https://www.youtube.com/watch?v=MREcgiGMYEw) |
 | 2024 | KubeCon India | Enhance Kubernetes Security with CEL | [sched](https://kccncind2024.sched.com/event/1mVST) · [YouTube](https://youtu.be/0PB4g4wl6Dk) |
 | 2024 | KubeCon China | Find Your Own Personal Tutor for K8s | [sched](https://kccncossaidevchn2024.sched.com/event/1eYZI) · [YouTube](https://youtu.be/xy7tJTIfyg8) |

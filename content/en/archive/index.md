@@ -36,7 +36,7 @@ build:
 | Year | Title | Links |
 |------|-------|-------|
 | 2024 | Kubernetes 10th Anniversary Webinar: Past, Present and Future | [YouTube](https://www.youtube.com/watch?v=DEbuAkW0aCA) |
-| — | Kubernetes Fundamentals (Megazone Webinar) | [YouTube](https://www.youtube.com/watch?v=RsBeVyVtNps) |
+| 2021 | Kubernetes Fundamentals (Megazone Webinar) | [YouTube](https://www.youtube.com/watch?v=RsBeVyVtNps) |
 
 </details>
 
@@ -46,8 +46,8 @@ build:
 | Year | Title | Links |
 |------|-------|-------|
 | 2023 | KWOK Demo at OpenInfra Community Days | [YouTube](https://www.youtube.com/watch?v=TNJ4AQi7KhY) |
-| — | Cloud Engineer Talks Cloud (Naver Cloud Tech Meetup) | [YouTube](https://www.youtube.com/watch?v=jE3Vgv_PpMk) |
-| — | GKE Dashboard (Google Next Recap Seoul) | [YouTube](https://www.youtube.com/watch?v=SKmhPcYp1M0) |
+| 2022 | Cloud Engineer Talks Cloud (Naver Cloud Tech Meetup) | [YouTube](https://www.youtube.com/watch?v=jE3Vgv_PpMk) |
+| 2021 | GKE Dashboard (Google Next Recap Seoul) | [YouTube](https://www.youtube.com/watch?v=SKmhPcYp1M0) |
 
 </details>
 
@@ -56,12 +56,12 @@ build:
 
 | Year | Title | Links |
 |------|-------|-------|
-| — | How Prometheus Automatically Collects Kubernetes Metrics | [YouTube](https://www.youtube.com/watch?v=47dl9vXdt4o) |
-| — | CNCF: Compare between MetalLB and Porter | [YouTube](https://www.youtube.com/watch?v=HwZ_yCQVRIQ) |
-| — | Load Balancer On-Premises with MetalLB | [YouTube](https://www.youtube.com/watch?v=hJO1nxsB5uY) |
-| — | Load Balancer in Baremetal Kubernetes | [YouTube](https://www.youtube.com/watch?v=jNr4I7KmSi4) |
-| — | How to Prepare for CKA | [YouTube](https://www.youtube.com/watch?v=B2KkkYiZPEk) |
-| — | Why Does Kubernetes Need Backup? | [YouTube](https://www.youtube.com/watch?v=A6w5p8zfF3Q) |
+| 2024 | How Prometheus Automatically Collects Kubernetes Metrics | [YouTube](https://www.youtube.com/watch?v=47dl9vXdt4o) |
+| 2024 | Why Does Kubernetes Need Backup? | [YouTube](https://www.youtube.com/watch?v=A6w5p8zfF3Q) |
+| 2020 | CNCF: Compare between MetalLB and Porter | [YouTube](https://www.youtube.com/watch?v=HwZ_yCQVRIQ) |
+| 2020 | Load Balancer On-Premises with MetalLB | [YouTube](https://www.youtube.com/watch?v=hJO1nxsB5uY) |
+| 2020 | How to Prepare for CKA | [YouTube](https://www.youtube.com/watch?v=B2KkkYiZPEk) |
+| 2019 | Load Balancer in Baremetal Kubernetes | [YouTube](https://www.youtube.com/watch?v=jNr4I7KmSi4) |
 
 </details>
 
@@ -70,11 +70,11 @@ build:
 
 | Year | Title | Links |
 |------|-------|-------|
-| — | How to Become a Global Tech Ambassador (CNCF Ambassador) | [YouTube](https://www.youtube.com/watch?v=7CuWOC98AoU) |
-| — | What Happens Under the Cloud? (Python for SRE) | [YouTube](https://www.youtube.com/watch?v=yAVOdaarXRo) |
-| — | Python for System/Network Engineers (Seminar) | [YouTube](https://www.youtube.com/watch?v=RqSlX4mUqU4) |
+| 2023 | How to Become a Global Tech Ambassador (CNCF Ambassador) | [YouTube](https://www.youtube.com/watch?v=7CuWOC98AoU) |
+| 2022 | Do You Really Need Kubernetes? (Interview) | [YouTube](https://www.youtube.com/watch?v=m-EmnMFRgeQ) |
 | 2020 | Microsoftware Interview (Issue 400) | [YouTube](https://www.youtube.com/watch?v=oSZ46AMOS-g) |
-| — | Do You Really Need Kubernetes? (Interview) | [YouTube](https://www.youtube.com/watch?v=m-EmnMFRgeQ) |
+| 2017 | What Happens Under the Cloud? (Python for SRE) | [YouTube](https://www.youtube.com/watch?v=yAVOdaarXRo) |
+| 2017 | Python for System/Network Engineers (Seminar) | [YouTube](https://www.youtube.com/watch?v=RqSlX4mUqU4) |
 
 </details>
 

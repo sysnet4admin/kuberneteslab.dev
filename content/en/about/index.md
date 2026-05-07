@@ -7,10 +7,15 @@ build:
   list: never
 ---
 
-## Hoon Jo
-
-CNCF Ambassador and Kubestronaut, focused on practical applications and education of Kubernetes and Cloud Native technologies. Author of multiple technical books, and an active speaker and program committee member at KubeCon and other global conferences.
-KubernetesLab is where I share hands-on experience and research findings from the field.
+<h2 class="profile-name">Hoon Jo</h2>
+<div class="profile-header">
+<div class="profile-photo-wrap">
+<img src="/images/profile.jpg" alt="Hoon Jo" class="profile-photo">
+</div>
+<div class="profile-bio">
+<p>CNCF Ambassador and Kubestronaut, focused on practical applications and education of Kubernetes and Cloud Native technologies. Author of multiple technical books, and an active speaker and program committee member at KubeCon and other global conferences. KubernetesLab is where I share hands-on experience and research findings from the field.</p>
+</div>
+</div>
 
 ## Books
 

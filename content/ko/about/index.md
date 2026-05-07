@@ -7,10 +7,15 @@ build:
   list: never
 ---
 
-## 조훈 (Hoon Jo)
-
-CNCF Ambassador이자 Kubestronaut로, Kubernetes와 Cloud Native 기술의 실무 적용과 교육에 집중하고 있습니다. 다수의 기술서를 집필하고, KubeCon 등 글로벌 컨퍼런스에서 발표와 프로그램 위원회 활동을 이어가고 있습니다.
-KubernetesLab은 현장에서 얻은 경험과 연구 결과를 공유하는 공간입니다.
+<h2 class="profile-name">조훈 (Hoon Jo)</h2>
+<div class="profile-header">
+<div class="profile-photo-wrap">
+<img src="/images/profile.jpg" alt="조훈 (Hoon Jo)" class="profile-photo">
+</div>
+<div class="profile-bio">
+<p>CNCF Ambassador이자 Kubestronaut로, Kubernetes와 Cloud Native 기술의 실무 적용과 교육에 집중하고 있습니다. 다수의 기술서를 집필하고, KubeCon 등 글로벌 컨퍼런스에서 발표와 프로그램 위원회 활동을 이어가고 있습니다. KubernetesLab은 현장에서 얻은 경험과 연구 결과를 공유하는 공간입니다.</p>
+</div>
+</div>
 
 ## 저서
 

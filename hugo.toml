@@ -9,6 +9,7 @@ defaultContentLanguageInSubdir = true
   env = "production"
   description = "Kubernetes & Cloud Native Research Lab"
   author = "Hoon Jo"
+  images = ["/images/flask_brand_dark.svg"]
   defaultTheme = "auto"
   ShowReadingTime = true
   ShowShareButtons = true
@@ -27,6 +28,30 @@ defaultContentLanguageInSubdir = true
   [[params.socialIcons]]
     name = "youtube"
     url = "https://www.youtube.com/HoonJo"
+
+[params.assets]
+  favicon = "favicon.svg"
+
+[params.label]
+  text = "KubernetesLab"
+  iconSVG = """<svg width="36" height="36" viewBox="-19.5 -19.5 39 39" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0; overflow:visible;">
+  <circle cx="0" cy="0" r="18" fill="#2F6FE8" stroke="white" stroke-width="1.5"/>
+  <g stroke="white" stroke-linecap="round" stroke-width="2.3" opacity="0.97">
+    <line x1="1.5"  y1="-3.2" x2="5.8"  y2="-7.5"/>
+    <line x1="2.7"  y1="-1.1" x2="8.2"  y2="-2.8"/>
+    <line x1="2.7"  y1="1.1"  x2="8.2"  y2="2.8"/>
+    <line x1="1.5"  y1="3.2"  x2="5.8"  y2="7.5"/>
+    <line x1="-1.5" y1="3.2"  x2="-5.8" y2="7.5"/>
+    <line x1="-2.7" y1="1.1"  x2="-8.2" y2="2.8"/>
+    <line x1="-2.7" y1="-1.1" x2="-8.2" y2="-2.8"/>
+    <line x1="-1.5" y1="-3.2" x2="-5.8" y2="-7.5"/>
+    <line x1="0"    y1="-4.2" x2="0"    y2="-7.2"/>
+    <line x1="0"    y1="4.2"  x2="0"    y2="7.2"/>
+  </g>
+  <circle cx="0" cy="0" r="4.6" fill="white"/>
+  <circle cx="0" cy="0" r="3.3" fill="#2F6FE8"/>
+  <circle cx="0" cy="0" r="2.0" fill="white"/>
+</svg>"""
 
 [languages]
   [languages.ko]

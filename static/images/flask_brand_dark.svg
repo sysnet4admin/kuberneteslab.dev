@@ -1,0 +1,31 @@
+<svg width="680" height="680" viewBox="0 0 680 680" xmlns="http://www.w3.org/2000/svg">
+  <title>KubernetesLab Brand Illustration Dark</title>
+  <circle cx="340" cy="340" r="340" fill="#0f172a"/>
+  <circle cx="340" cy="340" r="334" fill="none" stroke="#326CE5" stroke-width="1" opacity="0.15"/>
+  <rect x="281" y="44" width="118" height="14" rx="7" fill="none" stroke="white" stroke-width="2" opacity="0.6"/>
+  <rect x="290" y="58" width="100" height="28" rx="0" fill="none" stroke="white" stroke-width="2" opacity="0.6"/>
+  <path d="M290 86 Q268 132 190 190 L490 190 Q412 132 390 86 Z" fill="none" stroke="white" stroke-width="2" opacity="0.6" stroke-linejoin="round"/>
+  <path d="M190 190 L148 420 Q134 494 170 508 L510 508 Q546 494 532 420 L490 190 Z" fill="none" stroke="white" stroke-width="2" opacity="0.6" stroke-linejoin="round"/>
+  <path d="M152 458 L148 420 Q134 494 170 508 L510 508 Q546 494 532 420 L528 458 Z" fill="#1a3a6e" opacity="0.7"/>
+  <path d="M152 458 Q246 444 340 450 Q434 456 528 458" fill="none" stroke="white" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="224" cy="480" r="11" fill="white" opacity="0.12"/>
+  <circle cx="340" cy="488" r="8"  fill="white" opacity="0.10"/>
+  <circle cx="456" cy="476" r="13" fill="white" opacity="0.10"/>
+  <circle cx="340" cy="320" r="105" fill="#2F6FE8" stroke="white" stroke-width="2"/>
+  <g stroke="white" stroke-linecap="round" stroke-width="13.9" opacity="0.97">
+    <line x1="350.8" y1="303.0" x2="377.1" y2="276.7"/>
+    <line x1="357.0" y1="313.8" x2="397.5" y2="302.3"/>
+    <line x1="357.0" y1="326.2" x2="397.5" y2="337.7"/>
+    <line x1="350.8" y1="337.0" x2="377.1" y2="363.3"/>
+    <line x1="329.2" y1="337.0" x2="302.9" y2="363.3"/>
+    <line x1="323.0" y1="326.2" x2="282.5" y2="337.7"/>
+    <line x1="323.0" y1="313.8" x2="282.5" y2="302.3"/>
+    <line x1="329.2" y1="303.0" x2="302.9" y2="276.7"/>
+    <line x1="340"   y1="298.4" x2="340"   y2="280.3"/>
+    <line x1="340"   y1="341.6" x2="340"   y2="359.7"/>
+  </g>
+  <circle cx="340" cy="320" r="32.4" fill="white"/>
+  <circle cx="340" cy="320" r="23.2" fill="#2F6FE8"/>
+  <circle cx="340" cy="320" r="13.9" fill="white"/>
+  <text x="340" y="572" text-anchor="middle" fill="white" font-size="48" font-weight="700" font-family="monospace" letter-spacing="-0.5">KubernetesLab</text>
+</svg>

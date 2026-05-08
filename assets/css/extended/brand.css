@@ -3,6 +3,7 @@
     flex-direction: row-reverse;
     gap: 2rem;
     align-items: stretch;
+    min-height: 160px;
     margin-bottom: 2rem;
 }
 
@@ -40,6 +41,7 @@
     border-bottom: none;
     padding-bottom: 0;
 }
+
 
 @media (max-width: 480px) {
     .profile-header {

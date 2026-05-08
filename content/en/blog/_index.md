@@ -2,7 +2,7 @@
 title: "Blog"
 cascade:
   cover:
-    image: "/images/og-default.png"
+    image: "/images/og-brand.png"
     alt: "KubernetesLab"
     hidden: true
 ---

@@ -18,32 +18,102 @@ Claude Code sessions pile up across projects. When you need to get back to somet
 
 ## What cc-deck Does
 
-`cc-deck` opens an fzf TUI over all your Claude Code sessions. Each entry shows the **last thing you typed**, not a summary. Type anything to filter in real time. TODOs from Claude memory are pinned at the top automatically.
+`cc-deck` opens an fzf TUI over all your Claude Code sessions. Each entry shows the **last thing you typed**, not a summary. Type anything to filter in real time. TODOs from Claude memory and manually pinned sessions are always at the top.
 
 ![demo](https://raw.githubusercontent.com/sysnet4admin/cc-deck/main/demo/demo_social.gif)
 
-## Key Features
+## Features
 
-**Fuzzy search**  
-Type to filter sessions by last input content. Find any session instantly without remembering when or where it happened.
+### 1. Fuzzy Search
 
-**Auto-pinned TODOs**  
-When you ask Claude to track something — *"add this as a TODO"*, *"check back next week"* — Claude writes a memory entry with `name: TODO ...`. cc-deck detects these automatically and pins them at the top, linked back to the originating session.
+Type anything in the prompt to filter sessions by last input content in real time.
 
-**Mark TODO as done with Ctrl-D**  
-When a TODO is resolved, press `Ctrl-D`. cc-deck removes `TODO` from the memory entry name and appends `(completed)`. The memory file is preserved so Claude still has the context.
+```
+cc-deck> OOM
+  2/100
+  2026-05-08 08:59  /tmp/projects/infra/k8s: pod keeps OOMKilling after we scaled up
+```
 
-**Manual bookmark with Ctrl-K**  
-Pin any session with `Ctrl-K`. The session's last input is saved as the label. Press again to unpin.
+No need to remember when or where a session happened — search by what you were actually working on.
 
-**Smart resume**  
-Selecting a session automatically `cd`s to the original directory before calling `claude --resume`. No manual navigation needed.
+---
 
-**4 resume modes**  
-Switch between `claude`, `claude-api`, `--dangerously-skip-permissions`, and combinations with `Ctrl-O/A/S/X`. The last selected mode is remembered across runs.
+### 2. Auto-pinned TODOs
 
-**Fast**  
-mtime-based cache keeps repeat runs at ~0.04s.
+When you ask Claude to track something for later:
+
+```
+add this to memory as a TODO
+check back on this next week
+keep an eye on this for a few days
+```
+
+Claude writes a memory entry like this:
+
+```yaml
+---
+name: TODO - Monitor EKS cluster after 3Gi memory limit applied
+description: Watch for OOMKill recurrence over the next 2 weeks
+type: project
+originSessionId: a40fabf4-3d29-4014-a710-dcd444580c9d
+---
+```
+
+cc-deck scans `~/.claude/projects/*/memory/*.md` for `type: project` entries with `TODO` in the name, and pins them at the top automatically — linked back to the originating session via `originSessionId`.
+
+```
+[TODO] /tmp/projects/infra/k8s: Watch for OOMKill recurrence over the next 2 weeks
+```
+
+**Marking a TODO as done:** Press `Ctrl-D` on a TODO entry. cc-deck updates the memory file name from `TODO - Monitor EKS ...` to `Monitor EKS ... (completed)`. The entry disappears from the list, but the memory file is preserved so Claude still has the context.
+
+---
+
+### 3. Manual PIN
+
+Bookmark any session you want to return to quickly. Navigate to a session and press `Ctrl-K`. The session's last input is saved as the label and it appears at the top of the list.
+
+```
+[PIN]  /tmp/projects/api-server: memory usage keeps climbing after the last deploy
+```
+
+Press `Ctrl-K` again on a pinned entry to remove it.
+
+---
+
+### 4. Smart Resume
+
+Select any entry — TODO, PIN, or regular session — and cc-deck automatically:
+1. `cd`s to the original working directory
+2. Calls `claude --resume <session-id>`
+
+No manual navigation needed.
+
+---
+
+### 5. Resume Modes
+
+Four modes available via keyboard shortcuts. The last selected mode is remembered across runs.
+
+| Key | Command |
+|-----|---------|
+| `Enter` | Last saved mode |
+| `Ctrl-O` | `claude` |
+| `Ctrl-A` | `claude-api` |
+| `Ctrl-S` | `claude --dangerously-skip-permissions` |
+| `Ctrl-X` | `claude-api --dangerously-skip-permissions` |
+
+Override the default with an env var:
+
+```zsh
+export CLAUDE_DECK_CMD="claude-api"
+```
+
+---
+
+### 6. Performance
+
+An mtime-based cache keeps repeat runs at ~0.04s for 100 sessions.
 
 ## Installation
 
@@ -56,29 +126,7 @@ source ~/.zshrc
 
 Requires [fzf](https://github.com/junegunn/fzf): `brew install fzf`
 
-## How TODOs Work
-
-Ask Claude to track something:
-
-```
-add this to memory as a TODO
-check back on this next week
-```
-
-Claude writes a memory file:
-
-```yaml
----
-name: TODO - Monitor EKS cluster after 3Gi memory limit applied
-description: Watch for OOMKill recurrence over the next 2 weeks
-type: project
-originSessionId: a40fabf4-3d29-4014-a710-dcd444580c9d
----
-```
-
-cc-deck scans `~/.claude/projects/*/memory/*.md` for `type: project` entries with `TODO` in the name, and links them to the original session via `originSessionId`. When you press `Ctrl-D` on a TODO, the name becomes `Monitor EKS cluster after 3Gi memory limit applied (completed)` — removed from the list, but the memory is intact.
-
-## Key Bindings
+## All Key Bindings
 
 | Key | Action |
 |-----|--------|
@@ -89,6 +137,7 @@ cc-deck scans `~/.claude/projects/*/memory/*.md` for `type: project` entries wit
 | `Ctrl-A` | Resume with `claude-api` |
 | `Ctrl-S` | Resume with `claude --dangerously-skip-permissions` |
 | `Ctrl-X` | Resume with `claude-api --dangerously-skip-permissions` |
+| `ESC` | Quit |
 
 ## Source
 

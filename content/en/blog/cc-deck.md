@@ -12,13 +12,13 @@ TocOpen: true
 
 ## The Problem
 
-Claude Code sessions pile up across projects. When you need to get back to something — yesterday's debugging session, a task Claude flagged for follow-up, or a session you want to bookmark — finding it and resuming in the right context takes friction.
+Working across multiple Claude Code projects means sessions pile up fast. When you need to get back to something — yesterday's debugging session, a task Claude flagged for follow-up, or a session you want to bookmark — finding it and resuming in the right context adds friction.
 
 `claude --resume` shows a list, but the summaries are compressed and hard to read. You end up scrolling through UUIDs instead of working.
 
 ## What cc-deck Does
 
-`cc-deck` opens an fzf TUI over all your Claude Code sessions. Each entry shows the **last thing you typed**, not a summary. Type anything to filter in real time. TODOs from Claude memory and manually pinned sessions are always at the top.
+`cc-deck` opens an fzf TUI for all your Claude Code sessions. Each entry shows the **last thing you typed**, not a summary. Type anything to filter in real time. TODOs from Claude memory and manually pinned sessions are always at the top.
 
 ![demo](https://raw.githubusercontent.com/sysnet4admin/cc-deck/main/demo/demo_social.gif)
 
@@ -34,7 +34,7 @@ cc-deck> OOM
   2026-05-08 08:59  /tmp/projects/infra/k8s: pod keeps OOMKilling after we scaled up
 ```
 
-Select an entry — cc-deck `cd`s to the original directory and resumes the session automatically.
+Select one — cc-deck moves to the original directory and resumes the session automatically.
 
 ---
 
@@ -58,7 +58,7 @@ originSessionId: a40fabf4-3d29-4014-a710-dcd444580c9d
 ---
 ```
 
-cc-deck scans `~/.claude/projects/*/memory/*.md` for `type: project` entries with `TODO` in the name, and pins them at the top — linked back to the originating session via `originSessionId`. Select one and you land directly in the project directory where the work happened.
+cc-deck scans `~/.claude/projects/*/memory/*.md` for `type: project` entries with `TODO` in the name, and pins them at the top — linked back to the originating session via `originSessionId`. Select one and you're taken straight back to where the work happened.
 
 ```
 [TODO] /tmp/projects/infra/k8s: Watch for OOMKill recurrence over the next 2 weeks
@@ -70,7 +70,7 @@ When the TODO is resolved, press `Ctrl-D`. cc-deck renames the memory entry from
 
 ### 3. Manual PIN
 
-Bookmark any session you want to return to. Navigate to it and press `Ctrl-K`. The session's last input is saved as the label and it stays pinned at the top.
+Bookmark any session you want to return to. Find the session and press `Ctrl-K`. The session's last input is saved as the label and it stays pinned at the top.
 
 ```
 [PIN]  /tmp/projects/api-server: memory usage keeps climbing after the last deploy
@@ -83,7 +83,7 @@ Select it and cc-deck takes you back to `/tmp/projects/api-server` and resumes e
 ## Also Built In
 
 **Resume modes**  
-Four modes, switchable per session. The last used mode is remembered.
+Four modes — switch anytime. cc-deck remembers which one you used last.
 
 | Key | Command |
 |-----|---------|
@@ -96,7 +96,7 @@ Four modes, switchable per session. The last used mode is remembered.
 Set a persistent default with `export CLAUDE_DECK_CMD="claude-api"`.
 
 **Automatic directory switch**  
-Every selection — TODO, PIN, or regular session — automatically runs `cd` to the original working directory before `claude --resume`. The project context is always correct.
+Every selection — TODO, PIN, or regular session — runs `cd` to the original working directory before `claude --resume`. You're always in the right directory.
 
 **Cache**  
 mtime-based session cache keeps repeat runs at ~0.04s.

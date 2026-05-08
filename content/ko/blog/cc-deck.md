@@ -1,5 +1,5 @@
 ---
-title: "cc-deck: Claude Code 세션 허브"
+title: "cc-deck: Claude Code 세션을 한눈에"
 date: 2026-05-08
 draft: false
 tags: ["claude-code", "developer-tools", "productivity", "fzf", "zsh"]

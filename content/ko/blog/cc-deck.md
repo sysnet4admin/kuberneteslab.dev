@@ -26,7 +26,7 @@ TocOpen: true
 
 ### 1. 퍼지 검색
 
-프롬프트에 텍스트를 입력하면 마지막 입력 내용을 기준으로 세션이 실시간 필터링됩니다.
+프롬프트에 텍스트를 입력하면 마지막 입력 내용을 기준으로 세션이 실시간 필터링됩니다. 언제 어디서 했는지 기억하지 않아도 됩니다.
 
 ```
 cc-deck> OOM
@@ -34,7 +34,7 @@ cc-deck> OOM
   2026-05-08 08:59  /tmp/projects/infra/k8s: 스케일 업 후 pod OOMKill 계속 남
 ```
 
-언제 어디서 했는지 기억하지 않아도, 실제로 작업하던 내용으로 검색할 수 있습니다.
+항목을 선택하면 cc-deck이 원래 디렉토리로 이동하고 해당 세션을 자동으로 재개합니다.
 
 ---
 
@@ -45,10 +45,9 @@ Claude에게 나중에 확인할 항목을 기록해달라고 하면:
 ```
 메모리에 TODO로 기록해줘
 다음 주에 다시 확인해줘
-며칠 지켜봐줘
 ```
 
-Claude가 다음과 같은 메모리 파일을 작성합니다:
+Claude가 메모리 파일을 작성합니다:
 
 ```yaml
 ---
@@ -59,13 +58,13 @@ originSessionId: a40fabf4-3d29-4014-a710-dcd444580c9d
 ---
 ```
 
-cc-deck이 `~/.claude/projects/*/memory/*.md`에서 `type: project`이고 이름에 `TODO`가 포함된 항목을 감지해서 자동으로 상단에 고정합니다. `originSessionId`를 통해 원본 세션으로 바로 이동할 수 있습니다.
+cc-deck이 `~/.claude/projects/*/memory/*.md`에서 `type: project`이고 이름에 `TODO`가 포함된 항목을 감지해서 상단에 고정합니다. `originSessionId`로 원본 세션과 연결되어 있어서, 선택하면 해당 작업이 이루어진 프로젝트 디렉토리로 바로 이동합니다.
 
 ```
 [TODO] /tmp/projects/infra/k8s: 2주간 OOMKill 재발 여부 확인
 ```
 
-**TODO 완료 처리:** TODO 항목에서 `Ctrl-D`를 누르면 메모리 파일 이름이 `TODO - EKS 클러스터 ...` → `EKS 클러스터 ... (completed)`으로 변경됩니다. 목록에서 사라지지만, 메모리 파일은 보존되므로 Claude의 컨텍스트는 그대로 유지됩니다.
+TODO가 해결되면 `Ctrl-D`를 누릅니다. cc-deck이 메모리 파일 이름을 `TODO - EKS 클러스터 ...` → `EKS 클러스터 ... (completed)`으로 변경하고 목록에서 제거합니다. 메모리 파일 자체는 보존되므로 Claude의 컨텍스트는 그대로 유지됩니다.
 
 ---
 
@@ -77,23 +76,14 @@ cc-deck이 `~/.claude/projects/*/memory/*.md`에서 `type: project`이고 이름
 [PIN]  /tmp/projects/api-server: 배포 이후 메모리 사용량 계속 증가 — 원인 찾아줘
 ```
 
-핀된 항목에서 `Ctrl-K`를 다시 누르면 해제됩니다.
+선택하면 cc-deck이 `/tmp/projects/api-server`로 이동하고 정확히 그 세션을 재개합니다. 핀된 항목에서 `Ctrl-K`를 다시 누르면 해제됩니다. `Ctrl-D`로도 제거할 수 있습니다.
 
 ---
 
-### 4. 스마트 재개
+## 기본 포함 기능
 
-TODO, PIN, 일반 세션 어디서든 선택하면 cc-deck이 자동으로:
-1. 원래 작업 디렉토리로 `cd`
-2. `claude --resume <session-id>` 실행
-
-수동으로 이동할 필요가 없습니다.
-
----
-
-### 5. 실행 모드
-
-키보드 단축키로 4가지 모드를 선택할 수 있습니다. 마지막 선택한 모드가 다음 실행에도 유지됩니다.
+**실행 모드**  
+세션마다 모드를 선택할 수 있고, 마지막 선택한 모드가 유지됩니다.
 
 | 키 | 명령어 |
 |----|--------|
@@ -103,17 +93,15 @@ TODO, PIN, 일반 세션 어디서든 선택하면 cc-deck이 자동으로:
 | `Ctrl-S` | `claude --dangerously-skip-permissions` |
 | `Ctrl-X` | `claude-api --dangerously-skip-permissions` |
 
-기본 명령어 변경:
+기본값 변경: `export CLAUDE_DECK_CMD="claude-api"`
 
-```zsh
-export CLAUDE_DECK_CMD="claude-api"
-```
+**디렉토리 자동 이동**  
+TODO, PIN, 일반 세션 어떤 항목을 선택하든 `claude --resume` 전에 원래 작업 디렉토리로 자동으로 `cd`합니다. 별도 설정 없이 항상 올바른 프로젝트 컨텍스트로 진입합니다.
+
+**캐시**  
+mtime 기반 세션 캐시로 재실행 시 ~0.04초.
 
 ---
-
-### 6. 속도
-
-mtime 기반 캐시로 재실행 시 ~0.04초.
 
 ## 설치
 
@@ -125,19 +113,6 @@ source ~/.zshrc
 ```
 
 [fzf](https://github.com/junegunn/fzf) 필요: `brew install fzf`
-
-## 전체 키 바인딩
-
-| 키 | 동작 |
-|----|------|
-| `Enter` | 마지막 저장된 모드로 재개 |
-| `Ctrl-K` | 현재 세션 고정 / 해제 |
-| `Ctrl-D` | TODO 완료 처리 / PIN 제거 |
-| `Ctrl-O` | `claude`로 재개 |
-| `Ctrl-A` | `claude-api`로 재개 |
-| `Ctrl-S` | `claude --dangerously-skip-permissions`로 재개 |
-| `Ctrl-X` | `claude-api --dangerously-skip-permissions`로 재개 |
-| `ESC` | 종료 |
 
 ## 소스
 

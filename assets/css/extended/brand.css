@@ -1,3 +1,8 @@
+/* 홈 히어로 최소 높이 축소 (테마 기본 320px → 콘텐츠에 맞게) */
+.first-entry.home-info {
+    min-height: 0;
+}
+
 .profile-header {
     display: flex;
     flex-direction: row-reverse;

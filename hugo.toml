@@ -61,7 +61,7 @@ defaultContentLanguageInSubdir = true
     weight = 1
     [languages.ko.params]
       homeInfoParams.Title = "KubernetesLab"
-      homeInfoParams.Content = "Kubernetes & Cloud Native & AI 연구, 컨설팅, 교육"
+      homeInfoParams.Content = "Kubernetes & Cloud Native & AI 연구, 컨설팅, 교육  \nCNCF Ambassador / Kubestronaut / AIOps Researcher"
     [[languages.ko.menu.main]]
       identifier = "blog"
       name = "Blog"
@@ -95,7 +95,7 @@ defaultContentLanguageInSubdir = true
     weight = 2
     [languages.en.params]
       homeInfoParams.Title = "KubernetesLab"
-      homeInfoParams.Content = "Kubernetes, Cloud Native & AI Research, Consulting, and Training"
+      homeInfoParams.Content = "Kubernetes, Cloud Native & AI Research, Consulting, and Training  \nCNCF Ambassador / Kubestronaut / AIOps Researcher"
     [[languages.en.menu.main]]
       identifier = "blog"
       name = "Blog"

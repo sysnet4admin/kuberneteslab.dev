@@ -152,6 +152,7 @@ git clone https://github.com/sysnet4admin/cc-deck.git "$HOME\cc-deck"
 ```
 
 Requirements:
+- git (required on all platforms — Windows: `winget install Git.Git`)
 - python3 (required on all platforms)
 - macOS: `brew install fzf`
 - Linux: `sudo apt install fzf` or `sudo dnf install fzf`

@@ -152,6 +152,7 @@ git clone https://github.com/sysnet4admin/cc-deck.git "$HOME\cc-deck"
 ```
 
 사전 요구사항:
+- git (모든 플랫폼 필수 — Windows: `winget install Git.Git`)
 - python3 (모든 플랫폼 필수)
 - macOS: `brew install fzf`
 - Linux: `sudo apt install fzf` 또는 `sudo dnf install fzf`

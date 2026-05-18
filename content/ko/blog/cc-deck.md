@@ -89,14 +89,14 @@ TODO가 해결되면 `Ctrl-R`을 누릅니다. cc-deck이 메모리 파일 이�
 | 키 | 동작 |
 |----|------|
 | `Enter` | 마지막 저장된 모드로 재개 |
-| `Tab` | 모드 피커 열기 (설명 포함) |
+| `Tab` | 실행 모드 순환 (default → api → skip → api+skip) |
 | `Ctrl-O` | `claude`로 재개 |
 | `Ctrl-A` | `claude-api`로 재개 |
 | `Ctrl-S` | `claude --dangerously-skip-permissions`로 재개 |
 | `Ctrl-X` | `claude-api --dangerously-skip-permissions`로 재개 |
 | `Ctrl-K` | 현재 세션 핀 / 언핀 |
 | `Ctrl-R` | TODO 완료 처리 / PIN 제거 |
-| `Ctrl-/` | 도움말 표시 |
+| `F1` | 도움말 표시 |
 | `ESC` | 종료 |
 
 모드를 선택하면 다음에도 그대로 유지됩니다. 기본값 변경: `export CLAUDE_DECK_CMD="claude-api"`
@@ -152,6 +152,7 @@ git clone https://github.com/sysnet4admin/cc-deck.git "$HOME\cc-deck"
 ```
 
 사전 요구사항:
+- python3 (모든 플랫폼 필수)
 - macOS: `brew install fzf`
 - Linux: `sudo apt install fzf` 또는 `sudo dnf install fzf`
 - Windows: `winget install junegunn.fzf`

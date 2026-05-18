@@ -89,14 +89,14 @@ Select it and cc-deck takes you back to `/tmp/projects/api-server` and resumes e
 | Key | Action |
 |-----|--------|
 | `Enter` | Resume with last saved mode |
-| `Tab` | Open mode picker (with descriptions) |
+| `Tab` | Cycle resume mode (default → api → skip → api+skip) |
 | `Ctrl-O` | Resume with `claude` |
 | `Ctrl-A` | Resume with `claude-api` |
 | `Ctrl-S` | Resume with `claude --dangerously-skip-permissions` |
 | `Ctrl-X` | Resume with `claude-api --dangerously-skip-permissions` |
 | `Ctrl-K` | Pin / unpin current session |
 | `Ctrl-R` | Mark TODO done / remove PIN |
-| `Ctrl-/` | Show help |
+| `F1` | Show help |
 | `ESC` | Quit |
 
 The selected mode persists across runs. Set a persistent default with `export CLAUDE_DECK_CMD="claude-api"`.
@@ -152,6 +152,7 @@ git clone https://github.com/sysnet4admin/cc-deck.git "$HOME\cc-deck"
 ```
 
 Requirements:
+- python3 (required on all platforms)
 - macOS: `brew install fzf`
 - Linux: `sudo apt install fzf` or `sudo dnf install fzf`
 - Windows: `winget install junegunn.fzf`

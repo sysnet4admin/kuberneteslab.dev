@@ -2,10 +2,10 @@
 title: "cc-deck: Claude Code Session Hub"
 date: 2026-05-08
 draft: false
-tags: ["claude-code", "developer-tools", "productivity", "fzf", "zsh"]
+tags: ["claude-code", "developer-tools", "productivity", "fzf", "zsh", "bash"]
 categories: ["Tools"]
-description: "Claude Code sessions pile up across projects. cc-deck is a zsh function that turns them into a searchable hub — fuzzy search by what you were asking, auto-pin TODOs from Claude memory, bookmark sessions with Ctrl-K, and resume in the right directory."
-summary: "A zsh function that makes Claude Code sessions searchable and manageable — fuzzy search, TODO auto-pinning, manual bookmarks, and smart resume."
+description: "Claude Code sessions pile up across projects. cc-deck is a cross-platform TUI tool that turns them into a searchable hub — fuzzy search, auto-pin TODOs from Claude memory, bookmark sessions with Ctrl-K, auto-update, and resume in the right directory. Supports macOS (zsh), Linux (bash), and Windows (PowerShell)."
+summary: "A cross-platform TUI tool that makes Claude Code sessions searchable and manageable — fuzzy search, TODO auto-pinning, manual bookmarks, auto-update, and smart resume."
 ShowToc: true
 TocOpen: true
 ---
@@ -19,6 +19,8 @@ Working across multiple Claude Code projects means sessions pile up fast. When y
 ## What cc-deck Does
 
 `cc-deck` opens an fzf TUI for all your Claude Code sessions. Each entry shows the **last thing you typed**, not a summary. Type anything to filter in real time. TODOs from Claude memory and manually pinned sessions are always at the top.
+
+Supports macOS (zsh), Linux (bash), and Windows (PowerShell).
 
 ![demo](https://raw.githubusercontent.com/sysnet4admin/cc-deck/main/demo/demo_social.gif)
 
@@ -64,7 +66,7 @@ cc-deck scans `~/.claude/projects/*/memory/*.md` for `type: project` entries wit
 [TODO] /tmp/projects/infra/k8s: Watch for OOMKill recurrence over the next 2 weeks
 ```
 
-When the TODO is resolved, press `Ctrl-D`. cc-deck renames the memory entry from `TODO - Monitor EKS ...` to `Monitor EKS ... (completed)` and removes it from the list. The memory file itself is preserved, so Claude still has the full context.
+When the TODO is resolved, press `Ctrl-R`. cc-deck renames the memory entry from `TODO - Monitor EKS ...` to `Monitor EKS ... (completed)` and removes it from the list. The memory file itself is preserved, so Claude still has the full context.
 
 ---
 
@@ -76,27 +78,46 @@ Bookmark any session you want to return to. Find the session and press `Ctrl-K`.
 [PIN]  /tmp/projects/api-server: memory usage keeps climbing after the last deploy
 ```
 
-Select it and cc-deck takes you back to `/tmp/projects/api-server` and resumes exactly where you left off. Press `Ctrl-K` again on a pinned entry to remove it. `Ctrl-D` also removes a PIN.
+Select it and cc-deck takes you back to `/tmp/projects/api-server` and resumes exactly where you left off. Press `Ctrl-K` again on a pinned entry to remove it. `Ctrl-R` also removes a PIN.
 
 ---
 
 ## Also Built In
 
-**Resume modes**  
-Four modes — switch anytime. cc-deck remembers which one you used last.
+**Key bindings**
 
-| Key | Command |
-|-----|---------|
-| `Enter` | Last saved mode |
-| `Ctrl-O` | `claude` |
-| `Ctrl-A` | `claude-api` |
-| `Ctrl-S` | `claude --dangerously-skip-permissions` |
-| `Ctrl-X` | `claude-api --dangerously-skip-permissions` |
+| Key | Action |
+|-----|--------|
+| `Enter` | Resume with last saved mode |
+| `Tab` | Open mode picker (with descriptions) |
+| `Ctrl-O` | Resume with `claude` |
+| `Ctrl-A` | Resume with `claude-api` |
+| `Ctrl-S` | Resume with `claude --dangerously-skip-permissions` |
+| `Ctrl-X` | Resume with `claude-api --dangerously-skip-permissions` |
+| `Ctrl-K` | Pin / unpin current session |
+| `Ctrl-R` | Mark TODO done / remove PIN |
+| `Ctrl-/` | Show help |
+| `ESC` | Quit |
 
-Set a persistent default with `export CLAUDE_DECK_CMD="claude-api"`.
+The selected mode persists across runs. Set a persistent default with `export CLAUDE_DECK_CMD="claude-api"`.
 
 **Automatic directory switch**  
 Every selection — TODO, PIN, or regular session — runs `cd` to the original working directory before `claude --resume`. You're always in the right directory.
+
+**Auto-update**  
+cc-deck checks for updates in the background once every 24 hours. When an update is applied, you'll see a notification on the next run:
+
+```
+[cc-deck] Updated (v0.2.0 → v1.0.0). Reload with: source ~/.zshrc
+```
+
+To update immediately:
+
+```bash
+cc-deck update
+```
+
+To disable: set `CC_DECK_DISABLE_AUTOUPDATER=1`.
 
 **Cache**  
 mtime-based session cache keeps repeat runs at ~0.04s.
@@ -105,6 +126,8 @@ mtime-based session cache keeps repeat runs at ~0.04s.
 
 ## Installation
 
+**macOS (zsh)**
+
 ```zsh
 git clone https://github.com/sysnet4admin/cc-deck.git ~/cc-deck
 cd ~/cc-deck
@@ -112,7 +135,26 @@ cd ~/cc-deck
 source ~/.zshrc
 ```
 
-Requires [fzf](https://github.com/junegunn/fzf): `brew install fzf`
+**Linux (bash)**
+
+```bash
+git clone https://github.com/sysnet4admin/cc-deck.git ~/cc-deck
+cd ~/cc-deck
+./install.sh --bash
+source ~/.bashrc
+```
+
+**Windows (PowerShell)**
+
+```powershell
+git clone https://github.com/sysnet4admin/cc-deck.git "$HOME\cc-deck"
+. "$HOME\cc-deck\install.ps1"
+```
+
+Requirements:
+- macOS: `brew install fzf`
+- Linux: `sudo apt install fzf` or `sudo dnf install fzf`
+- Windows: `winget install junegunn.fzf`
 
 ## Source
 

@@ -126,7 +126,20 @@ mtime-based session cache keeps repeat runs at ~0.04s.
 
 ## Installation
 
-**macOS (zsh)**
+**macOS (Homebrew)**
+
+```zsh
+brew tap sysnet4admin/cc-deck
+brew install cc-deck
+```
+
+Then add to `~/.zshrc`:
+
+```zsh
+source $(brew --prefix cc-deck)/cc-deck.zsh
+```
+
+**macOS (manual)**
 
 ```zsh
 git clone https://github.com/sysnet4admin/cc-deck.git ~/cc-deck

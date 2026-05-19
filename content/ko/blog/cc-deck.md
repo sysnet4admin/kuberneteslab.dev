@@ -126,7 +126,20 @@ mtime 기반 세션 캐시로 재실행 시 ~0.04초.
 
 ## 설치
 
-**macOS (zsh)**
+**macOS (Homebrew)**
+
+```zsh
+brew tap sysnet4admin/cc-deck
+brew install cc-deck
+```
+
+그리고 `~/.zshrc`에 추가:
+
+```zsh
+source $(brew --prefix cc-deck)/cc-deck.zsh
+```
+
+**macOS (수동)**
 
 ```zsh
 git clone https://github.com/sysnet4admin/cc-deck.git ~/cc-deck

@@ -4,8 +4,8 @@ date: 2026-05-08
 draft: false
 tags: ["claude-code", "developer-tools", "productivity", "fzf", "zsh", "bash"]
 categories: ["Tools"]
-description: "여러 프로젝트의 Claude Code 세션이 쌓입니다. cc-deck은 이를 검색 가능한 허브로 만드는 TUI 도구입니다. macOS(zsh), Linux(bash), Windows(PowerShell) 지원. 퍼지 검색, TODO 자동 고정, 수동 북마크, 자동 업데이트."
-summary: "Claude Code 세션을 검색하고 관리할 수 있는 다중 플랫폼 TUI 도구 — 퍼지 검색, TODO 자동 고정, 수동 북마크, 스마트 재개."
+description: "여러 프로젝트의 Claude Code 세션이 쌓입니다. cc-deck은 이를 검색 가능한 허브로 만드는 TUI 도구입니다. macOS(zsh), Linux(bash), Windows(PowerShell) 지원. 퍼지 검색, TODO 자동 고정, 수동 북마크, 기록 없는 빠른 질문, 스마트 재개."
+summary: "Claude Code 세션을 검색하고 관리할 수 있는 다중 플랫폼 TUI 도구 — 퍼지 검색, TODO 자동 고정, 수동 북마크, 빠른 질문, 스마트 재개."
 ShowToc: true
 TocOpen: true
 ---
@@ -82,6 +82,30 @@ TODO가 해결되면 `Ctrl-R`을 누릅니다. cc-deck이 메모리 파일 이�
 
 ---
 
+### 4. 빠른 질문 (Quick Query)
+
+기록이 필요 없는 짧은 질문:
+
+```zsh
+# 일회성: 답변 출력 후 세션 저장 없음
+cc-deck -q "SIGTERM이 뭐야?"
+
+# 대화형: 계속 질문 가능, 7일 후 자동 삭제
+cc-deck -q
+```
+
+2회 이상 대화한 세션은 보존되어 TUI에 `[Quick]`으로 표시됩니다. TUI 안에서 `Ctrl-Q`를 누르면 브라우저를 나가지 않고 빠른 질문을 할 수 있습니다.
+
+```
+[TODO]  /tmp/projects/infra/k8s: 3Gi 적용 후 OOMKill 모니터링
+[PIN]   /tmp/projects/api-server: 메모리 사용량 계속 증가
+[Quick] ▶ 2 sessions
+────────────────────────────────────────────────────────────
+* 2026-05-08 09:14  /tmp/projects/api-server: ...
+```
+
+---
+
 ## 기본 포함 기능
 
 **키 바인딩**
@@ -95,7 +119,8 @@ TODO가 해결되면 `Ctrl-R`을 누릅니다. cc-deck이 메모리 파일 이�
 | `Ctrl-S` | `claude --dangerously-skip-permissions`로 재개 |
 | `Ctrl-X` | `claude-api --dangerously-skip-permissions`로 재개 |
 | `Ctrl-K` | 현재 세션 핀 / 언핀 |
-| `Ctrl-R` | TODO 완료 처리 / PIN 제거 |
+| `Ctrl-R` | TODO 완료 처리 / PIN 또는 Quick 세션 제거 |
+| `Ctrl-Q` | 빠른 질문 (세션 저장 없음) |
 | `F1` | 도움말 표시 |
 | `ESC` | 종료 |
 

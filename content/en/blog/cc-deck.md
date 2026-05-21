@@ -4,8 +4,8 @@ date: 2026-05-08
 draft: false
 tags: ["claude-code", "developer-tools", "productivity", "fzf", "zsh", "bash"]
 categories: ["Tools"]
-description: "Claude Code sessions pile up across projects. cc-deck is a cross-platform TUI tool that turns them into a searchable hub — fuzzy search, auto-pin TODOs from Claude memory, bookmark sessions with Ctrl-K, auto-update, and resume in the right directory. Supports macOS (zsh), Linux (bash), and Windows (PowerShell)."
-summary: "A cross-platform TUI tool that makes Claude Code sessions searchable and manageable — fuzzy search, TODO auto-pinning, manual bookmarks, auto-update, and smart resume."
+description: "Claude Code sessions pile up across projects. cc-deck is a cross-platform TUI tool that turns them into a searchable hub — fuzzy search, auto-pin TODOs, bookmark sessions, quick queries without history, and smart resume. Supports macOS (zsh), Linux (bash), and Windows (PowerShell)."
+summary: "A cross-platform TUI tool that makes Claude Code sessions searchable and manageable — fuzzy search, TODO auto-pinning, manual bookmarks, quick queries, and smart resume."
 ShowToc: true
 TocOpen: true
 ---
@@ -82,6 +82,30 @@ Select it and cc-deck takes you back to `/tmp/projects/api-server` and resumes e
 
 ---
 
+### 4. Quick Query
+
+For questions that don't need a permanent session:
+
+```zsh
+# One-shot: answer printed, no session saved
+cc-deck -q "what does SIGTERM do?"
+
+# Interactive: full conversation, auto-deleted after 7 days
+cc-deck -q
+```
+
+Sessions with 2+ exchanges are preserved and appear as `[Quick]` in the TUI. Press `Ctrl-Q` inside the session browser for a quick query without leaving.
+
+```
+[TODO]  /tmp/projects/infra/k8s: Watch for OOMKill recurrence
+[PIN]   /tmp/projects/api-server: memory usage keeps climbing
+[Quick] ▶ 2 sessions
+────────────────────────────────────────────────────────────
+* 2026-05-08 09:14  /tmp/projects/api-server: ...
+```
+
+---
+
 ## Also Built In
 
 **Key bindings**
@@ -95,7 +119,8 @@ Select it and cc-deck takes you back to `/tmp/projects/api-server` and resumes e
 | `Ctrl-S` | Resume with `claude --dangerously-skip-permissions` |
 | `Ctrl-X` | Resume with `claude-api --dangerously-skip-permissions` |
 | `Ctrl-K` | Pin / unpin current session |
-| `Ctrl-R` | Mark TODO done / remove PIN |
+| `Ctrl-R` | Mark TODO done / remove PIN or Quick session |
+| `Ctrl-Q` | Quick query (no session saved) |
 | `F1` | Show help |
 | `ESC` | Quit |
 

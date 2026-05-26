@@ -99,7 +99,7 @@ Sessions with 2+ exchanges are preserved and appear as `[Quick]` in the TUI. Pre
 ```
 [TODO]  /tmp/projects/infra/k8s: Watch for OOMKill recurrence
 [PIN]   /tmp/projects/api-server: memory usage keeps climbing
-[Quick] ▶ 2 sessions
+[Quick] ▶ 1 session
 ────────────────────────────────────────────────────────────
 * 2026-05-08 09:14  /tmp/projects/api-server: ...
 ```

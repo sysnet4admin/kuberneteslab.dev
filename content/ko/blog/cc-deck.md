@@ -99,7 +99,7 @@ cc-deck -q
 ```
 [TODO]  /tmp/projects/infra/k8s: 3Gi 적용 후 OOMKill 모니터링
 [PIN]   /tmp/projects/api-server: 메모리 사용량 계속 증가
-[Quick] ▶ 2 sessions
+[Quick] ▶ 1 session
 ────────────────────────────────────────────────────────────
 * 2026-05-08 09:14  /tmp/projects/api-server: ...
 ```

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="696" height="640" viewBox="0 0 696 640">
+<defs><style>text{font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif}</style></defs>
+<rect width="2064" height="1052" fill="#f0f2f5"/>
+<rect x="0" y="0" width="2064" height="64" fill="#1a237e"/>
+<text x="28" y="38" font-size="19" font-weight="700" fill="white">AIOps Agent Benchmark: Tier Comparison (9 Agents)</text>
+<text x="28" y="55" font-size="11" fill="#ffffff" fill-opacity="0.75">🟠 Claude   🔵 Gemini   🟢 Codex     Deep=Flagship   Mid=Efficient   Light=Lite</text>
+<rect x="28" y="76" width="640" height="554" fill="white" rx="8"/>
+<text x="348" y="96" text-anchor="middle" font-size="13" font-weight="700" fill="#1a237e">Processing Efficiency vs Ops_Score</text>
+<line x1="44" y1="102" x2="652" y2="102" stroke="#c5cae9" stroke-width="1.5"/>
+<g transform="translate(28,110)">
+<rect width="640" height="520" fill="#fafafa" rx="8"/>
+<defs><clipPath id="plot1"><rect x="70" y="45" width="530" height="395"/></clipPath></defs>
+<line x1="70" y1="440" x2="600" y2="440" stroke="#e8e8e8" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="64" y="444" text-anchor="end" font-size="9" fill="#aaa">55</text>
+<line x1="70" y1="341" x2="600" y2="341" stroke="#e8e8e8" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="64" y="345" text-anchor="end" font-size="9" fill="#aaa">60</text>
+<line x1="70" y1="242" x2="600" y2="242" stroke="#e8e8e8" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="64" y="246" text-anchor="end" font-size="9" fill="#aaa">66</text>
+<line x1="70" y1="145" x2="600" y2="145" stroke="#e8e8e8" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="64" y="149" text-anchor="end" font-size="9" fill="#aaa">71</text>
+<line x1="70" y1="46" x2="600" y2="46" stroke="#e8e8e8" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="64" y="50" text-anchor="end" font-size="9" fill="#aaa">76</text>
+<line x1="70" y1="440" x2="70" y2="444" stroke="#bbb" stroke-width="1"/>
+<text x="70" y="456" text-anchor="middle" font-size="8" fill="#aaa">0.24</text>
+<line x1="208" y1="440" x2="208" y2="444" stroke="#bbb" stroke-width="1"/>
+<text x="208" y="456" text-anchor="middle" font-size="8" fill="#aaa">0.35</text>
+<line x1="345" y1="440" x2="345" y2="444" stroke="#bbb" stroke-width="1"/>
+<text x="345" y="456" text-anchor="middle" font-size="8" fill="#aaa">0.46</text>
+<line x1="483" y1="440" x2="483" y2="444" stroke="#bbb" stroke-width="1"/>
+<text x="483" y="456" text-anchor="middle" font-size="8" fill="#aaa">0.57</text>
+<line x1="620" y1="440" x2="620" y2="444" stroke="#bbb" stroke-width="1"/>
+<text x="620" y="456" text-anchor="middle" font-size="8" fill="#aaa">0.68</text>
+<line x1="70" y1="440" x2="600" y2="440" stroke="#bbb" stroke-width="1.5"/>
+<line x1="70" y1="45" x2="70" y2="440" stroke="#bbb" stroke-width="1.5"/>
+<text x="335" y="470" text-anchor="middle" font-size="10" fill="#666">Processing Efficiency (← Slow / Fast →)</text>
+<text x="40" y="242" text-anchor="middle" font-size="10" fill="#666" transform="rotate(-90,40,242)">Ops_Score (out of 100)</text>
+<!-- Quadrant dividers: x=290 (eff≈0.42), y=215 (ops≈67.0) -->
+<line x1="290" y1="45" x2="290" y2="440" stroke="#aaa" stroke-width="1.2" stroke-dasharray="6,4"/>
+<line x1="70" y1="215" x2="600" y2="215" stroke="#aaa" stroke-width="1.2" stroke-dasharray="6,4"/>
+<!-- Quadrant labels -->
+<text x="448" y="64" text-anchor="middle" font-size="11" font-weight="700" fill="#1a237e" opacity="0.6">Production Ready</text>
+<text x="180" y="64" text-anchor="middle" font-size="11" font-weight="700" fill="#555" opacity="0.6">Capable</text>
+<text x="448" y="435" text-anchor="middle" font-size="11" font-weight="700" fill="#555" opacity="0.6">Potential</text>
+<text x="180" y="435" text-anchor="middle" font-size="11" font-weight="700" fill="#555" opacity="0.6">Limited</text>
+<circle cx="539" cy="245" r="12" fill="#4285F4" fill-opacity="0.3" stroke="white" stroke-width="1.5"/>
+<text x="539" y="249" text-anchor="middle" font-size="8" fill="white" font-weight="700">65.4</text>
+<text x="539" y="225" text-anchor="middle" font-size="9" font-weight="600" fill="#333">G-2.5 Lite</text>
+<circle cx="187" cy="279" r="12" fill="#10A37F" fill-opacity="0.3" stroke="white" stroke-width="1.5"/>
+<text x="187" y="283" text-anchor="middle" font-size="8" fill="white" font-weight="700">63.6</text>
+<text x="172" y="299" text-anchor="end" font-size="9" font-weight="600" fill="#333">GPT-mini</text>
+<circle cx="226" cy="259" r="12" fill="#D97706" fill-opacity="0.3" stroke="white" stroke-width="1.5"/>
+<text x="226" y="263" text-anchor="middle" font-size="8" fill="white" font-weight="700">64.7</text>
+<text x="226" y="239" text-anchor="middle" font-size="9" font-weight="600" fill="#333">Haiku 4.5</text>
+<circle cx="395" cy="187" r="12" fill="#4285F4" fill-opacity="0.6" stroke="white" stroke-width="1.5"/>
+<text x="395" y="191" text-anchor="middle" font-size="8" fill="white" font-weight="700">68.6</text>
+<text x="395" y="167" text-anchor="middle" font-size="9" font-weight="600" fill="#333">G-2.5 Flash</text>
+<circle cx="131" cy="339" r="12" fill="#10A37F" fill-opacity="0.6" stroke="white" stroke-width="1.5"/>
+<text x="131" y="343" text-anchor="middle" font-size="8" fill="white" font-weight="700">60.3</text>
+<text x="131" y="319" text-anchor="middle" font-size="9" font-weight="600" fill="#333">GPT-5.4</text>
+<circle cx="354" cy="100" r="12" fill="#D97706" fill-opacity="0.6" stroke="white" stroke-width="1.5"/>
+<text x="354" y="104" text-anchor="middle" font-size="8" fill="white" font-weight="700">73.3</text>
+<text x="354" y="80" text-anchor="middle" font-size="9" font-weight="600" fill="#333">Sonnet 4.6</text>
+<circle cx="453" cy="385" r="12" fill="#4285F4" fill-opacity="0.9" stroke="white" stroke-width="1.5"/>
+<text x="453" y="389" text-anchor="middle" font-size="8" fill="white" font-weight="700">57.8</text>
+<text x="453" y="365" text-anchor="middle" font-size="9" font-weight="600" fill="#333">G-2.5 Pro</text>
+<circle cx="198" cy="277" r="12" fill="#10A37F" fill-opacity="0.9" stroke="white" stroke-width="1.5"/>
+<text x="198" y="281" text-anchor="middle" font-size="8" fill="white" font-weight="700">63.7</text>
+<text x="213" y="299" text-anchor="start" font-size="9" font-weight="600" fill="#333">GPT-5.5</text>
+<circle cx="323" cy="149" r="12" fill="#D97706" fill-opacity="0.9" stroke="white" stroke-width="1.5"/>
+<text x="323" y="153" text-anchor="middle" font-size="8" fill="white" font-weight="700">70.6</text>
+<text x="323" y="129" text-anchor="middle" font-size="9" font-weight="600" fill="#333">Opus 4.7</text>
+</g>
+</svg>

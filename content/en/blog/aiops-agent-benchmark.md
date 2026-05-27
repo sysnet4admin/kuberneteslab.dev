@@ -9,11 +9,11 @@ summary: "Putting nine agents through ten Kubernetes incident scenarios under id
 ShowToc: true
 TocOpen: true
 cover:
-    image: "/images/aiops-tier-comparison-scatter.png"
+    image: "/images/aiops-tier-comparison-by-efficiency.png"
     alt: "AIOps Agent Benchmark: Processing Efficiency vs Ops_Score (9 agents)"
     hidden: true
 images:
-    - /images/aiops-tier-comparison-scatter.png
+    - /images/aiops-tier-comparison-by-efficiency.png
 ---
 
 ## They can write code, but can they operate?

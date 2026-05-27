@@ -9,11 +9,11 @@ summary: "9개 에이전트를 같은 조건에서 10개 K8s 장애 시나리오
 ShowToc: true
 TocOpen: true
 cover:
-    image: "/images/aiops-tier-comparison-ko-scatter.png"
+    image: "/images/aiops-tier-comparison-ko-by-efficiency.png"
     alt: "AIOps Agent Benchmark: 처리속도 vs Ops_Score 점도표 (9개 에이전트)"
     hidden: true
 images:
-    - /images/aiops-tier-comparison-ko-scatter.png
+    - /images/aiops-tier-comparison-ko-by-efficiency.png
 ---
 
 ## 코딩은 잘하는데, 운영도 잘할까?

@@ -8,6 +8,12 @@ description: "Claude Code, Gemini CLI, Codex CLI 9개 모델을 같은 K8s 운�
 summary: "9개 에이전트를 같은 조건에서 10개 K8s 장애 시나리오에 돌려보니, 효율 티어가 플래그십을 앞섰고, 브랜드마다 운영 과제를 다루는 성격이 뚜렷이 갈렸다."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/aiops-tier-comparison-ko-scatter.png"
+    alt: "AIOps Agent Benchmark: 처리속도 vs Ops_Score 점도표 (9개 에이전트)"
+    hidden: true
+images:
+    - /images/aiops-tier-comparison-ko-scatter.png
 ---
 
 ## 코딩은 잘하는데, 운영도 잘할까?

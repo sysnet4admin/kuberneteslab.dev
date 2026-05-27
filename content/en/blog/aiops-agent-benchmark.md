@@ -8,6 +8,12 @@ description: "We compared nine model configurations across Claude Code, Gemini C
 summary: "Putting nine agents through ten Kubernetes incident scenarios under identical conditions surfaced two things: the Efficient tier beat Flagship outright, and each brand has a clearly different operational personality."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/aiops-tier-comparison-scatter.png"
+    alt: "AIOps Agent Benchmark: Processing Efficiency vs Ops_Score (9 agents)"
+    hidden: true
+images:
+    - /images/aiops-tier-comparison-scatter.png
 ---
 
 ## They can write code, but can they operate?

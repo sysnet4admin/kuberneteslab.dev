@@ -4,8 +4,8 @@ date: 2026-05-08
 draft: false
 tags: ["claude-code", "developer-tools", "productivity", "fzf", "zsh", "bash"]
 categories: ["Tools"]
-description: "Claude Code sessions pile up across projects. cc-deck is a cross-platform TUI tool that turns them into a searchable hub — fuzzy search, auto-pin TODOs, bookmark sessions, quick queries without history, and smart resume. Supports macOS (zsh), Linux (bash), and Windows (PowerShell)."
-summary: "A cross-platform TUI tool that makes Claude Code sessions searchable and manageable — fuzzy search, TODO auto-pinning, manual bookmarks, quick queries, and smart resume."
+description: "Claude Code sessions pile up across projects. cc-deck is a cross-platform TUI tool that turns them into a searchable hub — fuzzy search, auto-pin TODOs, bookmark sessions, quick queries without history, session size management, and smart resume. Supports macOS (zsh), Linux (bash), and Windows (PowerShell)."
+summary: "A cross-platform TUI tool that makes Claude Code sessions searchable and manageable — fuzzy search, TODO auto-pinning, manual bookmarks, quick queries, size management for oversized sessions, and smart resume."
 ShowToc: true
 TocOpen: true
 ---
@@ -106,6 +106,29 @@ Sessions with 2+ exchanges are preserved and appear as `[Quick]` in the TUI. Pre
 
 ---
 
+### 5. Session size management
+
+A long-running session's `.jsonl` can grow to hundreds of MB. Because `claude --resume` loads the whole file into memory, large sessions make startup slow — multi-second hangs, high RAM. The worst offenders are usually old, so they fall outside the recent list and stay invisible.
+
+cc-deck surfaces oversized sessions in a **"sessions to manage"** group below `[Quick]`, regardless of recency:
+
+```
+[Quick] ▶ 1 session
+──────────────── sessions to manage (large) ────────────────
+[122M] /tmp/projects/books: chapter draft review
+ [77M] /tmp/projects/research: keep-alive tuning results
+```
+
+There are two cleanup levers, both keeping the same session id so resume keeps working:
+
+**`Ctrl-G` — prune snapshots (lossless).** Most bloat is `file-history-snapshot` entries: rewind checkpoints written every turn. They're cumulative — each stores the *full* tracked-file ledger — so they grow quadratically and can be 60% of a file while contributing nothing to the conversation. Pruning keeps the last few and drops the rest; the conversation is untouched. Sessions ≥100MB are pruned automatically on launch (and the original mtime is preserved, so cleaned-up sessions don't jump to the top).
+
+**`Ctrl-E` — trim to recent turns (lossy).** When a session is large because of conversation itself (messages + tool output), this keeps only the last ~10 turns and **gzip-archives the full session to `~/.claude/_archive/` first**. You keep recent context; the complete history is safely stored. The truncated session resumes normally — you pick up right where you left off.
+
+In practice a 305MB session pruned to 122MB losslessly, and a conversation-heavy 77MB session trimmed to 0.8MB while preserving the last 10 turns.
+
+---
+
 ## Also Built In
 
 **Key bindings**
@@ -121,6 +144,8 @@ Sessions with 2+ exchanges are preserved and appear as `[Quick]` in the TUI. Pre
 | `Ctrl-K` | Pin / unpin current session |
 | `Ctrl-R` | Mark TODO done / remove PIN or Quick session |
 | `Ctrl-Q` | Quick query (no session saved) |
+| `Ctrl-G` | Prune old snapshots (lossless, shrink size) |
+| `Ctrl-E` | Trim to recent turns (lossy, archives full first) |
 | `F1` | Show help |
 | `ESC` | Quit |
 

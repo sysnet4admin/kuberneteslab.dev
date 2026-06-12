@@ -1,6 +1,8 @@
 ---
 title: "공식 인증을 통과해도 기능은 제각각: 채점부터 새로 한 Gateway API 7종 비교"
 date: 2026-06-12
+aliases:
+  - /ko/blog/gateway-api-benchmark/
 draft: false
 tags: ["kubernetes", "gateway-api", "ingress", "conformance", "nginx", "envoy", "istio", "cilium", "kong", "traefik", "kgateway"]
 categories: ["Kubernetes"]

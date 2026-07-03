@@ -4,8 +4,8 @@ date: 2026-05-27
 draft: false
 tags: ["kubernetes", "aiops", "sre", "claude-code", "gemini-cli", "codex", "llm-agent", "benchmark"]
 categories: ["Kubernetes", "AI"]
-description: "Claude Code, Gemini CLI, Codex CLI 9개 모델을 같은 K8s 운영 시나리오로 비교 측정하면서 얻은 결론과 점수 설계의 근거. 상위 티어가 항상 더 좋지는 않다는 것을 확인했다."
-summary: "9개 에이전트를 같은 조건에서 10개 K8s 장애 시나리오에 돌려보니, 효율 티어가 플래그십을 앞섰고, 브랜드마다 운영 과제를 다루는 성격이 뚜렷이 갈렸다."
+description: "Claude Code, Gemini CLI, Codex CLI 9개 모델을 같은 K8s 운영 시나리오로 비교 측정하면서 얻은 결론과 점수 설계의 근거. 상위 티어가 항상 더 좋지는 않다는 것을 확인했습니다."
+summary: "9개 에이전트를 같은 조건에서 10개 K8s 장애 시나리오에 돌려보니, 효율 티어가 플래그십을 앞섰고, 브랜드마다 운영 과제를 다루는 성격이 뚜렷이 갈렸습니다."
 ShowToc: true
 TocOpen: true
 cover:

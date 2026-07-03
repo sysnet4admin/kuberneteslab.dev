@@ -12,7 +12,7 @@ TocOpen: true
 
 ## 컨텍스트 파일이 하나씩 늘어나는 문제
 
-AI 코딩 에이전트를 쓰는 팀이라면 저장소 루트에 이런 파일들이 쌓여 있을 겁니다. Claude Code용 `CLAUDE.md`, Cursor용 규칙 파일, Copilot용 instructions. 내용은 거의 같습니다. 빌드 명령, 테스트 방법, 건드리면 안 되는 영역. 도구가 하나 늘 때마다 같은 내용을 파일명만 바꿔 복제하고, 하나를 고치고 나면 나머지 고치는 걸 잊어버리기 일쑤입니다.
+AI 코딩 에이전트를 쓰는 팀이라면 저장소 루트에 이런 파일들이 쌓여 있을 겁니다. Claude Code용 `CLAUDE.md`, Cursor용 규칙 파일, Copilot용 instructions. 내용은 거의 같습니다. 빌드 명령, 테스트 방법, 건드리면 안 되는 영역. 도구가 하나 늘 때마다 같은 내용을 파일명만 바꿔 복제하고, 하나를 고치고 나면 나머지 고치는 걸 잊어버릴 수도 있습니다.
 
 [AGENTS.md](https://agents.md/)는 이 문제를 해결하려고 나온 개방형 형식입니다. Linux Foundation 산하 AAIF(Agentic AI Foundation)가 관리하고, 30개가 넘는 에이전트가 이 파일을 읽습니다. 파일 하나로 모든 도구에 대응하자는 것이죠.
 

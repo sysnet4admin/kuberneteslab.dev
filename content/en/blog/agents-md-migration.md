@@ -4,8 +4,8 @@ date: 2026-07-03
 draft: false
 tags: ["claude-code", "agents-md", "aaif", "context-file", "llm-agent", "benchmark", "kubernetes"]
 categories: ["AI"]
-description: "Measured whether the two workarounds for migrating a project context file from CLAUDE.md to AGENTS.md (import and symlink) cost speed or tokens in Claude Code, across 4 model tiers and 174 runs. No penalty on either axis."
-summary: "The two AGENTS.md migration workarounds (import, symlink) were measured on Kubernetes incident-response tasks: no penalty in speed or context-load tokens, and the import even came in 3 to 4% lighter."
+description: "Measured whether the two workarounds for migrating a project context file from CLAUDE.md to AGENTS.md (import and symlink) cost speed or tokens in Claude Code, across 5 model configurations and 210 runs. No penalty on either axis."
+summary: "The two AGENTS.md migration workarounds (import, symlink) were measured on Kubernetes incident-response tasks: no penalty in speed or context-load tokens; deltas moved with the symlink control, marking them as run variance."
 ShowToc: true
 TocOpen: true
 ---
@@ -32,28 +32,29 @@ The payload is checksum-identical across the three conditions, and it is not a s
 
 The tasks are Kubernetes incident response. On a dedicated cluster, each run injects a fault (a broken deployment, a wrong Service selector, an OOM limit) and the agent has to find and fix it. Before measuring speed, a canary line planted in the payload ("answer PING with PONG") confirmed each delivery method actually loads: all three responded, and a no-context control did not, so the check itself is valid.
 
-The volume: one pass over 10 scenarios (30 runs, Sonnet), then a sweep over the 4 low-variance scenarios with 4 models (Haiku 4.5, Sonnet 4.6, Opus 4.8, Fable 5) x 3 repetitions (144 runs). All 174 runs completed cleanly.
+The volume: one pass over 10 scenarios (30 runs, Sonnet 5), then a sweep over the 4 low-variance scenarios with 5 models (Haiku 4.5, Sonnet 4.6, Sonnet 5, Opus 4.8, Fable 5) x 3 repetitions (180 runs). All 210 runs completed cleanly.
 
 ## The result: nothing to worry about
 
-The most honest cost signal is the one-time context-load tokens at session start (cache write). If the indirection inflated what gets loaded, B or C would exceed A here. The opposite happened.
+The closest cost signal is cache-write tokens. If the indirection inflated what gets loaded, B would exceed the symlink control C. It never did.
 
 | Model | A (native) | B (import) vs A | C (symlink) vs A |
 |---|---|---|---|
 | Haiku 4.5 | 22,049 | -3% | +1% |
 | Sonnet 4.6 | 14,357 | -3% | -1% |
+| Sonnet 5 | 17,252 | +6% | +6% |
 | Opus 4.8 | 15,542 | -4% | -1% |
 | Fable 5 | 16,357 | -3% | -1% |
 
-The import (B) comes in 3 to 4% *lower* on all four models. A consistent sign across four tiers is not noise. The symlink (C) sits within ±1% of native, effectively identical.
+On no model does B systematically exceed the symlink (C). On four models the import came in 3 to 4% lower; on Sonnet 5 it measured +6%, but the symlink moved by the same +6% in the same runs. A symlink cannot mechanically differ from native, so a delta that moves with it is run variance, not a delivery cost.
 
 Wall time swings more, but with no direction: B is faster on some models and slower on others, and the largest time gaps come with near-zero token gaps. A delivery-method overhead would push one way consistently; this pattern is the agent taking a slightly different solution path each run. Per-model numbers are in the [README results section](https://github.com/sysnet4admin/Research/tree/main/agents-md-migration).
 
 ## Why it comes out this way
 
-The symlink being free is simple: the moment Claude Code opens the `CLAUDE.md` path, the OS resolves the link and returns the content of `AGENTS.md`. From Claude Code's side the read is identical to native; the filesystem does the work. That matches the measurement exactly (C within ±1% of A).
+The symlink being free is simple: the moment Claude Code opens the `CLAUDE.md` path, the OS resolves the link and returns the content of `AGENTS.md`. From Claude Code's side the read is identical to native; the filesystem does the work. That makes C a built-in control group.
 
-The import's -3% was the surprise. Same body, fewer load tokens, which suggests Claude Code renders an imported file slightly differently from native inline content. Either way, the point stands: the workaround is not a tax.
+The import never systematically exceeded that control: 3 to 4% below native on four models, and +6% on Sonnet 5 with the control at the same +6%. Either way, the point stands: the workaround is not a tax.
 
 ## What this means for a team
 
@@ -63,4 +64,4 @@ Two caveats. First, this measurement answers the speed and token-cost question; 
 
 ## Closing
 
-What blocks a migration is usually an unmeasured worry. "It might be slower" does not go away until someone measures it. Measured, there was no penalty on any tier from Haiku to Fable, and the import even came in slightly lighter. The harness, cluster provisioning, and aggregation scripts are all in the [GitHub repository](https://github.com/sysnet4admin/Research/tree/main/agents-md-migration), so you can run the same comparison with your own context file.
+What blocks a migration is usually an unmeasured worry. "It might be slower" does not go away until someone measures it. Measured, there was no penalty on any configuration from Haiku to Fable, across two Sonnet generations. The harness, cluster provisioning, and aggregation scripts are all in the [GitHub repository](https://github.com/sysnet4admin/Research/tree/main/agents-md-migration), so you can run the same comparison with your own context file.

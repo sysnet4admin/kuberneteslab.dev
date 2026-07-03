@@ -1,7 +1,7 @@
 ---
 title: "CLAUDE.md를 AGENTS.md로 바꾸면 느려질까요?"
 date: 2026-07-03
-draft: true
+draft: false
 tags: ["claude-code", "agents-md", "aaif", "context-file", "llm-agent", "benchmark", "kubernetes"]
 categories: ["AI"]
 description: "프로젝트 컨텍스트 파일을 CLAUDE.md에서 AGENTS.md로 옮길 때 import와 심볼릭 링크 두 우회 방법이 속도나 토큰 비용을 늘리는지, 모델 4종과 174회 실행으로 검증했습니다. 어느 티어에서도 페널티가 없었습니다."

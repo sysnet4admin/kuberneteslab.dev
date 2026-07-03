@@ -1,7 +1,7 @@
 ---
 title: "Does switching CLAUDE.md to AGENTS.md slow Claude Code down?"
 date: 2026-07-03
-draft: true
+draft: false
 tags: ["claude-code", "agents-md", "aaif", "context-file", "llm-agent", "benchmark", "kubernetes"]
 categories: ["AI"]
 description: "Measured whether the two workarounds for migrating a project context file from CLAUDE.md to AGENTS.md (import and symlink) cost speed or tokens in Claude Code, across 4 model tiers and 174 runs. No penalty on either axis."

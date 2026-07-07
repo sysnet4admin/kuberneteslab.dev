@@ -13,7 +13,7 @@ build:
 <img src="/images/profile.jpg" alt="조훈 (Hoon Jo)" class="profile-photo">
 </div>
 <div class="profile-bio">
-<p>CNCF Ambassador이자 Kubestronaut로, Kubernetes와 Cloud Native 기술의 실무 적용과 교육에 집중하고 있습니다. 다수의 기술서를 집필하고, KubeCon 등 글로벌 컨퍼런스에서 발표와 프로그램 위원회 활동을 이어가고 있습니다. KubernetesLab은 현장에서 얻은 경험과 연구 결과를 공유하는 공간입니다.</p>
+<p>CNCF Ambassador, AAIF(Agentic AI Foundation) Ambassador, Kubestronaut로, Kubernetes와 Cloud Native, Agentic AI 기술의 실무 적용과 교육에 집중하고 있습니다. 다수의 기술서를 집필하고, KubeCon 등 글로벌 컨퍼런스에서 발표와 프로그램 위원회 활동을 이어가고 있습니다. KubernetesLab은 현장에서 얻은 경험과 연구 결과를 공유하는 공간입니다.</p>
 </div>
 </div>
 
@@ -37,6 +37,7 @@ build:
 ## 자격 및 수상
 
 - [CNCF Ambassador](https://www.credly.com/badges/4ede0d01-f499-4178-893f-a5cce941412e/public_url)
+- [AAIF (Agentic AI Foundation) Ambassador](https://aaif.io/ambassadors) (2026)
 - [Kubestronaut (CKA + CKAD + CKS + KCNA + KCSA)](https://www.credly.com/badges/31d3b041-71e9-4371-93be-6156f9c89397/public_url)
 - [CCIE Data Center (Cisco)](https://www.credly.com/badges/a735c2f7-7c92-46dc-a0bd-072db6d874dc/public_url)
 - RHCE (Red Hat Certified Engineer)

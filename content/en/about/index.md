@@ -13,7 +13,7 @@ build:
 <img src="/images/profile.jpg" alt="Hoon Jo" class="profile-photo">
 </div>
 <div class="profile-bio">
-<p>CNCF Ambassador and Kubestronaut, focused on practical applications and education of Kubernetes and Cloud Native technologies. Author of multiple technical books, and an active speaker and program committee member at KubeCon and other global conferences. KubernetesLab is where I share hands-on experience and research findings from the field.</p>
+<p>CNCF Ambassador, AAIF (Agentic AI Foundation) Ambassador, and Kubestronaut, focused on practical applications and education of Kubernetes, Cloud Native, and Agentic AI technologies. Author of multiple technical books, and an active speaker and program committee member at KubeCon and other global conferences. KubernetesLab is where I share hands-on experience and research findings from the field.</p>
 </div>
 </div>
 
@@ -37,6 +37,7 @@ build:
 ## Certifications & Awards
 
 - [CNCF Ambassador](https://www.credly.com/badges/4ede0d01-f499-4178-893f-a5cce941412e/public_url)
+- [AAIF (Agentic AI Foundation) Ambassador](https://aaif.io/ambassadors) (2026)
 - [Kubestronaut (CKA + CKAD + CKS + KCNA + KCSA)](https://www.credly.com/badges/31d3b041-71e9-4371-93be-6156f9c89397/public_url)
 - [CCIE Data Center (Cisco)](https://www.credly.com/badges/a735c2f7-7c92-46dc-a0bd-072db6d874dc/public_url)
 - RHCE (Red Hat Certified Engineer)

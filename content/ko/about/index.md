@@ -19,6 +19,7 @@ build:
 
 ## 저서
 
+- [AI 시대에 개발자가 알아야 할 인프라 구성 배포 with 클로드 코드](https://product.kyobobook.co.kr/detail/S000220220936)
 - [한 걸음 앞선 개발자가 지금 꼭 알아야 할 클로드 코드](https://product.kyobobook.co.kr/detail/S000217402731)
 - [컨테이너 인프라 환경 구축을 위한 쿠버네티스/도커](https://product.kyobobook.co.kr/detail/S000001834629)
 - [우아하게 앤서블](https://product.kyobobook.co.kr/detail/S000001890851)

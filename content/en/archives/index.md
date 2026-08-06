@@ -7,10 +7,22 @@ build:
   list: never
 ---
 
+## Upcoming Talks
+
+| Date | Event | Title | Links |
+|------|-------|-------|-------|
+| 2026-08-11 | Open Source Summit Korea | GitAIOps: A 4-Layer Architecture for Predictable AI-Assisted Operations | [sched](https://osskorea2026.sched.com/event/2P8H1) · [materials](https://github.com/sysnet4admin/talks/tree/main/OSSummit/2026-Korea) |
+| 2026-08-21 | OCP Korea Tech Day | GitAIOps: A Three-Layer Structure That Gives AI Agents Lasting Memory | [event](https://www.ocpkorea.com/) |
+| 2026-10-07 | Open Source Tech Day (ETRI) | MCP, Before and After July 28: The Protocol's Past, Present, and the Future to Prepare For | |
+
 ## Talks
 
 | Year | Event | Title | Links |
 |------|-------|-------|-------|
+| 2026 | KubeCon Japan (Tokyo) | I Tested 7 So You Only Need 1: Your First Gateway API Migration in 5 Minutes | [schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/program/schedule/?id=1182975) · [materials](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan) |
+| 2026 | KubeCon Japan (Tokyo) | Lightning Talks Emcee (Project, Main Event) | [materials](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan-Emcee) |
+| 2026 | F5 AppWorld Seoul | Beyond Ingress: Gateway Strategy in the AI Era and How NGINX Is Evolving (joint session) | |
+| 2026 | N.EX.T Meetup #40 | AIOps Is Here: Deploying Kubernetes with Claude Code | [event](https://onoffmix.com/event/343228) · [materials](https://github.com/sysnet4admin/talks/tree/main/Korea-Community/2026-neteg) |
 | 2026 | Byline Network Webinar | AI-Driven SRE: Building Kubernetes Operations Standards with AI | [materials](https://github.com/sysnet4admin/talks/tree/main/Byline-Network/2026-ai-era-k8s-cloud-native) · [YouTube](https://www.youtube.com/watch?v=VhmC-XqTf1k) |
 | 2025 | KubeCon NA (Atlanta) | Anatomy of a Kubernetes Scheduler | [sched](https://kccncna2025.sched.com/event/27FUp) · [YouTube](https://www.youtube.com/watch?v=9BjX9SFOqRE) |
 | 2025 | KyvernoCon NA | CEL: Hidden Feature of Kyverno Playground | [sched](https://colocatedeventsna2025.sched.com/event/28D1M) · [YouTube](https://www.youtube.com/watch?v=b_p9Yjtp-bo) |

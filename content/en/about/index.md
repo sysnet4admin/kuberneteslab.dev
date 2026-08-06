@@ -19,6 +19,7 @@ build:
 
 ## Books
 
+- [AI Agent-Driven Infrastructure: Build, Deploy, and Operate with Claude Code](https://product.kyobobook.co.kr/detail/S000220220936)
 - [Claude Code for Developers One Step Ahead](https://product.kyobobook.co.kr/detail/S000217402731)
 - [Container Infrastructure with Kubernetes/Docker](https://product.kyobobook.co.kr/detail/S000001834629)
 - [Elegant Ansible](https://product.kyobobook.co.kr/detail/S000001890851)

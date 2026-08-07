@@ -1,2 +1,8 @@
 - id: written_by
   translation: "작성자"
+- id: recap_event
+  translation: "행사"
+- id: recap_date
+  translation: "일정"
+- id: figure_label
+  translation: "그림"

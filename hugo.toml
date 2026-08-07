@@ -7,6 +7,7 @@ defaultContentLanguageInSubdir = true
 
 [params]
   env = "production"
+  mainSections = ["blog"]
   description = "Kubernetes & Cloud Native Research Lab"
   author = "Hoon Jo"
   images = ["/images/og-brand.png"]

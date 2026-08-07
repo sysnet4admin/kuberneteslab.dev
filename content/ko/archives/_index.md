@@ -19,8 +19,8 @@ build:
 
 | 연도 | 행사 | 발표 제목 | 링크 |
 |------|------|-----------|------|
-| 2026 | KubeCon Japan (Tokyo) | I Tested 7 So You Only Need 1: Your First Gateway API Migration in 5 Minutes | [schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/program/schedule/?id=1182975) · [자료](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan) |
-| 2026 | KubeCon Japan (Tokyo) | Lightning Talks 진행 (Project, Main Event) | [자료](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan-Emcee) |
+| 2026 | KubeCon Japan (Yokohama) | I Tested 7 So You Only Need 1: Your First Gateway API Migration in 5 Minutes | [schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/program/schedule/?id=1182975) · [자료](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan) · [후기](/ko/archives/recaps/kubecon-japan-2026/) |
+| 2026 | KubeCon Japan (Yokohama) | Lightning Talks 진행 (Project, Main Event) | [자료](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan-Emcee) · [후기](/ko/archives/recaps/kubecon-japan-2026/) |
 | 2026 | F5 AppWorld Seoul | Beyond Ingress: AI 시대의 Gateway 전략과 NGINX의 진화 (공동 세션) | |
 | 2026 | N.EX.T 40회 | 눈앞에 다가온 AIOps: Claude Code와 함께한 쿠버네티스 구성 배포 | [event](https://onoffmix.com/event/343228) · [자료](https://github.com/sysnet4admin/talks/tree/main/Korea-Community/2026-neteg) |
 | 2026 | Byline Network 웨비나 | AI-Driven SRE: AI와 함께 만드는 쿠버네티스 운영 표준 | [자료](https://github.com/sysnet4admin/talks/tree/main/Byline-Network/2026-ai-era-k8s-cloud-native) · [YouTube](https://www.youtube.com/watch?v=VhmC-XqTf1k) |

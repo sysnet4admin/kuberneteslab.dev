@@ -19,8 +19,8 @@ build:
 
 | Year | Event | Title | Links |
 |------|-------|-------|-------|
-| 2026 | KubeCon Japan (Tokyo) | I Tested 7 So You Only Need 1: Your First Gateway API Migration in 5 Minutes | [schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/program/schedule/?id=1182975) · [materials](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan) |
-| 2026 | KubeCon Japan (Tokyo) | Lightning Talks Emcee (Project, Main Event) | [materials](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan-Emcee) |
+| 2026 | KubeCon Japan (Yokohama) | I Tested 7 So You Only Need 1: Your First Gateway API Migration in 5 Minutes | [schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/program/schedule/?id=1182975) · [materials](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan) · [recap](/en/archives/recaps/kubecon-japan-2026/) |
+| 2026 | KubeCon Japan (Yokohama) | Lightning Talks Emcee (Project, Main Event) | [materials](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan-Emcee) · [recap](/en/archives/recaps/kubecon-japan-2026/) |
 | 2026 | F5 AppWorld Seoul | Beyond Ingress: Gateway Strategy in the AI Era and How NGINX Is Evolving (joint session) | |
 | 2026 | N.EX.T Meetup #40 | AIOps Is Here: Deploying Kubernetes with Claude Code | [event](https://onoffmix.com/event/343228) · [materials](https://github.com/sysnet4admin/talks/tree/main/Korea-Community/2026-neteg) |
 | 2026 | Byline Network Webinar | AI-Driven SRE: Building Kubernetes Operations Standards with AI | [materials](https://github.com/sysnet4admin/talks/tree/main/Byline-Network/2026-ai-era-k8s-cloud-native) · [YouTube](https://www.youtube.com/watch?v=VhmC-XqTf1k) |

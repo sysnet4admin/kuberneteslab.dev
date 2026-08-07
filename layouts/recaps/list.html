@@ -1,0 +1,33 @@
+{{- define "main" }}
+
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="post-description">{{ .Description | markdownify }}</div>
+  {{- end }}
+</header>
+
+<div class="post-content">
+  {{- $recaps := .RegularPagesRecursive }}
+  {{- if $recaps }}
+  <table>
+    <thead>
+      <tr>
+        <th>{{ i18n "recap_event" }}</th>
+        <th>{{ i18n "recap_date" }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{- range $recaps.ByDate.Reverse }}
+      <tr>
+        <td><a href="{{ .Permalink }}">{{ with .Params.event }}{{ . }}{{ else }}{{ .Title }}{{ end }}</a></td>
+        <td>{{ with .Params.event_dates }}{{ . }}{{ else }}{{ .Date.Format "2006-01-02" }}{{ end }}</td>
+      </tr>
+      {{- end }}
+    </tbody>
+  </table>
+  {{- end }}
+</div>
+
+{{- end }}{{/* end main */}}

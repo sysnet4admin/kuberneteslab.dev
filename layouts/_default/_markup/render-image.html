@@ -1,0 +1,10 @@
+{{- /* 캡션은 마크다운 title 자리에 쓴다: ![alt](/path "캡션")
+       캡션이 있으면 figure로 감싸고 [그림 N] 번호를 자동으로 붙인다. */ -}}
+{{- if .Title -}}
+<figure>
+  <img loading="lazy" src="{{ .Destination | safeURL }}" alt="{{ .PlainText }}">
+  <figcaption><span class="fig-num">[{{ i18n "figure_label" }} {{ add .Ordinal 1 }}]</span> {{ .Title }}</figcaption>
+</figure>
+{{- else -}}
+<img loading="lazy" src="{{ .Destination | safeURL }}" alt="{{ .PlainText }}">
+{{- end -}}

@@ -1,2 +1,8 @@
 - id: written_by
   translation: "Written by"
+- id: recap_event
+  translation: "Event"
+- id: recap_date
+  translation: "Date"
+- id: figure_label
+  translation: "Figure"

@@ -90,3 +90,18 @@
     margin-right: 12px;
     margin-left: 0;
 }
+
+/* 사진 캡션: 그림 바로 아래, 작고 옅게 */
+.post-content figure > figcaption {
+    color: var(--secondary);
+    font-size: 0.85em;
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 0.6em 0 0;
+    text-align: center;
+}
+
+.post-content figure > figcaption .fig-num {
+    font-weight: 600;
+    opacity: 0.9;
+}

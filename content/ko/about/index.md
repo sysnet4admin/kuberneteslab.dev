@@ -13,7 +13,7 @@ build:
 <img src="/images/profile.jpg" alt="조훈 (Hoon Jo)" class="profile-photo">
 </div>
 <div class="profile-bio">
-<p>CNCF Ambassador, AAIF(Agentic AI Foundation) Ambassador, Kubestronaut로, Kubernetes와 Cloud Native, Agentic AI 기술의 실무 적용과 교육에 집중하고 있습니다. 다수의 기술서를 집필하고, KubeCon 등 글로벌 컨퍼런스에서 발표와 프로그램 위원회 활동을 이어가고 있습니다. KubernetesLab은 현장에서 얻은 경험과 연구 결과를 공유하는 공간입니다.</p>
+<p>CNCF Ambassador, AAIF(Agentic AI Foundation) Ambassador, Kubestronaut입니다. Kubernetes와 Cloud Native, Agentic AI를 현장에 적용하고 가르치는 일을 합니다. 자료가 없는 질문은 직접 측정해서 답을 만듭니다. CNI가 평소에 쓰는 자원, AI 에이전트의 쿠버네티스 운영 능력, Gateway API 구현체 비교 같은 것들입니다. 기술서 5권을 썼고 KubeCon EU, NA, China, India, Japan에서 발표했습니다. KubernetesLab은 그 측정과 현장 경험을 정리해 두는 공간입니다.</p>
 </div>
 </div>
 

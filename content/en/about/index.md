@@ -13,7 +13,7 @@ build:
 <img src="/images/profile.jpg" alt="Hoon Jo" class="profile-photo">
 </div>
 <div class="profile-bio">
-<p>CNCF Ambassador, AAIF (Agentic AI Foundation) Ambassador, and Kubestronaut, focused on practical applications and education of Kubernetes, Cloud Native, and Agentic AI technologies. Author of multiple technical books, and an active speaker and program committee member at KubeCon and other global conferences. KubernetesLab is where I share hands-on experience and research findings from the field.</p>
+<p>CNCF Ambassador, AAIF (Agentic AI Foundation) Ambassador, and Kubestronaut. I apply and teach Kubernetes, Cloud Native, and Agentic AI in the field. When a question has no published data, I measure it myself: what a CNI costs at idle, how well AI agents handle Kubernetes operations, how Gateway API implementations compare. I have written five technical books and spoken at KubeCon EU, NA, China, India, and Japan. KubernetesLab is where those measurements and field notes live.</p>
 </div>
 </div>
 

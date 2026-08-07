@@ -12,8 +12,11 @@ build:
 | Date | Event | Title | Links |
 |------|-------|-------|-------|
 | 2026-08-11 | Open Source Summit Korea | GitAIOps: A 4-Layer Architecture for Predictable AI-Assisted Operations | [sched](https://osskorea2026.sched.com/event/2P8H1) · [materials](https://github.com/sysnet4admin/talks/tree/main/OSSummit/2026-Korea) |
+| 2026-08-13 | MCP Dev Summit Seoul | AAIF Ambassador AMA: Building the Agentic Future Through Community Contribution (panel) | [sched](https://mcpseoul2026.sched.com/event/2QScw) |
+| 2026-08-13 | MCP Dev Summit Seoul | Book Signing: AI Agent-Driven Infrastructure with Claude Code | [sched](https://mcpseoul2026.sched.com/event/2TTsf) |
 | 2026-08-21 | OCP Korea Tech Day | GitAIOps: A Three-Layer Structure That Gives AI Agents Lasting Memory | [event](https://www.ocpkorea.com/) |
 | 2026-10-07 | Open Source Tech Day (ETRI) | MCP, Before and After July 28: The Protocol's Past, Present, and the Future to Prepare For | |
+| 2026-11-10 | KubeCon NA (Salt Lake City) | How Far Are Open-Source LLMs from Running Real Kubernetes Operations? A 10-Scenario Benchmark | [schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/?id=1246259) |
 
 ## Talks
 

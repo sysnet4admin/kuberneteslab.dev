@@ -9,11 +9,12 @@ source_url: "https://www.linkedin.com/feed/update/urn:li:activity:74891514994328
 summary: "Gateway API 이전을 다룬 Novice 트랙 세션을 발표하고, Lightning Talks 두 블록의 진행과 Peer Mentoring 멘토를 맡았습니다."
 ShowToc: false
 cover:
-    image: "/images/recaps/kubecon-japan-2026/01-lightning-talks-stage.jpg"
-    alt: "KubeCon + CloudNativeCon Japan 2026 무대"
+    image: "/images/recaps/kubecon-japan-2026/01-kubestronauts-stage.jpg"
+    alt: "무대에 오른 Kubestronaut들"
+    caption: "행사마다 열리는 Kubestronaut 무대 인사"
     hidden: false
 images:
-    - /images/recaps/kubecon-japan-2026/01-lightning-talks-stage.jpg
+    - /images/recaps/kubecon-japan-2026/01-kubestronauts-stage.jpg
 ---
 
 7월 28일부터 30일까지 요코하마 PACIFICO Yokohama에서 열린 KubeCon +

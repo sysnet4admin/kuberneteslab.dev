@@ -85,11 +85,11 @@ build:
 
 | 연도 | 제목 | 링크 |
 |------|------|------|
-| 2023 | 3기 라이트 세미나 — CNCF 앰버서더 되는 법 | [YouTube](https://www.youtube.com/watch?v=7CuWOC98AoU) |
+| 2023 | 3기 라이트 세미나: CNCF 앰버서더 되는 법 | [YouTube](https://www.youtube.com/watch?v=7CuWOC98AoU) |
 | 2022 | 쿠버네티스 안 써도 되지 않나요? (인터뷰) | [YouTube](https://www.youtube.com/watch?v=m-EmnMFRgeQ) |
 | 2020 | 마이크로소프트웨어 마.필.톡 400호 특집 (인터뷰) | [YouTube](https://www.youtube.com/watch?v=oSZ46AMOS-g) |
 | 2017 | 구름(Cloud) 아래엔 어떤 일이 있을까요? (파이썬) | [YouTube](https://www.youtube.com/watch?v=yAVOdaarXRo) |
-| 2017 | 제 4회 파이썬 격월 세미나 — 시스템/네트워크 엔지니어를 위한 파이썬 | [YouTube](https://www.youtube.com/watch?v=RqSlX4mUqU4) |
+| 2017 | 제 4회 파이썬 격월 세미나: 시스템/네트워크 엔지니어를 위한 파이썬 | [YouTube](https://www.youtube.com/watch?v=RqSlX4mUqU4) |
 
 </details>
 
@@ -98,7 +98,7 @@ build:
 
 ## 기고
 
-- [요즘IT](https://yozm.wishket.com/magazine/@sysnet4admin) — Kubernetes, CNCF, 클라우드 네이티브 (35편, 2023~2025)
+- [요즘IT](https://yozm.wishket.com/magazine/@sysnet4admin): Kubernetes, CNCF, 클라우드 네이티브 (35편, 2023~2025)
 - 마이크로소프트웨어 399호 (2020-01): 네트워크 관리에 자동화를 불어넣는 앤서블
 - 마이크로소프트웨어 400호 (2020-04): 인프라 엔지니어에게 개발이란 어떤 의미일까
 - [FastCampus 인터뷰](https://m.blog.naver.com/fastcampus/221090599608) (2017): 엔지니어가 왜 프로그래밍을 배워야 하냐고요?

@@ -4,7 +4,7 @@ date: 2026-04-08
 draft: false
 tags: ["kubernetes", "gateway-api", "ingress", "poc", "nginx", "envoy", "istio", "cilium"]
 categories: ["Kubernetes"]
-description: "We tested 7 Gateway API implementations — NGINX Gateway Fabric, Envoy Gateway, Istio, Cilium, and more — across 17 test scenarios over 100 rounds ahead of Ingress NGINX retirement."
+description: "We tested 7 Gateway API implementations (NGINX Gateway Fabric, Envoy Gateway, Istio, Cilium, and more) across 17 test scenarios over 100 rounds ahead of Ingress NGINX retirement."
 summary: "100-round PoC results and selection guide for 7 Kubernetes Gateway API implementations across 17 test scenarios"
 ShowToc: true
 TocOpen: true
@@ -12,7 +12,7 @@ TocOpen: true
 
 ## Ingress NGINX Is Retiring
 
-In March 2026, **Ingress NGINX — the most widely used Ingress implementation — reaches end of support.** While the Ingress API itself remains, the retirement of its flagship implementation signals a shift to the **Gateway API**.
+In March 2026, **Ingress NGINX, the most widely used Ingress implementation, reaches end of support.** While the Ingress API itself remains, the retirement of its flagship implementation signals a shift to the **Gateway API**.
 
 What makes Gateway API different from Ingress? The key difference is **role separation**. Infrastructure admins, cluster operators, and developers can configure their respective domains independently, offering greater expressiveness and extensibility.
 
@@ -52,7 +52,7 @@ What makes Gateway API different from Ingress? The key difference is **role sepa
 | Cilium Gateway | cilium | 192.168.1.15 | kube-system |
 | Kong Gateway | kong | 192.168.1.16 | kong |
 | Traefik Gateway | traefik | 192.168.1.17 | traefik |
-| kgateway | kgateway | — | ARM64 not supported, excluded |
+| kgateway | kgateway | N/A | ARM64 not supported, excluded |
 
 All 7 Gateway implementations ran independently in the same cluster. Cilium was chosen as the CNI to include Cilium Gateway in the tests. With a different CNI, the remaining 6 implementations are unaffected.
 
@@ -111,7 +111,7 @@ Four backend services were used across the test scenarios.
 | `grpc` | gRPC server (HTTP/2) | gRPC routing test only |
 | `backend-ns` | Separate namespace service | Cross-namespace routing test |
 
-`echo-v1` and `echo-v2` are used across most tests including host/path/header routing, canary, and rate limiting. `grpc` is dedicated to the gRPC protocol test, and `backend-ns` is used exclusively for the cross-namespace scenario — routing traffic from the `gateway-poc` namespace Gateway into the `backend-ns` namespace.
+`echo-v1` and `echo-v2` are used across most tests including host/path/header routing, canary, and rate limiting. `grpc` is dedicated to the gRPC protocol test, and `backend-ns` is used exclusively for the cross-namespace scenario, routing traffic from the `gateway-poc` namespace Gateway into the `backend-ns` namespace.
 
 ## Which Implementations Were Tested?
 
@@ -123,7 +123,7 @@ Four backend services were used across the test scenarios.
 | Cilium Gateway | v1.18.4 | eBPF-based high performance, kernel-level processing, CNCF graduated (2023) |
 | Kong Gateway | v3.9 (KIC v3.5) | Enterprise API gateway, rich plugin ecosystem |
 | Traefik Gateway | v3.6.2 | Cloud-native reverse proxy, Let's Encrypt integration |
-| kgateway (Solo.io) | v2.1.1 | CNCF Sandbox (2025), excluded — no ARM64 support |
+| kgateway (Solo.io) | v2.1.1 | CNCF Sandbox (2025), excluded (no ARM64 support) |
 
 ### Why Each Implementation Was Selected
 
@@ -154,7 +154,7 @@ Four backend services were used across the test scenarios.
 | **Traffic Management** | 7 | canary-traffic | Weight-based traffic split (80% v1, 20% v2) |
 | | 8 | rate-limiting | Limit max requests per second/minute |
 | | 9 | timeout-retry | Request timeout and automatic retry on failure |
-| | 10 | session-affinity | Sticky routing — same client to same backend |
+| | 10 | session-affinity | Sticky routing, same client to same backend |
 | **Request/Response** | 11 | url-rewrite | Rewrite URL paths: `/old-api/*` → `/new-api/*` |
 | | 12 | header-modifier | Add, modify, or delete request/response headers |
 | **Advanced** | 13 | cross-namespace | Route from `gateway-poc` to `backend-ns` namespace |
@@ -177,7 +177,7 @@ Four backend services were used across the test scenarios.
 | **Cilium Gateway** | **100%** | 14 | 0 | 3 | **A** |
 | Kong Gateway | 16.7% | 2 | 10 | 5 | F |
 | Traefik Gateway | 8.3% | 1 | 11 | 5 | F |
-| kgateway | N/A | — | — | 17 | — |
+| kgateway | N/A | N/A | N/A | 17 | N/A |
 
 **Four implementations (NGINX, Envoy, Istio, Cilium) achieved zero failures across all 100 rounds.**
 
@@ -225,7 +225,7 @@ Error: "no Route matched with those values"
 
 HTTPRoute resources failed to sync with Kong's internal configuration. In "unmanaged gateway" mode, Gateway API compatibility issues caused basic routing to fail, triggering cascading failures across most tests.
 
-Additionally, KIC v3.5.3 has configuration sync failures with Kong Gateway v3.9 — staying on KIC v3.5 is recommended.
+Additionally, KIC v3.5.3 has configuration sync failures with Kong Gateway v3.9, so staying on KIC v3.5 is recommended.
 
 ### Why Did Traefik Gateway Fail?
 
@@ -251,7 +251,7 @@ Rate limiting is **not included in the Gateway API standard spec.** Each impleme
 | **Envoy Gateway** | **Native** | [`BackendTrafficPolicy`](https://gateway.envoyproxy.io/docs/tasks/traffic/backend-traffic-policy/rate-limit/) | Declarative Gateway API-style config, most intuitive |
 | NGINX Gateway Fabric | Limited | [`SnippetsFilter`](https://docs.nginx.com/nginx-gateway-fabric/traffic-management/snippets/) | Low-level NGINX config injection |
 | Istio Gateway | Limited | [`EnvoyFilter`](https://istio.io/latest/docs/tasks/policy-enforcement/rate-limit/) | Low-level Envoy config injection |
-| Cilium Gateway | **Not supported** | — | [Issue #33500](https://github.com/cilium/cilium/issues/33500) in progress |
+| Cilium Gateway | **Not supported** | N/A | [Issue #33500](https://github.com/cilium/cilium/issues/33500) in progress |
 
 **Envoy Gateway is the only implementation with native declarative Rate Limiting via `BackendTrafficPolicy`.** NGINX and Istio can achieve it through low-level config injection, but this is not a dedicated Rate Limiting API and adds complexity. Cilium currently does not support HTTP Rate Limiting.
 
@@ -278,5 +278,5 @@ Rate limiting is **not included in the Gateway API standard spec.** Each impleme
 
 ## References
 
-- [yozm.wishket.com: PoC of 7 Kubernetes Gateway Implementations](https://yozm.wishket.com/magazine/detail/3559/) — Full context including background and concepts
-- [GitHub: gateway-PoC](https://github.com/sysnet4admin/Research/tree/main/gateway-PoC) — 17-test automation scripts and detailed results
+- [yozm.wishket.com: PoC of 7 Kubernetes Gateway Implementations](https://yozm.wishket.com/magazine/detail/3559/): Full context including background and concepts
+- [GitHub: gateway-PoC](https://github.com/sysnet4admin/Research/tree/main/gateway-PoC): 17-test automation scripts and detailed results

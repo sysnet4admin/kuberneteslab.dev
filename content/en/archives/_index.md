@@ -98,7 +98,7 @@ All slides: [github.com/sysnet4admin/talks](https://github.com/sysnet4admin/talk
 
 ## Writing
 
-- [Yozm IT](https://yozm.wishket.com/magazine/@sysnet4admin) — Kubernetes, CNCF, Cloud Native (35 articles, 2023~2025)
+- [Yozm IT](https://yozm.wishket.com/magazine/@sysnet4admin): Kubernetes, CNCF, Cloud Native (35 articles, 2023~2025)
 - Microsoftware Issue 399 (Jan 2020): Ansible for Network Automation
 - Microsoftware Issue 400 (Apr 2020): What Does Development Mean for Infrastructure Engineers?
 - [FastCampus Interview](https://m.blog.naver.com/fastcampus/221090599608) (2017): Why Should Engineers Learn Programming?

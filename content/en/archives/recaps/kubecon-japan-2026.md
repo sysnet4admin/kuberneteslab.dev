@@ -9,11 +9,12 @@ source_url: "https://www.linkedin.com/feed/update/urn:li:activity:74891514994328
 summary: "A Novice-track session on Gateway API migration, emceeing both Lightning Talk blocks, and a turn as a Peer Mentoring mentor."
 ShowToc: false
 cover:
-    image: "/images/recaps/kubecon-japan-2026/01-lightning-talks-stage.jpg"
-    alt: "On stage at KubeCon + CloudNativeCon Japan 2026"
+    image: "/images/recaps/kubecon-japan-2026/01-kubestronauts-stage.jpg"
+    alt: "Kubestronauts on stage"
+    caption: "Kubestronauts called on stage, as at every event"
     hidden: false
 images:
-    - /images/recaps/kubecon-japan-2026/01-lightning-talks-stage.jpg
+    - /images/recaps/kubecon-japan-2026/01-kubestronauts-stage.jpg
 ---
 
 KubeCon + CloudNativeCon Japan 2026 ran July 28-30 at PACIFICO Yokohama. I

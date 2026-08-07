@@ -4,15 +4,15 @@ date: 2026-05-08
 draft: false
 tags: ["claude-code", "developer-tools", "productivity", "fzf", "zsh", "bash"]
 categories: ["Tools"]
-description: "Claude Code sessions pile up across projects. cc-deck is a cross-platform TUI tool that turns them into a searchable hub — fuzzy search, auto-pin TODOs, bookmark sessions, quick queries without history, session size management, and smart resume. Supports macOS (zsh), Linux (bash), and Windows (PowerShell)."
-summary: "A cross-platform TUI tool that makes Claude Code sessions searchable and manageable — fuzzy search, TODO auto-pinning, manual bookmarks, quick queries, size management for oversized sessions, and smart resume."
+description: "Claude Code sessions pile up across projects. cc-deck is a cross-platform TUI tool that turns them into a searchable hub: fuzzy search, auto-pin TODOs, bookmark sessions, quick queries without history, session size management, and smart resume. Supports macOS (zsh), Linux (bash), and Windows (PowerShell)."
+summary: "A cross-platform TUI tool that makes Claude Code sessions searchable and manageable: fuzzy search, TODO auto-pinning, manual bookmarks, quick queries, size management for oversized sessions, and smart resume."
 ShowToc: true
 TocOpen: true
 ---
 
 ## The Problem
 
-Working across multiple Claude Code projects means sessions pile up fast. When you need to get back to something — yesterday's debugging session, a task Claude flagged for follow-up, or a session you want to bookmark — finding it and resuming in the right context adds friction.
+Working across multiple Claude Code projects means sessions pile up fast. When you need to get back to something (yesterday's debugging session, a task Claude flagged for follow-up, or a session you want to bookmark), finding it and resuming in the right context adds friction.
 
 `claude --resume` shows a list, but the summaries are compressed and hard to read. You end up scrolling through UUIDs instead of working.
 
@@ -36,7 +36,7 @@ cc-deck> OOM
   2026-05-08 08:59  /tmp/projects/infra/k8s: pod keeps OOMKilling after we scaled up
 ```
 
-Select one — cc-deck moves to the original directory and resumes the session automatically.
+Select one and cc-deck moves to the original directory, resuming the session automatically.
 
 ---
 
@@ -60,7 +60,7 @@ originSessionId: a40fabf4-3d29-4014-a710-dcd444580c9d
 ---
 ```
 
-cc-deck scans `~/.claude/projects/*/memory/*.md` for `type: project` entries with `TODO` in the name, and pins them at the top — linked back to the originating session via `originSessionId`. Select one and you're taken straight back to where the work happened.
+cc-deck scans `~/.claude/projects/*/memory/*.md` for `type: project` entries with `TODO` in the name, and pins them at the top, linked back to the originating session via `originSessionId`. Select one and you're taken straight back to where the work happened.
 
 ```
 [TODO] /tmp/projects/infra/k8s: Watch for OOMKill recurrence over the next 2 weeks
@@ -108,7 +108,7 @@ Sessions with 2+ exchanges are preserved and appear as `[Quick]` in the TUI. Pre
 
 ### 5. Session size management
 
-A long-running session's `.jsonl` can grow to hundreds of MB. Because `claude --resume` loads the whole file into memory, large sessions make startup slow — multi-second hangs, high RAM. The worst offenders are usually old, so they fall outside the recent list and stay invisible.
+A long-running session's `.jsonl` can grow to hundreds of MB. Because `claude --resume` loads the whole file into memory, large sessions make startup slow: multi-second hangs and high RAM. The worst offenders are usually old, so they fall outside the recent list and stay invisible.
 
 cc-deck surfaces oversized sessions in a **"sessions to manage"** group below `[Quick]`, regardless of recency:
 
@@ -121,9 +121,9 @@ cc-deck surfaces oversized sessions in a **"sessions to manage"** group below `[
 
 There are two cleanup levers, both keeping the same session id so resume keeps working:
 
-**`Ctrl-G` — prune snapshots (lossless).** Most bloat is `file-history-snapshot` entries: rewind checkpoints written every turn. They're cumulative — each stores the *full* tracked-file ledger — so they grow quadratically and can be 60% of a file while contributing nothing to the conversation. Pruning keeps the last few and drops the rest; the conversation is untouched. Sessions ≥100MB are pruned automatically on launch (and the original mtime is preserved, so cleaned-up sessions don't jump to the top).
+**`Ctrl-G`: prune snapshots (lossless).** Most bloat is `file-history-snapshot` entries: rewind checkpoints written every turn. They're cumulative (each stores the *full* tracked-file ledger), so they grow quadratically and can be 60% of a file while contributing nothing to the conversation. Pruning keeps the last few and drops the rest; the conversation is untouched. Sessions ≥100MB are pruned automatically on launch (and the original mtime is preserved, so cleaned-up sessions don't jump to the top).
 
-**`Ctrl-E` — trim to recent turns (lossy).** When a session is large because of conversation itself (messages + tool output), this keeps only the last ~10 turns and **gzip-archives the full session to `~/.claude/_archive/` first**. You keep recent context; the complete history is safely stored. The truncated session resumes normally — you pick up right where you left off.
+**`Ctrl-E`: trim to recent turns (lossy).** When a session is large because of conversation itself (messages + tool output), this keeps only the last ~10 turns and **gzip-archives the full session to `~/.claude/_archive/` first**. You keep recent context; the complete history is safely stored. The truncated session resumes normally, so you pick up right where you left off.
 
 In practice a 305MB session pruned to 122MB losslessly, and a conversation-heavy 77MB session trimmed to 0.8MB while preserving the last 10 turns.
 
@@ -152,7 +152,7 @@ In practice a 305MB session pruned to 122MB losslessly, and a conversation-heavy
 The selected mode persists across runs. Set a persistent default with `export CLAUDE_DECK_CMD="claude-api"`.
 
 **Automatic directory switch**  
-Every selection — TODO, PIN, or regular session — runs `cd` to the original working directory before `claude --resume`. You're always in the right directory.
+Every selection, whether TODO, PIN, or a regular session, runs `cd` to the original working directory before `claude --resume`. You're always in the right directory.
 
 **Auto-update**  
 cc-deck checks for updates in the background once every 24 hours. When an update is applied, you'll see a notification on the next run:
@@ -202,7 +202,7 @@ git clone https://github.com/sysnet4admin/cc-deck.git "$HOME\cc-deck"
 ```
 
 Requirements:
-- git (required on all platforms — Windows: `winget install Git.Git`)
+- git (required on all platforms. Windows: `winget install Git.Git`)
 - python3 (required on all platforms)
 - macOS: `brew install fzf`
 - Linux: `sudo apt install fzf` or `sudo dnf install fzf`

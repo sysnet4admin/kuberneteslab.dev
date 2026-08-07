@@ -52,7 +52,7 @@ Gateway API는 Ingress API와 무엇이 다를까요? 가장 큰 차이는 **역
 | Cilium Gateway | cilium | 192.168.1.15 | kube-system |
 | Kong Gateway | kong | 192.168.1.16 | kong |
 | Traefik Gateway | traefik | 192.168.1.17 | traefik |
-| kgateway | kgateway | — | ARM64 미지원, 테스트 제외 |
+| kgateway | kgateway | N/A | ARM64 미지원, 테스트 제외 |
 
 동일 클러스터에서 7개의 Gateway 구현체를 독립적으로 운영했습니다. CNI로 Cilium을 선택한 이유는 Cilium Gateway 테스트를 포함하기 위해서입니다. 다른 CNI를 사용할 경우 Cilium Gateway를 제외한 나머지 6개는 영향 없이 동일하게 동작합니다.
 
@@ -177,7 +177,7 @@ Gateway API는 Ingress API와 무엇이 다를까요? 가장 큰 차이는 **역
 | **Cilium Gateway** | **100%** | 14 | 0 | 3 | **A** |
 | Kong Gateway | 16.7% | 2 | 10 | 5 | F |
 | Traefik Gateway | 8.3% | 1 | 11 | 5 | F |
-| kgateway | N/A | — | — | 17 | — |
+| kgateway | N/A | N/A | N/A | 17 | N/A |
 
 **4개 구현체(NGINX, Envoy, Istio, Cilium)가 100라운드에서 단 한 번도 실패하지 않았습니다.**
 
@@ -251,7 +251,7 @@ Rate Limiting은 **Gateway API 표준 스펙에 포함되어 있지 않습니다
 | **Envoy Gateway** | **네이티브** | [`BackendTrafficPolicy`](https://gateway.envoyproxy.io/docs/tasks/traffic/backend-traffic-policy/rate-limit/) | Gateway API 스타일 선언적 설정, 가장 직관적 |
 | NGINX Gateway Fabric | 제한적 | [`SnippetsFilter`](https://docs.nginx.com/nginx-gateway-fabric/traffic-management/snippets/) | 로우레벨 NGINX 설정 주입 방식 |
 | Istio Gateway | 제한적 | [`EnvoyFilter`](https://istio.io/latest/docs/tasks/policy-enforcement/rate-limit/) | 로우레벨 Envoy 설정 주입 방식 |
-| Cilium Gateway | **미지원** | — | [Issue #33500](https://github.com/cilium/cilium/issues/33500) 진행 중 |
+| Cilium Gateway | **미지원** | N/A | [Issue #33500](https://github.com/cilium/cilium/issues/33500) 진행 중 |
 
 **API 트래픽 제어가 중요하다면 Envoy Gateway의 `BackendTrafficPolicy`가 가장 Gateway API 친화적인 방식입니다.** NGINX와 Istio는 CRD를 통해 구성 가능하지만 전용 Rate Limiting API가 아닌 로우레벨 설정 주입 방식이라 복잡도가 높습니다.
 
@@ -278,5 +278,5 @@ Rate Limiting은 **Gateway API 표준 스펙에 포함되어 있지 않습니다
 
 ## 참고 자료
 
-- [요즘IT 기사: 쿠버네티스 7개 주요 게이트웨이 기술 검증(PoC)하기](https://yozm.wishket.com/magazine/detail/3559/) — 배경과 개념을 포함한 전체 내용
-- [GitHub: gateway-PoC](https://github.com/sysnet4admin/Research/tree/main/gateway-PoC) — 17개 테스트 자동화 스크립트 및 상세 결과
+- [요즘IT 기사: 쿠버네티스 7개 주요 게이트웨이 기술 검증(PoC)하기](https://yozm.wishket.com/magazine/detail/3559/): 배경과 개념을 포함한 전체 내용
+- [GitHub: gateway-PoC](https://github.com/sysnet4admin/Research/tree/main/gateway-PoC): 17개 테스트 자동화 스크립트 및 상세 결과

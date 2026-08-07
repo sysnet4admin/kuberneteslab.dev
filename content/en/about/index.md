@@ -13,7 +13,7 @@ build:
 <img src="/images/profile.jpg" alt="Hoon Jo" class="profile-photo">
 </div>
 <div class="profile-bio">
-<p>CNCF Ambassador, AAIF (Agentic AI Foundation) Ambassador, and Kubestronaut. I apply and teach Kubernetes, Cloud Native, and Agentic AI in the field. When a question has no published data, I measure it myself: what a CNI costs at idle, how well AI agents handle Kubernetes operations, how Gateway API implementations compare. I have written five technical books and spoken at KubeCon EU, NA, China, India, and Japan. KubernetesLab is where those measurements and field notes live.</p>
+<p>CNCF Ambassador, AAIF (Agentic AI Foundation) Ambassador, and Kubestronaut. I apply and teach Kubernetes, Cloud Native, and Agentic AI in the field. When a question has no published data, I measure it myself: what a CNI costs at idle, how well AI agents handle Kubernetes operations, how Gateway API implementations compare. I have written five technical books, spoken at KubeCon EU, NA, China, India, and Japan, and served on the KubeCon + CloudNativeCon program committee several times. KubernetesLab is where those measurements and field notes live.</p>
 </div>
 </div>
 
@@ -39,6 +39,7 @@ build:
 
 - [CNCF Ambassador](https://www.credly.com/badges/4ede0d01-f499-4178-893f-a5cce941412e/public_url)
 - [AAIF (Agentic AI Foundation) Ambassador](https://aaif.io/ambassadors) (2026)
+- [KubeCon + CloudNativeCon Program Committee](https://www.credly.com/users/hoonjo/badges) (multiple editions)
 - [Kubestronaut (CKA + CKAD + CKS + KCNA + KCSA)](https://www.credly.com/badges/31d3b041-71e9-4371-93be-6156f9c89397/public_url)
 - [CCIE Data Center (Cisco)](https://www.credly.com/badges/a735c2f7-7c92-46dc-a0bd-072db6d874dc/public_url)
 - RHCE (Red Hat Certified Engineer)

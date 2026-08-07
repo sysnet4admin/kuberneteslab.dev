@@ -238,7 +238,7 @@ The result is that uptime drops from 168 hours/week to 60 hours/week (about 36%)
 3. Pods restart automatically based on stored Deployment specs (no manual deploy)
 4. Pods become Ready → DB/service reconnects → traffic resumes
 
-Kubernetes resource definitions (etcd) and PV data (Azure Disk) remain intact while the cluster is stopped. Metrics and logs simply show a gap during the stop window — that is collection downtime, not data loss. Transient Pod Not Ready alerts on startup are suppressed using a Grafana Mute Timing.
+Kubernetes resource definitions (etcd) and PV data (Azure Disk) remain intact while the cluster is stopped. Metrics and logs simply show a gap during the stop window, which is collection downtime, not data loss. Transient Pod Not Ready alerts on startup are suppressed using a Grafana Mute Timing.
 
 #### Savings
 

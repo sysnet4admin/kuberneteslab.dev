@@ -5,7 +5,7 @@ draft: false
 tags: ["claude-code", "developer-tools", "productivity", "fzf", "zsh", "bash"]
 categories: ["Tools"]
 description: "여러 프로젝트의 Claude Code 세션이 쌓입니다. cc-deck은 이를 검색 가능한 허브로 만드는 TUI 도구입니다. macOS(zsh), Linux(bash), Windows(PowerShell) 지원. 퍼지 검색, TODO 자동 고정, 수동 북마크, 기록 없는 빠른 질문, 세션 크기 관리, 스마트 재개."
-summary: "Claude Code 세션을 검색하고 관리할 수 있는 다중 플랫폼 TUI 도구 — 퍼지 검색, TODO 자동 고정, 수동 북마크, 빠른 질문, 비대 세션 크기 관리, 스마트 재개."
+summary: "Claude Code 세션을 검색하고 관리할 수 있는 다중 플랫폼 TUI 도구입니다. 퍼지 검색, TODO 자동 고정, 수동 북마크, 빠른 질문, 비대 세션 크기 관리, 스마트 재개를 지원합니다."
 ShowToc: true
 TocOpen: true
 ---
@@ -75,7 +75,7 @@ TODO가 해결되면 `Ctrl-R`을 누릅니다. cc-deck이 메모리 파일 이�
 자주 돌아올 세션을 북마크합니다. 세션으로 이동 후 `Ctrl-K`를 누르면 마지막 입력 내용이 레이블로 저장되어 상단에 고정됩니다.
 
 ```
-[PIN]  /tmp/projects/api-server: 배포 이후 메모리 사용량 계속 증가 — 원인 찾아줘
+[PIN]  /tmp/projects/api-server: 배포 이후 메모리 사용량 계속 증가, 원인 찾아줘
 ```
 
 선택하면 cc-deck이 `/tmp/projects/api-server`로 이동하고 정확히 그 세션을 재개합니다. 핀된 항목에서 `Ctrl-K`를 다시 누르면 해제됩니다. `Ctrl-R`로도 제거할 수 있습니다.
@@ -108,7 +108,7 @@ cc-deck -q
 
 ### 5. 세션 크기 관리
 
-오래 이어간 세션의 `.jsonl`은 수백 MB까지 커집니다. `claude --resume`이 파일 전체를 메모리에 로드하기 때문에, 큰 세션은 시작이 느려집니다 — 수 초간 멈춤, RAM 폭증. 그런데 비대한 세션은 보통 오래된 것이라 최근 목록 밖으로 밀려 잘 보이지도 않습니다.
+오래 이어간 세션의 `.jsonl`은 수백 MB까지 커집니다. `claude --resume`이 파일 전체를 메모리에 로드하기 때문에, 큰 세션은 시작이 느려집니다. 수 초간 멈추고 RAM 사용량이 치솟습니다. 그런데 비대한 세션은 보통 오래된 것이라 최근 목록 밖으로 밀려 잘 보이지도 않습니다.
 
 cc-deck은 이런 비대 세션을 최근 사용 여부와 무관하게 `[Quick]` 아래 **"sessions to manage"** 그룹에 노출합니다:
 
@@ -121,9 +121,9 @@ cc-deck은 이런 비대 세션을 최근 사용 여부와 무관하게 `[Quick]
 
 정리 방법은 두 가지이며, 둘 다 세션 ID를 유지해 resume이 그대로 됩니다:
 
-**`Ctrl-G` — 스냅샷 정리 (무손실).** 비대의 주범은 대개 `file-history-snapshot`(매 턴 기록되는 rewind 체크포인트)입니다. 누적식이라 매번 *전체* 추적-파일 장부를 다시 적기 때문에 제곱으로 커지고, 한 파일의 60%를 차지하면서도 대화엔 전혀 기여하지 않습니다. 마지막 몇 개만 남기고 제거하며 대화는 그대로입니다. 100MB↑ 세션은 실행 시 자동으로도 정리되고, 원본 수정 시각을 보존해 정리된 세션이 목록 위로 튀지 않습니다.
+**`Ctrl-G`: 스냅샷 정리 (무손실).** 비대의 주범은 대개 `file-history-snapshot`(매 턴 기록되는 rewind 체크포인트)입니다. 누적식이라 매번 *전체* 추적-파일 장부를 다시 적기 때문에 제곱으로 커지고, 한 파일의 60%를 차지하면서도 대화엔 전혀 기여하지 않습니다. 마지막 몇 개만 남기고 제거하며 대화는 그대로입니다. 100MB↑ 세션은 실행 시 자동으로도 정리되고, 원본 수정 시각을 보존해 정리된 세션이 목록 위로 튀지 않습니다.
 
-**`Ctrl-E` — 최근 턴만 남기기 (손실).** 대화 자체로 큰 세션일 때, 최근 ~10턴만 남기고 **전체 세션을 `~/.claude/_archive/`에 gzip으로 먼저 보관**합니다. 최근 흐름은 유지되고 전체 기록은 안전하게 저장됩니다. 정리된 세션은 정상적으로 resume되어 하던 곳에서 바로 이어집니다.
+**`Ctrl-E`: 최근 턴만 남기기 (손실).** 대화 자체로 큰 세션일 때, 최근 ~10턴만 남기고 **전체 세션을 `~/.claude/_archive/`에 gzip으로 먼저 보관**합니다. 최근 흐름은 유지되고 전체 기록은 안전하게 저장됩니다. 정리된 세션은 정상적으로 resume되어 하던 곳에서 바로 이어집니다.
 
 실제로 305MB 세션이 무손실로 122MB가 되고, 대화-주범 77MB 세션이 최근 10턴을 유지하며 0.8MB로 줄었습니다.
 
@@ -202,7 +202,7 @@ git clone https://github.com/sysnet4admin/cc-deck.git "$HOME\cc-deck"
 ```
 
 사전 요구사항:
-- git (모든 플랫폼 필수 — Windows: `winget install Git.Git`)
+- git (모든 플랫폼 필수. Windows: `winget install Git.Git`)
 - python3 (모든 플랫폼 필수)
 - macOS: `brew install fzf`
 - Linux: `sudo apt install fzf` 또는 `sudo dnf install fzf`

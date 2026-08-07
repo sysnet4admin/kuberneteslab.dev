@@ -4,7 +4,7 @@ date: 2026-04-23
 draft: false
 tags: ["kubernetes", "finops", "eks", "migration", "weighted-routing", "sre"]
 categories: ["Kubernetes", "FinOps"]
-description: "A record of reducing infrastructure costs by ~49% through a full rebuild of an EKS cluster from V1 to V2 — from ~$6,600/month to ~$3,360/month, saving ~$38,880/year. Seven patterns that resolved accumulated debt that couldn't be unwound through in-place downsizing alone."
+description: "A record of reducing infrastructure costs by ~49% through a full rebuild of an EKS cluster from V1 to V2, going from ~$6,600/month to ~$3,360/month and saving ~$38,880/year. Seven patterns that resolved accumulated debt that couldn't be unwound through in-place downsizing alone."
 summary: "~$3,240/month, ~$38,880/year saved (~49%). Consolidated EKS 1.32/1.33 to 1.35, ArgoCD v1 to v3, and Kafka Zookeeper to KRaft in one shot while reducing nodes from 25 to 15. Achieved fully zero-downtime cutover with Route53 Weighted Routing."
 ShowToc: true
 TocOpen: true
@@ -59,9 +59,9 @@ The production environment runs ~60 ArgoCD apps, 10+ Helm releases, Kafka with 3
 
 All six patterns in the small cluster post involved shrinking instances or right-sizing resources while the existing cluster stayed in place. In this environment, a different category of debt had accumulated that couldn't be reached the same way.
 
-**Version debt.** Moving from EKS 1.32 to 1.35 requires four minor version jumps. EKS only allows one minor version upgrade at a time — 10–20 minutes per control plane hop, more than an hour per step once node pool replacement is included. On top of that, ArgoCD v1 → v3 (two major versions), Loki 2.x → 3.x, Grafana 10 → 12, and Strimzi 0.46 (KRaft-only) were all needed simultaneously.
+**Version debt.** Moving from EKS 1.32 to 1.35 requires four minor version jumps. EKS only allows one minor version upgrade at a time, which means 10–20 minutes per control plane hop and more than an hour per step once node pool replacement is included. On top of that, ArgoCD v1 → v3 (two major versions), Loki 2.x → 3.x, Grafana 10 → 12, and Strimzi 0.46 (KRaft-only) were all needed simultaneously.
 
-**Node group debt.** PROD V1 had nine node groups mixing four instance types (m6i.xlarge, m6i.2xlarge, m7i.xlarge, and one other) — each added at different points in time. Role labels and instance specs had drifted out of alignment, making right-sizing impossible without restructuring first.
+**Node group debt.** PROD V1 had nine node groups mixing four instance types (m6i.xlarge, m6i.2xlarge, m7i.xlarge, and one other), each added at different points in time. Role labels and instance specs had drifted out of alignment, making right-sizing impossible without restructuring first.
 
 **Data backend debt.** Migrating Redis 7.x to Valkey 8.x and moving Kafka from Zookeeper to KRaft mode within the same cluster would have required running both data migrations and mode transitions together, with a rollback scope that was far too large.
 
@@ -88,7 +88,7 @@ With the existing cluster left untouched, a separate V2 cluster was built and th
 | AWS LB Controller | v2.x | v3.0.x |
 | Cluster Autoscaler | v1.x | v1.35.x |
 
-Doing major version upgrades in a new cluster rather than stepping through them in place is safer and faster for both EKS and ArgoCD. Strimzi 0.46 being KRaft-only made the Kafka migration a natural inflection point — the new cluster was the obvious time to do it.
+Doing major version upgrades in a new cluster rather than stepping through them in place is safer and faster for both EKS and ArgoCD. Strimzi 0.46 being KRaft-only made the Kafka migration a natural inflection point, and the new cluster was the obvious time to do it.
 
 ### 2. Node Group Consolidation
 
@@ -218,7 +218,7 @@ Specifying two AZ subnets explicitly when creating the node group with eksctl gu
 
 #### EFS CSI Controller Resource Reduction
 
-The EFS CSI Controller only handles the dynamic provisioning API — actual NFS mounts are handled by the node DaemonSet — so it's safe to significantly reduce its resources.
+The EFS CSI Controller only handles the dynamic provisioning API, since actual NFS mounts are handled by the node DaemonSet, so it's safe to significantly reduce its resources.
 
 - Requests: CPU 100m → 50m, MEM 256Mi → 64Mi
 - Limits: CPU 200m, MEM 256Mi
@@ -311,7 +311,7 @@ Route53 record TTL was set to 60 seconds, with natural drain waited per client t
 | API client | 5 ~ 10 min |
 | Long-running worker | 30 ~ 60 min |
 
-Long-running workers take the longest due to Keep-Alive and connection pool reuse — they require separate monitoring.
+Long-running workers take the longest due to Keep-Alive and connection pool reuse, so they require separate monitoring.
 
 #### Debezium Dual Capture
 
@@ -396,7 +396,7 @@ Non-cost outcomes:
 
 6. **Observability has a cost.** As series cardinality grows, memory, S3, and query costs all increase together. Controlling ingest at the ServiceMonitor level via whitelist is more effective than reducing after the fact.
 
-7. **The unit of zero-downtime changes at scale.** In small clusters, zero-downtime means `maxSurge: 1 / maxUnavailable: 0` at the pod level. At large scale, it means shifting traffic itself incrementally via Route53 weights — along with data consistency mechanisms like Debezium dual capture and consumer idempotency.
+7. **The unit of zero-downtime changes at scale.** In small clusters, zero-downtime means `maxSurge: 1 / maxUnavailable: 0` at the pod level. At large scale, it means shifting traffic itself incrementally via Route53 weights, along with data consistency mechanisms like Debezium dual capture and consumer idempotency.
 
 ## Closing
 

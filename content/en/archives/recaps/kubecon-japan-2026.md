@@ -35,9 +35,10 @@ are in the repository.
 On Wednesday I emceed both Lightning Talk blocks in room 313+314.
 [Project Lightning Talks](https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/program/schedule/?all-sessions=project-opportunities&date=wed-jul-29&engage-with-projects=project-lightning-talks)
 ran 11:30 to 12:40 with nine CNCF projects, five minutes each: Argo CD, k0s,
-OpenTelemetry, CoHDI, Kairos, Longhorn, Spiderpool, youki, and Lima. Main Event
-Lightning Talks followed at 14:50 with four community stories, also five minutes
-each. Thirteen speakers in total.
+OpenTelemetry, CoHDI, Kairos, Longhorn, Spiderpool, youki, and Lima.
+[Main Event Lightning Talks](https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/program/schedule/?all-sessions=lightning-talks)
+followed at 14:50 with four community stories, also five minutes each. Thirteen
+speakers in total.
 
 Keeping that pace while giving every speaker their moment was harder than my own
 talk, and I would do it again tomorrow.

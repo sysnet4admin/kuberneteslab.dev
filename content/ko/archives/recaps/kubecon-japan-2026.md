@@ -35,8 +35,8 @@ in 5 Minutes"를 발표했습니다. Gateway API 구현체 7종을 같은 조건
 [Project Lightning Talks](https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/program/schedule/?all-sessions=project-opportunities&date=wed-jul-29&engage-with-projects=project-lightning-talks)는
 11시 30분부터 12시 40분까지, CNCF 프로젝트 9개가 각 5분씩 올라왔습니다. Argo CD,
 k0s, OpenTelemetry, CoHDI, Kairos, Longhorn, Spiderpool, youki, Lima 순서였습니다.
-이어서 Main Event Lightning Talks는 14시 50분부터 커뮤니티 이야기 4개를 역시 5분씩
-다뤘습니다. 모두 13명입니다.
+이어서 [Main Event Lightning Talks](https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/program/schedule/?all-sessions=lightning-talks)는
+14시 50분부터 커뮤니티 이야기 4개를 역시 5분씩 다뤘습니다. 모두 13명입니다.
 
 5분이라는 간격을 지키면서 발표자마다 자기 몫의 순간을 갖게 하는 일이 제 발표보다
 어려웠습니다. 그래도 내일 또 하라고 하면 하겠습니다.

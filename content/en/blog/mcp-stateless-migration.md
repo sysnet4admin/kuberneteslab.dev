@@ -1,7 +1,7 @@
 ---
 title: "Port an MCP server to the stateless spec on Kubernetes: a step-by-step migration"
-date: 2026-08-10
-draft: true
+date: 2026-08-18
+draft: false
 tags: ["mcp", "model-context-protocol", "stateless", "agentgateway", "aaif", "migration", "kubernetes"]
 categories: ["Kubernetes"]
 description: "A walkthrough of migrating a session-based MCP server to the 2026-07-28 stateless spec on Kubernetes, with verbatim payloads, the manifests, and numbers from scale-out and pod-replacement runs."
@@ -22,6 +22,10 @@ patterns, pod replacement, or session-loss recovery. This walkthrough is the
 operations companion to those: what the migration looks like end to end, with
 the payloads, the manifests, and the numbers from running it.
 
+There is no forced cutover date, and dual-era support is the SDK default, so
+staying on the old spec is a legitimate choice. This is the walkthrough for
+after you have decided to move.
+
 Everything below is reproducible from the harness:
 https://github.com/sysnet4admin/Research/tree/main/mcp-migration
 
@@ -41,10 +45,17 @@ https://github.com/sysnet4admin/Research/tree/main/mcp-migration
   outside the cluster.
 
 ```sh
+docker info > /dev/null       # the daemon has to be up before anything else
 ./images/build_and_load.sh    # build both images, import into containerd
 ./k8s/deploy.sh               # namespace, code ConfigMap, Redis, both servers
 kubectl --context <ctx> -n mcp-pilot get svc
 ```
+
+That first line is not decoration. On a machine where the Docker daemon comes
+from something you start by hand (colima, in my case) it is easy to restore a
+snapshot, have the build fail, and deploy anyway; the pods then sit on
+`ErrImageNeverPull` because there is no registry to fall back to. I lost an
+unattended run to exactly that.
 
 `deploy.sh` supplies the new-spec server's code as a ConfigMap mounted at
 `/app` rather than baking it into the image, so the image only carries
@@ -156,11 +167,18 @@ HTTP/1.1 200
 ```
 
 `resultType` and the `serverInfo` in `_meta` are new requirements in this
-revision, and the SDK fills them in. I ported this server against a beta SDK in
-July and it ran unmodified on stable 2.0.0, including the changes that looked
-risky on paper: error codes renumbered, `resultType` required, `ttlMs` and
-`cacheScope` added to list results. If your server is built on an SDK rather
-than hand-rolled HTTP, this step is mostly a version bump.
+revision, and the SDK fills them in, as it does `ttlMs` and `cacheScope` on
+list results. Error codes were renumbered too, but that only matters if you
+read them; this harness calls tools and never inspects the code. I ported this
+server against a beta SDK in July and it ran unmodified on stable 2.0.0. If
+your server is built on an SDK rather than hand-rolled HTTP, this step is
+mostly a version bump.
+
+One scoping note before the manifests. This walkthrough covers session state,
+which is the part every session-based server has to deal with. Two other
+migration items are out of scope here: elicitation has to be rewritten to the
+MRTR pattern, and long-running work moves to the Tasks extension, which the
+Python SDK 2.0.0 does not implement yet.
 
 Deploy it behind a Service. Nothing here is session-aware:
 
@@ -353,26 +371,37 @@ python3 harness/loadgen.py --url http://<LB_IP>/mcp \
   --out cell.json
 ```
 
-Same workload, same cluster, 200 rps offered for 30 seconds, three runs per
-cell. Throughput below is the median of the three; loss counts are summed over
-them:
+Same workload, same cluster, 200 rps offered for 30 seconds, ten to
+twenty-two runs per cell. Throughput below
+is the median with the observed range in parentheses; loss counts are summed:
 
 | Setup | 1 replica | 2 replicas | 4 replicas |
 |---|---|---|---|
-| Old spec, new connection per call | 200.0 rps | 98.9 rps | 38.3 rps |
-| Old spec, connection reuse | 200.0 rps | 181.4 rps | 119.2 rps |
-| New spec | 200.0 rps | 200.0 rps | 200.0 rps |
+| Old spec, new connection per call | 199.9 | 116.5 (92 to 155) | 33.2 (22 to 57) |
+| Old spec, connection reuse | 200.0 | 168.9 (136 to 193) | 130.8 (96 to 191) |
+| New spec, either mode | 200.0 | 200.0 | 200.0 |
 
-The old spec loses throughput as replicas are added, down to 38.3 rps with
-8,695 session losses out of 18,000 requests. Connection reuse softens it and
-does not remove it; that row also varies run to run at four replicas
-(154, 107, 119 rps), so read its direction rather than its exact value. The new
-spec is unchanged at every replica count, zero losses, p50 steady at 6.2ms.
+Two things stand out. The old spec loses throughput as replicas are added,
+down to a median 33.2 rps with 37,844 session losses out of 78,000 requests,
+and connection reuse softens that without removing it. Less obvious until you
+repeat the runs: every old-spec cell above one replica is also
+*unpredictable*. The four-replica cells landed anywhere from 22 to 57 rps and
+from 96 to 191 rps depending on the run, because the outcome depends on which
+pods happen to hold the sessions your connections happen to reach.
+
+The new spec held a median 200.0 rps across all 69 runs, the lowest at
+199.7, at every replica count and in both connection modes, with zero losses
+and p50 steady at 6.2ms. That is the
+practical claim behind the revision: with no session to miss, plain
+round-robin across replicas works, sticky sessions stop being a requirement,
+and the throughput you get stops depending on luck.
 
 Two things about this table. It comes from a three-node VirtualBox cluster, so
 the absolute numbers do not extrapolate. And 200 rps is deliberately below
-saturation, roughly half the ceiling observed while piloting the harness. What
-transfers to your cluster is the shape, not the values.
+saturation: pushing the new spec harder, it tracked the target exactly to
+300 rps and fell behind from 400 (324.6 achieved), still with zero losses. So
+the offered rate here is about two thirds of what this cluster can serve, and
+what transfers to yours is the shape, not the values.
 
 Then kill a pod during a run, which is what a rollout does anyway:
 
@@ -382,18 +411,44 @@ kubectl --context <ctx> -n mcp-pilot delete pod \
     -o jsonpath='{.items[0].metadata.name}')
 ```
 
-Across three 60-second runs at 100 rps with a pod killed at t=20s, the old spec
-lost 667 sessions in total (421, 155, and 91 in the three runs) and the new spec
-lost nothing in any of them. The two cells are not identically configured: the
-old-spec cell echoes over reused connections, which is its most favourable mode,
-while the new-spec cell exercises the HMAC counter with a new connection per
-call. All six kills were verified to have actually landed.
+Across six 60-second runs at 100 rps with a pod killed at t=20s, the old
+spec lost 1,922 requests to session loss, anywhere from 59 to 1,072 per run
+depending on how many sessions the killed pod happened to hold. The new spec
+went through three such kills losing nothing. The two cells are not identically
+configured: the old-spec cell echoes over reused connections, which is its
+most favourable mode, while the new-spec cell exercises the HMAC counter with
+a new connection per call. Every kill was verified to have actually landed.
+
+The handle designs split the same way under pod replacement: the pod-memory
+variant lost 13,942 handles across five kills, because a dying pod takes its
+state with it, while HMAC and Redis lost none. Killing Redis itself mid-run
+cost 24 losses at 91.7 rps achieved; small, because the pod restarts quickly,
+but external storage is a dependency you now have to keep alive.
 
 ## If you cannot migrate yet
 
-A gateway that terminates sessions and routes them consistently keeps an
-old-spec server working while you wait. With agentgateway v1.4.1, the backend
-declares the routing mode:
+Old-spec servers keep working on their own; clients and SDKs fall back when
+they meet one. What breaks is running them at more than one replica. Two
+bridges fix that while you wait, and both removed the losses in my runs. They
+charge different prices.
+
+The cheap one is the Service's own sticky sessions:
+
+```sh
+kubectl --context <ctx> -n mcp-pilot patch svc mcp-a -p \
+  '{"spec":{"sessionAffinity":"ClientIP"}}'
+```
+
+With that single field, the four-replica cell went from a 26.4 rps median
+with 13,760 losses to 200.0 rps with zero, and pod-replacement losses fell
+from 2,148 to 88. Before you copy it, look at how it won: my load generator
+is one host, so one client IP, and ClientIP affinity pins per IP. All traffic
+went to a single pod. Perfect session survival, zero load balancing. A real
+client fleet has many IPs, so the effect will be partial, and one chatty
+client still hammers one pod.
+
+The heavier bridge is a session-terminating gateway. With agentgateway
+v1.4.1, the backend declares the routing mode:
 
 ```yaml
 apiVersion: agentgateway.dev/v1alpha1
@@ -415,23 +470,30 @@ spec:
 The `selector` is required for stateful routing; a bare target name is not
 enough for the gateway to find the backing Service.
 
-Through the gateway, the same old-spec server at four replicas kept every
-request served, with zero session losses, against 8,695 losses on the direct
-path.
-The absolute throughput of the two paths is not comparable, because the gateway
-control plane and proxy consume worker CPU and those cells run only one server
-at four replicas at a time. What the comparison answers is whether session
-routing removes the losses, and it does.
+Through the gateway, the old-spec server ran scale-out at four replicas with
+zero session losses, and pod replacement ended with 20 failures across five
+runs, 4 per run; the same-day direct-path control lost 1,255 across three
+runs, 418 per run. The gateway terminates the session and re-pins it to a surviving pod,
+so the client never meets the pod that died. (Absolute throughput between the
+two paths is not comparable, because the gateway consumes worker CPU and the
+scale-out cells ran one server at a time; the pod-replacement comparison ran
+back to back under identical conditions.)
 
-Be clear about what this buys. The session state did not disappear, it moved
-into the gateway, which becomes the component whose scaling and replacement you
-now think about. The new spec posts the same numbers with none of that
-machinery.
+Two honest caveats. First, these numbers come from a client that
+re-initializes on 5xx: behind the gateway a lost session surfaces as a 5xx
+rather than the direct path's 400, and my harness originally did not recover
+from 5xx, which made the gateway look dramatically worse until I found the
+bug and remeasured. Check what your client does with a 5xx before you trust
+any gateway benchmark, including this one. Second, the session-keeping burden
+did not disappear; it moved into the gateway, which makes the gateway's own
+failure and replacement the next thing you think about. I did not kill the
+gateway in this study. The new spec posts the same numbers with neither
+device.
 
-One version note if you tried this early: agentgateway v1.4.0-alpha.1 mangled
-`params._meta`, so new-spec traffic could not pass through it end to end. That
-was my blocker in July. v1.4.1, released the day after the spec, passes it
-intact.
+One version note if you tried this early: agentgateway v1.4.0-alpha.1, a July
+prerelease, mangled `params._meta`, so new-spec traffic could not pass through
+it end to end. That was my blocker at the time. Everything above was measured
+on v1.4.1, released right after the spec, which passes it intact.
 
 ## Two traps worth writing down
 
@@ -467,8 +529,10 @@ snapshot, then build and load images, then deploy.
 5. Verify at two or more replicas with a new connection per call. One replica
    proves nothing.
 6. Kill a pod during a run and count what you lose.
-7. If you need a bridge, use gateway session routing knowingly, and plan for
-   the gateway's own redundancy.
+7. If you need a bridge, sticky sessions and gateway session routing both
+   work. Know the price of each: affinity gives up load balancing, and a
+   gateway takes over the session-keeping burden, so plan for its own
+   redundancy.
 
 The harness, the ported server with all three handle designs, the captured
 payloads, and the full measurement tables are in the repository. The load

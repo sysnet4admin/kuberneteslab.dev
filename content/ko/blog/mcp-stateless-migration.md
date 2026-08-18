@@ -5,7 +5,7 @@ draft: false
 tags: ["mcp", "model-context-protocol", "stateless", "agentgateway", "aaif", "migration", "kubernetes"]
 categories: ["Kubernetes"]
 description: "MCP 2026-07-28 스테이트리스 개정으로 세션 기반 서버를 옮기는 과정을 쿠버네티스에서 처음부터 끝까지 따라갑니다. 실제 요청과 응답, 매니페스트, 그리고 레플리카를 늘리고 파드를 죽여 가며 잰 수치를 함께 싣습니다."
-summary: "전송 계층을 v2 SDK로 옮기는 일은 대체로 버전만 올리면 됩니다. 진짜 마이그레이션은 세션이 들고 있던 상태를 핸들로 어디에 둘지 정하는 데 있고 파드 메모리에 두면 같은 실패가 HTTP 200 뒤에 숨어 되돌아옵니다."
+summary: "전송 계층을 v2 SDK로 옮기는 일은 대체로 버전만 올리면 됩니다. 진짜 마이그레이션은 세션이 들고 있던 상태를 핸들로 어디에 둘지 정하는 데 있고 파드 메모리에 두면 같은 실패가 HTTP 200 안에 도구 오류로 다시 나타납니다."
 ShowToc: true
 TocOpen: true
 ---

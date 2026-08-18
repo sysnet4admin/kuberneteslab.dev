@@ -63,7 +63,7 @@ dependencies. If you follow the manifests by hand instead, that ConfigMap and
 its volume mount are the step people miss. The images are side-loaded into
 containerd rather than pushed to a registry, so `imagePullPolicy: Never`
 applies and nothing can be pulled as a fallback. Load them **after** any cluster
-reset; more on that at the end.
+reset (a snapshot restore); more on that at the end.
 
 ## Step 1: record what the old spec does before you change it
 
@@ -113,7 +113,7 @@ HTTP/1.1 400
 
 Nothing is broken. kube-proxy balances per connection, the session lives in one
 pod's memory, and this connection reached a different pod. Every reconnect is a
-fresh draw, and rollouts, autoscaling, and node drains all force reconnects.
+fresh draw, and rollouts, node drains, and autoscaler scale-in all force reconnects.
 
 ## Step 2: port the transport
 
@@ -134,8 +134,9 @@ def echo(message: str) -> str:
 
 # Reaching the server by LoadBalancer IP means the Host header is an IP that
 # the SDK's DNS-rebinding guard rejects, and allowed_hosts has no wildcard for
-# a floating IP. Turning the guard off is the only available route on a private
-# lab network; do not do this on a routable one.
+# a floating IP. Pinning the IP and listing it in allowed_hosts would keep the
+# guard on; turning it off is simply the shortest path on a private lab network.
+# Do not do this on a routable one.
 security = TransportSecuritySettings(enable_dns_rebinding_protection=False)
 app = mcp.streamable_http_app(transport_security=security)
 ```

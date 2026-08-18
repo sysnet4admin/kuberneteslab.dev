@@ -5,7 +5,7 @@ draft: false
 tags: ["mcp", "model-context-protocol", "stateless", "agentgateway", "aaif", "migration", "kubernetes"]
 categories: ["Kubernetes"]
 description: "MCP 2026-07-28 스테이트리스 개정으로 세션 기반 서버를 옮기는 과정을 쿠버네티스에서 처음부터 끝까지 따라갑니다. 실제 요청과 응답, 매니페스트, 그리고 레플리카를 늘리고 파드를 죽여 가며 잰 수치를 함께 싣습니다."
-summary: "전송 계층을 v2 SDK로 옮기는 일은 대체로 버전만 올리면 됩니다. 진짜 마이그레이션은 세션이 들고 있던 상태를 핸들로 어디에 둘지 정하는 데 있고, 파드 메모리에 두면 같은 실패가 HTTP 200 뒤에 숨어 되돌아옵니다."
+summary: "전송 계층을 v2 SDK로 옮기는 일은 대체로 버전만 올리면 됩니다. 진짜 마이그레이션은 세션이 들고 있던 상태를 핸들로 어디에 둘지 정하는 데 있고 파드 메모리에 두면 같은 실패가 HTTP 200 뒤에 숨어 되돌아옵니다."
 ShowToc: true
 TocOpen: true
 ---
@@ -57,7 +57,7 @@ kubectl --context <ctx> -n mcp-pilot get svc
 만들어 `/app`에 마운트합니다. 이미지에는 의존성만 들어 있습니다. 매니페스트를 손으로
 따라 적용한다면 이 컨피그맵과 볼륨 마운트가 빠뜨리기 쉬운 부분입니다. 이미지는
 레지스트리에 올리지 않고 containerd에 직접 적재하므로 `imagePullPolicy: Never`가
-걸려 있고 받아 올 곳이 없습니다. 클러스터를 초기화했다면 그 **뒤에** 적재해야
+걸려 있고 받아 올 곳이 없습니다. 클러스터를 초기화(스냅샷 복원)했다면 그 **뒤에** 적재해야
 합니다. 이유는 글 끝에서 다룹니다.
 
 ## 1단계: 바꾸기 전에 구 스펙이 무엇을 하는지 기록합니다
@@ -106,7 +106,7 @@ HTTP/1.1 400
 그렇다면 왜 이런 응답이 왔을까요? 고장이 난 것이 아닙니다. kube-proxy는 연결
 단위로 분배하고 세션은 파드 하나의
 메모리에 있는데, 이 연결이 다른 파드로 전달된 것입니다. 재연결은 매번 새로
-뽑는 것과 같고 롤아웃과 오토스케일링, 노드 드레인이 모두 재연결을 일으킵니다.
+뽑는 것과 같고 롤아웃과 노드 드레인, 오토스케일링의 축소가 모두 재연결을 일으킵니다.
 
 ## 2단계: 전송 계층을 옮깁니다
 
@@ -127,7 +127,8 @@ def echo(message: str) -> str:
 
 # LoadBalancer IP로 접근하면 Host 헤더가 IP라서 SDK의 DNS 리바인딩 보호가
 # 거절하는데, allowed_hosts는 유동 IP를 위한 와일드카드를 지원하지 않는다.
-# 사설망에서는 보호를 끄는 것이 유일한 방법이다. 공인망에서는 이렇게 하면 안 된다.
+# IP를 고정해 allowed_hosts에 등록하면 보호를 켠 채 통과할 수 있지만 사설
+# 측정망에서는 끄는 것이 가장 간단하다. 공인망에서는 이렇게 하면 안 된다.
 security = TransportSecuritySettings(enable_dns_rebinding_protection=False)
 app = mcp.streamable_http_app(transport_security=security)
 ```

@@ -115,6 +115,18 @@ Nothing is broken. kube-proxy balances per connection, the session lives in one
 pod's memory, and this connection reached a different pod. Every reconnect is a
 fresh draw, and rollouts, node drains, and autoscaler scale-in all force reconnects.
 
+If you know Kubernetes well, everything so far may read as something you
+already knew. Pods get evicted and rescheduled onto other nodes, so keeping
+state inside a pod goes against how Kubernetes is meant to be run, and the
+old spec sat awkwardly with that by holding sessions in the protocol layer.
+So what this post measures is not whether the move points the right way but
+what staying actually costs: how much throughput drops, how it fails, and
+what you have to decide again once you have moved. A StatefulSet may come to
+mind here, but it solves a different problem. It pins pod names and attaches
+a volume per pod, and it does not change which pod the Service sends a
+request to. An in-memory session is not written to that volume either, so it
+goes away with the pod all the same.
+
 ## Step 2: port the transport
 
 Build the server on the v2 SDK and drop the session plumbing. This is the whole

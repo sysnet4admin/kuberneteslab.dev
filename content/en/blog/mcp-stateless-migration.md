@@ -538,7 +538,7 @@ snapshot, then build and load images, then deploy.
 2. Port the transport by moving to the v2 SDK. Expect this to be small.
 3. Find every piece of state the session used to hold. This is the real work.
 4. Choose per state: sign it into the handle with a key shared by every
-   replica, or put it in shared storage. Never leave it in pod memory.
+   replica, or put it in shared storage. Never leave it in pod memory. It is the same rule Kubernetes workloads already follow by keeping sessions in an external store.
 5. Verify at two or more replicas with a new connection per call. One replica
    proves nothing.
 6. Kill a pod during a run and count what you lose.

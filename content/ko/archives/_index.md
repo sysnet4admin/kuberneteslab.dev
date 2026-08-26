@@ -15,7 +15,8 @@ build:
 | 2026-08-13 | MCP Dev Summit Seoul | AAIF Ambassador AMA: Building the Agentic Future Through Community Contribution (패널) | [sched](https://mcpseoul2026.sched.com/event/2QScw) |
 | 2026-08-13 | MCP Dev Summit Seoul | 북 사이닝: AI 시대에 개발자가 알아야 할 인프라 구성 배포 with 클로드 코드 | [sched](https://mcpseoul2026.sched.com/event/2TTsf) |
 | 2026-08-21 | OCP Korea Tech Day | GitAIOps: AI 에이전트에게 지워지지 않는 기억을 주는 3층 구조 | [event](https://www.ocpkorea.com/) |
-| 2026-10-07 | 오픈소스 테크데이 (ETRI) | MCP, 7월 28일 이전과 이후: 프로토콜의 과거, 현재, 그리고 준비할 미래 | |
+| 2026-09-09 | AAIF Seoul Chapter | AI야 GitOps를 만나볼래? | [event](https://luma.com/sa692amj) |
+| 2026-10-07 | 오픈소스 테크데이 (ETRI) | MCP, 7월 28일 이전과 이후: 프로토콜의 과거, 현재, 그리고 준비할 미래 | [event](https://ostday.kr/) |
 | 2026-11-10 | KubeCon NA (Salt Lake City) | How Far Are Open-Source LLMs from Running Real Kubernetes Operations? A 10-Scenario Benchmark | [schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/?id=1246259) |
 
 ## 발표 이력

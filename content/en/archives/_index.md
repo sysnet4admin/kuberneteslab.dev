@@ -15,7 +15,8 @@ build:
 | 2026-08-13 | MCP Dev Summit Seoul | AAIF Ambassador AMA: Building the Agentic Future Through Community Contribution (panel) | [sched](https://mcpseoul2026.sched.com/event/2QScw) |
 | 2026-08-13 | MCP Dev Summit Seoul | Book Signing: AI Agent-Driven Infrastructure with Claude Code | [sched](https://mcpseoul2026.sched.com/event/2TTsf) |
 | 2026-08-21 | OCP Korea Tech Day | GitAIOps: A Three-Layer Structure That Gives AI Agents Lasting Memory | [event](https://www.ocpkorea.com/) |
-| 2026-10-07 | Open Source Tech Day (ETRI) | MCP, Before and After July 28: The Protocol's Past, Present, and the Future to Prepare For | |
+| 2026-09-09 | AAIF Seoul Chapter | Hey AI, Want to Meet GitOps? | [event](https://luma.com/sa692amj) |
+| 2026-10-07 | Open Source Tech Day (ETRI) | MCP, Before and After July 28: The Protocol's Past, Present, and the Future to Prepare For | [event](https://ostday.kr/) |
 | 2026-11-10 | KubeCon NA (Salt Lake City) | How Far Are Open-Source LLMs from Running Real Kubernetes Operations? A 10-Scenario Benchmark | [schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/?id=1246259) |
 
 ## Talks

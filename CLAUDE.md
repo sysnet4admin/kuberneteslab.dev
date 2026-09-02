@@ -43,6 +43,37 @@ git log --all -E --oneline --grep="$PRIV"   # 커밋 메시지
   이 저장소만의 예외임에 유의한다.
 - AI스러운 문장 4패턴(영어 직역체, 요약과 단언 반복, 평균 수렴 구조, 선언문 남용)을 피한다.
   상세 규칙은 전역 설정에서 불러온다.
+- **블로그 글 본문과 About 소개 문단은 저자 명의 글이다.** 전역 규칙(어시스턴트
+  레지스터)이 아니라 저자 문체 시트를 따른다. 쓰기 전에 `author-style` 스킬을 부른다.
+  Archives의 표와 목록, README, 이 파일은 저자 명의 글이 아니므로 해당하지 않는다.
+
+## 행사 참관 후기 (recaps, 2026-08-07 신설)
+
+`content/{ko,en}/archives/recaps/`에 행사 단위로 쓴다. CNCF 트래블 펀딩 지원서에
+인용할 수 있는 영구 URL을 만드는 것이 목적이라 LinkedIn 후기를 여기로 옮겨 적는다.
+
+- `archives`는 branch bundle(`_index.md`)이고 recaps가 그 하위 섹션이다.
+  상단 메뉴에는 넣지 않는다. 진입은 Archives 발표 이력 표의 `[후기]` 링크로 한다.
+- `_index.md`에 `type: "recaps"`를 두면 `layouts/recaps/list.html`이 잡힌다.
+  목록은 행사명과 일정만 최신순으로 보여준다.
+- front matter는 `archetypes/recaps.md` 참조. `event`, `city`, `event_dates`,
+  `source_url`(원문 링크)을 채운다. `date`는 행사 날짜로 두면 정렬이 곧 행사 최신순이다.
+- tags와 categories는 넣지 않는다. 넣으면 `/tags/`에서 블로그 글과 섞인다.
+- 사진은 `static/images/recaps/<슬러그>/`에 두고 ko/en이 공유한다. 대표 사진은
+  `cover`로 걸고 `cover.caption`까지 채운다(공유 시 미리보기 카드에 쓰인다).
+
+### 그림 캡션
+
+`layouts/_default/_markup/render-image.html`이 마크다운 title 자리를 캡션으로 만들고
+`[그림 N]` 번호를 자동으로 붙인다. 번호는 Hugo의 이미지 순번이라 사진을 넣고 빼도
+손댈 필요가 없다. 라벨 문구는 `i18n/{ko,en}.yaml`의 `figure_label`에 있다.
+
+```markdown
+![대체 텍스트](/images/... "화면에 보이는 캡션")
+```
+
+title이 없으면 캡션도 번호도 안 붙고 그냥 `<img>`로 나간다. 그래서 기존 블로그 글은
+영향을 받지 않는다. **설명 문단이 먼저 오고 그림이 뒤에 온다.** 예외를 두지 않는다.
 
 ## 발행 흐름
 

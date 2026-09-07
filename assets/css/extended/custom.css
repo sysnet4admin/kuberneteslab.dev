@@ -31,15 +31,31 @@
     font-size: 0.92em;
 }
 
-/* 인용문(노트 상자로도 씀): 옅은 배경으로 본문과 구분 */
+/* 인용문 */
 .post-content blockquote {
     margin: 1.5em 0;
     padding: 0.8em 1.2em;
     border-left: 3px solid #326CE5;
-    background: var(--code-bg);
-    border-radius: 6px;
 }
-.post-content blockquote > :last-child {
+
+/* 노트 상자 (shortcode note): 사방 테두리 + 옅은 배경 */
+.post-content .note-box {
+    margin: 1.5em 0;
+    padding: 0.9em 1.2em;
+    border: 1px solid var(--border);
+    border-left: 4px solid #326CE5;
+    border-radius: 8px;
+    background: var(--code-bg);
+}
+.post-content .note-box .note-title {
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+.post-content .note-box p,
+.post-content .note-box ul {
+    margin-bottom: 0.6em;
+}
+.post-content .note-box > :last-child {
     margin-bottom: 0;
 }
 

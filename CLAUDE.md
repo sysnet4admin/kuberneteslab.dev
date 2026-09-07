@@ -82,3 +82,17 @@ title이 없으면 캡션도 번호도 안 붙고 그냥 `<img>`로 나간다. �
 - 새 글은 `draft: true`로 넣고 로컬 확인(`hugo server -D`) 후 발행 시점에 false로 바꾼다.
 - 발행 후 해당 연구 프로젝트의 README(EN/KO)와 Public Research 루트 README에 링크를 추가하고
   `/digest`로 반영한다.
+
+## 노트 상자 (2026-09-07)
+
+본문 안 용어 설명이나 [노트] 블록은 인용문(>)이 아니라 `note` 쇼트코드로 감싼다.
+사방 테두리와 옅은 배경이 붙어 본문과 구분된다(`layouts/shortcodes/note.html`,
+스타일은 `assets/css/extended/custom.css`의 `.note-box`).
+
+```
+{{</* note title="[노트] 이 글에서 쓰는 용어" */>}}
+- 항목: 설명
+{{</* /note */>}}
+```
+
+안에는 마크다운(목록, 코드체)을 그대로 쓸 수 있다. 인용문(>)은 인용에만 쓴다.

@@ -74,7 +74,7 @@ python3 harness/capture.py http://<A_LB_IP>/mcp http://<B_LB_IP>/mcp payloads/
 
 구 스펙은 `initialize`로 시작하고 세션 ID가 응답 헤더로 옵니다.
 
-```http
+```text
 POST /mcp
 Accept: application/json, text/event-stream
 Content-Type: application/json
@@ -149,7 +149,7 @@ app = mcp.streamable_http_app(transport_security=security)
 이제 클라이언트는 신 스펙임을 헤더와 `params._meta`에 실어 보내고 핸드셰이크는
 없습니다.
 
-```http
+```text
 POST /mcp
 MCP-Protocol-Version: 2026-07-28
 Mcp-Method: tools/call

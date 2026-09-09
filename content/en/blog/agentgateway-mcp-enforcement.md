@@ -186,6 +186,14 @@ requests per second (rps) to 0.7 ms in the 400 rps range where the load
 generator saturates, so I dropped the word "constant" and kept only the upper
 bound, "under 1 ms per call".
 
+One more thing worth separating here. The v1.5.0 release notes list
+"guardrails for tool calls" as a new feature, and that is a different mechanism
+from the guardrails described above. It is the LLM prompt guard, which inspects
+tool_calls inside LLM traffic, and attaching it to an MCP backend gets the
+policy accepted while having no effect at all on tools/call (checked
+2026-09-09). It is the same split between an accepted policy and actual
+enforcement that the argument-conditioned rule showed.
+
 ## The latency cost of the gateway hop, and what happens to p99
 
 The cost of the gateway itself is of course the other question, and controlling

@@ -12,9 +12,9 @@ TocOpen: true
 
 Once MCP (Model Context Protocol) servers start to multiply, a gateway in front
 of them is the natural next thing to consider. I picked agentgateway, a hosted
-project of the AAIF (Agentic AI Foundation) under the Linux Foundation, and
-since a feature table cannot answer "does turning a policy on actually block
-the call", I decided to measure it. The yardstick is the one I used when
+project of the Agentic AI Foundation (AAIF), and since a feature table cannot
+answer "does turning a policy on actually block the call", I decided to measure
+it. The yardstick is the one I used when
 [comparing seven Kubernetes Gateway API implementations](/en/blog/gateway-api-poc/):
 what is declared and what is enforced are two different things. In this post
 "the gateway" with no further qualifier means agentgateway, which is not the

@@ -27,7 +27,7 @@
 <text x="48" y="304" font-size="10" fill="#2c6e49" text-anchor="start">•</text>
 <text x="64" y="304" font-size="9.5" fill="#444" text-anchor="start">도구 이름에 백엔드 이름이 붙어 어느 서버 것인지 보인다</text>
 <rect x="460" y="212" width="410" height="128" rx="8" fill="#fdf3e7" stroke="#c96" stroke-width="1.5"/>
-<text x="665" y="236" font-size="12" fill="#b5651d" text-anchor="middle" font-weight="bold">내는 것 (기본 설정)</text>
+<text x="665" y="236" font-size="12" fill="#b5651d" text-anchor="middle" font-weight="bold">잃는 것 (기본 설정)</text>
 <text x="478" y="260" font-size="10" fill="#b5651d" text-anchor="start">•</text>
 <text x="494" y="260" font-size="9.5" fill="#444" text-anchor="start">응답이 20ms 늘고 처리량은 초당 100건 근처가 경계다</text>
 <text x="478" y="282" font-size="10" fill="#b5651d" text-anchor="start">•</text>

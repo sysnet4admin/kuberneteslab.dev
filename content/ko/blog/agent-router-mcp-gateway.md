@@ -349,8 +349,9 @@ agentgateway는 같은 자리에서 같은 trace-id에 자기 span-id를 붙여�
 세션 ID를 푸는 계산 때문이었고 helm 값 1개를 낮추자 응답이 1.55ms로 처리량이 초당
 805건으로 바뀌었습니다.
 
-측정에 쓴 매니페스트와 하네스, 셀 정의와 원자료는 아래 저장소에 있으니 직접
-확인해 보실 수 있습니다.
-
-- [agent-router-study](https://github.com/sysnet4admin/Research/tree/main/agent-router-study)
-- [agentgateway-study](https://github.com/sysnet4admin/Research/tree/main/agentgateway-study): 같은 재단의 다른 MCP 게이트웨이를 같은 프레임으로 먼저 측정한 기록입니다.
+측정에 쓴 매니페스트와 하네스, 조건 정의와 원자료는
+[GitHub 저장소](https://github.com/sysnet4admin/Research/tree/main/agent-router-study)에
+공개해 두었으니 참고하시기 바랍니다. 같은 재단의 다른 MCP 게이트웨이를 같은 틀로 먼저
+측정한 기록은
+[agentgateway-study](https://github.com/sysnet4admin/Research/tree/main/agentgateway-study)에
+있습니다. 다른 환경에서 재현해 보신 결과가 있다면 알려 주시면 좋겠습니다.

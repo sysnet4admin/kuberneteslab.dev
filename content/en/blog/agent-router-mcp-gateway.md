@@ -364,8 +364,8 @@ requests per second. That is not the policy but the key derivation the proxy rep
 unwrap the session ID, and lowering one helm value took the response to 1.55ms and
 throughput to 805 requests per second.
 
-The manifests, harnesses, condition definitions and raw data used here are in the repository
-below if you want to check them yourself.
-
-- [agent-router-study](https://github.com/sysnet4admin/Research/tree/main/agent-router-study)
-- [agentgateway-study](https://github.com/sysnet4admin/Research/tree/main/agentgateway-study): the other MCP gateway under the same foundation, measured earlier with the same frame.
+The manifests, harnesses, condition definitions and raw data are in the
+[GitHub repository](https://github.com/sysnet4admin/Research/tree/main/agent-router-study).
+The other MCP gateway under the same foundation, measured earlier with the same frame, is in
+[agentgateway-study](https://github.com/sysnet4admin/Research/tree/main/agentgateway-study).
+If you reproduce this in a different environment, I would be glad to hear what you find.

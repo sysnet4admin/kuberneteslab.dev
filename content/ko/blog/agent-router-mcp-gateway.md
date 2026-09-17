@@ -53,8 +53,12 @@ agentgateway는 이미 측정해 봤는데 그때 한 가지를 확인했습니�
   리소스입니다. 어느 백엔드를 묶을지와 누가 무엇을 호출할 수 있는지를 여기에 적습니다.
 {{< /note >}}
 
-Agent Router의 동작 원리 가운데 아래 결과를 읽으려면 MCP 요청이 Envoy를
-2번 지난다는 점입니다.
+측정해서 알게 된 것을 먼저 한 장으로 정리하면 이렇습니다.
+
+![Agent Router를 앞에 두면 무엇이 좋아지고 어떤 비용이 드는가](/images/agent-router-value-ko.svg)
+
+아래에서 이 그림의 항목을 하나씩 근거와 함께 풀어 봅니다. 그 전에 동작 원리를
+1가지만 알아 두면 결과를 읽기 수월합니다. MCP 요청은 Envoy를 2번 지납니다.
 
 ![MCP 요청이 지나는 경로](/images/agent-router-arch-ko.svg)
 
@@ -114,8 +118,6 @@ level=ERROR msg="failed to evaluate authorization CEL" component=mcp-proxy
   error="no such key: arguments" expression="request.mcp.params.arguments.a == 1"
 ```
 
-## 왜 이런 결과가 나올까요?
-
 소스를 따라가 보면 목록을 거를 때 프록시가 하는 일이 조금 특이합니다. 도구를
 차례로 확인하면서 "이 도구를 호출하면 허용되는가"를 인가 로직으로 평가하는데, 이때
 `request.mcp.method`에는 `tools/call`을 넣고 `params`에는 방금 들어온 `tools/list`
@@ -135,8 +137,6 @@ CEL 평가가 오류로 끝나면 그 규칙을 건너뛰고 다음 규칙으로
 운영하는 입장에서 이 동작이 까다로운 것은 호출 자체가 정상으로 처리되기 때문입니다. 에이전트는 `tools/list`를 보고 무엇을 호출할지 정하기 때문에 목록에 없는
 도구는 통과할 호출이어도 시도하지 않습니다. 인자 값을 조건으로 삼는 허용 규칙을 문서 예시대로
 켜는 순간 그 엔드포인트는 에이전트에게 도구가 없는 서버로 보입니다.
-
-## 우회 방법 4가지 중 1개만 쓸 수 있었습니다
 
 우회할 방법을 4가지 만들어 전부 측정해 봤는데 온전히 쓸 수 있었던 것은 1개였습니다.
 

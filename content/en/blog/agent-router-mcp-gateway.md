@@ -56,9 +56,13 @@ every cycle, with no measurement errors and no pod restarts.
   Which backends to group and who may call what are written here.
 {{< /note >}}
 
-Of everything about how Agent Router works, one point is needed to read the results
-below: an MCP request passes through Envoy twice. Keep that shape in mind while reading
-the latency and throughput figures.
+Here is what the measurements turned up, on one page.
+
+![What Agent Router adds in front of MCP servers, and what it costs](/images/agent-router-value-en.svg)
+
+The rest of this post takes those items one at a time with the evidence behind them.
+One point about how Agent Router works makes the results easier to read first: an MCP
+request passes through Envoy twice.
 
 ![The path an MCP request takes](/images/agent-router-arch-en.svg)
 
@@ -120,8 +124,6 @@ level=ERROR msg="failed to evaluate authorization CEL" component=mcp-proxy
   error="no such key: arguments" expression="request.mcp.params.arguments.a == 1"
 ```
 
-## Why does this happen?
-
 Following the source, what the proxy does while filtering the list is
 unusual. It walks the tools one at a time and asks the authorization logic "would
 calling this tool be allowed?", putting `tools/call` in `request.mcp.method` and the
@@ -145,8 +147,6 @@ agent reads `tools/list` to decide what to call, so a tool missing from the list
 one it will not try even when the call would pass. The moment argument-condition
 authorization goes on the way the documentation shows, that endpoint looks to an agent
 like a server with no tools.
-
-## Only one of four workarounds was usable
 
 I built four ways around it and measured them all. Only one worked intact.
 

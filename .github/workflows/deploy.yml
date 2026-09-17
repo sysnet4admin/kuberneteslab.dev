@@ -27,3 +27,12 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy public --project-name kuberneteslab-dev
+
+      - name: IndexNow 알림
+        if: github.event_name == 'push'
+        run: |
+          KEY=4f74ffd8d1944f88edeeadb700aba2dc
+          curl -sS -X POST https://api.indexnow.org/IndexNow \
+            -H "Content-Type: application/json" \
+            -d "{\"host\":\"kuberneteslab.dev\",\"key\":\"$KEY\",\"keyLocation\":\"https://kuberneteslab.dev/$KEY.txt\",\"urlList\":[\"https://kuberneteslab.dev/ko/\",\"https://kuberneteslab.dev/en/\",\"https://kuberneteslab.dev/ko/blog/\",\"https://kuberneteslab.dev/en/blog/\"]}" \
+            -w "\nIndexNow 응답: %{http_code}\n"

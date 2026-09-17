@@ -27,8 +27,9 @@ changed first and the name followed. The repository moved to
 
 I had already measured the first one, and one thing came out of it. Authorization
 that takes the arguments of a tool call as its condition did not work on the
-authorization path, and calls that met the condition were blocked along with the
-rest, which I filed as an upstream issue. Agent Router, though, says in its documentation that
+authorization path when written into the MCP authorization policy, and calls that met the
+condition were blocked along with the rest. I filed that upstream, and there is now a
+separate route-level policy where such a condition does work. Agent Router, though, says in its documentation that
 a CEL expression in an authorization rule can use call arguments, and ships an
 example. So this time I set out to check whether that sentence holds.
 
@@ -103,8 +104,9 @@ different results.
 | `tools/call mcpb__get-sum a=2` | 403 |
 
 Repeating it 75 times changed nothing. It works as documented. Compared with a gateway
-that can only block by tool name, the unit of control moves down a level, and this is
-something agentgateway under the same foundation could not do at the same point.
+that can only block by tool name, the unit of control moves down a level. agentgateway
+under the same foundation cannot do it in its MCP authorization policy and needs a
+route-level policy instead, a path that opened after the v1.5.0 this post measured.
 
 There is one thing to watch here, though. The rule says `get-sum` while the call says
 `mcpb__get-sum`. When Agent Router shows tool names to a client it renames them into

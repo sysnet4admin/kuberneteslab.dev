@@ -66,12 +66,13 @@ One point about how Agent Router works makes the results easier to read first.
 The MCP proxy runs as a Go server in a sidecar inside the Envoy proxy pod, so no
 separate pod is created for it. The design proposal gives the reason: Envoy's extension
 mechanisms cannot reply with streaming responses from a filter, nor make streaming
-callouts to arbitrary upstreams, so merging MCP notifications was not implementable.
+callouts to arbitrary upstreams, so terminating client SSE and merging notifications from
+several servers could not be done in a filter.
 Hence a Go server, with Envoy still carrying traffic in and out.
 
-So an MCP request passes through Envoy twice. It arrives at the ingress listener and
-goes to the proxy, then comes back in through the MCP listener when the proxy calls the
-backend. Keep that shape in mind while reading the latency and throughput figures below.
+So an MCP request passes through Envoy twice. It arrives at the ingress listener and goes
+to the proxy on local port 9856, then the proxy sends it back to local port 10088 and it
+enters the MCP listener. Both legs are local TCP ports inside the same pod. Keep that shape in mind while reading the latency and throughput figures below.
 
 ![The path an MCP request takes](/images/agent-router-arch-en.svg)
 

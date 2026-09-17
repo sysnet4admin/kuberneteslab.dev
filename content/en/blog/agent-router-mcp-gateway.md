@@ -61,17 +61,19 @@ Here is what the measurements turned up, on one page.
 ![What Agent Router adds in front of MCP servers, and what it costs](/images/agent-router-value-en.svg)
 
 The rest of this post takes those items one at a time with the evidence behind them.
-One point about how Agent Router works makes the results easier to read first: an MCP
-request passes through Envoy twice.
-
-![The path an MCP request takes](/images/agent-router-arch-en.svg)
+One point about how Agent Router works makes the results easier to read first.
 
 The MCP proxy runs as a Go server in a sidecar inside the Envoy proxy pod, so no
 separate pod is created for it. The design proposal gives the reason: Envoy's extension
 mechanisms cannot reply with streaming responses from a filter, nor make streaming
 callouts to arbitrary upstreams, so merging MCP notifications was not implementable.
-Hence a Go server, with Envoy still carrying traffic in and out. Passing through Envoy
-twice this way is the background to the latency and throughput figures below.
+Hence a Go server, with Envoy still carrying traffic in and out.
+
+So an MCP request passes through Envoy twice. It arrives at the ingress listener and
+goes to the proxy, then comes back in through the MCP listener when the proxy calls the
+backend. Keep that shape in mind while reading the latency and throughput figures below.
+
+![The path an MCP request takes](/images/agent-router-arch-en.svg)
 
 ## The values passed on a call decide pass or block
 

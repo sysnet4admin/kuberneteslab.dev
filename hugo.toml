@@ -4,6 +4,7 @@ theme = 'PaperMod'
 paginate = 10
 defaultContentLanguage = 'ko'
 defaultContentLanguageInSubdir = true
+enableRobotsTXT = true
 
 [params]
   env = "production"
@@ -63,6 +64,7 @@ defaultContentLanguageInSubdir = true
     [languages.ko.params]
       homeInfoParams.Title = "KubernetesLab"
       homeInfoParams.Content = "Kubernetes & Cloud Native & AI 연구, 컨설팅, 교육  \nCNCF Ambassador / Kubestronaut / AIOps Researcher"
+      footer.text = "[리눅스 재단 자격증 할인 코드](https://promo.kuberneteslab.dev/)"
     [[languages.ko.menu.main]]
       identifier = "blog"
       name = "Blog"
@@ -97,6 +99,7 @@ defaultContentLanguageInSubdir = true
     [languages.en.params]
       homeInfoParams.Title = "KubernetesLab"
       homeInfoParams.Content = "Kubernetes, Cloud Native & AI Research, Consulting, and Training  \nCNCF Ambassador / Kubestronaut / AIOps Researcher"
+      footer.text = "[LF discount codes](https://promo.kuberneteslab.dev/en/)"
     [[languages.en.menu.main]]
       identifier = "blog"
       name = "Blog"

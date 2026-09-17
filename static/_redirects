@@ -3,3 +3,7 @@
 /archive/ /ko/archives/ 301
 /ko/blog/a2a-protocol-cost/ /ko/blog/a2a-when-to-use/ 301
 /en/blog/a2a-protocol-cost/ /en/blog/a2a-when-to-use/ 301
+/promo https://promo.kuberneteslab.dev/ 301
+/promo/ https://promo.kuberneteslab.dev/ 301
+/ko/promo/ https://promo.kuberneteslab.dev/ 301
+/en/promo/ https://promo.kuberneteslab.dev/en/ 301

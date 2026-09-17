@@ -63,3 +63,54 @@
         width: 100%;
     }
 }
+
+/* 푸터: promo.kuberneteslab.dev와 같은 세 칸 구성 (2026-09-17) */
+.footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.3em 1em;
+    text-align: left;
+}
+
+.footer-link {
+    flex: 1;
+    text-align: center;
+}
+
+.footer .footer-social {
+    display: flex;
+    align-items: center;
+    gap: 1.4em;
+    margin-inline-start: auto;
+    margin-inline-end: 0;
+}
+
+.footer-social a,
+.footer-social a:hover {
+    display: inline-flex;
+    padding: 0.2em;
+    border-bottom: 0;
+}
+
+.footer-social svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* 좁은 화면에서도 한 줄을 유지한다 (390px에서 필요 폭 345, 가용 358) */
+@media (max-width: 560px) {
+    .footer {
+        font-size: 11px;
+        gap: 0.3em 0.6em;
+    }
+
+    .footer .footer-social {
+        gap: 0.9em;
+    }
+
+    .footer-social svg {
+        width: 18px;
+        height: 18px;
+    }
+}

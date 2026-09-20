@@ -3,6 +3,7 @@
        프로모션 숫자로 바꾼다. 받아 오지 못하면 기본값이 그대로 남는다. */ -}}
 {{- $ko := eq .Language.Lang "ko" -}}
 {{- $url := cond $ko "https://promo.kuberneteslab.dev/" "https://promo.kuberneteslab.dev/en/" -}}
+<div class="promo-cta-wrap">
 <div class="promo-cta" id="promo-cta" data-lang="{{ cond $ko "ko" "en" }}">
   <div class="promo-cta-rate">
     <strong>30%</strong><span>{{ cond $ko "상시 할인" "Year-round" }}</span>
@@ -12,6 +13,7 @@
     <p>{{ cond $ko "CKA, CKS, MCPA 등 카탈로그 전체에 적용됩니다." "Applies to the whole catalog: CKA, CKS, MCPA, and more." }}</p>
   </div>
   <a class="promo-cta-link" href="{{ $url }}">{{ cond $ko "할인 코드 보기 →" "See the codes →" }}</a>
+</div>
 </div>
 <script>
 (function () {

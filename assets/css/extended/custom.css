@@ -127,13 +127,24 @@
     opacity: 0.9;
 }
 
-/* 글 하단 자격증 할인 안내 */
+/* 글 하단 자격증 할인 안내. 본문과 이어져 보이지 않도록 위에 구분선을 둔다. */
+.promo-cta-wrap {
+    margin-top: 2.5em;
+    padding-top: 1.6em;
+    border-top: 1px solid var(--border);
+}
+
+.promo-cta-wrap + .post-author {
+    margin-top: 1.6em;
+    border-top: 0;
+}
+
 .promo-cta {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 0.4em 1.1em;
-    margin: 2.5em 0 0;
+    margin: 0;
     padding: 0.9em 1.2em;
     border: 1px solid var(--border);
     border-radius: 8px;

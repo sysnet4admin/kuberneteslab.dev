@@ -127,16 +127,9 @@
     opacity: 0.9;
 }
 
-/* 글 하단 자격증 할인 안내. 본문과 이어져 보이지 않도록 위에 구분선을 둔다. */
+/* 글 하단 자격증 할인 안내. 선 없이 여백으로 본문과 띄운다. */
 .promo-cta-wrap {
-    margin-top: 2.5em;
-    padding-top: 1.6em;
-    border-top: 1px solid var(--border);
-}
-
-.promo-cta-wrap + .post-author {
-    margin-top: 1.6em;
-    border-top: 0;
+    margin-top: 3.2em;
 }
 
 .promo-cta {
@@ -183,7 +176,10 @@
     margin-left: auto;
     font-weight: 600;
     white-space: nowrap;
+    color: #326CE5;
 }
+
+.promo-cta a.promo-cta-link:hover { color: #2856b8; }
 
 @media (max-width: 560px) {
     .promo-cta a.promo-cta-link { margin-left: 0; }

@@ -9,8 +9,11 @@
     </span>
     {{- end }}
 
+    {{- /* 글 본문 끝에 같은 안내 배너가 있으므로 글에서는 이 링크를 숨긴다. */ -}}
+    {{- if not (and (eq .Kind "page") (eq .Type "blog")) }}
     {{- with site.Params.footer.text }}
     <span class="footer-link">{{ . | markdownify }}</span>
+    {{- end }}
     {{- end }}
 
     <span class="footer-social">

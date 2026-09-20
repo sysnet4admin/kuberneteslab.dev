@@ -1,7 +1,7 @@
+{{- /* 작성자 표시. 소셜 아이콘은 푸터에 같은 것이 있어 여기서는 생략한다. */ -}}
 {{- $author := .Params.author | default site.Params.author -}}
-{{- if and $author site.Params.socialIcons -}}
+{{- with $author -}}
 <div class="post-author">
-    <div class="post-author-name">{{ i18n "written_by" }} <strong>{{ $author }}</strong></div>
-    {{ partial "social_icons.html" (dict "align" "left") }}
+    <div class="post-author-name">{{ i18n "written_by" }} <strong>{{ . }}</strong></div>
 </div>
 {{- end -}}

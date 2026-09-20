@@ -42,6 +42,8 @@
   </div>
   {{- end }}
 
+  {{- if eq .Type "blog" }}{{ partial "promo_cta.html" . }}{{ end }}
+
   {{- partial "post_author.html" . }}
 
   <footer class="post-footer">

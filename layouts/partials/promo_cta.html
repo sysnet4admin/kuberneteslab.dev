@@ -1,0 +1,51 @@
+{{- /* 글 하단 자격증 할인 안내.
+       기본값은 상시 할인이고, promo 사이트의 cta.json을 받아 오면 진행 중인
+       프로모션 숫자로 바꾼다. 받아 오지 못하면 기본값이 그대로 남는다. */ -}}
+{{- $ko := eq .Language.Lang "ko" -}}
+{{- $url := cond $ko "https://promo.kuberneteslab.dev/" "https://promo.kuberneteslab.dev/en/" -}}
+<div class="promo-cta" id="promo-cta" data-lang="{{ cond $ko "ko" "en" }}">
+  <div class="promo-cta-rate">
+    <strong>30%</strong><span>{{ cond $ko "상시 할인" "Year-round" }}</span>
+  </div>
+  <div class="promo-cta-body">
+    <div class="promo-cta-title">{{ cond $ko "리눅스 재단 자격증 할인 코드" "Linux Foundation certification discount codes" }}</div>
+    <p>{{ cond $ko "CKA, CKS, MCPA 등 카탈로그 전체에 적용됩니다." "Applies to the whole catalog: CKA, CKS, MCPA, and more." }}</p>
+  </div>
+  <a class="promo-cta-link" href="{{ $url }}">{{ cond $ko "할인 코드 보기 →" "See the codes →" }}</a>
+</div>
+<script>
+(function () {
+  var el = document.getElementById('promo-cta');
+  if (!el || !window.fetch) return;
+  var ko = el.dataset.lang === 'ko';
+  fetch('https://promo.kuberneteslab.dev/cta.json', { mode: 'cors' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      if (!d || !d.promo) return;
+      var p = d.promo;
+      var end = new Date(p.end);
+      var now = new Date();
+      if (!(end > now)) return;
+      var days = Math.ceil((end - now) / 86400000);
+      var rate = el.querySelector('.promo-cta-rate strong');
+      var state = el.querySelector('.promo-cta-rate span');
+      var desc = el.querySelector('.promo-cta-body p');
+      var when = end.toLocaleDateString(ko ? 'ko-KR' : 'en-US', {
+        timeZone: ko ? 'Asia/Seoul' : 'UTC', month: 'long', day: 'numeric'
+      });
+      rate.textContent = p.max + '%';
+      if (ko) {
+        state.textContent = days <= 3 ? days + '일 남음' : '진행 중';
+        desc.textContent = p.single && p.bundle
+          ? when + '까지 번들 ' + p.bundle + '%, 단일 자격증 ' + p.single + '%. 평소에는 상시 ' + d.standing + '%입니다.'
+          : when + '까지 최대 ' + p.max + '% 할인. 평소에는 상시 ' + d.standing + '%입니다.';
+      } else {
+        state.textContent = days <= 3 ? (days + (days === 1 ? ' day left' : ' days left')) : 'Now on';
+        desc.textContent = p.single && p.bundle
+          ? 'Until ' + when + ': ' + p.bundle + '% on bundles, ' + p.single + '% on single certifications. Year-round it is ' + d.standing + '%.'
+          : 'Until ' + when + ': up to ' + p.max + '% off. Year-round it is ' + d.standing + '%.';
+      }
+    })
+    .catch(function () {});
+})();
+</script>

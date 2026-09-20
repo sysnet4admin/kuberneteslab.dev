@@ -126,3 +126,54 @@
     font-weight: 600;
     opacity: 0.9;
 }
+
+/* 글 하단 자격증 할인 안내 */
+.promo-cta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4em 1.1em;
+    margin: 2.5em 0 0;
+    padding: 0.9em 1.2em;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--code-bg);
+    font-size: 0.9em;
+    color: var(--secondary);
+}
+
+.promo-cta-rate {
+    flex: 0 0 auto;
+    text-align: center;
+    line-height: 1.05;
+}
+
+.promo-cta-rate strong {
+    display: block;
+    font-size: 1.8em;
+    color: #326CE5;
+}
+
+.promo-cta-rate span { font-size: 0.72em; }
+
+.promo-cta-body {
+    flex: 1;
+    min-width: 160px;
+}
+
+.promo-cta-title {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.promo-cta-body p { margin: 0.15em 0 0; }
+
+.promo-cta a.promo-cta-link {
+    margin-left: auto;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+    .promo-cta a.promo-cta-link { margin-left: 0; }
+}

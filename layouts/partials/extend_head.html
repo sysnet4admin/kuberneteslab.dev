@@ -1,0 +1,6 @@
+{{- /* 태그와 카테고리 목록은 글 제목만 모아 둔 얇은 페이지라 검색엔진이
+       중복으로 본다. 사람은 그대로 쓰되 색인에서는 뺀다. 링크는 따라가게
+       두어 글로 가는 길은 살린다. */ -}}
+{{- if or (eq .Kind "taxonomy") (eq .Kind "term") }}
+<meta name="robots" content="noindex, follow">
+{{- end }}

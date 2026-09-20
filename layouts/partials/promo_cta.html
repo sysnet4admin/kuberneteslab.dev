@@ -2,7 +2,7 @@
        기본값은 상시 할인이고, promo 사이트의 cta.json을 받아 오면 진행 중인
        프로모션 숫자로 바꾼다. 받아 오지 못하면 기본값이 그대로 남는다. */ -}}
 {{- $ko := eq .Language.Lang "ko" -}}
-{{- $url := cond $ko "https://promo.kuberneteslab.dev/" "https://promo.kuberneteslab.dev/en/" -}}
+{{- $url := cond $ko "https://promo.kuberneteslab.dev/ko/" "https://promo.kuberneteslab.dev/en/" -}}
 <div class="promo-cta-wrap">
 <div class="promo-cta" id="promo-cta" data-lang="{{ cond $ko "ko" "en" }}">
   <div class="promo-cta-rate">
@@ -20,7 +20,7 @@
   var el = document.getElementById('promo-cta');
   if (!el || !window.fetch) return;
   var ko = el.dataset.lang === 'ko';
-  fetch('https://promo.kuberneteslab.dev/cta.json', { mode: 'cors' })
+  fetch('https://promo.kuberneteslab.dev/ko/cta.json', { mode: 'cors' })
     .then(function (r) { return r.ok ? r.json() : null; })
     .then(function (d) {
       if (!d || !d.promo) return;

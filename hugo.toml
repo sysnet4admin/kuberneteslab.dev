@@ -64,7 +64,7 @@ enableRobotsTXT = true
     [languages.ko.params]
       homeInfoParams.Title = "KubernetesLab"
       homeInfoParams.Content = "Kubernetes & Cloud Native & AI 연구, 컨설팅, 교육  \nCNCF Ambassador / Kubestronaut / AIOps Researcher"
-      footer.text = "[리눅스 재단 자격증 할인 코드](https://promo.kuberneteslab.dev/)"
+      footer.text = "[리눅스 재단 자격증 할인 코드](https://promo.kuberneteslab.dev/ko/)"
     [[languages.ko.menu.main]]
       identifier = "blog"
       name = "Blog"

@@ -4,15 +4,15 @@ date: 2026-04-08
 draft: false
 tags: ["kubernetes", "gateway-api", "ingress", "poc", "nginx", "envoy", "istio", "cilium"]
 categories: ["Kubernetes"]
-description: "Ingress NGINX 은퇴를 앞두고, NGINX Gateway Fabric, Envoy Gateway, Istio, Cilium 등 7개 Gateway API 구현체를 17개 테스트 시나리오로 100라운드 검증한 결과를 공유합니다."
+description: "Ingress NGINX 사용 중단을 앞두고 NGINX Gateway Fabric, Envoy Gateway, Istio, Cilium 등 7개 Gateway API 구현체를 17개 테스트 시나리오로 100라운드 검증한 결과를 공유합니다."
 summary: "7개 Kubernetes Gateway API 구현체를 17개 테스트로 100라운드 검증한 PoC 결과와 상황별 선택 가이드"
 ShowToc: true
 TocOpen: true
 ---
 
-## Ingress NGINX가 은퇴합니다
+## Ingress NGINX가 사용 중단됩니다
 
-2026년 3월, 가장 널리 사용되던 Ingress 구현체인 **Ingress NGINX의 지원이 종료**됩니다. Ingress API 자체는 유지되지만, 대표 구현체의 은퇴는 곧 **Gateway API로의 전환**을 의미합니다.
+2026년 3월, 가장 널리 사용되던 Ingress 구현체인 **Ingress NGINX의 지원이 종료**됩니다. Ingress API 자체는 유지되지만 대표 구현체의 사용 중단는 곧 **Gateway API로의 전환**을 의미합니다.
 
 Gateway API는 Ingress API와 무엇이 다를까요? 가장 큰 차이는 **역할 분리**입니다. 인프라 관리자, 클러스터 운영자, 개발자가 각자의 영역에서 독립적으로 설정할 수 있어 더 높은 표현력과 확장성을 제공합니다.
 
@@ -223,7 +223,7 @@ Gateway API는 Ingress API와 무엇이 다를까요? 가장 큰 차이는 **역
 Error: "no Route matched with those values"
 ```
 
-HTTPRoute 리소스가 Kong 내부 설정으로 동기화되지 않는 문제입니다. "unmanaged gateway" 모드에서 Gateway API 호환성 이슈가 있으며, 기본 라우팅부터 실패하면서 연쇄적으로 대부분의 테스트가 실패했습니다.
+HTTPRoute 리소스가 Kong 내부 설정으로 동기화되지 않는 문제입니다. "unmanaged gateway" 모드에서 Gateway API 호환성 이슈가 있으며 기본 라우팅부터 실패하면서 연쇄적으로 대부분의 테스트가 실패했습니다.
 
 추가로 KIC v3.5.3은 Kong Gateway v3.9와 설정 동기화 실패 문제가 있어 KIC v3.5를 유지해야 합니다.
 
@@ -240,7 +240,7 @@ Error: "404 page not found" / Warning: "Gateway not ready"
 
 Gateway가 Ready 상태에 도달하지 못해 라우팅 자체가 불가능했습니다.
 
-> Kong과 Traefik 모두 Ingress 구현체로서는 성숙한 제품이지만, **Gateway API 지원은 아직 발전 중**입니다.
+> Kong과 Traefik 모두 Ingress 구현체로서는 성숙한 제품이지만 **Gateway API 지원은 아직 발전 중**입니다.
 
 ## Rate Limiting은 어떻게 지원되나?
 

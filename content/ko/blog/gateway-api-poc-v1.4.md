@@ -6,7 +6,7 @@ aliases:
 draft: false
 tags: ["kubernetes", "gateway-api", "ingress", "conformance", "nginx", "envoy", "istio", "cilium", "kong", "traefik", "kgateway"]
 categories: ["Kubernetes"]
-description: "ingress-nginx 사용 중단 후 어떤 Gateway API로 옮길지, 작년 PoC를 채점 모델부터 공식 적합성 체계로 갈아엎고 7개 구현체를 처음부터 다시 측정했습니다. 7종 모두 필수 기능은 통과했지만 실제 기능 폭은 6개에서 13개까지 갈렸고 작년에 점수가 낮았던 Kong과 Traefik도 여기 포함됩니다(필수 기능은 통과, 기능 폭은 갈림)."
+description: "ingress-nginx 사용 중단 후 어떤 Gateway API로 옮길지, 작년 PoC를 채점 모델부터 공식 적합성 체계로 갈아엎고 7개 구현체를 처음부터 다시 측정했습니다. 7종 모두 필수 기능은 통과했지만 실제 기능 폭은 6개에서 13개까지 나누어졌고 작년에 점수가 낮았던 Kong과 Traefik도 여기 포함됩니다(필수 기능은 통과, 기능 폭은 나누어짐)."
 summary: "작년 Gateway API PoC를 채점 모델부터 갈아엎고 7개 구현체를 다시 봤습니다. 공식 적합성은 7종 모두 통과했지만 실제 쓸 수 있는 기능은 6개에서 13개까지 갈렸습니다."
 ShowToc: true
 TocOpen: true
@@ -133,6 +133,6 @@ conformance가 보지 않는 운영 지표도 함께 측정했습니다. **기�
 
 ## 마치며
 
-이번 재측정에서 가장 또렷해진 교훈은 두 가지입니다. 하나는 **conformant 인증은 출발선일 뿐**이라는 것, 다른 하나는 **표준과 생태계가 빠르게 발전한다**는 것입니다. 작년 12월에 점수가 낮았던 구현체들이 반년 사이 전부 Core를 통과한 변화가, 순위표 한 줄보다 더 값진 발견이었습니다.
+이번 재측정에서 가장 또렷해진 교훈은 2가지입니다. 첫 번째는 **conformant 인증은 출발선일 뿐**이라는 것, 두 번째는 **표준과 생태계가 빠르게 발전한다**는 것입니다. 작년 12월에 점수가 낮았던 구현체들이 반년 사이 전부 Core를 통과한 변화가, 순위표 한 줄보다 더 값진 발견이었습니다.
 
 측정 하네스, 채점 기준(rubric), 구현체별 설치 스크립트, ingress2gateway 변환 증거는 모두 [GitHub 저장소](https://github.com/sysnet4admin/Research/tree/main/gateway-PoC)에 있습니다. 이 시점의 발행본은 [`gateway/v1.4` 브랜치](https://github.com/sysnet4admin/Research/tree/gateway/v1.4)에 그대로 보존해 두었습니다.

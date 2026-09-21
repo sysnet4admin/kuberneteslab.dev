@@ -131,7 +131,7 @@ Gateway API는 Ingress API와 무엇이 다를까요? 가장 큰 차이는 **역
 
 **Envoy Gateway**: Envoy Proxy(CNCF 졸업, 2018)를 기반으로 한 Gateway API 구현체. xDS 프로토콜 기반 동적 설정과 풍부한 필터 체인이 특징. Rate Limiting을 선언적 CRD로 지원하는 유일한 구현체.
 
-**Istio Gateway**: 서비스 메시의 사실상 표준인 Istio가 제공하는 Gateway API 지원. Envoy 기반이지만 Istio 컨트롤 플레인과 통합되어 mTLS 자동화, 트래픽 관리가 가능.
+**Istio Gateway**: 서비스 메시의 사실상 표준인 Istio가 제공하는 Gateway API 지원. Envoy 기반이지만 Istio 컨트롤 플레인과 통합되어 mTLS 자동화, 트래픽 관리를 함께 쓸 수 있습니다.
 
 **Cilium Gateway**: eBPF를 활용해 커널 레벨에서 패킷을 처리하는 고성능 구현체. L3/L4/L7을 통합하며 네트워크 정책과 연동 가능. CNI로 Cilium을 사용하는 클러스터 전용.
 

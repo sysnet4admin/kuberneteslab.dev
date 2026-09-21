@@ -7,3 +7,5 @@
 /promo/ https://promo.kuberneteslab.dev/ 301
 /ko/promo/ https://promo.kuberneteslab.dev/ko/ 301
 /en/promo/ https://promo.kuberneteslab.dev/en/ 301
+/ko/promo https://promo.kuberneteslab.dev/ko/ 301
+/en/promo https://promo.kuberneteslab.dev/en/ 301

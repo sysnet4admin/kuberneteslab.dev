@@ -4,3 +4,12 @@
 {{- if or (eq .Kind "taxonomy") (eq .Kind "term") }}
 <meta name="robots" content="noindex, follow">
 {{- end }}
+
+{{- /* 404 화면의 탭 제목은 Hugo 기본값이라 언어와 무관하게 영어로 나온다.
+       제목은 head.html이 먼저 찍고 그 뒤에 이 파셜을 부르므로 서버에서는 못 바꾼다.
+       205줄짜리 테마 파일을 통째로 덮어쓰는 대신 브라우저에서 제목만 바꾼다.
+       스크립트가 꺼져 있으면 기본 제목이 그대로 보이고 본문은 영향받지 않는다. */ -}}
+{{- if eq .Kind "404" }}
+{{- $t := cond (eq .Language.Lang "en") "Page not found" "페이지를 찾을 수 없습니다" }}
+<script>document.title = {{ printf "%s | %s" $t site.Title }};</script>
+{{- end }}

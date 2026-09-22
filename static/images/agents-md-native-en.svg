@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" width="900" height="320" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2f7d4f"/></marker></defs>
+<rect width="900" height="320" fill="white"/>
+<text x="450.0" y="32" font-size="17" fill="#111" text-anchor="middle" font-weight="bold">How Claude Code reaches your project instructions</text>
+<text x="450.0" y="54" font-size="11.5" fill="#777" text-anchor="middle">From 2.1.277 there is a second path straight to AGENTS.md. Project instructions in /config decides which one is used.</text>
+<rect x="34" y="84" width="400" height="212" rx="8" fill="#fcfcfc" stroke="#ddd" stroke-width="1"/>
+<text x="234.0" y="104" font-size="12" fill="#555" text-anchor="middle" font-weight="bold">Before 2.1.277</text>
+<rect x="58" y="150" width="120" height="52" rx="6" fill="#eef3f8" stroke="#7a9cc0" stroke-width="1.5"/>
+<text x="118.0" y="174" font-size="12.5" fill="#1f3c58" text-anchor="middle" font-weight="bold">Claude Code</text>
+<rect x="292" y="134" width="118" height="40" rx="6" fill="#f6faf7" stroke="#2f7d4f" stroke-width="1.5"/>
+<text x="351.0" y="159" font-size="12" fill="#222" text-anchor="middle" font-family="Menlo, monospace">CLAUDE.md</text>
+<rect x="292" y="212" width="118" height="40" rx="6" fill="#fafafa" stroke="#bbb" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="351.0" y="237" font-size="12" fill="#888" text-anchor="middle" font-family="Menlo, monospace">AGENTS.md</text>
+<line x1="178" y1="162" x2="286" y2="154.0" stroke="#2f7d4f" stroke-width="1.8" marker-end="url(#ar)"/>
+<text x="235.0" y="140.0" font-size="9" fill="#2f7d4f" text-anchor="middle">read directly</text>
+<line x1="351.0" y1="212" x2="351.0" y2="182" stroke="#b5651d" stroke-width="1.8" marker-end="url(#a)" stroke-dasharray="5 3"/>
+<text x="241.0" y="220" font-size="8.5" fill="#b5651d" text-anchor="middle">@AGENTS.md import</text>
+<text x="241.0" y="231" font-size="8.5" fill="#b5651d" text-anchor="middle">or a symlink</text>
+<text x="234.0" y="286" font-size="9.5" fill="#b5651d" text-anchor="middle">needs a workaround</text>
+<rect x="466" y="84" width="400" height="212" rx="8" fill="#fcfcfc" stroke="#ddd" stroke-width="1"/>
+<text x="666.0" y="104" font-size="12" fill="#555" text-anchor="middle" font-weight="bold">From 2.1.277</text>
+<rect x="490" y="150" width="120" height="52" rx="6" fill="#eef3f8" stroke="#7a9cc0" stroke-width="1.5"/>
+<text x="550.0" y="174" font-size="12.5" fill="#1f3c58" text-anchor="middle" font-weight="bold">Claude Code</text>
+<text x="550.0" y="191" font-size="8.5" fill="#5b7791" text-anchor="middle">built-in agents-md plugin</text>
+<rect x="724" y="134" width="118" height="40" rx="6" fill="#f6faf7" stroke="#2f7d4f" stroke-width="1.5"/>
+<text x="783.0" y="159" font-size="12" fill="#222" text-anchor="middle" font-family="Menlo, monospace">CLAUDE.md</text>
+<rect x="724" y="212" width="118" height="40" rx="6" fill="#f6faf7" stroke="#2f7d4f" stroke-width="1.5"/>
+<text x="783.0" y="237" font-size="12" fill="#222" text-anchor="middle" font-family="Menlo, monospace">AGENTS.md</text>
+<line x1="610" y1="162" x2="718" y2="154.0" stroke="#2f7d4f" stroke-width="1.8" marker-end="url(#ar)"/>
+<text x="667.0" y="140.0" font-size="9" fill="#2f7d4f" text-anchor="middle">read directly</text>
+<line x1="610" y1="190" x2="718" y2="232.0" stroke="#2f7d4f" stroke-width="1.8" marker-end="url(#ar)"/>
+<text x="667.0" y="250.0" font-size="9" fill="#2f7d4f" text-anchor="middle">read directly</text>
+<text x="666.0" y="286" font-size="9.5" fill="#777" text-anchor="middle">Project instructions setting</text>
+</svg>

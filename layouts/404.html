@@ -27,5 +27,8 @@
     <a href="{{ "/blog/" | relLangURL }}">글 전체 보기</a>
     {{ end }}
   </p>
+
+  {{- /* 막다른 길이므로 갈 곳을 하나 더 둔다. 글 끝에 붙는 것과 같은 배너다. */ -}}
+  {{ partial "promo_cta.html" . }}
 </div>
 {{ end }}

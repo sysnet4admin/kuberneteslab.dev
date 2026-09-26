@@ -24,7 +24,7 @@ build:
 | 2026 | OCP Korea Tech Day | GitAIOps: A Three-Layer Structure That Gives AI Agents Lasting Memory | [event](https://www.ocpkorea.com/) · [materials](https://github.com/sysnet4admin/talks/tree/main/OCP-Korea/2026-TechDay) |
 | 2026 | MCP Dev Summit Seoul | AAIF Ambassador AMA: Building the Agentic Future Through Community Contribution (panel) | [sched](https://mcpseoul2026.sched.com/event/2QScw) |
 | 2026 | MCP Dev Summit Seoul | Book Signing: AI Agent-Driven Infrastructure with Claude Code | [sched](https://mcpseoul2026.sched.com/event/2TTsf) |
-| 2026 | Open Source Summit Korea | GitAIOps: A 4-Layer Architecture for Predictable AI-Assisted Operations | [sched](https://osskorea2026.sched.com/event/2P8H1) · [materials](https://github.com/sysnet4admin/talks/tree/main/OSSummit/2026-Korea) |
+| 2026 | Open Source Summit Korea | GitAIOps: A 4-Layer Architecture for Predictable AI-Assisted Operations | [sched](https://osskorea2026.sched.com/event/2P8H1) · [materials](https://github.com/sysnet4admin/talks/tree/main/OSSummit/2026-Korea) · [YouTube](https://youtu.be/zkf2DGbx6bQ) |
 | 2026 | KubeCon Japan (Yokohama) | I Tested 7 So You Only Need 1: Your First Gateway API Migration in 5 Minutes | [schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/program/schedule/?id=1182975) · [materials](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan) · [YouTube](https://youtu.be/lne3bX2FOnA) · [recap](/en/archives/recaps/kubecon-japan-2026/) |
 | 2026 | KubeCon Japan (Yokohama) | Lightning Talks Emcee (Project, Main Event) | [materials](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan-Emcee) · [YouTube opening](https://youtu.be/HrX5hdsRJys) · [YouTube closing](https://youtu.be/jcbQjfTafA8) · [recap](/en/archives/recaps/kubecon-japan-2026/) |
 | 2026 | F5 AppWorld Seoul | Beyond Ingress: Gateway Strategy in the AI Era and How NGINX Is Evolving (joint session) | |
@@ -34,7 +34,7 @@ build:
 | 2025 | KyvernoCon NA | CEL: Hidden Feature of Kyverno Playground | [sched](https://colocatedeventsna2025.sched.com/event/28D1M) · [YouTube](https://www.youtube.com/watch?v=b_p9Yjtp-bo) |
 | 2025 | KubeCon China (Hong Kong) | Policy as Code: Past, Present and Future | [sched](https://kccncchn2025.sched.com/event/1x5k8) · [YouTube](https://www.youtube.com/watch?v=6_Dh6xhqoys) |
 | 2025 | KubeCon EU (London) | K8s in Wonderland: Why? Many of Unknown Code | [sched](https://kccnceu2025.sched.com/event/1txFz) · [YouTube](https://youtu.be/GvIPSgt69Sg) |
-| 2025 | KCD Seoul | Managing Kubernetes in the New World of AI Agents | [event](https://community.cncf.io/events/details/cncf-kcd-south-korea-presents-kcd-seoul-2025/) |
+| 2025 | KCD Seoul | Managing Kubernetes in the New World of AI Agents | [event](https://community.cncf.io/events/details/cncf-kcd-south-korea-presents-kcd-seoul-2025/) · [materials](https://github.com/sysnet4admin/talks/tree/main/Korea-Community/2025-CNKCD) · [YouTube](https://youtu.be/uUrIweMJfnk) |
 | 2025 | OpenInfra Days Korea | Policy as Code: Past, Present and Future | [event](https://2025.openinfradays.kr/session/14) · [YouTube](https://www.youtube.com/watch?v=MREcgiGMYEw) |
 | 2024 | KubeCon India | Enhance Kubernetes Security with CEL | [sched](https://kccncind2024.sched.com/event/1mVST) · [YouTube](https://youtu.be/0PB4g4wl6Dk) |
 | 2024 | KubeCon China | Find Your Own Personal Tutor for K8s | [sched](https://kccncossaidevchn2024.sched.com/event/1eYZI) · [YouTube](https://youtu.be/xy7tJTIfyg8) |

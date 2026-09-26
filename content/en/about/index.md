@@ -13,7 +13,7 @@ build:
 <img src="/images/profile.jpg" alt="Hoon Jo" class="profile-photo">
 </div>
 <div class="profile-bio">
-<p>CNCF Ambassador, AAIF (Agentic AI Foundation) Ambassador, and Kubestronaut. I apply and teach Kubernetes, Cloud Native, and Agentic AI in the field. When a question has no published data, I measure it myself: what a CNI costs at idle, how well AI agents handle Kubernetes operations, how Gateway API implementations compare. I have written five technical books, spoken at KubeCon EU, NA, China, India, and Japan, and served on the KubeCon + CloudNativeCon program committee since 2023 across the EU, NA, China, India, and Japan editions. KubernetesLab is where those measurements and field notes live.</p>
+<p>CNCF Ambassador, AAIF (Agentic AI Foundation) Ambassador, and Kubestronaut. I apply and teach Kubernetes, Cloud Native, and Agentic AI in the field, and when that work raises a question with no published data, I measure it myself. So far those questions have centered on Kubernetes: what a CNI (Container Network Interface) costs at idle, how Gateway API implementations compare, and how well AI agents handle cluster operations. More recently I have started looking at what changes when you put a gateway in front of MCP (Model Context Protocol) servers or connect agents to each other over A2A (Agent2Agent). Beyond measurement, I have written five technical books, spoken at KubeCon + CloudNativeCon EU, NA, China, India, and Japan, and served on the program committee for those same events since 2023. KubernetesLab is where those measurements and field notes live.</p>
 </div>
 </div>
 
@@ -50,6 +50,7 @@ build:
 
 ## Open Source
 
+- [notiflex-platform](https://github.com/sysnet4admin/notiflex-platform): B2B notification SaaS built on GKE by an AI agent (GitOps, Argo Rollouts)
 - [kDbench](https://github.com/sysnet4admin/kDbench): Kubernetes storage performance test
 - [kubeconn](https://github.com/sysnet4admin/kubeconn): Pod container connection tool
 - [ctx-cleaner](https://github.com/sysnet4admin/ctx-cleaner): Kubernetes context cleanup tool

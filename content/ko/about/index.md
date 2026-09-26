@@ -13,7 +13,7 @@ build:
 <img src="/images/profile.jpg" alt="조훈 (Hoon Jo)" class="profile-photo">
 </div>
 <div class="profile-bio">
-<p>CNCF Ambassador, AAIF(Agentic AI Foundation) Ambassador, Kubestronaut입니다. Kubernetes와 Cloud Native, Agentic AI를 현장에 적용하고 가르치는 일을 합니다. 자료가 없는 질문은 직접 측정해서 답을 만듭니다. CNI가 평소에 쓰는 자원, AI 에이전트의 쿠버네티스 운영 능력, Gateway API 구현체 비교 같은 것들입니다. 기술서 5권을 썼고 KubeCon EU, NA, China, India, Japan에서 발표했으며 2023년부터 KubeCon + CloudNativeCon 프로그램 위원회로 EU, NA, China, India, Japan 회차에 참여하고 있습니다. KubernetesLab은 그 측정과 현장 경험을 정리해 두는 공간입니다.</p>
+<p>CNCF 앰버서더(Ambassador), 에이전틱 AI 재단(AAIF, Agentic AI Foundation) 앰버서더 그리고 쿠버스트로넛(Kubestronaut)입니다. 쿠버네티스(Kubernetes), 클라우드 네이티브(Cloud Native) 그리고 에이전틱 AI를 현장에 적용하고 가르치는 일을 하는데 그 과정에서 자료가 없는 질문을 만나면 직접 측정해서 답을 만듭니다. 그동안은 쿠버네티스를 중심으로 CNI(Container Network Interface)가 평소에 쓰는 자원, Gateway API 구현체 비교 그리고 AI 에이전트의 클러스터 운영 능력 같은 질문을 다뤘습니다. 최근에는 MCP(Model Context Protocol) 서버 앞에 게이트웨이를 두거나 A2A(Agent2Agent)로 에이전트끼리 연결했을 때 무엇이 달라지는지도 확인하기 시작했습니다. 측정 외에도 기술서 5권을 썼고 KubeCon + CloudNativeCon의 EU, NA, China, India 그리고 Japan 행사에서 발표했으며 2023년부터는 같은 행사들의 프로그램 위원회 위원으로도 참여하고 있습니다. KubernetesLab은 그 측정과 현장 경험을 정리해 두는 공간입니다.</p>
 </div>
 </div>
 
@@ -50,6 +50,7 @@ build:
 
 ## 오픈소스
 
+- [notiflex-platform](https://github.com/sysnet4admin/notiflex-platform): AI 에이전트가 GKE 위에 구축한 B2B 알림 SaaS (GitOps, Argo Rollouts)
 - [kDbench](https://github.com/sysnet4admin/kDbench): Kubernetes 스토리지 성능 테스트
 - [kubeconn](https://github.com/sysnet4admin/kubeconn): Pod 컨테이너 접속 도구
 - [ctx-cleaner](https://github.com/sysnet4admin/ctx-cleaner): Kubernetes context 정리 도구

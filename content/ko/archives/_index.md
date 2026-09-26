@@ -3,6 +3,7 @@ title: "Archives"
 layout: "single"
 summary: "archive"
 ShowToc: false
+showLastmod: true
 build:
   list: never
 ---

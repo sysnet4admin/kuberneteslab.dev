@@ -6,3 +6,5 @@
   translation: "일정"
 - id: figure_label
   translation: "그림"
+- id: last_updated
+  translation: "최종 업데이트"

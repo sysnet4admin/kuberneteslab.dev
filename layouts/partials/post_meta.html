@@ -1,0 +1,27 @@
+{{- $scratch := newScratch }}
+
+{{- /* 계속 고치는 페이지는 작성일 대신 Git 기록의 마지막 수정일을 보여 준다(showLastmod).
+       Archives처럼 날짜가 없는 섹션은 하위 페이지 날짜를 물려받아 엉뚱한 날짜가 나오기 때문이다. */ -}}
+{{- if and (.Param "showLastmod") (not .Lastmod.IsZero) -}}
+{{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s %s</span>" (.Lastmod) (i18n "last_updated") (.Lastmod | time.Format (default ":date_long" site.Params.DateFormat)))) }}
+{{- else if not .Date.IsZero -}}
+{{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s</span>" (.Date) (.Date | time.Format (default ":date_long" site.Params.DateFormat)))) }}
+{{- end }}
+
+{{- if (.Param "ShowReadingTime") -}}
+{{- $scratch.Add "meta" (slice (printf "<span>%s</span>" (i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime)))) }}
+{{- end }}
+
+{{- if (.Param "ShowWordCount") -}}
+{{- $scratch.Add "meta" (slice (printf "<span>%s</span>" (i18n "words" .WordCount | default (printf "%d words" .WordCount)))) }}
+{{- end }}
+
+{{- if not (.Param "hideAuthor") -}}
+{{- with (partial "author.html" .) }}
+{{- $scratch.Add "meta" (slice (printf "<span>%s</span>" .)) }}
+{{- end }}
+{{- end }}
+
+{{- with ($scratch.Get "meta") }}
+{{- delimit . "&nbsp;·&nbsp;" | safeHTML -}}
+{{- end -}}

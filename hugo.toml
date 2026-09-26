@@ -4,6 +4,8 @@ theme = 'PaperMod'
 paginate = 10
 defaultContentLanguage = 'ko'
 defaultContentLanguageInSubdir = true
+# 계속 고치는 페이지(Archives)에 실제 수정일을 보여 주려고 Git 기록을 읽는다
+enableGitInfo = true
 enableRobotsTXT = true
 
 [params]
@@ -136,3 +138,7 @@ enableRobotsTXT = true
     startLevel = 2
     endLevel = 3
     ordered = false
+
+# 글에 직접 적은 lastmod가 있으면 그것이 우선하고, 없을 때만 Git 기록을 쓴다
+[frontmatter]
+  lastmod = ['lastmod', ':git', 'date', 'publishDate']

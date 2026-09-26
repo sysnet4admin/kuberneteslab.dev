@@ -6,3 +6,5 @@
   translation: "Date"
 - id: figure_label
   translation: "Figure"
+- id: last_updated
+  translation: "Updated"

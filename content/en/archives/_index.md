@@ -13,6 +13,7 @@ build:
 |------|-------|-------|-------|
 | 2026-10-07 | Open Source Tech Day (ETRI) | MCP, Before and After July 28: The Protocol's Past, Present, and the Future to Prepare For | [event](https://ostday.kr/) · [materials](https://github.com/sysnet4admin/talks/tree/main/ETRI-OST/2026-TechDay) |
 | 2026-11-10 | KubeCon NA (Salt Lake City) | How Far Are Open-Source LLMs from Running Real Kubernetes Operations? A 10-Scenario Benchmark | [schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/?id=1246259) |
+| 2026-12-07~09 | Open Source Summit Japan (Tokyo) | One .md File for Every AI Agent: Gains, Losses, and Costs | [event](https://events.linuxfoundation.org/open-source-summit-japan/) |
 
 ## Talks
 

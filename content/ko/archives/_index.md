@@ -11,20 +11,20 @@ build:
 
 | 일정 | 행사 | 발표 제목 | 링크 |
 |------|------|-----------|------|
-| 2026-08-11 | Open Source Summit Korea | GitAIOps: A 4-Layer Architecture for Predictable AI-Assisted Operations | [sched](https://osskorea2026.sched.com/event/2P8H1) · [자료](https://github.com/sysnet4admin/talks/tree/main/OSSummit/2026-Korea) |
-| 2026-08-13 | MCP Dev Summit Seoul | AAIF Ambassador AMA: Building the Agentic Future Through Community Contribution (패널) | [sched](https://mcpseoul2026.sched.com/event/2QScw) |
-| 2026-08-13 | MCP Dev Summit Seoul | 북 사이닝: AI 시대에 개발자가 알아야 할 인프라 구성 배포 with 클로드 코드 | [sched](https://mcpseoul2026.sched.com/event/2TTsf) |
-| 2026-08-21 | OCP Korea Tech Day | GitAIOps: AI 에이전트에게 지워지지 않는 기억을 주는 3층 구조 | [event](https://www.ocpkorea.com/) |
-| 2026-09-09 | AAIF Seoul Chapter | AI야 GitOps를 만나볼래? | [event](https://luma.com/sa692amj) |
-| 2026-10-07 | 오픈소스 테크데이 (ETRI) | MCP, 7월 28일 이전과 이후: 프로토콜의 과거, 현재, 그리고 준비할 미래 | [event](https://ostday.kr/) |
+| 2026-10-07 | 오픈소스 테크데이 (ETRI) | MCP, 7월 28일 이전과 이후: 프로토콜의 과거, 현재, 그리고 준비할 미래 | [event](https://ostday.kr/) · [자료](https://github.com/sysnet4admin/talks/tree/main/ETRI-OST/2026-TechDay) |
 | 2026-11-10 | KubeCon NA (Salt Lake City) | How Far Are Open-Source LLMs from Running Real Kubernetes Operations? A 10-Scenario Benchmark | [schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/?id=1246259) |
 
 ## 발표 이력
 
 | 연도 | 행사 | 발표 제목 | 링크 |
 |------|------|-----------|------|
-| 2026 | KubeCon Japan (Yokohama) | I Tested 7 So You Only Need 1: Your First Gateway API Migration in 5 Minutes | [schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/program/schedule/?id=1182975) · [자료](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan) · [후기](/ko/archives/recaps/kubecon-japan-2026/) |
-| 2026 | KubeCon Japan (Yokohama) | Lightning Talks 진행 (Project, Main Event) | [자료](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan-Emcee) · [후기](/ko/archives/recaps/kubecon-japan-2026/) |
+| 2026 | AAIF Seoul Chapter | AI야 GitOps를 만나볼래? | [event](https://luma.com/sa692amj) · [자료](https://github.com/sysnet4admin/talks/tree/main/AAIF/2026-Seoul-AgenticAINight) |
+| 2026 | OCP Korea Tech Day | GitAIOps: AI 에이전트에게 지워지지 않는 기억을 주는 3층 구조 | [event](https://www.ocpkorea.com/) · [자료](https://github.com/sysnet4admin/talks/tree/main/OCP-Korea/2026-TechDay) |
+| 2026 | MCP Dev Summit Seoul | AAIF Ambassador AMA: Building the Agentic Future Through Community Contribution (패널) | [sched](https://mcpseoul2026.sched.com/event/2QScw) |
+| 2026 | MCP Dev Summit Seoul | 북 사이닝: AI 시대에 개발자가 알아야 할 인프라 구성 배포 with 클로드 코드 | [sched](https://mcpseoul2026.sched.com/event/2TTsf) |
+| 2026 | Open Source Summit Korea | GitAIOps: A 4-Layer Architecture for Predictable AI-Assisted Operations | [sched](https://osskorea2026.sched.com/event/2P8H1) · [자료](https://github.com/sysnet4admin/talks/tree/main/OSSummit/2026-Korea) |
+| 2026 | KubeCon Japan (Yokohama) | I Tested 7 So You Only Need 1: Your First Gateway API Migration in 5 Minutes | [schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/program/schedule/?id=1182975) · [자료](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan) · [YouTube](https://youtu.be/lne3bX2FOnA) · [후기](/ko/archives/recaps/kubecon-japan-2026/) |
+| 2026 | KubeCon Japan (Yokohama) | Lightning Talks 진행 (Project, Main Event) | [자료](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan-Emcee) · [YouTube 개회](https://youtu.be/HrX5hdsRJys) · [YouTube 폐회](https://youtu.be/jcbQjfTafA8) · [후기](/ko/archives/recaps/kubecon-japan-2026/) |
 | 2026 | F5 AppWorld Seoul | Beyond Ingress: AI 시대의 Gateway 전략과 NGINX의 진화 (공동 세션) | |
 | 2026 | N.EX.T 40회 | 눈앞에 다가온 AIOps: Claude Code와 함께한 쿠버네티스 구성 배포 | [event](https://onoffmix.com/event/343228) · [자료](https://github.com/sysnet4admin/talks/tree/main/Korea-Community/2026-neteg) |
 | 2026 | Byline Network 웨비나 | AI-Driven SRE: AI와 함께 만드는 쿠버네티스 운영 표준 | [자료](https://github.com/sysnet4admin/talks/tree/main/Byline-Network/2026-ai-era-k8s-cloud-native) · [YouTube](https://www.youtube.com/watch?v=VhmC-XqTf1k) |

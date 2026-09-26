@@ -11,20 +11,20 @@ build:
 
 | Date | Event | Title | Links |
 |------|-------|-------|-------|
-| 2026-08-11 | Open Source Summit Korea | GitAIOps: A 4-Layer Architecture for Predictable AI-Assisted Operations | [sched](https://osskorea2026.sched.com/event/2P8H1) · [materials](https://github.com/sysnet4admin/talks/tree/main/OSSummit/2026-Korea) |
-| 2026-08-13 | MCP Dev Summit Seoul | AAIF Ambassador AMA: Building the Agentic Future Through Community Contribution (panel) | [sched](https://mcpseoul2026.sched.com/event/2QScw) |
-| 2026-08-13 | MCP Dev Summit Seoul | Book Signing: AI Agent-Driven Infrastructure with Claude Code | [sched](https://mcpseoul2026.sched.com/event/2TTsf) |
-| 2026-08-21 | OCP Korea Tech Day | GitAIOps: A Three-Layer Structure That Gives AI Agents Lasting Memory | [event](https://www.ocpkorea.com/) |
-| 2026-09-09 | AAIF Seoul Chapter | Hey AI, Want to Meet GitOps? | [event](https://luma.com/sa692amj) |
-| 2026-10-07 | Open Source Tech Day (ETRI) | MCP, Before and After July 28: The Protocol's Past, Present, and the Future to Prepare For | [event](https://ostday.kr/) |
+| 2026-10-07 | Open Source Tech Day (ETRI) | MCP, Before and After July 28: The Protocol's Past, Present, and the Future to Prepare For | [event](https://ostday.kr/) · [materials](https://github.com/sysnet4admin/talks/tree/main/ETRI-OST/2026-TechDay) |
 | 2026-11-10 | KubeCon NA (Salt Lake City) | How Far Are Open-Source LLMs from Running Real Kubernetes Operations? A 10-Scenario Benchmark | [schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/?id=1246259) |
 
 ## Talks
 
 | Year | Event | Title | Links |
 |------|-------|-------|-------|
-| 2026 | KubeCon Japan (Yokohama) | I Tested 7 So You Only Need 1: Your First Gateway API Migration in 5 Minutes | [schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/program/schedule/?id=1182975) · [materials](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan) · [recap](/en/archives/recaps/kubecon-japan-2026/) |
-| 2026 | KubeCon Japan (Yokohama) | Lightning Talks Emcee (Project, Main Event) | [materials](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan-Emcee) · [recap](/en/archives/recaps/kubecon-japan-2026/) |
+| 2026 | AAIF Seoul Chapter | Hey AI, Want to Meet GitOps? | [event](https://luma.com/sa692amj) · [materials](https://github.com/sysnet4admin/talks/tree/main/AAIF/2026-Seoul-AgenticAINight) |
+| 2026 | OCP Korea Tech Day | GitAIOps: A Three-Layer Structure That Gives AI Agents Lasting Memory | [event](https://www.ocpkorea.com/) · [materials](https://github.com/sysnet4admin/talks/tree/main/OCP-Korea/2026-TechDay) |
+| 2026 | MCP Dev Summit Seoul | AAIF Ambassador AMA: Building the Agentic Future Through Community Contribution (panel) | [sched](https://mcpseoul2026.sched.com/event/2QScw) |
+| 2026 | MCP Dev Summit Seoul | Book Signing: AI Agent-Driven Infrastructure with Claude Code | [sched](https://mcpseoul2026.sched.com/event/2TTsf) |
+| 2026 | Open Source Summit Korea | GitAIOps: A 4-Layer Architecture for Predictable AI-Assisted Operations | [sched](https://osskorea2026.sched.com/event/2P8H1) · [materials](https://github.com/sysnet4admin/talks/tree/main/OSSummit/2026-Korea) |
+| 2026 | KubeCon Japan (Yokohama) | I Tested 7 So You Only Need 1: Your First Gateway API Migration in 5 Minutes | [schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/program/schedule/?id=1182975) · [materials](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan) · [YouTube](https://youtu.be/lne3bX2FOnA) · [recap](/en/archives/recaps/kubecon-japan-2026/) |
+| 2026 | KubeCon Japan (Yokohama) | Lightning Talks Emcee (Project, Main Event) | [materials](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan-Emcee) · [YouTube opening](https://youtu.be/HrX5hdsRJys) · [YouTube closing](https://youtu.be/jcbQjfTafA8) · [recap](/en/archives/recaps/kubecon-japan-2026/) |
 | 2026 | F5 AppWorld Seoul | Beyond Ingress: Gateway Strategy in the AI Era and How NGINX Is Evolving (joint session) | |
 | 2026 | N.EX.T Meetup #40 | AIOps Is Here: Deploying Kubernetes with Claude Code | [event](https://onoffmix.com/event/343228) · [materials](https://github.com/sysnet4admin/talks/tree/main/Korea-Community/2026-neteg) |
 | 2026 | Byline Network Webinar | AI-Driven SRE: Building Kubernetes Operations Standards with AI | [materials](https://github.com/sysnet4admin/talks/tree/main/Byline-Network/2026-ai-era-k8s-cloud-native) · [YouTube](https://www.youtube.com/watch?v=VhmC-XqTf1k) |

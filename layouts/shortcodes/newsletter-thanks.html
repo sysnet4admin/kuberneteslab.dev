@@ -1,0 +1,5 @@
+{{- /* 뉴스레터 구독 완료 페이지. Kit 폼의 "가입 후 이동 주소"가 이 페이지를 가리킨다.
+     구독 폼의 확인 창(iframe) 안에서 열리면 바깥 페이지에 완료 신호를 보내 폼 자리를 완료 문구로 바꾸게 한다. */ -}}
+<script>
+if (window.top !== window.self) { window.parent.postMessage({ name: 'kl:newsletter:done' }, '*'); }
+</script>

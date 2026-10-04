@@ -130,6 +130,13 @@ title이 없으면 캡션도 번호도 안 붙고 그냥 `<img>`로 나간다. �
 - front matter의 `date`, `lastmod`에는 시간대(`+09:00`)를 붙인다. 빠뜨리면 UTC로
   읽혀 미래 날짜가 되고 페이지가 경고 없이 빌드에서 빠진다.
 
+### 피드와 메일
+- 피드 `/ko/feed.xml`, `/en/feed.xml`은 `history.yaml`에서 시작 시각이 지난 항목만 담는다.
+  끝난 항목은 다음 배포 때 제목 앞에 `[종료]`가 붙는다.
+- 새 프로모션 확인은 Awin 메일과 리눅스 재단 공식 페이지로 한다. 메일은 Awin 메일만 조회한다.
+- promo 감사 페이지(`content/*/thanks/`)는 "마지막 업데이트" 계산에서 빠진다.
+  promo `content/`에 독자용이 아닌 페이지를 더하면 같은 제외를 넣는다.
+
 ### 내용 원칙
 - 페이지 본문과 FAQ 답변은 저자 명의 글이다. `author-style` 절차를 탄다.
 - 자격증 정책, 할인율, 통계는 공식 문서 원문과 대조한다. FAQ처럼 오래 걸어 두는
@@ -137,3 +144,17 @@ title이 없으면 캡션도 번호도 안 붙고 그냥 `<img>`로 나간다. �
 - 수수료 구조는 "링크와 수수료에 대해서" 문단 이상으로 자세히 쓰지 않는다.
 - 다른 할인 경로나 제휴 조건과 비교하는 문장을 넣지 않는다.
 - 공식 페이지에 공개되지 않은 일정이나 할인 정보는 싣지 않는다.
+
+## 뉴스레터 구독 (Kit, 2026-10-04)
+
+- 고정 주소는 `kuberneteslab.dev/newsletter`(302로 `/ko/newsletter/`)다. QR
+  (`static/images/qr/newsletter.svg`, `.png`)과 인쇄물에는 이 주소만 쓴다.
+- 폼은 Kit 스크립트 없이 이메일만 Kit 폼 주소로 보내는 HTML 폼이다(`layouts/partials/newsletter.html`,
+  promo에도 같은 이름의 파일). Kit 폼 번호는 두 저장소 `hugo.toml`의 `[params.newsletter]`에만 둔다.
+- 폼 아래 동의 문구 두 줄은 Kit 폼에 적힌 문구와 같게 두고 숨기지 않는다. 바꿀 때는 Kit 폼과 두 사이트를 함께 고친다.
+- 블로그 글에서는 작성자 띠 안에 넣는다(`layouts/partials/post_author.html`).
+- Kit 폼의 가입 후 동작은 외부 주소 이동이고, 이동 주소는 `/ko/newsletter/thanks/`, `/en/newsletter/thanks/`다.
+  감사 페이지 주소를 바꾸면 Kit 설정도 함께 바꾼다.
+- 감사 페이지는 `nl_return` 쿠키(구독 버튼을 누른 페이지 주소, 30분)로 돌아가기 링크를 만들고,
+  promo에서 왔으면 promo 감사 페이지로 넘긴다.
+- Kit 계정, API 키, 발송 설정은 이 저장소 세션에서 다루지 않는다.

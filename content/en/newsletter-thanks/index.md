@@ -15,6 +15,4 @@ build:
 
 You're subscribed. I'll send the next issue when new posts are ready.
 
-[Back to the blog](/en/)
-
 {{< newsletter-thanks >}}

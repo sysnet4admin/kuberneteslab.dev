@@ -59,7 +59,7 @@ build:
 
 - [GitHub](https://github.com/sysnet4admin)
 - [LinkedIn](https://www.linkedin.com/in/hoonjo/)
-- [YouTube](https://www.youtube.com/HoonJo)
+- [YouTube](https://www.youtube.com/@kuberneteslab)
 
 
 ## 협업 문의

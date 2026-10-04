@@ -31,7 +31,7 @@ enableRobotsTXT = true
     url = "https://www.linkedin.com/in/hoonjo/"
   [[params.socialIcons]]
     name = "youtube"
-    url = "https://www.youtube.com/HoonJo"
+    url = "https://www.youtube.com/@kuberneteslab"
 
 [params.assets]
   favicon = "favicon.svg"

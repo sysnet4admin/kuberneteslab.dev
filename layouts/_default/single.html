@@ -42,7 +42,7 @@
   </div>
   {{- end }}
 
-  {{- if eq .Type "blog" }}{{ partial "promo_cta.html" . }}{{ end }}
+  {{- if eq .Type "blog" }}{{ partial "promo_cta.html" . }}{{ partial "newsletter.html" . }}{{ end }}
 
   {{- partial "post_author.html" . }}
 

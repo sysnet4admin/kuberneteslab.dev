@@ -252,3 +252,16 @@ html:lang(ko) body {
     word-break: keep-all;
     overflow-wrap: anywhere;
 }
+
+/* 뉴스레터 구독 폼(Kit). 폼은 Kit가 그리는 밝은 카드 그대로 두고 둘레 여백만 맞춘다.
+   폼이 그려지면 대체 링크를 숨긴다. */
+.newsletter-box { margin: 32px 0 8px; }
+.newsletter-box .formkit-form { margin: 0 auto; max-width: 100% !important; box-sizing: border-box; border-radius: 8px; overflow: hidden; }
+.newsletter-box .formkit-form, .newsletter-box .formkit-form * { box-sizing: border-box; }
+.newsletter-box .formkit-form h2, .newsletter-box .formkit-form h1 { overflow-wrap: anywhere; word-break: keep-all; }
+@media (max-width: 600px) {
+  .newsletter-box .formkit-form[data-style="minimal"] { padding: 24px 16px !important; }
+  .newsletter-box .formkit-form .formkit-header h2, .newsletter-box .formkit-form .formkit-header h1 { font-size: 26px !important; }
+}
+.newsletter-fallback { margin: 8px 0 0; font-size: 0.85em; text-align: center; color: var(--secondary); }
+.newsletter-box:has(.formkit-form) .newsletter-fallback { display: none; }

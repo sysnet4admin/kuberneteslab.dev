@@ -33,6 +33,13 @@ enableRobotsTXT = true
     name = "youtube"
     url = "https://www.youtube.com/@kuberneteslab"
 
+# 뉴스레터 구독 폼(Kit). 폼이 바뀌면 여기 두 ID만 고친다.
+[params.newsletter]
+  host = "kuberneteslab.kit.com"
+  [params.newsletter.forms]
+    ko = "374d8bf569"
+    en = "e8ac70690c"
+
 [params.assets]
   favicon = "favicon.svg"
 

@@ -8,3 +8,6 @@
   translation: "Figure"
 - id: last_updated
   translation: "Updated"
+
+- id: newsletter_fallback
+  translation: "If the form does not appear, you can subscribe here."

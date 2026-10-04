@@ -1,0 +1,9 @@
+{{- /* 뉴스레터 구독 폼(Kit). 폼 안의 동의와 개인정보 안내는 Kit에서 관리하므로 숨기거나 자르지 않는다.
+     스크립트가 막혀 폼이 그려지지 않을 때를 위해 Kit 호스팅 페이지 링크를 같이 둔다. */ -}}
+{{- $nl := site.Params.newsletter -}}
+{{- with index $nl.forms site.Language.Lang }}
+<div class="newsletter-box">
+  <script async data-uid="{{ . }}" src="https://{{ $nl.host }}/{{ . }}/index.js"></script>
+  <p class="newsletter-fallback"><a href="https://{{ $nl.host }}/{{ . }}" target="_blank" rel="noopener">{{ i18n "newsletter_fallback" }}</a></p>
+</div>
+{{- end }}

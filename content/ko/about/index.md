@@ -70,3 +70,5 @@ build:
 - 오픈소스 협업
 
 문의: contact@kuberneteslab.dev
+
+{{< newsletter >}}

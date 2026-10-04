@@ -9,3 +9,6 @@
 /en/promo/ https://promo.kuberneteslab.dev/en/ 301
 /ko/promo https://promo.kuberneteslab.dev/ko/ 301
 /en/promo https://promo.kuberneteslab.dev/en/ 301
+# 뉴스레터 고정 주소. QR과 인쇄물에는 이 주소만 쓴다. 목적지를 바꿀 수 있게 302로 둔다.
+/newsletter /ko/newsletter/ 302
+/newsletter/ /ko/newsletter/ 302

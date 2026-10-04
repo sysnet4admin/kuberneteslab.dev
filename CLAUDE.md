@@ -119,7 +119,8 @@ title이 없으면 캡션도 번호도 안 붙고 그냥 `<img>`로 나간다. �
   형식을 바꾸면 배너도 같이 고친다. CORS는 `https://kuberneteslab.dev`만 허용하므로
   로컬에서는 기본값(상시 30%)이 보이는 게 정상이다.
 - FAQ는 `data/faq.yaml` 한 곳에서 화면과 FAQPage 스키마를 같이 만든다.
-- 제휴 링크는 `static/_redirects`의 `/go/*`.
+- 제휴 링크는 `static/_redirects`의 `/out/<이름>` 줄에 둔다. 독자에게는 `/go/<이름>`을 쓰고, 이 주소는
+  "이동 중" 안내 페이지(`static/go-wait.html`)를 보여 준 뒤 `/out/<이름>`으로 넘긴다.
 
 ### 배포에서 조심할 것
 - 언어 하위 경로라 Hugo가 루트 404를 만들지 않는다. 워크플로가 `public/ko/404.html`을

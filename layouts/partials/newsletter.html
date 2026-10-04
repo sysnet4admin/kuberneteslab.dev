@@ -1,9 +1,23 @@
-{{- /* 뉴스레터 구독 폼(Kit). 폼 안의 동의와 개인정보 안내는 Kit에서 관리하므로 숨기거나 자르지 않는다.
-     스크립트가 막혀 폼이 그려지지 않을 때를 위해 Kit 호스팅 페이지 링크를 같이 둔다. */ -}}
+{{- /* 뉴스레터 구독 카드. Kit 스크립트 없이 이메일만 Kit 폼 주소로 보낸다.
+     아래 두 줄(할인 소식 안내, 개인정보 안내)은 구독 동의 문구라서 빼거나 숨기지 않는다.
+     문구는 Kit 폼에 적힌 것과 같게 유지한다. */ -}}
+{{- $ko := eq site.Language.Lang "ko" -}}
 {{- $nl := site.Params.newsletter -}}
 {{- with index $nl.forms site.Language.Lang }}
-<div class="newsletter-box">
-  <script async data-uid="{{ . }}" src="https://{{ $nl.host }}/{{ . }}/index.js"></script>
-  <p class="newsletter-fallback"><a href="https://{{ $nl.host }}/{{ . }}" target="_blank" rel="noopener">{{ i18n "newsletter_fallback" }}</a></p>
+<div class="newsletter-cta">
+  <form class="newsletter-form" action="{{ printf $nl.action . }}" method="post" target="_blank">
+    <div class="newsletter-body">
+      <div class="newsletter-title">{{ cond $ko "쿠버네티스 랩 뉴스레터" "KubernetesLab Newsletter" }}</div>
+      <p>{{ cond $ko "블로그 새 글과 연구 노트를 정리해 보내 드립니다." "A roundup of new blog posts and research notes." }}</p>
+    </div>
+    <div class="newsletter-fields">
+      <input type="email" name="email_address" required autocomplete="email" aria-label="{{ cond $ko "이메일 주소" "Email address" }}" placeholder="{{ cond $ko "이메일 주소" "Email address" }}">
+      <button type="submit">{{ cond $ko "구독하기" "Subscribe" }}</button>
+    </div>
+  </form>
+  <p class="newsletter-consent">
+    {{- if $ko }}리눅스 재단 자격증 행사가 열리면 할인 소식도 함께 보내 드립니다. 메일 하단에서 언제든 수신을 거부할 수 있습니다.<br>수집 항목: 이메일 주소. 이용 목적: 뉴스레터 발송. 보유 기간: 구독 해지 시까지.
+    {{- else }}Linux Foundation exam discounts are included when a promotion runs. Unsubscribe anytime.<br>I use your email address only for this newsletter and keep it until you unsubscribe.{{ end -}}
+  </p>
 </div>
 {{- end }}

@@ -8,6 +8,3 @@
   translation: "그림"
 - id: last_updated
   translation: "최종 업데이트"
-
-- id: newsletter_fallback
-  translation: "구독 폼이 보이지 않으면 여기에서 구독하실 수 있습니다."

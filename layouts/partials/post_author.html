@@ -1,7 +1,9 @@
-{{- /* 작성자 표시. 소셜 아이콘은 푸터에 같은 것이 있어 여기서는 생략한다. */ -}}
+{{- /* 작성자 표시. 소셜 아이콘은 푸터에 같은 것이 있어 여기서는 생략한다.
+     블로그 글에서는 작성자 아래에 뉴스레터 구독을 같은 띠 안에 붙인다. */ -}}
 {{- $author := .Params.author | default site.Params.author -}}
 {{- with $author -}}
 <div class="post-author">
     <div class="post-author-name">{{ i18n "written_by" }} <strong>{{ . }}</strong></div>
+    {{- if eq $.Type "blog" }}{{ partial "newsletter.html" $ }}{{ end }}
 </div>
 {{- end -}}

@@ -13,3 +13,17 @@
 {{- $t := cond (eq .Language.Lang "en") "Page not found" "페이지를 찾을 수 없습니다" }}
 <script>document.title = {{ printf "%s | %s" $t site.Title }};</script>
 {{- end }}
+
+{{- /* 뉴스레터 감사 페이지. promo 사이트에서 구독을 시작했으면(nl_return 쿠키) 그리지 않고
+       promo 감사 페이지로 바로 넘긴다. 확인 창(iframe) 안에서는 넘기지 않는다. */ -}}
+{{- if .Params.newsletterThanks }}
+<script>
+(function () {
+  if (window.top !== window.self) return;
+  var m = document.cookie.match(/(?:^|; )nl_return=([^;]+)/);
+  var u = m ? decodeURIComponent(m[1]) : '';
+  var p = u.match(/^https:\/\/promo\.kuberneteslab\.dev\/(ko|en)\//);
+  if (p) location.replace('https://promo.kuberneteslab.dev/' + p[1] + '/thanks/');
+})();
+</script>
+{{- end }}

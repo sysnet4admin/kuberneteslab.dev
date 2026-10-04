@@ -2,6 +2,7 @@
 title: "Subscribed"
 url: "/en/newsletter/thanks/"
 layout: "single"
+newsletterThanks: true
 summary: "newsletter-thanks"
 ShowToc: false
 ShowReadingTime: false

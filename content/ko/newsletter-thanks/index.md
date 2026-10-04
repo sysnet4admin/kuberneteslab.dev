@@ -2,6 +2,7 @@
 title: "구독 완료"
 url: "/ko/newsletter/thanks/"
 layout: "single"
+newsletterThanks: true
 summary: "newsletter-thanks"
 ShowToc: false
 ShowReadingTime: false

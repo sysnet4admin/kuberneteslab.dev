@@ -141,9 +141,9 @@ First, `007-evict` was run under slightly different conditions from the other sc
 
 Second, I used only one model, so the ranking may change with a different model. The shell baseline was measured from late August to early September and the six MCP servers in August, and I could not confirm that both used the same version of ollama, the tool that runs the local model. The number of rounds also differs, six for containers and reza-gholizade and three for the rest, so the precision differs. For servers near the baseline, read the results within the ±0.032 spread mentioned above.
 
-Finally, MCP servers often change their tool counts and flags with each release. Flux159, for example, was measured on v4.0.7, and a read-only option that trims the tool list further was added later, so measuring it again now could change its safety results. For that reason, pin the versions when you reproduce this.
+Finally, MCP servers and agent models are changing very quickly, so these values measured in August 2026 are not enough on their own to settle a choice today. In practice, MCP servers often change their tool counts and flags with each release; Flux159, for example, was measured on v4.0.7, and a read-only option that trims the tool list further was added later, so measuring it again now could shift its safety score. So please treat these results as a reference when choosing a server, and test with the version and environment you will use before adopting one.
 
-The [limits section of the repository README](https://github.com/sysnet4admin/Research/tree/main/mcp-server-benchmark) lists each server's version and the two harness defects I found during the measurement. I re-ran the affected runs.
+The [limits section of the repository README](https://github.com/sysnet4admin/Research/tree/main/mcp-server-benchmark) lists each server's version and the two harness defects I found during the measurement (I re-ran the affected runs), so if you reproduce this, it is best to pin those versions.
 
 ## Closing
 

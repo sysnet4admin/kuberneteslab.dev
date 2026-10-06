@@ -4,8 +4,8 @@ date: 2026-08-04
 draft: false
 tags: ["cni", "calico", "cilium", "flannel", "antrea", "kube-router", "kube-proxy", "nftables", "ebpf", "benchmark", "kubernetes"]
 categories: ["Kubernetes"]
-description: "We measured the standing CPU and memory usage of Calico, Cilium, Flannel, Antrea, and kube-router across 14 configurations in a 9-day unattended campaign. Memory, not CPU, is what separates them, and switching kube-proxy to nftables mode alone cut its memory usage by 70%."
-summary: "A CNI is picked once and rarely revisited, and there is no organized data on what it consumes day to day. Measuring 5 CNIs in 14 configurations under identical conditions showed an 8x memory spread, an eBPF map share that kubectl top never sees, and a 70% kube-proxy memory saving from the nftables mode that had not been published as a number."
+description: "I measured the standing CPU and memory usage of Calico, Cilium, Flannel, Antrea, and kube-router across 14 configurations in an unattended campaign. Memory, not CPU, is what separates them, and switching kube-proxy to nftables mode alone cut its memory usage by 70%."
+summary: "A CNI is picked once and rarely revisited, and there is no organized data on what it consumes day to day. Measuring 5 CNIs in 14 configurations under identical conditions showed an 8x memory spread, eBPF map memory that shows up in different metrics depending on the CNI, and a 70% kube-proxy memory saving from the nftables mode that had not been published as a number."
 ShowToc: true
 TocOpen: true
 ---
@@ -21,8 +21,9 @@ So how much do they use? Looking for an answer turned up something
 interesting: throughput benchmarks are everywhere, but I could not find a
 public source comparing standing resource usage under identical conditions.
 Vendor docs do not have it either. Cilium ships its helm chart without
-resource requests, and a Calico maintainer declined a request to publish
-recommended values. Search results for these numbers are often filled by
+resource requests, and in projectcalico/calico#5418 one Calico maintainer
+explained that a heuristic default would be wrong for somebody, while another
+pointed to per-cluster overrides. Search results for these numbers are often filled by
 sources with no traceable origin.
 
 This gap matters because of where the market is heading. Training and
@@ -32,15 +33,20 @@ question a team asks before migrating is exactly "so how much more does it
 use day to day?", and the migration case studies stay quiet on that point. If
 nobody has the answer, the only option is to measure it.
 
-So we measured it: Calico Open Source, Cilium, Flannel, Antrea, and
-kube-router, split into 14 configurations, running unattended for 9 days, for
-73 valid measurement runs. All numbers and the reproduction harness are in
+So I measured it: Calico Open Source, Cilium, Flannel, Antrea, and
+kube-router, split into 14 configurations, measured unattended for 9 days
+and then extended with an extra round and a re-measurement, for 73 valid
+measurement runs. All numbers and the reproduction harness are in
 the [GitHub repository](https://github.com/sysnet4admin/Research/tree/main/cni-benchmark).
 
-## What we measured, and how
+{{< note title="[Update] October 6, 2026" >}}
+After this post went out, I checked a few things and corrected several places. First, I checked which metric the eBPF map memory shows up in, and it differs by CNI. Cilium's maps are charged to the cilium-agent container, so they are already inside that container's working set, while Calico eBPF's maps are charged at the pod level, outside the calico-node container. I checked the Cilium default and Calico eBPF configurations once each on kernel 6.8; the other Cilium configurations use the same agent and are expected to behave the same, which I will confirm in the next re-measurement. So I corrected the parts that said eBPF maps never show up in kubectl top, and the scatter plot. The earlier figure added the maps a second time for the four Cilium configurations and placed them 412 to 712MiB further right. Because the maps land in different places, the conclusion of finding 4 changed as well. Separately, I corrected the wording about Calico issue #5418 and the description of the measurement period to match the source and the records. Finally, the kube-router behavior in finding 3 has since been traced to its cause and reported upstream, and the maintainer opened a fix PR. The body of finding 3 is left as recorded at publication, and the details are in the README of the [GitHub repository](https://github.com/sysnet4admin/Research/tree/main/cni-benchmark).
+{{< /note >}}
+
+## What I measured, and how
 
 The target is standing cost: the CPU and memory the networking stack (every
-CNI component plus kube-proxy) uses at rest and under load. We did not
+CNI component plus kube-proxy) uses at rest and under load. I did not
 measure throughput or latency. On a virtualized 3-node cluster (VirtualBox),
 the virtual switch would blend into those numbers and they could not be
 attributed to the CNI itself. Load is used only as a stimulus that triggers
@@ -71,8 +77,8 @@ gives this picture.
 ![Standing-cost map: idle memory vs churn CPU](/images/cni-standing-cost-map.svg)
 
 Three things jump out. First, the horizontal spread is wide: the lightest
-configuration (Flannel + nftables, 209MiB) and the heaviest (Cilium KPR with
-maps, around 2,400MiB) are more than 10x apart. Second, only one point sits
+configuration (Flannel + nftables, 209MiB) and the heaviest (Cilium KPR, 1,705MiB
+with its maps already inside) are more than 8x apart. Second, only one point sits
 in the top-left: kube-router in all-features mode. Third, everything else
 clusters between 150 and 470mC of churn CPU, which is another way of saying
 the real axis of standing cost is memory, not CPU.
@@ -86,12 +92,16 @@ networking stack occupies 100MiB or 800MiB changes what is left for
 workloads. If you choose a CNI on resource grounds, memory is the axis to
 look at.
 
-There is a trap here. The eBPF map kernel memory that eBPF-based CNIs use
-lives outside process metrics and never shows up in `kubectl top`. Measured
-node totals: Cilium default 412MiB, Cilium KPR 712MiB, Calico eBPF 521MiB.
-Calico eBPF actually has a smaller process footprint than its iptables
-sibling (920 vs 1005MiB), so leaving maps out can flip the comparison. Memory
-comparisons of eBPF CNIs need bpftool accounting included.
+There is one thing to watch here. The eBPF map kernel memory that eBPF-based
+CNIs use came to 412MiB for Cilium default, 712MiB for Cilium KPR, and 521MiB
+for Calico eBPF (node totals), and which metric it shows up in depends on the
+CNI. Cilium's maps are charged to the cilium-agent container and are already
+inside its container working set, while Calico eBPF's maps are charged at the
+pod level, outside the calico-node container, and drop out of container
+working set. So Calico eBPF looks smaller than its iptables sibling on
+container memory alone (920 vs 1005MiB), and comparing it that way can flip
+the result. When comparing eBPF CNIs on memory, it is worth checking first
+whether the maps are inside or outside the metric you use.
 
 ## Finding 2: switching kube-proxy to nftables mode cut memory by 70%
 
@@ -121,26 +131,28 @@ all configurations at idle (2mC / 215MiB). But once churn started, it climbed
 to 3,355mC cluster total (about 1.1 cores per node) and stayed there after
 churn ended. All five repetitions produced the same numbers.
 
-We reproduced it once to narrow the cause. No pod restarts, no OOM kills, no
+I reproduced it once to narrow the cause. No pod restarts, no OOM kills, no
 error logs; the CPU went to a userspace loop inside kube-router. The most
 telling observation is history dependence: the same object scale (200
 Services, 12,008 endpoints) cost 77mC before churn, holds at 3,300mC after
 one churn episode, and returns to idle within 90 seconds of deleting the load
 objects. The split configuration that leaves Services to kube-proxy was
 normal under the same load, so the cause most likely lies in the IPVS service
-proxy; we did not identify which internal operation is responsible. If you
+proxy; I did not identify which internal operation is responsible. If you
 are considering all-features mode on a cluster with frequent pod replacement,
 this behavior is worth knowing about.
 
-## Finding 4: for Calico, the install method changes memory more than the dataplane
+## Finding 4: for Calico, both the install method and the dataplane change memory substantially
 
 On the same iptables dataplane, the operator install uses 533MiB more idle
 memory than the manifest install, because two Typha replicas, two
-calico-apiservers, csi-node-driver, and tigera-operator all stay resident. By
-contrast, switching the dataplane to eBPF moves process memory by only 85MiB.
-The mundane question "how do you install it" weighs more on resident memory
-than the flashy question "which dataplane do you run". The operator does buy
-management convenience; 533MiB is the price of that convenience.
+calico-apiservers, csi-node-driver, and tigera-operator all stay resident. Switching
+the dataplane to eBPF moves container memory by only
+85MiB, but the eBPF dataplane keeps 521MiB of maps at the pod level, outside
+container metrics. Counting those maps, the dataplane switch (about 436MiB)
+is close to the install-method difference (533MiB), so both choices weigh
+substantially on resident memory. The operator does buy management convenience; 533MiB is the
+price of that convenience.
 
 ## Finding 5: leaving observability features on costs very little
 
@@ -153,7 +165,7 @@ turn these off.
 
 ## Before you reuse these numbers
 
-Three cautions. First, as above, eBPF maps never appear in `kubectl top`.
+Three cautions. First, as above, which metric eBPF maps show up in depends on the CNI.
 Second, working set and RSS differ by up to 5x per component (cilium-agent:
 1,137 vs 236MiB); check which metric a source uses before comparing. Third,
 absolute CPU shifted 20~33% between measurement windows depending on host
@@ -169,8 +181,8 @@ out of scope; encryption and observability extras are too.
 
 The opening question was "how much does a CNI use day to day?" The answer:
 CPU is negligible whichever you pick, and memory usage spans an 8x range
-depending on configuration. Counting that memory honestly means including the
-eBPF maps that `kubectl top` never shows, and you can cut 70% of kube-proxy's
+depending on configuration. Counting that memory properly means checking whether
+the eBPF maps are inside or outside container working set, and you can cut 70% of kube-proxy's
 share without changing your CNI at all, just by switching its mode.
 
 The full 14-configuration tables, per-component numbers, and the reproduction

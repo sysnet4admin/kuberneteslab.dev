@@ -4,8 +4,8 @@ date: 2026-08-04
 draft: false
 tags: ["cni", "calico", "cilium", "flannel", "antrea", "kube-router", "kube-proxy", "nftables", "ebpf", "benchmark", "kubernetes"]
 categories: ["Kubernetes"]
-description: "Calico, Cilium, Flannel, Antrea, kube-router 5종을 14개 구성으로 나누어 상시 CPU와 메모리 사용량을 9일간 무인 측정했습니다. 조건을 가르는 축은 CPU가 아니라 메모리였고, kube-proxy를 nftables 모드로 바꾸는 것만으로 메모리 사용량이 70% 줄었습니다."
-summary: "CNI는 한 번 고르면 다시 들여다보지 않는 구성 요소라 평소 자원 사용량을 정리한 자료가 없습니다. 5종 14구성을 같은 조건에서 실측했더니 메모리 사용량이 8배까지 갈렸고, eBPF map처럼 kubectl top에 안 잡히는 몫과 kube-proxy nftables 모드의 70% 절감처럼 알려지지 않았던 수치들이 확인됐습니다."
+description: "Calico, Cilium, Flannel, Antrea, kube-router 5종을 14개 구성으로 나누어 상시 CPU와 메모리 사용량을 무인으로 측정했습니다. 조건을 가르는 축은 CPU가 아니라 메모리였고, kube-proxy를 nftables 모드로 바꾸는 것만으로 메모리 사용량이 70% 줄었습니다."
+summary: "CNI는 한 번 고르면 다시 들여다보지 않는 구성 요소라 평소 자원 사용량을 정리한 자료가 없습니다. 5종 14구성을 같은 조건에서 실측했더니 메모리 사용량이 8배까지 갈렸고, CNI마다 다른 지표에 잡히는 eBPF map 메모리와 kube-proxy nftables 모드의 70% 절감처럼 알려지지 않았던 수치들이 확인됐습니다."
 ShowToc: true
 TocOpen: true
 ---
@@ -20,8 +20,9 @@ CNI를 언제 마지막으로 들여다보셨나요? 대부분은 클러스터�
 그렇다면 얼마나 쓰고 있을까요? 이 질문에 답하는 자료를 찾다가 흥미로운 사실을
 알게 됐습니다. 처리량 벤치마크는 많은데, 상시 자원 사용량을 같은 조건에서
 비교한 공개 자료는 찾을 수 없었습니다. 벤더 문서에도 없습니다. Cilium은 helm
-차트에 자원 요청값을 넣지 않았고, Calico 메인테이너는 권장치를 공표해 달라는
-요청을 거절했습니다. 그래서 검색하면 출처가 불분명한 수치가 먼저 나오는 경우가
+차트에 자원 요청값을 넣지 않았고 Calico 이슈 #5418에서는 한 메인테이너가
+휴리스틱으로 정한 기본값은 어떤 클러스터에는 맞지 않게 된다고 설명했고 다른
+메인테이너는 클러스터별 오버라이드를 안내했습니다. 그래서 검색하면 출처가 불분명한 수치가 먼저 나오는 경우가
 많습니다.
 
 이 공백이 실무에서 문제가 되는 이유는 시장 구도 때문입니다. 교육과 자격증은
@@ -31,9 +32,14 @@ Cilium으로 향하고 있습니다. 이관을 검토하는 팀이 마지막에 
 침묵합니다. 답이 없으면 직접 재 보는 수밖에 없습니다.
 
 그래서 측정했습니다. Calico Open Source, Cilium, Flannel, Antrea, kube-router
-5종을 14개 구성으로 나누어 9일간 무인으로 돌렸고, 유효 측정 73회분을 모았습니다.
+5종을 14개 구성으로 나누어 9일간 무인으로 측정했고 이후 추가 측정과 재측정을
+더해 유효 측정 73회분을 모았습니다.
 전체 수치와 재현 방법은 [GitHub 저장소](https://github.com/sysnet4admin/Research/tree/main/cni-benchmark)에
 있습니다.
+
+{{< note title="[갱신] 2026년 10월 6일" >}}
+이 글을 발행한 뒤에 확인한 내용이 있어서 몇 곳을 고쳤습니다. 우선 eBPF map 메모리가 어느 지표에 잡히는지를 직접 확인해 보니 CNI마다 달랐습니다. Cilium의 map은 cilium-agent 컨테이너에 매겨져 이미 그 컨테이너의 working set 안에 있었고 Calico eBPF의 map은 calico-node 컨테이너 밖인 파드 단위에 매겨져 있었습니다. 커널 6.8에서 Cilium 기본 구성과 Calico eBPF 구성을 각각 1회 확인했고 나머지 Cilium 구성은 같은 에이전트라 같을 것으로 보고 다음 재측정에서 확인하려고 합니다. 그래서 "eBPF map은 kubectl top에 잡히지 않는다"고 쓴 부분과 산점도를 고쳤습니다. 이전 그림은 Cilium 네 구성에 map을 한 번 더 더해서 412~712MiB 오른쪽에 그려져 있었습니다. 또 map이 잡히는 위치가 이렇게 다르다 보니 발견 4의 결론도 달라졌습니다. 이와 별개로 Calico 이슈 #5418의 표현과 측정 기간 설명을 원문과 기록에 맞게 바로잡았습니다. 마지막으로 발견 3의 kube-router 동작은 이후 원인을 확인해 업스트림에 제보했고 메인테이너가 수정 PR을 올렸습니다. 발견 3 본문은 발행 당시의 기록 그대로 두었고 보다 상세한 내용은 [GitHub 저장소](https://github.com/sysnet4admin/Research/tree/main/cni-benchmark)의 README에 정리되어 있으니 참고하시기 바랍니다.
+{{< /note >}}
 
 ## 무엇을 어떻게 측정했나
 
@@ -69,8 +75,8 @@ working set 기준으로 보되 RSS를 병기할 것, 그리고 eBPF 계열이 �
 ![상시 비용 산점도: idle 메모리 대 churn CPU](/images/cni-standing-cost-map-ko.svg)
 
 이 그림에서 세 가지가 바로 보입니다. 첫째, 가장 가벼운 Flannel+nftables
-(209MiB)와 가장 무거운 Cilium KPR 구성(map 포함 2,400MiB대)이 가로축에서
-10배 이상 벌어져 있습니다. 둘째, 세로 방향은 kube-router
+(209MiB)와 가장 무거운 Cilium KPR 구성(1,705MiB, map이 이미 들어 있는 값)이 가로축에서
+8배 이상 벌어져 있습니다. 둘째, 세로 방향은 kube-router
 전기능(Ku1) 하나만 왼쪽 위로 튀어 있습니다. 셋째, 나머지 구성들의 churn CPU는
 150~470mC 대역에 모여 있어서, 상시 비용의 실질 축은 CPU가 아니라 메모리라는
 것을 알 수 있습니다.
@@ -83,12 +89,15 @@ CNI를 골라도 평소 CPU가 문제 될 가능성은 낮다는 뜻입니다. �
 100MiB를 쓰는지 800MiB를 쓰는지에 따라 워크로드에 남는 메모리가 달라지게
 됩니다. CNI를 자원 관점에서 고른다면 봐야 할 축은 메모리입니다.
 
-여기에 함정이 하나 있습니다. eBPF 계열 CNI가 쓰는 map 커널 메모리는 프로세스
-메트릭 바깥에 있어서 `kubectl top`에 잡히지 않습니다. 실측값은 노드 합 기준으로
-Cilium 기본 412MiB, Cilium KPR 712MiB, Calico eBPF 521MiB였습니다. Calico
-eBPF는 프로세스 메모리만 보면 iptables 구성보다 오히려 작기 때문에(920 대
-1005MiB), map을 빼고 비교하면 판단이 반대로 나올 수 있습니다. eBPF CNI의
-메모리를 비교할 때는 bpftool 계측까지 포함해야 합니다.
+여기에 주의할 점이 하나 있습니다. eBPF 계열 CNI가 쓰는 map 커널 메모리는 노드 합
+기준으로 Cilium 기본 412MiB, Cilium KPR 712MiB, Calico eBPF 521MiB였는데, 이
+메모리가 어느 지표에 잡히는지는 CNI마다 다릅니다. Cilium은 map이 cilium-agent
+컨테이너에 매겨져 이미 컨테이너 working set 안에 있지만 Calico eBPF는 map이
+calico-node 컨테이너 밖인 파드 단위에 매겨져 컨테이너 working set에서 빠집니다.
+그래서 Calico eBPF는 컨테이너 메모리만 보면 iptables 구성보다 오히려 작은데(920 대
+1005MiB), 그 상태로 비교하면 판단이 반대로 나올 수 있습니다. eBPF CNI의 메모리를
+비교할 때는 map이 쓰고 있는 지표 안에 있는지 밖에 있는지부터 확인하시는 게 좋을 것
+같습니다.
 
 ## 발견 2. kube-proxy를 nftables 모드로 바꾸면 메모리가 70% 줄어듭니다
 
@@ -126,14 +135,16 @@ kube-router는 파드 네트워킹, NetworkPolicy, IPVS 서비스 프록시를 �
 동작이 원인인지까지는 확인하지 않았습니다. 파드 교체가 잦은 클러스터에
 전기능 모드를 고려하신다면 이 동작을 알고 계시는 게 좋겠습니다.
 
-## 발견 4. Calico는 데이터플레인보다 설치 방식이 메모리를 더 바꿉니다
+## 발견 4. Calico는 설치 방식도 데이터플레인도 메모리를 크게 바꿉니다
 
 같은 iptables 데이터플레인이라도 operator 방식 설치는 manifest 방식보다 idle
 메모리를 533MiB 더 씁니다. Typha 2개, calico-apiserver 2개, csi-node-driver,
-tigera-operator가 추가로 상주하기 때문입니다. 그에 반해 데이터플레인을 eBPF로
-바꿨을 때의 프로세스 메모리 차이는 85MiB에 그칩니다. 어느 데이터플레인을 쓰는지보다 어떤 방식으로 설치하는지가 상주 메모리에는
-더 크게 작용하는 셈입니다. 물론 operator가 주는 관리 편의가
-있으니, 533MiB를 그 편의의 비용으로 이해하시면 됩니다.
+tigera-operator가 추가로 상주하기 때문입니다. 데이터플레인을 eBPF로
+바꿨을 때의 컨테이너 메모리 차이는 85MiB에 그치지만 eBPF 데이터플레인은 컨테이너
+지표 밖인 파드 단위에 map 521MiB를 따로 씁니다. 이 map까지 세면 데이터플레인
+전환(약 436MiB)과 설치 방식 차이(533MiB)가 비슷한 크기라서 두 선택 모두 상주
+메모리에 크게 작용합니다. 물론 operator가 주는 관리 편의가 있으니, 533MiB를 그
+편의의 비용으로 이해하시면 됩니다.
 
 ## 발견 5. 관측 기능은 켜 두어도 부담이 매우 작습니다
 
@@ -146,8 +157,8 @@ FlowExporter도 +5~10MiB로 같은 경향이었습니다. 관측 스택의 실�
 
 ## 수치를 읽을 때 주의하실 점
 
-세 가지만 짚고 넘어가는 게 좋겠습니다. 첫째, 위에서 말한 대로 eBPF map은 `kubectl top`에
-잡히지 않습니다. 둘째, working set과 RSS는 구성 요소에 따라 5배까지
+세 가지만 짚고 넘어가는 게 좋겠습니다. 첫째, 위에서 말한 대로 eBPF map이 어느 지표에
+잡히는지는 CNI마다 다릅니다. 둘째, working set과 RSS는 구성 요소에 따라 5배까지
 다릅니다(cilium-agent는 1,137 대 236MiB). 다른 자료와 수치를 비교하실 때는
 어떤 메트릭 기준인지부터 확인하셔야 합니다. 셋째, CPU 절대값은 호스트 상태에
 따라 측정 시기 사이에 20~33% 달라지는 것을 확인했습니다. 이번 측정은 14개
@@ -163,8 +174,8 @@ FlowExporter도 +5~10MiB로 같은 경향이었습니다. 관측 스택의 실�
 
 측정을 시작할 때의 질문은 "CNI는 평소에 자원을 얼마나 쓸까"였습니다. 답은
 "CPU는 어느 것이든 무시할 수준이고, 메모리 사용량은 구성에 따라 8배까지
-나누어진다"입니다. 그리고 그 메모리를 제대로 세려면 `kubectl top` 밖에 있는 eBPF
-map까지 봐야 하고, CNI를 바꾸지 않아도 kube-proxy 모드 전환만으로 70%를 줄일
+나누어진다"입니다. 그리고 그 메모리를 제대로 세려면 eBPF map이 컨테이너 working set
+안에 있는지 밖에 있는지까지 봐야 하고 CNI를 바꾸지 않아도 kube-proxy 모드 전환만으로 70%를 줄일
 수 있다는 것까지 확인했습니다.
 
 측정 조건 14개의 전체 표, 구성 요소별 상세 수치, 재현용 하네스는

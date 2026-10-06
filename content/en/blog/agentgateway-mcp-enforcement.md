@@ -21,6 +21,10 @@ what is declared and what is enforced are two different things. In this post
 same thing as a Kubernetes Gateway API resource, so please keep the two apart
 while reading.
 
+{{< note title="[Update] October 6, 2026" >}}
+Since this post went out, agentgateway v1.6.0 has been released, and running the policy tests from the body again showed two things have changed. First, when a guardrail server denies a tools/call, the HTTP 200 and the reason text stay the same and only where the reason sits has moved, from a JSON-RPC error (-32001) to a tool result with `isError: true` (PR #3526). This holds for requests sent with protocol header 2026-07-28, and I did not measure how clients handle this result. Second, PR #3301, which the body describes as not yet in a release, is included in v1.6.0, so an argument condition can now be attached as a route authorization policy on a release build, and I confirmed on a real Kubernetes MCP server that it blocks only pod deletion in the prod namespace with 403 while allowing deletion in the dev namespace. The measurements in the body are left as they were on v1.5.0, and the details are recorded in [the v1.6.0 section of the README](https://github.com/sysnet4admin/Research/blob/main/agentgateway-study/README.md#v160-release-measured-2026-10-06).
+{{< /note >}}
+
 It is worth settling what agentgateway is before going on. It is an open-source
 proxy that takes, in one place, the traffic of agents calling tools over MCP,
 agents calling other agents over A2A (Agent2Agent), and applications calling
@@ -318,9 +322,10 @@ Let me turn the above into an operating procedure.
 4. If you need argument-level control, build a checking server with
    guardrails. The latency cost is under 1 ms per call, so it is not a heavy
    burden, and write the rejection reason as a sentence an agent can read and
-   correct itself with. From the release that includes PR #3301, the same
-   condition can also be attached as a route authorization policy, so check
-   the release notes.
+   correct itself with. From v1.6.0, which includes PR #3301, the same
+   condition can also be attached as a route authorization policy. When a
+   route policy denies, though, the official SDK replaces the plain-text 403
+   reason with a generic message, so the reason does not reach the agent.
 5. Do not expect the gateway to improve p99. The hop costs under 1 ms at p50
    per tool call, p99 does not improve, and a p99 penalty of a few
    milliseconds shows only when a connection-reusing client calls a very fast

@@ -4,7 +4,7 @@ date: 2026-09-22
 draft: false
 tags: ["claude-code", "agents-md", "aaif", "context-file", "llm-agent", "kubernetes"]
 categories: ["AI"]
-description: "Claude Code 2.1.277 ships native AGENTS.md support. The default only reads it when no CLAUDE.md exists, CLAUDE.local.md counts for that check, and sessions routed through Bedrock or Vertex do not get the feature at all. Existing imports and symlinks can stay, but one SessionStart hook has to go."
+description: "Claude Code 2.1.277 ships native AGENTS.md support. The default only reads it when no CLAUDE.md exists, and CLAUDE.local.md counts for that check. Sessions routed through Amazon Bedrock or Google Vertex AI could not use it before 2.1.281, but from 2.1.281 they read AGENTS.md too. Existing imports and symlinks can stay, but one SessionStart hook has to go."
 summary: "Native support does not mean the workaround has to go. The documented pitfalls, plus 80 runs from the July extension study, decide what to keep and what to fix."
 ShowToc: true
 TocOpen: true
@@ -13,6 +13,10 @@ TocOpen: true
 Back in July I wrote [Does switching CLAUDE.md to AGENTS.md slow Claude Code down?](https://kuberneteslab.dev/en/blog/agents-md-migration/), where Claude Code could not read `AGENTS.md` on its own, so the only way to migrate was a workaround: keep a single `@AGENTS.md` import line in `CLAUDE.md`, or turn `CLAUDE.md` into a symlink pointing at `AGENTS.md`. The worry was that the workaround might add cost to every session, so I measured 210 runs, and the answer was that it does not.
 
 Then in September 2026, Claude Code 2.1.277 shipped native `AGENTS.md` support. So should you now remove the workaround? The short answer is that in most cases you do not have to, and there are situations where keeping it is the safer choice. There is exactly one workaround you do have to remove, and there is one place where the default behaves differently from what the name suggests, which makes it easy to conclude that the feature is not working.
+
+{{< note title="[Update] October 6, 2026" >}}
+Two things have changed since this post went out. From 2.1.281, sessions that go through Amazon Bedrock, Google Vertex AI, Microsoft Foundry, or an LLM gateway, and sessions with telemetry disabled, can read `AGENTS.md` too. From 2.1.280, an `AGENTS.md` read through the setting also shows up in the `/memory` and `/context` lists. I revised "Sessions that do not get the feature", "Differences worth knowing in day-to-day use", and the checklist to match the current documentation.
+{{< /note >}}
 
 ## What changed
 
@@ -53,14 +57,15 @@ Some files are never read: `AGENTS.local.md`, `AGENTS.override.md`, and anything
 
 ## Sessions that do not get the feature
 
-Shipping the feature does not mean every session has it. The documented conditions fall into four cases.
+Shipping the feature does not mean every session has it. The current documentation lists three cases.
 
-- You are on a version older than 2.1.277. As I write this the stable channel is still 2.1.267, so depending on your channel an update may not bring the entry
-- Your session does not fetch feature flags from Anthropic, which is the case when you go through a third-party provider such as Amazon Bedrock, Vertex, or Foundry, or when you have disabled telemetry
-- It is your first session after installing or upgrading. Claude reads `AGENTS.md` from the next session on
-- You or your organization set `disableAllHooks` or `allowManagedHooksOnly`, or the built-in `agents-md` plugin is disabled in `/plugin`
+- You are on a version older than 2.1.277
+- The built-in `agents-md` plugin is disabled in `/plugin`
+- It is your first session after upgrading from 2.1.276 or earlier. This does not happen on every upgrade, and when it does, Claude reads `AGENTS.md` from the next session on.
 
-In these sessions Claude reads `CLAUDE.md` only, and the Project instructions entry does not even appear in `/config`. If your company routes models through Bedrock, this is the item to check first, so look for the entry in `/config` before you move a whole team over to `AGENTS.md`.
+In these sessions Claude reads `CLAUDE.md` only, and the Project instructions entry does not even appear in `/config`.
+
+When I first wrote this post there were two more cases. One was sessions that go through Amazon Bedrock, Google Vertex AI, Microsoft Foundry, or an LLM gateway, or that have telemetry disabled. That restriction was lifted in 2.1.281, so these sessions now read `AGENTS.md` once Claude Code is updated. If your company routes models through Bedrock, check that everyone is on 2.1.281 or later before the team moves to `AGENTS.md`. The other case was `disableAllHooks` or `allowManagedHooksOnly` being set. It no longer appears in the documentation's list, but I could not find a changelog entry saying the restriction was lifted, so if you use either setting, check `/config` for the entry yourself.
 
 ## What to keep and what to fix
 
@@ -93,9 +98,9 @@ So there is no speed or cost reason to rush the workaround out. Reading a file o
 
 ## Differences worth knowing in day-to-day use
 
-An `AGENTS.md` that Claude reads through the Project instructions setting does behave differently from a `CLAUDE.md` in a few places, and these are the ones you need when something looks wrong.
+An `AGENTS.md` that Claude reads through the Project instructions setting does behave differently from a `CLAUDE.md` in a few places, and these are the ones you need when something looks wrong. When I first wrote this there were four, and the first of them, how you confirm the file loaded, has matched `CLAUDE.md` since 2.1.280. That leaves three, but I kept the first one here for anyone still on an older version.
 
-The first is **how you confirm it loaded**. A `CLAUDE.md` appears in `/memory` and in the Memory files list in `/context`, but an `AGENTS.md` read through the setting is missing from that list. It is easy to look at that list and conclude the file was ignored. Under the default value you can check with the `no CLAUDE.md found; AGENTS.md loaded: ...` line near the start of the conversation. Under any other value that line does not appear, so ask Claude what its project instructions say instead.
+The first is **how you confirm it loaded**. Before 2.1.280, only a `CLAUDE.md` appeared in `/memory` and in the Memory files list in `/context`, and an `AGENTS.md` read through the setting was missing from that list, so it was easy to look at the list and conclude the file was ignored. From 2.1.280 it appears there too, so now you check `/memory` or `/context` for the path of your `AGENTS.md`. On older versions, ask Claude what its project instructions say. On any version, an interactive session on the default value also shows a `no CLAUDE.md found; AGENTS.md loaded: ...` line near the start of the conversation, which you can check as well.
 
 The second is **hooks**. `InstructionsLoaded` hooks fire for a `CLAUDE.md` but not for an `AGENTS.md` read through the setting. They behave as usual for an `AGENTS.md` that a `CLAUDE.md` imports or symlinks to, so if you have automation that depends on that hook, keep the workaround in place.
 
@@ -105,12 +110,12 @@ The fourth is **an `@path` import of a file outside your working directory**. Fr
 
 ## What to do
 
-1. Open `/config` and check that **Project instructions** is there. If it is missing, you are in one of the unsupported cases above, so keep the workaround.
+1. Open `/config` and check that **Project instructions** is there. If it is missing, you are in one of the cases under "Sessions that do not get the feature", so check your version and the state of `agents-md` in `/plugin` first, then open a new session, and if the entry is still missing, keep the workaround.
 2. If you want `AGENTS.md` to be the source of truth, check whether a `CLAUDE.md` is still in the repository. While it is, the default will not read `AGENTS.md`.
 3. If you keep a personal `CLAUDE.local.md`, set Project instructions to `claude-md-and-agents-md`.
 4. Remove any SessionStart hook that prints `AGENTS.md`. Leaving just this one in place makes Claude read the same content twice.
 5. Leave your `@AGENTS.md` import or symlink alone. If your team has sessions that do not get the feature, I would leave it alone.
-6. After changing anything, start a new session and check. On the default value look for the `AGENTS.md loaded:` line; on `claude-md-and-agents-md` that line does not appear, so ask Claude what its project instructions say. An `AGENTS.md` read through the setting stays out of the `/context` list, though one reached by an import or a symlink does show up.
+6. After changing anything, start a new session and check. On 2.1.280 or later, look for the path of your `AGENTS.md` in the `/memory` or `/context` list. On older versions, ask Claude what its project instructions say.
 
 ## Closing
 

@@ -4,7 +4,7 @@ date: 2026-09-22
 draft: false
 tags: ["claude-code", "agents-md", "aaif", "context-file", "llm-agent", "kubernetes"]
 categories: ["AI"]
-description: "Claude Code 2.1.277에 AGENTS.md 네이티브 지원이 들어갔습니다. 다만 기본값은 CLAUDE.md가 없을 때만 AGENTS.md를 읽는 방식이고, CLAUDE.local.md가 그 판정에 포함되며, Bedrock이나 Vertex를 경유하는 세션에는 기능 자체가 없습니다. 기존 import와 심볼릭 링크는 그대로 두어도 되지만 SessionStart 훅 하나는 지워야 합니다."
+description: "Claude Code 2.1.277에 AGENTS.md 네이티브 지원이 들어갔습니다. 다만 기본값은 CLAUDE.md가 없을 때만 AGENTS.md를 읽는 방식이고 CLAUDE.local.md가 그 판정에 포함됩니다. 또 2.1.281 이전 버전에서는 Amazon Bedrock이나 Google Vertex AI를 경유하는 세션에서 이 기능을 쓸 수 없었지만 2.1.281부터는 이런 세션에서도 AGENTS.md를 읽습니다. 기존 import와 심볼릭 링크는 그대로 두어도 되지만 SessionStart 훅 1개는 지워야 합니다."
 summary: "네이티브 지원이 들어왔다고 우회 방법을 급하게 지울 필요는 없습니다. 공식 문서가 밝힌 함정과 7월 확장 측정 80런을 근거로, 무엇을 남기고 무엇을 고쳐야 하는지 정리했습니다."
 ShowToc: true
 TocOpen: true
@@ -13,6 +13,10 @@ TocOpen: true
 지난 7월에 [CLAUDE.md를 AGENTS.md로 바꾸면 느려질까요?](https://kuberneteslab.dev/ko/blog/agents-md-migration/)라는 글을 쓰면서 Claude Code가 `AGENTS.md`를 직접 읽지 못하니 `@AGENTS.md` import 한 줄을 남기거나 심볼릭 링크(symbolic link)를 거는 우회 방법을 쓸 수밖에 없다는 이야기를 했었습니다. 그 우회 방법 때문에 세션마다 비용이 더 드는지가 걱정이어서 210회를 측정했고 결과는 손해가 없다는 쪽이었습니다.
 
 그런데 2026년 9월에 Claude Code 2.1.277이 나오면서 `AGENTS.md`를 직접 읽는 기능이 추가되었습니다. 그러면 이제 우회 방법을 지워야 하는 걸까요? 결론부터 말씀드리면 대부분의 경우 그대로 두어도 되고 오히려 남겨 두는 편이 안전한 상황도 있습니다. 다만 반드시 지워야 하는 구성이 1개 있고 기본값이 이름만 보고 짐작한 것과 다르게 동작해서 "분명히 켰는데 안 읽힌다"고 느끼기 쉬운 자리도 있습니다. 이 글에서는 그 부분들을 정리해 보겠습니다.
+
+{{< note title="[갱신] 2026년 10월 6일" >}}
+이 글을 발행한 뒤에 Claude Code가 업데이트되면서 2가지가 달라졌습니다. 우선 2.1.281부터는 클라우드 서비스나 LLM 게이트웨이를 거쳐 모델을 쓰는 세션과 텔레메트리(telemetry)를 끈 세션에서도 `AGENTS.md`를 읽을 수 있게 되었습니다. 여기에는 여러 모델을 API로 쓸 수 있게 해 주는 AWS의 관리형 서비스인 Amazon Bedrock, 구글 클라우드의 Google Vertex AI 그리고 마이크로소프트의 Microsoft Foundry가 해당합니다. 그리고 2.1.280부터는 설정으로 읽힌 `AGENTS.md`도 `/memory`와 `/context`의 목록에 나옵니다. 그래서 "기능이 지원되지 않는 세션", "운영하면서 알아 두면 좋은 차이" 그리고 점검 목록을 지금의 공식 문서에 맞춰 수정했습니다.
+{{< /note >}}
 
 ## 무엇이 바뀌었나
 
@@ -53,14 +57,15 @@ Claude Code 2.1.277부터 `AGENTS.md`를 읽는 일은 `agents-md`라는 내장 
 
 ## 기능이 지원되지 않는 세션
 
-하지만 이 기능이 추가되었다고 해서 모든 세션에서 바로 쓸 수 있는 것은 아닙니다. 공식 문서가 밝힌 조건은 다음 4가지로 나누어 볼 수 있습니다.
+하지만 이 기능이 추가되었다고 해서 모든 세션에서 바로 쓸 수 있는 것은 아닙니다. 지금 공식 문서가 밝힌 조건은 다음 3가지로 나누어 볼 수 있습니다.
 
-- 2.1.277보다 낮은 버전을 쓰는 경우. 이 글을 쓰는 시점에 stable 채널은 아직 그보다 낮은 2.1.267이라 채널에 따라 업데이트해도 항목이 보이지 않을 수 있습니다
-- 세션에 앤트로픽(Anthropic)의 기능 플래그가 전달되지 않는 경우. 여러 모델을 API로 쓸 수 있게 해 주는 AWS의 관리형 서비스인 Amazon Bedrock, 그리고 Vertex 나 Foundry 같은 서드파티 제공자를 거치거나 텔레메트리(telemetry)를 꺼 두었을 때가 대표적입니다
-- 설치하거나 업그레이드한 직후의 첫 세션인 경우. 그다음 세션부터 읽습니다
-- `disableAllHooks`나 `allowManagedHooksOnly`를 켜 두었거나 `/plugin`에서 내장 `agents-md` 플러그인을 꺼 둔 경우
+- 2.1.277보다 낮은 버전을 쓰는 경우
+- `/plugin`에서 내장 `agents-md` 플러그인을 끈 경우
+- 2.1.276 이하 버전에서 업그레이드한 직후의 첫 세션인 경우. 업그레이드할 때마다 이런 세션이 생기는 것은 아니고 생기더라도 그다음 세션부터는 `AGENTS.md`를 읽습니다.
 
-이 조건에 해당하면 `/config` 화면에 Project instructions 항목 자체가 나타나지 않고 `CLAUDE.md`만 읽습니다. 사내에서 Amazon Bedrock을 경유해 모델을 쓰는 환경이라면 이 항목이 특히 걸릴 수 있으니, 팀 전체가 `AGENTS.md`로 옮기기 전에 `/config`에 항목이 보이는지부터 확인해 보시는 편이 좋겠습니다.
+이 조건에 해당하면 `/config` 화면에 Project instructions 항목 자체가 나타나지 않고 `CLAUDE.md`만 읽습니다.
+
+사실 이 글을 처음 쓸 때는 조건이 2개 더 있었습니다. 그중 1개는 Amazon Bedrock, Google Vertex AI, Microsoft Foundry 또는 LLM 게이트웨이를 거치거나 텔레메트리를 끈 세션이었는데 이 제한은 2.1.281에서 풀렸기 때문에 지금은 버전만 올리면 이런 세션에서도 `AGENTS.md`를 읽습니다. 그러니 사내에서 Amazon Bedrock을 경유해 모델을 쓰는 환경이라면 팀이 `AGENTS.md`로 옮기기 전에 모두가 2.1.281 이상을 쓰는지부터 확인해 보시는 편이 좋겠습니다. 나머지 1개는 `disableAllHooks`나 `allowManagedHooksOnly`를 켠 경우였는데 지금 공식 문서의 조건 목록에서는 빠져 있습니다. 다만 이 제한이 풀렸다는 내용은 변경 기록(changelog)에서 찾지 못했으니 이 설정을 쓰고 있다면 `/config`에 항목이 나타나는지 직접 살펴보시는 게 좋을 것 같습니다.
 
 ## 남겨 둘 것과 고칠 것
 
@@ -93,9 +98,9 @@ Claude Code 2.1.277부터 `AGENTS.md`를 읽는 일은 `agents-md`라는 내장 
 
 ## 운영하면서 알아 두면 좋은 차이
 
-다만 설정으로 읽힌 `AGENTS.md`는 `CLAUDE.md`와 4가지가 다르게 동작하는데, 이 부분은 문제가 생겼을 때 원인을 찾는 데 필요하니 미리 알아 두시는 편이 좋습니다.
+다만 설정으로 읽힌 `AGENTS.md`는 `CLAUDE.md`와 다르게 동작하는 점이 있는데 이 차이는 문제가 생겼을 때 원인을 찾는 데 필요하니 미리 알아 두시는 편이 좋습니다. 이 글을 처음 쓸 때는 이러한 차이가 4가지였는데 그중 첫 번째인 확인 방법은 2.1.280부터 `CLAUDE.md`와 같아졌습니다. 그래서 지금 남은 차이는 3가지이지만 아직 이전 버전을 쓰는 분들을 위해 확인 방법도 함께 적었습니다.
 
-첫 번째는 **확인 방법**입니다. `CLAUDE.md`는 `/memory`와 `/context`의 Memory files 목록에 나오지만 설정으로 읽힌 `AGENTS.md`는 그 목록에서 빠져 있습니다. 그래서 목록만 보고 "안 읽혔구나"라고 판단하기 쉽습니다. 실제로 읽혔는지는 기본값을 쓸 때 대화 시작 부분에 나오는 `no CLAUDE.md found; AGENTS.md loaded: ...` 줄로 확인합니다. 기본값이 아닌 설정에서는 그 줄이 뜨지 않으므로 Claude에게 프로젝트 지시에 무엇이 적혀 있는지 직접 물어보면 됩니다.
+첫 번째는 **확인 방법**입니다. 2.1.280보다 낮은 버전에서는 `CLAUDE.md`만 `/memory`와 `/context`의 Memory files 목록에 나오고 설정으로 읽힌 `AGENTS.md`는 그 목록에서 빠져 있었기 때문에 목록만 보고 "안 읽혔구나"라고 판단하기 쉬웠습니다. 그런데 2.1.280부터는 이 목록에도 나오므로 지금은 `/memory`나 `/context`에서 `AGENTS.md`의 경로가 보이는지 확인하면 됩니다. 그보다 낮은 버전이라면 Claude에게 프로젝트 지시에 무엇이 적혀 있는지 직접 물어보시는 게 좋을 것 같습니다. 덧붙여 버전과 상관없이 기본값을 쓰는 대화형 세션이라면 대화 시작 부분에 나오는 `no CLAUDE.md found; AGENTS.md loaded: ...` 줄로도 확인할 수 있습니다.
 
 두 번째는 **훅**입니다. `InstructionsLoaded` 훅은 `CLAUDE.md`에서는 실행되지만 설정으로 읽힌 `AGENTS.md`에서는 실행되지 않습니다. 다만 `CLAUDE.md`가 import하거나 심볼릭 링크로 가리키는 `AGENTS.md`에서는 평소대로 동작하니, 이 훅에 의존하는 자동화가 있다면 우회 방법을 그대로 유지하시기 바랍니다.
 
@@ -107,12 +112,12 @@ Claude Code 2.1.277부터 `AGENTS.md`를 읽는 일은 `agents-md`라는 내장 
 
 지금까지 이야기한 것을 점검 목록으로 정리해 보겠습니다.
 
-1. `/config`를 열어 **Project instructions** 항목이 보이는지 확인합니다. 안 보이면 위의 "지원되지 않는 세션" 조건에 해당하니 우회 방법을 그대로 유지합니다.
+1. `/config`를 열어 **Project instructions** 항목이 보이는지 확인합니다. 안 보이면 위의 "기능이 지원되지 않는 세션" 조건에 해당합니다. 이때는 먼저 버전과 `/plugin`의 `agents-md` 상태를 확인하고 새 세션을 한 번 더 열어 본 뒤에도 항목이 없으면 우회 방법을 그대로 유지합니다.
 2. `AGENTS.md`를 정본으로 쓸 생각이라면 저장소에 `CLAUDE.md`가 남아 있는지 확인합니다. 남아 있으면 기본값에서는 `AGENTS.md`가 읽히지 않습니다.
 3. 개인용 `CLAUDE.local.md`를 쓰고 있다면 Project instructions를 `claude-md-and-agents-md`로 바꿉니다.
 4. `AGENTS.md`를 출력하는 SessionStart 훅이 있으면 지웁니다. 이 훅을 그대로 두면 파일을 두 번 읽게 됩니다.
 5. `@AGENTS.md` import나 심볼릭 링크는 그대로 두어도 됩니다. 팀에 지원되지 않는 세션이 있다면 오히려 그대로 두는 것을 권해 드립니다.
-6. 바꾼 뒤에는 새 세션에서 확인합니다. 기본값을 그대로 쓴다면 `AGENTS.md loaded:` 줄이 뜨고 `claude-md-and-agents-md`로 바꿨다면 그 줄이 뜨지 않으므로 Claude에게 프로젝트 지시에 무엇이 적혀 있는지 직접 물어봅니다. 설정으로 직접 읽힌 `AGENTS.md`는 `/context` 목록에 나오지 않지만 import나 심볼릭 링크로 읽히는 경우에는 나옵니다.
+6. 바꾼 뒤에는 새 세션에서 확인합니다. 2.1.280 이상이라면 `/memory`나 `/context` 목록에 `AGENTS.md`의 경로가 나오는지 보면 되고 그보다 낮은 버전에서는 Claude에게 프로젝트 지시에 무엇이 적혀 있는지 직접 물어봅니다.
 
 ## 마치며
 

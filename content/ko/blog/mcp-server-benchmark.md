@@ -151,4 +151,4 @@ TocOpen: true
 
 따라서 MCP 서버를 고를 때는 스타 수보다 도구 목록을 어떻게 관리하는지를 먼저 살펴보는 것이 좋겠습니다. 이번 6종에서는 도구 목록이 입력 토큰을 좌우했고 읽기 전용 모드를 켰을 때 그 목록이 줄어드는지도 서버마다 달랐기 때문입니다.
 
-측정 하네스, 시나리오별 점수 그리고 도구 목록을 세는 스크립트는 [GitHub 저장소](https://github.com/sysnet4admin/Research/tree/main/mcp-server-benchmark)에 공개해 두었습니다.
+시나리오별 점수와 실행별 기록, 집계 결과 그리고 도구 목록을 세는 스크립트는 [GitHub 저장소](https://github.com/sysnet4admin/Research/tree/main/mcp-server-benchmark)에 공개해 두었습니다. 러너와 채점기 그리고 시나리오 정답지는 같은 시나리오로 측정을 이어 가고 있어서 공개하지 않았습니다.

@@ -151,4 +151,4 @@ The question I started with was "does an MCP server make a Kubernetes operations
 
 So when you choose an MCP server, look at how it manages its tool list before you look at its star count. Across these six servers, the tool list drove the input tokens, and whether that list shrinks with read-only mode on also differed from server to server.
 
-The measurement harness, the per-scenario scores, and the script that counts the tool lists are public in the [GitHub repository](https://github.com/sysnet4admin/Research/tree/main/mcp-server-benchmark).
+The per-scenario scores and per-run records, the aggregated results, and the script that counts the tool lists are public in the [GitHub repository](https://github.com/sysnet4admin/Research/tree/main/mcp-server-benchmark). The runner, the scorer, and the scenario answer keys are not published, because the same scenarios are used for ongoing measurements.

@@ -38,7 +38,7 @@ Cilium으로 향하고 있습니다. 이관을 검토하는 팀이 마지막에 
 있습니다.
 
 {{< note title="[갱신] 2026년 10월 6일" >}}
-이 글을 발행한 뒤에 확인한 내용이 있어서 몇 곳을 고쳤습니다. 우선 eBPF map 메모리가 어느 지표에 잡히는지를 직접 확인해 보니 CNI마다 달랐습니다. Cilium의 map은 cilium-agent 컨테이너에 매겨져 이미 그 컨테이너의 working set 안에 있었고 Calico eBPF의 map은 calico-node 컨테이너 밖인 파드 단위에 매겨져 있었습니다. 커널 6.8에서 Cilium 기본 구성과 Calico eBPF 구성을 각각 1회 확인했고 나머지 Cilium 구성은 같은 에이전트라 같을 것으로 보고 다음 재측정에서 확인하려고 합니다. 그래서 "eBPF map은 kubectl top에 잡히지 않는다"고 쓴 부분과 산점도를 고쳤습니다. 이전 그림은 Cilium 네 구성에 map을 한 번 더 더해서 412~712MiB 오른쪽에 그려져 있었습니다. 또 map이 잡히는 위치가 이렇게 다르다 보니 발견 4의 결론도 달라졌습니다. 이와 별개로 Calico 이슈 #5418의 표현과 측정 기간 설명을 원문과 기록에 맞게 바로잡았습니다. 마지막으로 발견 3의 kube-router 동작은 이후 원인을 확인해 업스트림에 제보했고 메인테이너가 수정 PR을 올려 2026-10-11에 머지됐습니다. 발견 3 본문은 발행 당시의 기록 그대로 두었고 보다 상세한 내용은 [GitHub 저장소](https://github.com/sysnet4admin/Research/tree/main/cni-benchmark)의 README에 정리되어 있으니 참고하시기 바랍니다.
+이 글을 발행한 뒤에 확인한 내용이 있어서 몇 곳을 고쳤습니다. 우선 eBPF map 메모리가 어느 지표에 잡히는지를 직접 확인해 보니 CNI마다 달랐습니다. Cilium의 map은 cilium-agent 컨테이너에 매겨져 이미 그 컨테이너의 working set 안에 있었고 Calico eBPF의 map은 calico-node 컨테이너 밖인 파드 단위에 매겨져 있었습니다. 커널 6.8에서 Cilium 구성 3개(기본, KPR, netkit)와 Calico eBPF 구성을 각각 1회 확인했고 `kubectl top`은 컨테이너 working set의 합을 보여 주기 때문에 Cilium의 map은 여기에 나오지만 Calico eBPF의 map은 나오지 않았습니다. 그래서 "eBPF map은 kubectl top에 잡히지 않는다"고 쓴 부분과 산점도를 고쳤습니다. 이전 그림은 Cilium 네 구성에 map을 한 번 더 더해서 412~712MiB 오른쪽에 그려져 있었습니다. 또 map이 잡히는 위치가 이렇게 다르다 보니 발견 4의 결론도 달라졌습니다. 이와 별개로 Calico 이슈 #5418의 표현과 측정 기간 설명을 원문과 기록에 맞게 바로잡았습니다. 마지막으로 발견 3의 kube-router 동작은 이후 원인을 확인해 업스트림에 제보했고 메인테이너가 수정 PR을 올려 2026-10-11에 머지됐습니다. 발견 3 본문은 발행 당시의 기록 그대로 두었고 보다 상세한 내용은 [GitHub 저장소](https://github.com/sysnet4admin/Research/tree/main/cni-benchmark)의 README에 정리되어 있으니 참고하시기 바랍니다.
 {{< /note >}}
 
 ## 무엇을 어떻게 측정했나

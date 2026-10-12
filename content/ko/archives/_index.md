@@ -101,7 +101,7 @@ build:
 
 ## 기고
 
-- [요즘IT](https://yozm.wishket.com/magazine/@sysnet4admin): Kubernetes, CNCF, 클라우드 네이티브 (35편, 2023~2025)
+- [요즘IT](https://yozm.wishket.com/magazine/@pagaia/): Kubernetes, CNCF, 클라우드 네이티브, AI 에이전트 (40편, 2023~2026)
 - 마이크로소프트웨어 399호 (2020-01): 네트워크 관리에 자동화를 불어넣는 앤서블
 - 마이크로소프트웨어 400호 (2020-04): 인프라 엔지니어에게 개발이란 어떤 의미일까
 - [FastCampus 인터뷰](https://m.blog.naver.com/fastcampus/221090599608) (2017): 엔지니어가 왜 프로그래밍을 배워야 하냐고요?

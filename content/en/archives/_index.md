@@ -8,45 +8,9 @@ build:
   list: never
 ---
 
-## Upcoming Talks
+{{% talks "upcoming" %}}
 
-| Date | Event | Title | Links |
-|------|-------|-------|-------|
-| 2026-11-10 | KubeCon NA (Salt Lake City) | How Far Are Open-Source LLMs from Running Real Kubernetes Operations? A 10-Scenario Benchmark | [schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/?id=1246259) |
-| 2026-12-09 | Open Source Summit Japan (Tokyo) | One .md File for Every AI Agent: Gains, Losses, and Costs | [sched](https://ossjapan2026.sched.com/event/2YNTQ) |
-
-## Talks
-
-| Year | Event | Title | Links |
-|------|-------|-------|-------|
-| 2026 | Open Source Tech Day (ETRI) | MCP, Before and After July 28: The Protocol's Past, Present, and the Future to Prepare For | [event](https://ostday.kr/) · [materials](https://github.com/sysnet4admin/talks/tree/main/ETRI-OST/2026-TechDay) |
-| 2026 | AAIF Seoul Chapter | Hey AI, Want to Meet GitOps? | [event](https://luma.com/sa692amj) · [materials](https://github.com/sysnet4admin/talks/tree/main/AAIF/2026-Seoul-AgenticAINight) |
-| 2026 | OCP Korea Tech Day | GitAIOps: A Three-Layer Structure That Gives AI Agents Lasting Memory | [event](https://www.ocpkorea.com/) · [materials](https://github.com/sysnet4admin/talks/tree/main/OCP-Korea/2026-TechDay) |
-| 2026 | MCP Dev Summit Seoul | AAIF Ambassador AMA: Building the Agentic Future Through Community Contribution (panel) | [sched](https://mcpseoul2026.sched.com/event/2QScw) |
-| 2026 | MCP Dev Summit Seoul | Book Signing: AI Agent-Driven Infrastructure with Claude Code | [sched](https://mcpseoul2026.sched.com/event/2TTsf) |
-| 2026 | Open Source Summit Korea | GitAIOps: A 4-Layer Architecture for Predictable AI-Assisted Operations | [sched](https://osskorea2026.sched.com/event/2P8H1) · [materials](https://github.com/sysnet4admin/talks/tree/main/OSSummit/2026-Korea) · [YouTube](https://youtu.be/zkf2DGbx6bQ) |
-| 2026 | KubeCon Japan (Yokohama) | I Tested 7 So You Only Need 1: Your First Gateway API Migration in 5 Minutes | [schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/program/schedule/?id=1182975) · [materials](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan) · [YouTube](https://youtu.be/lne3bX2FOnA) · [recap](/en/archives/recaps/kubecon-japan-2026/) |
-| 2026 | KubeCon Japan (Yokohama) | Lightning Talks Emcee (Project, Main Event) | [materials](https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan-Emcee) · [YouTube opening](https://youtu.be/HrX5hdsRJys) · [YouTube closing](https://youtu.be/jcbQjfTafA8) · [recap](/en/archives/recaps/kubecon-japan-2026/) |
-| 2026 | F5 AppWorld Seoul | Beyond Ingress: Gateway Strategy in the AI Era and How NGINX Is Evolving (joint session) | |
-| 2026 | N.EX.T Meetup #40 | AIOps Is Here: Deploying Kubernetes with Claude Code | [event](https://onoffmix.com/event/343228) · [materials](https://github.com/sysnet4admin/talks/tree/main/Korea-Community/2026-neteg) |
-| 2026 | Byline Network Webinar | AI-Driven SRE: Building Kubernetes Operations Standards with AI | [materials](https://github.com/sysnet4admin/talks/tree/main/Byline-Network/2026-ai-era-k8s-cloud-native) · [YouTube](https://www.youtube.com/watch?v=VhmC-XqTf1k) |
-| 2025 | KubeCon NA (Atlanta) | Anatomy of a Kubernetes Scheduler | [sched](https://kccncna2025.sched.com/event/27FUp) · [YouTube](https://www.youtube.com/watch?v=9BjX9SFOqRE) |
-| 2025 | KyvernoCon NA | CEL: Hidden Feature of Kyverno Playground | [sched](https://colocatedeventsna2025.sched.com/event/28D1M) · [YouTube](https://www.youtube.com/watch?v=b_p9Yjtp-bo) |
-| 2025 | KubeCon China (Hong Kong) | Policy as Code: Past, Present and Future | [sched](https://kccncchn2025.sched.com/event/1x5k8) · [YouTube](https://www.youtube.com/watch?v=6_Dh6xhqoys) |
-| 2025 | KubeCon EU (London) | K8s in Wonderland: Why? Many of Unknown Code | [sched](https://kccnceu2025.sched.com/event/1txFz) · [YouTube](https://youtu.be/GvIPSgt69Sg) |
-| 2025 | KCD Seoul | Managing Kubernetes in the New World of AI Agents | [event](https://community.cncf.io/events/details/cncf-kcd-south-korea-presents-kcd-seoul-2025/) · [materials](https://github.com/sysnet4admin/talks/tree/main/Korea-Community/2025-CNKCD) · [YouTube](https://youtu.be/uUrIweMJfnk) |
-| 2025 | OpenInfra Days Korea | Policy as Code: Past, Present and Future | [event](https://2025.openinfradays.kr/session/14) · [YouTube](https://www.youtube.com/watch?v=MREcgiGMYEw) |
-| 2024 | KubeCon India | Enhance Kubernetes Security with CEL | [sched](https://kccncind2024.sched.com/event/1mVST) · [YouTube](https://youtu.be/0PB4g4wl6Dk) |
-| 2024 | KubeCon China | Find Your Own Personal Tutor for K8s | [sched](https://kccncossaidevchn2024.sched.com/event/1eYZI) · [YouTube](https://youtu.be/xy7tJTIfyg8) |
-| 2023 | KubeCon NA (Chicago) | Beyond Passwords: Keycloak's IAM + Security | [sched](https://kccncna2023.sched.com/event/1R2qR) · [YouTube](https://youtu.be/nRd0ejHADss) |
-| 2023 | KCD Taiwan × COSCUP | Deploy 1 Thousand Pods on My Laptop (w/ KWOK) | [YouTube](https://www.youtube.com/watch?v=FB3LLR3vRdo) |
-| 2023 | OpenInfra Days Korea | Deploy 100 Nodes with 1GB Memory (w/ KWOK) | [YouTube](https://www.youtube.com/watch?v=XqeO2ZTNYII) |
-| 2022 | UbuCon Asia | K8s Container Environment with AppArmor | [event](https://2022.ubucon.asia/sessions/safe-kubenetes-environment-with-apparmor/) · [YouTube](https://www.youtube.com/watch?v=BFnrd1OJkgk) |
-| 2022 | HashiTalks 2022 | How to Build a Multi-Context Lab for Kubernetes | [YouTube](https://www.youtube.com/watch?v=6Ksyej9VlSM) |
-| 2021 | HashiTalks 2021 | Deploying Cisco NXOSv with Vagrant | [YouTube](https://www.youtube.com/watch?v=P499YqBUYhw) |
-| 2021 | OpenInfra Community Days Korea | Introducing My Friends Who Keep Kubernetes Safe | [YouTube](https://www.youtube.com/watch?v=Vpk4V_TY9bw) |
-| 2020 | OpenInfra Community Days Korea | MetalLB vs Porter: A Personal Comparison | [YouTube](https://www.youtube.com/watch?v=lqVaianMKA8) |
-| 2019 | Open Infra & Cloud Native Korea | Network Automation with Ansible | [YouTube](https://www.youtube.com/watch?v=7vGka5aUIWw) |
+{{% talks "history" %}}
 
 <details>
 <summary>Webinars (2)</summary>

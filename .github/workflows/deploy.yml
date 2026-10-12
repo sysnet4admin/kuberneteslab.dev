@@ -3,6 +3,10 @@ name: Deploy to Cloudflare Pages
 on:
   push:
     branches: [main]
+  schedule:
+    # Archives의 예정된 발표가 날짜가 지나면 발표 이력으로 내려가도록 매일 다시 빌드한다(data/talks.yaml, UTC-12 자정 직후)
+    - cron: '10 12 * * *'
+  workflow_dispatch:
 
 jobs:
   deploy:

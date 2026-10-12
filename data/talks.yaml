@@ -1,0 +1,298 @@
+# Archives의 발표 목록. content/{ko,en}/archives/_index.md의 talks 쇼트코드가 읽는다.
+# date가 있는 항목은 그날이 모든 시간대에서 끝나면(UTC-12 기준, 매일 12:10 UTC 재배포) 발표 이력으로 내려간다.
+# 예정된 발표는 날짜순, 발표 이력은 date가 있는 항목을 최신순으로 먼저 두고 year만 있는 항목은 이 파일 순서대로 둔다.
+# 새 발표는 date를 넣어 맨 위에 추가한다.
+# date_label은 화면에 보일 날짜(여러 날 행사)이고 없으면 date를 쓴다. year만 있는 항목은 이력에만 보인다.
+# 값이 언어마다 다르면 {ko: ..., en: ...}로 쓴다.
+talks:
+- date: '2026-11-10'
+  event: KubeCon NA (Salt Lake City)
+  title: How Far Are Open-Source LLMs from Running Real Kubernetes Operations? A 10-Scenario Benchmark
+  links:
+  - label: schedule
+    url: https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/?id=1246259
+- date: '2026-12-09'
+  event: Open Source Summit Japan (Tokyo)
+  title: 'One .md File for Every AI Agent: Gains, Losses, and Costs'
+  links:
+  - label: sched
+    url: https://ossjapan2026.sched.com/event/2YNTQ
+- year: 2026
+  event:
+    ko: 오픈소스 테크데이 (ETRI)
+    en: Open Source Tech Day (ETRI)
+  title:
+    ko: 'MCP, 7월 28일 이전과 이후: 프로토콜의 과거, 현재, 그리고 준비할 미래'
+    en: 'MCP, Before and After July 28: The Protocol''s Past, Present, and the Future to Prepare For'
+  links:
+  - label: event
+    url: https://ostday.kr/
+  - label:
+      ko: 자료
+      en: materials
+    url: https://github.com/sysnet4admin/talks/tree/main/ETRI-OST/2026-TechDay
+- year: 2026
+  event: AAIF Seoul Chapter
+  title:
+    ko: AI야 GitOps를 만나볼래?
+    en: Hey AI, Want to Meet GitOps?
+  links:
+  - label: event
+    url: https://luma.com/sa692amj
+  - label:
+      ko: 자료
+      en: materials
+    url: https://github.com/sysnet4admin/talks/tree/main/AAIF/2026-Seoul-AgenticAINight
+- year: 2026
+  event: OCP Korea Tech Day
+  title:
+    ko: 'GitAIOps: AI 에이전트에게 지워지지 않는 기억을 주는 3층 구조'
+    en: 'GitAIOps: A Three-Layer Structure That Gives AI Agents Lasting Memory'
+  links:
+  - label: event
+    url: https://www.ocpkorea.com/
+  - label:
+      ko: 자료
+      en: materials
+    url: https://github.com/sysnet4admin/talks/tree/main/OCP-Korea/2026-TechDay
+- year: 2026
+  event: MCP Dev Summit Seoul
+  title:
+    ko: 'AAIF Ambassador AMA: Building the Agentic Future Through Community Contribution (패널)'
+    en: 'AAIF Ambassador AMA: Building the Agentic Future Through Community Contribution (panel)'
+  links:
+  - label: sched
+    url: https://mcpseoul2026.sched.com/event/2QScw
+- year: 2026
+  event: MCP Dev Summit Seoul
+  title:
+    ko: '북 사이닝: AI 시대에 개발자가 알아야 할 인프라 구성 배포 with 클로드 코드'
+    en: 'Book Signing: AI Agent-Driven Infrastructure with Claude Code'
+  links:
+  - label: sched
+    url: https://mcpseoul2026.sched.com/event/2TTsf
+- year: 2026
+  event: Open Source Summit Korea
+  title: 'GitAIOps: A 4-Layer Architecture for Predictable AI-Assisted Operations'
+  links:
+  - label: sched
+    url: https://osskorea2026.sched.com/event/2P8H1
+  - label:
+      ko: 자료
+      en: materials
+    url: https://github.com/sysnet4admin/talks/tree/main/OSSummit/2026-Korea
+  - label: YouTube
+    url: https://youtu.be/zkf2DGbx6bQ
+- year: 2026
+  event: KubeCon Japan (Yokohama)
+  title: 'I Tested 7 So You Only Need 1: Your First Gateway API Migration in 5 Minutes'
+  links:
+  - label: schedule
+    url: https://events.linuxfoundation.org/kubecon-cloudnativecon-japan/program/schedule/?id=1182975
+  - label:
+      ko: 자료
+      en: materials
+    url: https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan
+  - label: YouTube
+    url: https://youtu.be/lne3bX2FOnA
+  - label:
+      ko: 후기
+      en: recap
+    url:
+      ko: /ko/archives/recaps/kubecon-japan-2026/
+      en: /en/archives/recaps/kubecon-japan-2026/
+- year: 2026
+  event: KubeCon Japan (Yokohama)
+  title:
+    ko: Lightning Talks 진행 (Project, Main Event)
+    en: Lightning Talks Emcee (Project, Main Event)
+  links:
+  - label:
+      ko: 자료
+      en: materials
+    url: https://github.com/sysnet4admin/talks/tree/main/KubeCon/2026-Japan-Emcee
+  - label:
+      ko: YouTube 개회
+      en: YouTube opening
+    url: https://youtu.be/HrX5hdsRJys
+  - label:
+      ko: YouTube 폐회
+      en: YouTube closing
+    url: https://youtu.be/jcbQjfTafA8
+  - label:
+      ko: 후기
+      en: recap
+    url:
+      ko: /ko/archives/recaps/kubecon-japan-2026/
+      en: /en/archives/recaps/kubecon-japan-2026/
+- year: 2026
+  event: F5 AppWorld Seoul
+  title:
+    ko: 'Beyond Ingress: AI 시대의 Gateway 전략과 NGINX의 진화 (공동 세션)'
+    en: 'Beyond Ingress: Gateway Strategy in the AI Era and How NGINX Is Evolving (joint session)'
+- year: 2026
+  event:
+    ko: N.EX.T 40회
+    en: 'N.EX.T Meetup #40'
+  title:
+    ko: '눈앞에 다가온 AIOps: Claude Code와 함께한 쿠버네티스 구성 배포'
+    en: 'AIOps Is Here: Deploying Kubernetes with Claude Code'
+  links:
+  - label: event
+    url: https://onoffmix.com/event/343228
+  - label:
+      ko: 자료
+      en: materials
+    url: https://github.com/sysnet4admin/talks/tree/main/Korea-Community/2026-neteg
+- year: 2026
+  event:
+    ko: Byline Network 웨비나
+    en: Byline Network Webinar
+  title:
+    ko: 'AI-Driven SRE: AI와 함께 만드는 쿠버네티스 운영 표준'
+    en: 'AI-Driven SRE: Building Kubernetes Operations Standards with AI'
+  links:
+  - label:
+      ko: 자료
+      en: materials
+    url: https://github.com/sysnet4admin/talks/tree/main/Byline-Network/2026-ai-era-k8s-cloud-native
+  - label: YouTube
+    url: https://www.youtube.com/watch?v=VhmC-XqTf1k
+- year: 2025
+  event: KubeCon NA (Atlanta)
+  title: Anatomy of a Kubernetes Scheduler
+  links:
+  - label: sched
+    url: https://kccncna2025.sched.com/event/27FUp
+  - label: YouTube
+    url: https://www.youtube.com/watch?v=9BjX9SFOqRE
+- year: 2025
+  event: KyvernoCon NA
+  title: 'CEL: Hidden Feature of Kyverno Playground'
+  links:
+  - label: sched
+    url: https://colocatedeventsna2025.sched.com/event/28D1M
+  - label: YouTube
+    url: https://www.youtube.com/watch?v=b_p9Yjtp-bo
+- year: 2025
+  event: KubeCon China (Hong Kong)
+  title: 'Policy as Code: Past, Present and Future'
+  links:
+  - label: sched
+    url: https://kccncchn2025.sched.com/event/1x5k8
+  - label: YouTube
+    url: https://www.youtube.com/watch?v=6_Dh6xhqoys
+- year: 2025
+  event: KubeCon EU (London)
+  title: 'K8s in Wonderland: Why? Many of Unknown Code'
+  links:
+  - label: sched
+    url: https://kccnceu2025.sched.com/event/1txFz
+  - label: YouTube
+    url: https://youtu.be/GvIPSgt69Sg
+- year: 2025
+  event: KCD Seoul
+  title:
+    ko: 인공지능 에이전트로 관리하는 쿠버네티스 신세계
+    en: Managing Kubernetes in the New World of AI Agents
+  links:
+  - label: event
+    url: https://community.cncf.io/events/details/cncf-kcd-south-korea-presents-kcd-seoul-2025/
+  - label:
+      ko: 자료
+      en: materials
+    url: https://github.com/sysnet4admin/talks/tree/main/Korea-Community/2025-CNKCD
+  - label: YouTube
+    url: https://youtu.be/uUrIweMJfnk
+- year: 2025
+  event: OpenInfra Days Korea
+  title:
+    ko: Policy as Code의 과거 현재 그리고 미래
+    en: 'Policy as Code: Past, Present and Future'
+  links:
+  - label: event
+    url: https://2025.openinfradays.kr/session/14
+  - label: YouTube
+    url: https://www.youtube.com/watch?v=MREcgiGMYEw
+- year: 2024
+  event: KubeCon India
+  title: Enhance Kubernetes Security with CEL
+  links:
+  - label: sched
+    url: https://kccncind2024.sched.com/event/1mVST
+  - label: YouTube
+    url: https://youtu.be/0PB4g4wl6Dk
+- year: 2024
+  event: KubeCon China
+  title: Find Your Own Personal Tutor for K8s
+  links:
+  - label: sched
+    url: https://kccncossaidevchn2024.sched.com/event/1eYZI
+  - label: YouTube
+    url: https://youtu.be/xy7tJTIfyg8
+- year: 2023
+  event: KubeCon NA (Chicago)
+  title: 'Beyond Passwords: Keycloak''s IAM + Security'
+  links:
+  - label: sched
+    url: https://kccncna2023.sched.com/event/1R2qR
+  - label: YouTube
+    url: https://youtu.be/nRd0ejHADss
+- year: 2023
+  event: KCD Taiwan × COSCUP
+  title: Deploy 1 Thousand Pods on My Laptop (w/ KWOK)
+  links:
+  - label: YouTube
+    url: https://www.youtube.com/watch?v=FB3LLR3vRdo
+- year: 2023
+  event: OpenInfra Days Korea
+  title:
+    ko: 1GB 메모리로 100개 노드 올리기 (w/ KWOK)
+    en: Deploy 100 Nodes with 1GB Memory (w/ KWOK)
+  links:
+  - label: YouTube
+    url: https://www.youtube.com/watch?v=XqeO2ZTNYII
+- year: 2022
+  event: UbuCon Asia
+  title: K8s Container Environment with AppArmor
+  links:
+  - label: event
+    url: https://2022.ubucon.asia/sessions/safe-kubenetes-environment-with-apparmor/
+  - label: YouTube
+    url: https://www.youtube.com/watch?v=BFnrd1OJkgk
+- year: 2022
+  event: HashiTalks 2022
+  title: How to Build a Multi-Context Lab for Kubernetes
+  links:
+  - label: YouTube
+    url: https://www.youtube.com/watch?v=6Ksyej9VlSM
+- year: 2021
+  event: HashiTalks 2021
+  title: Deploying Cisco NXOSv with Vagrant
+  links:
+  - label: YouTube
+    url: https://www.youtube.com/watch?v=P499YqBUYhw
+- year: 2021
+  event: OpenInfra Community Days Korea
+  title:
+    ko: 쿠버네티스를 안전하게 해주는 내 친구들
+    en: Introducing My Friends Who Keep Kubernetes Safe
+  links:
+  - label: YouTube
+    url: https://www.youtube.com/watch?v=Vpk4V_TY9bw
+- year: 2020
+  event: OpenInfra Community Days Korea
+  title:
+    ko: MetalLB와 Porter 비교
+    en: 'MetalLB vs Porter: A Personal Comparison'
+  links:
+  - label: YouTube
+    url: https://www.youtube.com/watch?v=lqVaianMKA8
+- year: 2019
+  event: Open Infra & Cloud Native Korea
+  title:
+    ko: 앤서블을 통한 오픈네트워크 관리 자동화
+    en: Network Automation with Ansible
+  links:
+  - label: YouTube
+    url: https://www.youtube.com/watch?v=7vGka5aUIWw

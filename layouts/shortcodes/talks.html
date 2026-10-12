@@ -1,0 +1,45 @@
+{{- /* Archives의 발표 표. data/talks.yaml을 읽어 날짜가 지났는지에 따라 예정된 발표와 발표 이력을 나눈다.
+     {{% talks "upcoming" %}} 또는 {{% talks "history" %}}로 부르고 마크다운 표를 내보낸다.
+     예정된 발표가 없으면 그 절(제목 포함)을 내보내지 않는다. */ -}}
+{{- $kind := .Get 0 -}}
+{{- $lang := .Page.Language.Lang -}}
+{{- $ko := eq $lang "ko" -}}
+{{- /* 어느 시간대에서도 그날이 끝난 뒤(UTC-12 기준) 내려가게 한다. 미국 행사가 현지에서 열리기 전에 내려가지 않는다. */ -}}
+{{- $today := (now.UTC.Add (time.ParseDuration "-12h")).Format "2006-01-02" -}}
+{{- $up := slice -}}
+{{- $past := slice -}}
+{{- $old := slice -}}
+{{- range hugo.Data.talks.talks -}}
+  {{- if .date -}}
+    {{- if ge .date $today }}{{ $up = $up | append . }}{{ else }}{{ $past = $past | append . }}{{ end -}}
+  {{- else -}}
+    {{- $old = $old | append . -}}
+  {{- end -}}
+{{- end -}}
+{{- $rows := slice -}}
+{{- if eq $kind "upcoming" }}{{ $rows = sort $up "date" }}{{ else }}{{ $rows = (sort $past "date" "desc") | append $old }}{{ end -}}
+{{- if $rows -}}
+{{- if eq $kind "upcoming" }}
+## {{ cond $ko "예정된 발표" "Upcoming Talks" }}
+
+| {{ cond $ko "일정" "Date" }} | {{ cond $ko "행사" "Event" }} | {{ cond $ko "발표 제목" "Title" }} | {{ cond $ko "링크" "Links" }} |
+{{- else }}
+## {{ cond $ko "발표 이력" "Talks" }}
+
+| {{ cond $ko "연도" "Year" }} | {{ cond $ko "행사" "Event" }} | {{ cond $ko "발표 제목" "Title" }} | {{ cond $ko "링크" "Links" }} |
+{{- end }}
+{{ if $ko }}|------|------|-----------|------|{{ else }}|------|-------|-------|-------|{{ end }}
+{{- range $rows }}
+{{- $first := "" -}}
+{{- if eq $kind "upcoming" }}{{ $first = .date_label | default .date }}{{ else if .date }}{{ $first = substr .date 0 4 }}{{ else }}{{ $first = string .year }}{{ end -}}
+{{- $ev := .event }}{{ if reflect.IsMap .event }}{{ $ev = index .event $lang }}{{ end -}}
+{{- $ti := .title }}{{ if reflect.IsMap .title }}{{ $ti = index .title $lang }}{{ end -}}
+{{- $ls := slice -}}
+{{- range .links -}}
+  {{- $lb := .label }}{{ if reflect.IsMap .label }}{{ $lb = index .label $lang }}{{ end -}}
+  {{- $u := .url }}{{ if reflect.IsMap .url }}{{ $u = index .url $lang }}{{ end -}}
+  {{- $ls = $ls | append (printf "[%s](%s)" $lb $u) -}}
+{{- end }}
+| {{ $first }} | {{ $ev }} | {{ $ti }} | {{ delimit $ls " · " }} |
+{{- end }}
+{{- end -}}

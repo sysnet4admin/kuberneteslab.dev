@@ -13,7 +13,7 @@ build:
 | 일정 | 행사 | 발표 제목 | 링크 |
 |------|------|-----------|------|
 | 2026-11-10 | KubeCon NA (Salt Lake City) | How Far Are Open-Source LLMs from Running Real Kubernetes Operations? A 10-Scenario Benchmark | [schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/?id=1246259) |
-| 2026-12-07~09 | Open Source Summit Japan (Tokyo) | One .md File for Every AI Agent: Gains, Losses, and Costs | [event](https://events.linuxfoundation.org/open-source-summit-japan/) |
+| 2026-12-09 | Open Source Summit Japan (Tokyo) | One .md File for Every AI Agent: Gains, Losses, and Costs | [sched](https://ossjapan2026.sched.com/event/2YNTQ) |
 
 ## 발표 이력
 

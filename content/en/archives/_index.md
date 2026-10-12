@@ -12,7 +12,6 @@ build:
 
 | Date | Event | Title | Links |
 |------|-------|-------|-------|
-| 2026-10-07 | Open Source Tech Day (ETRI) | MCP, Before and After July 28: The Protocol's Past, Present, and the Future to Prepare For | [event](https://ostday.kr/) · [materials](https://github.com/sysnet4admin/talks/tree/main/ETRI-OST/2026-TechDay) |
 | 2026-11-10 | KubeCon NA (Salt Lake City) | How Far Are Open-Source LLMs from Running Real Kubernetes Operations? A 10-Scenario Benchmark | [schedule](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/?id=1246259) |
 | 2026-12-07~09 | Open Source Summit Japan (Tokyo) | One .md File for Every AI Agent: Gains, Losses, and Costs | [event](https://events.linuxfoundation.org/open-source-summit-japan/) |
 
@@ -20,6 +19,7 @@ build:
 
 | Year | Event | Title | Links |
 |------|-------|-------|-------|
+| 2026 | Open Source Tech Day (ETRI) | MCP, Before and After July 28: The Protocol's Past, Present, and the Future to Prepare For | [event](https://ostday.kr/) · [materials](https://github.com/sysnet4admin/talks/tree/main/ETRI-OST/2026-TechDay) |
 | 2026 | AAIF Seoul Chapter | Hey AI, Want to Meet GitOps? | [event](https://luma.com/sa692amj) · [materials](https://github.com/sysnet4admin/talks/tree/main/AAIF/2026-Seoul-AgenticAINight) |
 | 2026 | OCP Korea Tech Day | GitAIOps: A Three-Layer Structure That Gives AI Agents Lasting Memory | [event](https://www.ocpkorea.com/) · [materials](https://github.com/sysnet4admin/talks/tree/main/OCP-Korea/2026-TechDay) |
 | 2026 | MCP Dev Summit Seoul | AAIF Ambassador AMA: Building the Agentic Future Through Community Contribution (panel) | [sched](https://mcpseoul2026.sched.com/event/2QScw) |

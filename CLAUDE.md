@@ -80,6 +80,8 @@ title이 없으면 캡션도 번호도 안 붙고 그냥 `<img>`로 나간다. �
 - 발표 표는 `data/talks.yaml` 한 곳에 있고 `layouts/shortcodes/talks.html`이 예정된 발표와 발표 이력으로 나눠 그린다.
   ko/en 두 페이지의 표를 손으로 고치지 않는다. 언어마다 다른 값은 `{ko: ..., en: ...}`로 쓴다.
 - 새 발표는 `date`를 넣어 맨 위에 추가한다. 날짜가 모든 시간대에서 지나면(UTC-12 기준) 매일 12:10 UTC 재빌드 때 이력으로 내려간다.
+- `talk-link-watch` 워크플로가 매일 YouTube(CNCF, 리눅스 재단, 쿠버네티스 랩 채널)와 `sched_site`의 sched에서 빠진 링크 후보를 찾아
+  `talk-links` 라벨 이슈로 알린다. 맞으면 `links`에 넣고 이슈를 닫는다.
 
 ## 발행 흐름
 

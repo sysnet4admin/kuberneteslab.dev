@@ -4,6 +4,7 @@
 # 새 발표는 date를 넣어 맨 위에 추가한다.
 # date_label은 화면에 보일 날짜(여러 날 행사)이고 없으면 date를 쓴다. year만 있는 항목은 이력에만 보인다.
 # 값이 언어마다 다르면 {ko: ..., en: ...}로 쓴다.
+# sched_site에 행사의 sched 주소를 적어 두면 세션 링크가 공개될 때 발표 링크 감지 워크플로가 이슈로 알린다.
 talks:
 - date: '2026-11-10'
   event: KubeCon NA (Salt Lake City)

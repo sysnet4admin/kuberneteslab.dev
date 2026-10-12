@@ -117,6 +117,7 @@ title이 없으면 캡션도 번호도 안 붙고 그냥 `<img>`로 나간다. �
   종료 시각은 미국 동부 23:59를 UTC로 적는다(예: `2026-09-23T03:59:00Z`).
 - 프로모션을 더하거나 끝날 때마다 promo 첫 화면의 "지금 결제하는 건 어떨까요?" 절(ko/en)이
   새 기록과 맞는지 검토한다. 할인율 범위, 예외(쿠버스트로넛 번들 등), 기간 표현이 대상이다.
+  쿠버스트로넛 번들 문장은 `history.yaml` 맨 위의 `kubestronaut_bundle_usd`, `kubestronaut_ref_rate`를 읽으니 가격이나 기준이 바뀌면 그 값을 고친다.
   할인 알림 글의 결제 권유도 이 절과 같은 방향으로 쓴다.
 - `/ko/cta.json`은 이 저장소의 글 끝 배너(`layouts/partials/promo_cta.html`)가 읽는다.
   형식을 바꾸면 배너도 같이 고친다. CORS는 `https://kuberneteslab.dev`만 허용하므로

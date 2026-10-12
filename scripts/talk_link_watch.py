@@ -16,7 +16,10 @@ import urllib.request
 
 import yaml
 
-UA = {"User-Agent": "Mozilla/5.0 (kuberneteslab.dev talk-link-watch)", "Accept-Language": "en-US,en;q=0.8"}
+UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130 Safari/537.36",
+      "Accept-Language": "en-US,en;q=0.8",
+      # 데이터센터에서 요청하면 동의 화면이 먼저 나오므로 동의한 것으로 보낸다
+      "Cookie": "CONSENT=YES+cb; SOCS=CAI"}
 CHANNELS = {
     "UCvqbFHwN-nwalWPjPUKpvTA": "CNCF",
     "UCfX55Sx5hEFjoC3cNs6mCUQ": "The Linux Foundation",
@@ -50,10 +53,12 @@ def text(v, lang="en"):
 
 
 def youtube_search(query):
-    s = get("https://www.youtube.com/results?search_query=" + urllib.parse.quote(query))
+    url = "https://www.youtube.com/results?hl=en&gl=US&search_query=" + urllib.parse.quote(query)
+    s = get(url)
     m = re.search(r"var ytInitialData = (\{.*?\});</script>", s, re.S)
     if not m:
-        raise RuntimeError("YouTube 검색 결과 형식이 바뀌었습니다")
+        head = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", s))[:300]
+        raise RuntimeError("YouTube 검색 결과 형식이 바뀌었습니다: " + head)
     data = json.loads(m.group(1))
     out = []
 

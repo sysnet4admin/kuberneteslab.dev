@@ -22,6 +22,19 @@ jobs:
           pip install --quiet pyyaml
           python3 scripts/talk_link_watch.py > found.json
 
+      - name: 검색 동작 확인
+        # 이미 아는 발표 영상(KubeCon NA 2025)을 못 찾으면 실패시켜 메일로 알린다. YouTube 검색 형식이 바뀐 경우다.
+        run: |
+          python3 - <<'PY'
+          import sys
+          sys.path.insert(0, "scripts")
+          import talk_link_watch as w
+          q = "Anatomy of a Kubernetes Scheduler"
+          hits = [v for v in w.youtube_search(q) if v["channel"] in w.CHANNELS and w.similar(q, v["title"].split(" - ")[0])]
+          print(hits[:1])
+          sys.exit(0 if any(v["id"] == "9BjX9SFOqRE" for v in hits) else 1)
+          PY
+
       - name: 이슈 열기
         env:
           GH_TOKEN: ${{ github.token }}

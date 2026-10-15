@@ -115,7 +115,7 @@ title이 없으면 캡션도 번호도 안 붙고 그냥 `<img>`로 나간다. �
 - 커밋, 검증, 푸시는 promo 저장소 안에서 한다. 블로그 커밋에 섞지 않는다.
 - 위 "이 저장소는 공개다" 규칙이 그대로 적용된다. 검증 명령은 promo 저장소에서 돌리고
   결과를 본 뒤에 푸시한다. 검증과 푸시를 한 명령에 엮지 않는다.
-- Cloudflare Pages 프로젝트 `promo-kuberneteslab-dev`. push 때와 매일 두 번(00:10, 05:10 UTC) cron으로 다시
+- Cloudflare Pages 프로젝트 `promo-kuberneteslab-dev`. push 때와 매일 세 번(00:10, 05:10, 22:10 UTC) cron으로 다시
   배포하고, 끝난 프로모션은 재배포 때 내려간다.
 - 배포 확인은 커밋 SHA로 실행을 찾아서 한다. 푸시 직후 목록 맨 위는 이전 실행일 수 있다.
 

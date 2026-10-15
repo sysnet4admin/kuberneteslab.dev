@@ -6,6 +6,10 @@ ShowToc: false
 showLastmod: true
 build:
   list: never
+# archives와 하위 recaps는 피드를 만들지 않는다(메인 피드와 내용이 겹친다)
+outputs: [html]
+cascade:
+  outputs: [html]
 ---
 
 {{% talks "upcoming" %}}

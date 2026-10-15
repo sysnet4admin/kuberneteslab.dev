@@ -1,7 +1,6 @@
 baseURL = 'https://kuberneteslab.dev/'
 title = 'KubernetesLab'
 theme = 'PaperMod'
-paginate = 10
 defaultContentLanguage = 'ko'
 defaultContentLanguageInSubdir = true
 # 계속 고치는 페이지(Archives)에 실제 수정일을 보여 주려고 Git 기록을 읽는다
@@ -135,8 +134,22 @@ enableRobotsTXT = true
       url = "/en/archives/"
       weight = 50
 
+# 목록 2쪽이 생기면 canonical이 1쪽을 가리키게 되어(테마 동작) 글이 30개를 넘기 전까지는 한 쪽에 모두 보인다.
+# Hugo 0.128부터 예전 paginate 키는 읽히지 않는다.
+[pagination]
+  pagerSize = 30
+
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+  # 태그와 카테고리 피드는 구독자가 없고 검색엔진이 크롤링만 하고 색인하지 않는다. 블로그 섹션 피드는 기본값대로 남는다
+  taxonomy = ["HTML"]
+  term = ["HTML"]
+
+# 태그와 카테고리 목록은 글 제목만 모은 얇은 페이지라 색인에서 뺀다. 테마가 robots 메타를 한 줄만 내도록 테마 값을 쓴다
+[[cascade]]
+  robotsNoIndex = true
+  [cascade.target]
+    kind = "{taxonomy,term}"
 
 [markup]
   [markup.goldmark.renderer]

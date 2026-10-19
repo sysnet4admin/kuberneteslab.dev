@@ -40,7 +40,11 @@ measurement runs. All numbers and the reproduction harness are in
 the [GitHub repository](https://github.com/sysnet4admin/Research/tree/main/cni-benchmark).
 
 {{< note title="[Update] October 6, 2026" >}}
-After this post went out, I checked a few things and corrected several places. First, I checked which metric the eBPF map memory shows up in, and it differs by CNI. Cilium's maps are charged to the cilium-agent container, so they are already inside that container's working set, while Calico eBPF's maps are charged at the pod level, outside the calico-node container. I checked three Cilium configurations (default, KPR, netkit) and the Calico eBPF configuration once each on kernel 6.8, and because `kubectl top` shows the sum of container working sets, Cilium's maps appear in it while Calico eBPF's maps did not. So I corrected the parts that said eBPF maps never show up in kubectl top, and the scatter plot. The earlier figure added the maps a second time for the four Cilium configurations and placed them 412 to 712MiB further right. Because the maps land in different places, the conclusion of finding 4 changed as well. Separately, I corrected the wording about Calico issue #5418 and the description of the measurement period to match the source and the records. Finally, the kube-router behavior in finding 3 has since been traced to its cause and reported upstream, and the maintainer's fix PR was merged on 2026-10-11. The body of finding 3 is left as recorded at publication, and the details are in the README of the [GitHub repository](https://github.com/sysnet4admin/Research/tree/main/cni-benchmark).
+After this post went out, I checked a few things and corrected several places. First, I checked which metric the eBPF map memory shows up in, and it differs by CNI. Cilium's maps are charged to the cilium-agent container, so they are already inside that container's working set, while Calico eBPF's maps are charged at the pod level, outside the calico-node container. I checked three Cilium configurations (default, KPR, netkit) and the Calico eBPF configuration once each on kernel 6.8, and because `kubectl top` shows the sum of container working sets, Cilium's maps appear in it while Calico eBPF's maps did not. So I corrected the parts that said eBPF maps never show up in kubectl top, and the scatter plot. The earlier figure added the maps a second time for the four Cilium configurations and placed them 412 to 712MiB further right. Because the maps land in different places, the conclusion of finding 4 changed as well. Separately, I corrected the wording about Calico issue #5418 and the description of the measurement period to match the source and the records.
+{{< /note >}}
+
+{{< note title="[Update] October 19, 2026" >}}
+After publication I found the cause of the kube-router behavior covered in finding 3 and reported it upstream, and the fix PR the maintainer opened was merged on October 11, 2026. Reflecting this, finding 3 now adds the cause and a September re-measurement in which I changed only that call, and the scatter plot shows that measurement as a hollow point. The detailed numbers are in the README of the [GitHub repository](https://github.com/sysnet4admin/Research/tree/main/cni-benchmark).
 {{< /note >}}
 
 ## What I measured, and how
@@ -82,6 +86,14 @@ with its maps already inside) are more than 8x apart. Second, only one point sit
 in the top-left: kube-router in all-features mode. Third, everything else
 clusters between 150 and 470mC of churn CPU, which is another way of saying
 the real axis of standing cost is memory, not CPU.
+
+Ku1 has two points: the filled one is the July measurement, and the hollow one is a September re-measurement with
+a binary in which I changed only the call that caused the problem (the fixed binary from here on). In September its
+churn CPU only drops from 3,355mC to 2,268mC, still the highest of all configurations, and because the vertical
+axis is churn CPU, the phase after churn, where the fix mostly shows, does not appear in this chart. I look at that
+effect in finding 3. Also, the hollow point's horizontal position (idle memory) keeps the July value, because the
+fixed binary was kept as a file on the node and mounted with hostPath, so its page cache was counted outside the
+container and memory could not be compared on the same basis as July.
 
 ## Finding 1: memory usage is what separates the conditions
 
@@ -137,10 +149,33 @@ telling observation is history dependence: the same object scale (200
 Services, 12,008 endpoints) cost 77mC before churn, holds at 3,300mC after
 one churn episode, and returns to idle within 90 seconds of deleting the load
 objects. The split configuration that leaves Services to kube-proxy was
-normal under the same load, so the cause most likely lies in the IPVS service
-proxy; I did not identify which internal operation is responsible. If you
-are considering all-features mode on a cluster with frequent pod replacement,
-this behavior is worth knowing about.
+normal under the same load, so I judged that the cause most likely lay in the IPVS
+service proxy, but at publication I had not identified which internal operation was behind it.
+
+So after publication I reproduced it with profiling enabled to find the cause. It turned out that each time the
+service proxy builds an endpoint list it shuffles the order at random, and while doing so it called the
+cryptographic random function `crypto/rand.Int` once per endpoint, with a system call on each call. During churn
+this call took more than half of the CPU that kube-router uses. A shuffle does not need cryptographic randomness,
+so I built a fixed binary that changes only this call to `math/rand/v2`, and the CPU that did not come back down
+after churn went away. After confirming that the same behavior appears on the latest release (2.11.1) and the
+development branch and that this change resolves it, I reported it upstream as
+[#2165](https://github.com/cloudnativelabs/kube-router/issues/2165).
+
+Next, in September I re-measured the two kube-router configurations (Ku1, Ku2) with the fixed binary, built on
+2.11.1, using the same procedure as the July measurement. The CPU in the phase after churn, 3,158mC in July (2.10.0),
+dropped to 59mC. During churn it still uses 2,268mC, and the profile shows that this CPU goes into re-syncing 200
+Services into IPVS. The split configuration (Ku2), on the other hand, does not go through kube-router's service
+proxy, so in September it showed no difference from July.
+
+The maintainer, having received the report, opened
+[PR #2175](https://github.com/cloudnativelabs/kube-router/pull/2175) on September 26, while the September
+re-measurement was still running. Its shuffle change goes in the same direction as mine, and it also keeps
+endpoints in sorted order instead of shuffling them for the IPVS hashing schedulers (which select a server by
+source or destination address). When I checked a build with this PR on September 28, the profile at 2 minutes after
+churn showed no kube-router CPU, just as with the fixed binary, and the PR was merged into the default branch on
+October 11, 2026. As of this writing (October 19, 2026), however, no release includes the fix yet. So if you are
+considering all-features mode on a cluster with frequent pod replacement, it is probably best to wait for that
+release.
 
 ## Finding 4: for Calico, both the install method and the dataplane change memory substantially
 

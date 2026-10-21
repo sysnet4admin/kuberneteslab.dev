@@ -87,6 +87,8 @@ title이 없으면 캡션도 번호도 안 붙고 그냥 `<img>`로 나간다. �
 
 - 연구 글은 로컬 초안 저장소의 `<project>/_PUBLISHING/blog/`가 정본이고,
   이 저장소의 content 파일은 렌더링 사본이다. 수정은 정본에서 먼저 한다.
+- 연구를 거치지 않은 글과 매체 기고에서 파생한 글은 이 저장소의 content 파일이 정본이다
+  (예: gateway-api-poc, agentic-ai-gateway). 매체의 재게시 조건과 검수 기록은 저장소 밖 기고 작업 폴더에 둔다(2026-10-21).
 - 새 글은 `draft: true`로 넣고 로컬 확인(`hugo server -D`) 후 발행 시점에 false로 바꾼다.
 - 발행 후 해당 연구 프로젝트의 README(EN/KO)와 Public Research 루트 README에 링크를 추가하고
   `/digest`로 반영한다.

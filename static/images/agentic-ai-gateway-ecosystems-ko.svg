@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" font-family="Helvetica, Arial, sans-serif">
+<rect width="900" height="470" fill="white"/>
+<text x="450" y="30" font-size="15" fill="#111" text-anchor="middle" font-weight="bold">CNCF와 에이전틱 AI 재단의 생태계 구성 비교</text>
+
+<!-- 열 머리 -->
+<text x="110" y="74" font-size="11.5" fill="#777" text-anchor="middle">구분</text>
+<rect x="210" y="52" width="320" height="34" rx="6" fill="#EEF3FC" stroke="#326CE5" stroke-width="1.6"/>
+<text x="370" y="74" font-size="13" fill="#326CE5" text-anchor="middle" font-weight="bold">CNCF</text>
+<rect x="560" y="52" width="320" height="34" rx="6" fill="#F3EEFB" stroke="#7B4BC4" stroke-width="1.6"/>
+<text x="720" y="74" font-size="13" fill="#7B4BC4" text-anchor="middle" font-weight="bold">에이전틱 AI 재단(AAIF)</text>
+
+<!-- 행 1: 출범 -->
+<text x="110" y="122" font-size="11.5" fill="#333" text-anchor="middle" font-weight="bold">출범</text>
+<rect x="210" y="100" width="320" height="38" rx="5" fill="#fafafa" stroke="#bbb" stroke-width="1.2"/>
+<text x="370" y="124" font-size="11" fill="#333" text-anchor="middle">2015년 7월, 구글의 쿠버네티스 기부로 시작</text>
+<rect x="560" y="100" width="320" height="38" rx="5" fill="#fafafa" stroke="#bbb" stroke-width="1.2"/>
+<text x="720" y="124" font-size="11" fill="#333" text-anchor="middle">2025년 12월, MCP, goose, AGENTS.md로 시작</text>
+
+<!-- 행 2: 중심 -->
+<text x="110" y="182" font-size="11.5" fill="#333" text-anchor="middle" font-weight="bold">중심이 되는 프로젝트</text>
+<rect x="210" y="152" width="320" height="50" rx="5" fill="#ffffff" stroke="#326CE5" stroke-width="1.8"/>
+<text x="370" y="174" font-size="12" fill="#222" text-anchor="middle" font-weight="bold">쿠버네티스</text>
+<text x="370" y="192" font-size="10" fill="#666" text-anchor="middle">컨테이너를 배포하고 운영하는 플랫폼</text>
+<rect x="560" y="152" width="320" height="50" rx="5" fill="#ffffff" stroke="#7B4BC4" stroke-width="1.8"/>
+<text x="720" y="174" font-size="12" fill="#222" text-anchor="middle" font-weight="bold">MCP, A2A</text>
+<text x="720" y="192" font-size="10" fill="#666" text-anchor="middle">도구 연결과 에이전트 간 통신 규격</text>
+
+<!-- 행 3: 트래픽 계층 -->
+<text x="110" y="246" font-size="11.5" fill="#333" text-anchor="middle" font-weight="bold">트래픽을 다루는 계층</text>
+<rect x="210" y="216" width="320" height="50" rx="5" fill="#ffffff" stroke="#326CE5" stroke-width="1.8"/>
+<text x="370" y="238" font-size="12" fill="#222" text-anchor="middle" font-weight="bold">Envoy, Gateway API</text>
+<text x="370" y="256" font-size="10" fill="#666" text-anchor="middle">Envoy 2017년 CNCF 프로젝트, Gateway API 2023년 정식 버전</text>
+<rect x="560" y="216" width="320" height="50" rx="5" fill="#ffffff" stroke="#7B4BC4" stroke-width="1.8"/>
+<text x="720" y="238" font-size="12" fill="#222" text-anchor="middle" font-weight="bold">agentgateway, Agent Router</text>
+<text x="720" y="256" font-size="10" fill="#666" text-anchor="middle">2026년 6월과 9월에 호스티드 프로젝트로</text>
+
+<!-- 행 4: 에이전트/도구 -->
+<text x="110" y="310" font-size="11.5" fill="#333" text-anchor="middle" font-weight="bold">그 밖의 대표 프로젝트</text>
+<rect x="210" y="280" width="320" height="50" rx="5" fill="#fafafa" stroke="#bbb" stroke-width="1.2"/>
+<text x="370" y="302" font-size="11" fill="#333" text-anchor="middle">모니터링, 패키지 관리, 보안 등</text>
+<text x="370" y="320" font-size="10" fill="#666" text-anchor="middle">Prometheus, Helm 등</text>
+<rect x="560" y="280" width="320" height="50" rx="5" fill="#fafafa" stroke="#bbb" stroke-width="1.2"/>
+<text x="720" y="302" font-size="11" fill="#333" text-anchor="middle">에이전트와 에이전트 지침</text>
+<text x="720" y="320" font-size="10" fill="#666" text-anchor="middle">goose, AGENTS.md</text>
+
+<!-- 행 5: 규모 -->
+<text x="110" y="370" font-size="11.5" fill="#333" text-anchor="middle" font-weight="bold">지금의 규모</text>
+<rect x="210" y="344" width="320" height="44" rx="5" fill="#fafafa" stroke="#bbb" stroke-width="1.2"/>
+<text x="370" y="371" font-size="11" fill="#333" text-anchor="middle">호스티드 프로젝트 230개, 회원사 723곳</text>
+<rect x="560" y="344" width="320" height="44" rx="5" fill="#fafafa" stroke="#bbb" stroke-width="1.2"/>
+<text x="720" y="371" font-size="11" fill="#333" text-anchor="middle">호스티드 프로젝트 6개, 회원사 270곳</text>
+
+<text x="880" y="430" font-size="10" fill="#888" text-anchor="end">* 두 재단의 공식 그림이 아님. 생태계의 구성을 비교하려고 따로 그렸으며 행의 대응은 이 글의 해석</text>
+<text x="880" y="448" font-size="10" fill="#888" text-anchor="end">  2026년 10월 12일 기준</text>
+</svg>

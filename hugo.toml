@@ -154,6 +154,10 @@ enableRobotsTXT = true
 [markup]
   [markup.goldmark.renderer]
     unsafe = true
+  # 한국어 범위 표기 "0.953~0.996"의 물결표가 한 문단에 두 번 나오면 그 사이가 취소선이 된다.
+  # 사이트에서 취소선을 의도해 쓴 곳이 없어 기능을 끈다(2026-10-23).
+  [markup.goldmark.extensions]
+    strikethrough = false
   [markup.tableOfContents]
     startLevel = 2
     endLevel = 3

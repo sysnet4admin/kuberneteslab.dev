@@ -37,11 +37,12 @@ build:
 
 ## 자격 및 수상
 
-- [CNCF Ambassador](https://www.credly.com/badges/4ede0d01-f499-4178-893f-a5cce941412e/public_url)
+- [CNCF Ambassador](https://www.credly.com/badges/a7d8f6f4-94b6-4f53-921a-cd0b672ae691/public_url)
 - [AAIF (Agentic AI Foundation) Ambassador](https://aaif.io/ambassadors) (2026)
 - [KubeCon + CloudNativeCon 프로그램 위원회](https://www.credly.com/users/hoonjo/badges) (EU, NA, China, India, Japan, 2023~)
 - [KyvernoCon EU 2026 프로그램 위원회](https://www.credly.com/users/hoonjo/badges)
 - [Kubestronaut (CKA + CKAD + CKS + KCNA + KCSA)](https://www.credly.com/badges/31d3b041-71e9-4371-93be-6156f9c89397/public_url)
+- [MCPA (Model Context Protocol Associate)](https://www.credly.com/badges/b4f72e66-4c42-4300-9ced-f0ea112fc616/public_url)
 - [CCIE Data Center (Cisco)](https://www.credly.com/badges/a735c2f7-7c92-46dc-a0bd-072db6d874dc/public_url)
 - 세종도서 학술부문 우수도서 (2021)
 - 교보문고 IT 올해의 책 (2021)

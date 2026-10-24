@@ -43,7 +43,6 @@ build:
 - [KyvernoCon EU 2026 프로그램 위원회](https://www.credly.com/users/hoonjo/badges)
 - [Kubestronaut (CKA + CKAD + CKS + KCNA + KCSA)](https://www.credly.com/badges/31d3b041-71e9-4371-93be-6156f9c89397/public_url)
 - [CCIE Data Center (Cisco)](https://www.credly.com/badges/a735c2f7-7c92-46dc-a0bd-072db6d874dc/public_url)
-- RHCE (Red Hat Certified Engineer)
 - 세종도서 학술부문 우수도서 (2021)
 - 교보문고 IT 올해의 책 (2021)
 - [Yes24 월간 개발자 2025년 10월호](https://event.yes24.com/template?EventNo=263676)

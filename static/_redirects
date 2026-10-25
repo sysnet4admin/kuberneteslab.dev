@@ -12,3 +12,16 @@
 # 뉴스레터 고정 주소. QR과 인쇄물에는 이 주소만 쓴다. 목적지를 바꿀 수 있게 302로 둔다.
 /newsletter /ko/newsletter/ 302
 /newsletter/ /ko/newsletter/ 302
+# 인프런 강의 바로가기. YouTube 설명란에 쓴다. 경로는 지우거나 바꾸지 않는다. 목적지는 인프런 직접 홍보 링크(inf.run)로 둔다.
+/inflearn/cert https://inf.run/dikjy 302
+/inflearn/cert/ https://inf.run/dikjy 302
+/inflearn/k8s https://inf.run/jVh2M 302
+/inflearn/k8s/ https://inf.run/jVh2M 302
+/inflearn/k8s-adv https://inf.run/4GAVr 302
+/inflearn/k8s-adv/ https://inf.run/4GAVr 302
+/inflearn/prometheus https://inf.run/B4u9w 302
+/inflearn/prometheus/ https://inf.run/B4u9w 302
+/inflearn/grafana https://inf.run/y2sjq 302
+/inflearn/grafana/ https://inf.run/y2sjq 302
+/inflearn/ansible https://inf.run/ZVDSP 302
+/inflearn/ansible/ https://inf.run/ZVDSP 302

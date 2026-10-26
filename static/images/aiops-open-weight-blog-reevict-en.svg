@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="508" viewBox="0 0 900 508" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', Helvetica, Arial, sans-serif" role="img" aria-label="Raising the limit only: when the pod is evicted again (007)">
+<rect width="900" height="508" fill="#ffffff"/>
+<rect x="70" y="92" width="790" height="360" fill="#fafbfc" stroke="#d8dee4"/>
+<line x1="70.0" y1="92.0" x2="70.0" y2="452.0" stroke="#d8dee4" stroke-width="1" />
+<text x="70.0" y="468.0" font-size="10.5" fill="#59636e" text-anchor="middle" font-weight="normal">0</text>
+<line x1="157.8" y1="92.0" x2="157.8" y2="452.0" stroke="#d8dee4" stroke-width="1" />
+<text x="157.8" y="468.0" font-size="10.5" fill="#59636e" text-anchor="middle" font-weight="normal">5</text>
+<line x1="245.6" y1="92.0" x2="245.6" y2="452.0" stroke="#d8dee4" stroke-width="1" />
+<text x="245.6" y="468.0" font-size="10.5" fill="#59636e" text-anchor="middle" font-weight="normal">10</text>
+<line x1="333.3" y1="92.0" x2="333.3" y2="452.0" stroke="#d8dee4" stroke-width="1" />
+<text x="333.3" y="468.0" font-size="10.5" fill="#59636e" text-anchor="middle" font-weight="normal">15</text>
+<line x1="421.1" y1="92.0" x2="421.1" y2="452.0" stroke="#d8dee4" stroke-width="1" />
+<text x="421.1" y="468.0" font-size="10.5" fill="#59636e" text-anchor="middle" font-weight="normal">20</text>
+<line x1="508.9" y1="92.0" x2="508.9" y2="452.0" stroke="#d8dee4" stroke-width="1" />
+<text x="508.9" y="468.0" font-size="10.5" fill="#59636e" text-anchor="middle" font-weight="normal">25</text>
+<line x1="596.7" y1="92.0" x2="596.7" y2="452.0" stroke="#d8dee4" stroke-width="1" />
+<text x="596.7" y="468.0" font-size="10.5" fill="#59636e" text-anchor="middle" font-weight="normal">30</text>
+<line x1="684.4" y1="92.0" x2="684.4" y2="452.0" stroke="#d8dee4" stroke-width="1" />
+<text x="684.4" y="468.0" font-size="10.5" fill="#59636e" text-anchor="middle" font-weight="normal">35</text>
+<line x1="772.2" y1="92.0" x2="772.2" y2="452.0" stroke="#d8dee4" stroke-width="1" />
+<text x="772.2" y="468.0" font-size="10.5" fill="#59636e" text-anchor="middle" font-weight="normal">40</text>
+<line x1="860.0" y1="92.0" x2="860.0" y2="452.0" stroke="#d8dee4" stroke-width="1" />
+<text x="860.0" y="468.0" font-size="10.5" fill="#59636e" text-anchor="middle" font-weight="normal">45</text>
+<line x1="70.0" y1="452.0" x2="860.0" y2="452.0" stroke="#d8dee4" stroke-width="1" />
+<text x="62.0" y="456.0" font-size="10.5" fill="#59636e" text-anchor="end" font-weight="normal">0</text>
+<line x1="70.0" y1="386.5" x2="860.0" y2="386.5" stroke="#d8dee4" stroke-width="1" />
+<text x="62.0" y="390.5" font-size="10.5" fill="#59636e" text-anchor="end" font-weight="normal">100</text>
+<line x1="70.0" y1="321.1" x2="860.0" y2="321.1" stroke="#d8dee4" stroke-width="1" />
+<text x="62.0" y="325.1" font-size="10.5" fill="#59636e" text-anchor="end" font-weight="normal">200</text>
+<line x1="70.0" y1="255.6" x2="860.0" y2="255.6" stroke="#d8dee4" stroke-width="1" />
+<text x="62.0" y="259.6" font-size="10.5" fill="#59636e" text-anchor="end" font-weight="normal">300</text>
+<line x1="70.0" y1="190.2" x2="860.0" y2="190.2" stroke="#d8dee4" stroke-width="1" />
+<text x="62.0" y="194.2" font-size="10.5" fill="#59636e" text-anchor="end" font-weight="normal">400</text>
+<line x1="70.0" y1="124.7" x2="860.0" y2="124.7" stroke="#d8dee4" stroke-width="1" />
+<text x="62.0" y="128.7" font-size="10.5" fill="#59636e" text-anchor="end" font-weight="normal">500</text>
+<line x1="70.0" y1="452.0" x2="745.8" y2="124.7" stroke="#cf222e" stroke-width="2" />
+<line x1="70.0" y1="432.4" x2="860.0" y2="432.4" stroke="#59636e" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="854.0" y="426.4" font-size="10.5" fill="#59636e" text-anchor="end" font-weight="normal">30Mi (original)</text>
+<circle cx="119.2" cy="432.4" r="5" fill="#cf222e"/>
+<circle cx="120.0" cy="432.4" r="5" fill="#cf222e"/>
+<text x="130.0" y="448.4" font-size="10.5" fill="#1f2328" text-anchor="start" font-weight="normal">observed 2m 48s, 2m 51s</text>
+<line x1="70.0" y1="386.5" x2="860.0" y2="386.5" stroke="#59636e" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="854.0" y="380.5" font-size="10.5" fill="#59636e" text-anchor="end" font-weight="normal">100Mi</text>
+<circle cx="210.7" cy="386.5" r="5" fill="#cf222e"/>
+<circle cx="214.0" cy="386.5" r="5" fill="#cf222e"/>
+<text x="224.0" y="378.5" font-size="10.5" fill="#1f2328" text-anchor="start" font-weight="normal">observed 8m 1s, 8m 12s</text>
+<line x1="70.0" y1="124.7" x2="860.0" y2="124.7" stroke="#59636e" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="854.0" y="118.7" font-size="10.5" fill="#59636e" text-anchor="end" font-weight="normal">500Mi</text>
+<circle cx="745.8" cy="124.7" r="5" fill="#ffffff" stroke="#cf222e" stroke-width="2"/>
+<text x="755.8" y="116.7" font-size="10.5" fill="#1f2328" text-anchor="start" font-weight="normal">calculated about 40 min</text>
+<line x1="70.0" y1="450.8" x2="860.0" y2="450.8" stroke="#1a7f37" stroke-width="2.5" />
+<text x="386.0" y="442.8" font-size="10.5" fill="#1a7f37" text-anchor="start" font-weight="600">log rotation (measured 1.9 MiB)</text>
+<text x="465.0" y="494.0" font-size="11" fill="#59636e" text-anchor="middle" font-weight="normal">minutes since the pod started</text>
+<text x="18" y="272.0" font-size="11" fill="#59636e" text-anchor="middle" transform="rotate(-90 18 272.0)">ephemeral storage used (MiB)</text>
+<text x="24.0" y="28.0" font-size="14.5" fill="#1f2328" text-anchor="start" font-weight="600">Raising the limit only: when the pod is evicted again (007)</text>
+<text x="24.0" y="48.0" font-size="10.5" fill="#59636e" text-anchor="start" font-weight="normal">log usage grows at about 227 KB/s (measured). Filled marks = observed evictions, hollow = calculated</text>
+</svg>

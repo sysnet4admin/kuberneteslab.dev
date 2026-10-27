@@ -8,6 +8,10 @@ description: "I gave 9 open-weight models and 5 commercial models the same 10 Ku
 summary: "I measured whether you can hand Kubernetes operations to an open-weight model under the same conditions as commercial models. The post covers how far you can go, where the differences came from, and what to check when adopting one in an environment that handles sensitive data."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/aiops-open-weight-benchmark.jpg"
+    alt: "Can you hand Kubernetes operations to an open-weight model?"
+    hidden: true
 ---
 
 ## When Claude or GPT is hard to use

@@ -8,6 +8,10 @@ description: "Calico, Cilium, Flannel, Antrea, kube-router 5종을 14개 구성�
 summary: "CNI는 한 번 고르면 다시 들여다보지 않는 구성 요소라 평소 자원 사용량을 정리한 자료가 없습니다. 5종 14구성을 같은 조건에서 실측했더니 메모리 사용량이 8배까지 갈렸고, CNI마다 다른 지표에 잡히는 eBPF map 메모리와 kube-proxy nftables 모드의 70% 절감처럼 알려지지 않았던 수치들이 확인됐습니다."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/cni-standing-cost.jpg"
+    alt: "CNI는 평소에 자원을 얼마나 쓸까요?"
+    hidden: true
 ---
 
 ## 설치하고 나면 아무도 안 보는 구성 요소

@@ -8,6 +8,10 @@ description: "오픈 웨이트 모델 9종과 상용 모델 5종에 같은 쿠�
 summary: "오픈 웨이트 모델에 쿠버네티스 운영을 맡길 수 있는지 상용 모델과 같은 조건으로 측정했습니다. 어디까지 맡길 수 있고 어디서 차이가 발생했는지 그리고 민감한 데이터를 다루는 환경에서 도입할 때 무엇을 확인해야 하는지 정리했습니다."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/aiops-open-weight-benchmark.jpg"
+    alt: "오픈 웨이트 모델에 쿠버네티스 운영을 맡길 수 있을까요?"
+    hidden: true
 ---
 
 ## Claude나 GPT를 사용하기 어려울 때의 선택지

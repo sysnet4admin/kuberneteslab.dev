@@ -8,6 +8,10 @@ description: "I measured the standing CPU and memory usage of Calico, Cilium, Fl
 summary: "A CNI is picked once and rarely revisited, and there is no organized data on what it consumes day to day. Measuring 5 CNIs in 14 configurations under identical conditions showed an 8x memory spread, eBPF map memory that shows up in different metrics depending on the CNI, and a 70% kube-proxy memory saving from the nftables mode that had not been published as a number."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/cni-standing-cost.jpg"
+    alt: "How much CPU and memory does a CNI actually use?"
+    hidden: true
 ---
 
 ## The component nobody looks at after install

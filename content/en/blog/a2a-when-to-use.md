@@ -8,6 +8,10 @@ description: "Running the A2A protocol on the official Python SDK to check, item
 summary: "What A2A gives you is a contract for progress and cancellation. What it costs is a larger response (seven times plain HTTP for the same job) and 1.2 to 2.1 ms more per call. The authentication the agent card declares is not enforced by the SDK's default setup, so read declaration and enforcement separately."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/a2a-when-to-use.jpg"
+    alt: "What changes when you connect agents over A2A?"
+    hidden: true
 ---
 
 On 2026-08-17 a project called A2A (Agent2Agent) joined the Agentic AI

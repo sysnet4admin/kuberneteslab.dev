@@ -8,6 +8,10 @@ description: "쿠버네티스용 MCP 서버 6종을 같은 모델, 같은 장애
 summary: "MCP 서버를 붙이면 에이전트가 나아질 거라는 기대를 240회 측정으로 확인했습니다. 점수, 위험 행동, 토큰 그리고 읽기 전용 모드의 설계를 서버별로 살펴보고 상황별로 어떤 서버를 고르면 좋을지 정리했습니다."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/mcp-server-benchmark.jpg"
+    alt: "쿠버네티스 운영 에이전트에 MCP 서버를 붙이면 더 나아질까요?"
+    hidden: true
 ---
 
 ## MCP 서버를 붙이면 나아진다는 기대

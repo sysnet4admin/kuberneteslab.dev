@@ -8,6 +8,10 @@ description: "A2A 프로토콜을 공식 파이썬 SDK로 실행해 놓고 스�
 summary: "A2A로 얻는 것은 진행 확인과 취소의 규약입니다. 대신 응답 바이트가 늘고(같은 작업에 순수 HTTP의 7배) 호출당 지연 시간이 1.2~2.1ms 더 붙습니다. 다만 에이전트 카드가 선언한 인증은 SDK 기본 구성에서 강제되지 않으니 선언과 강제를 나눠 보셔야 합니다."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/a2a-when-to-use.jpg"
+    alt: "A2A로 에이전트를 연결하면 무엇이 달라질까요?"
+    hidden: true
 ---
 
 에이전틱 AI 재단(AAIF, Agentic AI Foundation)에 2026년 8월 17일

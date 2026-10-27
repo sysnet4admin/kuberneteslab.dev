@@ -8,6 +8,10 @@ description: "agentgateway v1.5.0 in front of an MCP server, measured: what the 
 summary: "The gateway hop costs under 1 ms per tool call and never improves p99, and in return you get control and observation the server cannot do on its own. One argument-conditioned policy was accepted and still did not enforce what it said, so turn a policy on and then check it with real calls."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/agentgateway-mcp-enforcement.jpg"
+    alt: "What changes when you put a gateway in front of MCP?"
+    hidden: true
 ---
 
 Once MCP (Model Context Protocol) servers start to multiply, a gateway in front

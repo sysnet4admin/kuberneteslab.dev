@@ -8,6 +8,10 @@ description: "Claude Code 2.1.277에 AGENTS.md 네이티브 지원이 들어갔�
 summary: "네이티브 지원이 들어왔다고 우회 방법을 급하게 지울 필요는 없습니다. 공식 문서가 밝힌 함정과 7월 확장 측정 80런을 근거로, 무엇을 남기고 무엇을 고쳐야 하는지 정리했습니다."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/agents-md-native.jpg"
+    alt: "Claude Code가 AGENTS.md를 직접 읽을 수 있도록 변경되었습니다!"
+    hidden: true
 ---
 
 지난 7월에 [CLAUDE.md를 AGENTS.md로 바꾸면 느려질까요?](https://kuberneteslab.dev/ko/blog/agents-md-migration/)라는 글을 쓰면서 Claude Code가 `AGENTS.md`를 직접 읽지 못하니 `@AGENTS.md` import 한 줄을 남기거나 심볼릭 링크(symbolic link)를 거는 우회 방법을 쓸 수밖에 없다는 이야기를 했었습니다. 그 우회 방법 때문에 세션마다 비용이 더 드는지가 걱정이어서 210회를 측정했고 결과는 손해가 없다는 쪽이었습니다.

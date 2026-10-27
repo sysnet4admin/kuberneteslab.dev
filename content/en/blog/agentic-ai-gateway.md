@@ -8,6 +8,10 @@ description: "A look at the gateway placed where agents call tools: market moves
 summary: "Why several companies are shipping products at the point where agents connect, what ecosystem the Agentic AI Foundation wants to grow, and, based on installing the foundation's two gateways myself, when a gateway is worth considering."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/agentic-ai-gateway.jpg"
+    alt: "What does a gateway mean in the world of agentic AI?"
+    hidden: true
 ---
 
 In May 2025 the security company Invariant Labs showed that an issue filed in a public GitHub repository could make an AI agent leak content from the same user's private repositories. The agent had only called GitHub MCP (Model Context Protocol) server tools within its granted permissions, and the server code had no bug, so Invariant Labs concluded that GitHub could not stop the attack by fixing the server alone and that it had to be handled at the agent system level.

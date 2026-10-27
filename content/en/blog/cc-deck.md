@@ -8,6 +8,10 @@ description: "Claude Code sessions pile up across projects. cc-deck is a cross-p
 summary: "A cross-platform TUI tool that makes Claude Code sessions searchable and manageable: fuzzy search, TODO auto-pinning, manual bookmarks, quick queries, size management for oversized sessions, and smart resume."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/cc-deck.jpg"
+    alt: "cc-deck: Claude Code Session Hub"
+    hidden: true
 ---
 
 ## The Problem

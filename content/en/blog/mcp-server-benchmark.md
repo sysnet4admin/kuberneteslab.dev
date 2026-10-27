@@ -8,6 +8,10 @@ description: "I compared six Kubernetes MCP servers against plain kubectl in a s
 summary: "I checked the expectation that an MCP server makes an agent better over 240 runs. The post compares scores, unsafe actions, tokens, and read-only designs per server, and suggests which server fits which situation."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/mcp-server-benchmark.jpg"
+    alt: "Does an MCP server make a Kubernetes operations agent better?"
+    hidden: true
 ---
 
 ## The expectation that an MCP server helps

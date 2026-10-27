@@ -8,6 +8,10 @@ description: "Claude Code 2.1.277 ships native AGENTS.md support. The default on
 summary: "Native support does not mean the workaround has to go. The documented pitfalls, plus 80 runs from the July extension study, decide what to keep and what to fix."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/agents-md-native.jpg"
+    alt: "Claude Code can now read AGENTS.md directly"
+    hidden: true
 ---
 
 Back in July I wrote [Does switching CLAUDE.md to AGENTS.md slow Claude Code down?](https://kuberneteslab.dev/en/blog/agents-md-migration/), where Claude Code could not read `AGENTS.md` on its own, so the only way to migrate was a workaround: keep a single `@AGENTS.md` import line in `CLAUDE.md`, or turn `CLAUDE.md` into a symlink pointing at `AGENTS.md`. The worry was that the workaround might add cost to every session, so I measured 210 runs, and the answer was that it does not.

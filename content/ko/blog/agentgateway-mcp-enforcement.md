@@ -8,6 +8,10 @@ description: "agentgateway v1.5.0을 MCP 서버 앞에 두고 정책이 실제�
 summary: "게이트웨이를 거치는 비용은 도구 호출당 1ms 아래로 작고 p99가 좋아지는 일은 없으며 그 대가로 서버가 해 줄 수 없는 통제와 관측을 얻습니다. 다만 인자 조건을 쓴 정책은 수용되고도 의도대로 강제되지 않았으니 정책은 켠 뒤 실제 호출로 확인해야 합니다."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/agentgateway-mcp-enforcement.jpg"
+    alt: "MCP 앞에 게이트웨이를 두면 무엇이 달라질까요?"
+    hidden: true
 ---
 
 MCP(Model Context Protocol) 서버가 하나둘 늘어나면 자연스럽게 앞단에 게이트웨이를

@@ -8,6 +8,10 @@ description: "프로젝트 컨텍스트 파일을 CLAUDE.md에서 AGENTS.md로 �
 summary: "AGENTS.md 마이그레이션의 두 우회 방법(import, 심볼릭 링크)을 쿠버네티스 장애 대응 과제에서 검증했더니, 속도와 컨텍스트 로드 토큰 어느 쪽에도 페널티가 없었습니다. 편차는 대조군인 심볼릭 링크와 함께 움직이는 실행 노이즈였습니다."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/agents-md-migration.jpg"
+    alt: "CLAUDE.md를 AGENTS.md로 바꾸면 느려질까요?"
+    hidden: true
 ---
 
 ## 컨텍스트 파일이 하나씩 늘어나는 문제

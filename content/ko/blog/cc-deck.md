@@ -8,6 +8,10 @@ description: "여러 프로젝트의 Claude Code 세션이 쌓입니다. cc-deck
 summary: "Claude Code 세션을 검색하고 관리할 수 있는 다중 플랫폼 TUI 도구입니다. 퍼지 검색, TODO 자동 고정, 수동 북마크, 빠른 질문, 비대 세션 크기 관리, 스마트 재개를 지원합니다."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/cc-deck.jpg"
+    alt: "cc-deck: Claude Code 세션을 한눈에"
+    hidden: true
 ---
 
 ## 문제

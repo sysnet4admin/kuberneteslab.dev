@@ -8,6 +8,10 @@ description: "Measured whether the two workarounds for migrating a project conte
 summary: "The two AGENTS.md migration workarounds (import, symlink) were measured on Kubernetes incident-response tasks: no penalty in speed or context-load tokens; deltas moved with the symlink control, marking them as run variance."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/agents-md-migration.jpg"
+    alt: "Does switching CLAUDE.md to AGENTS.md slow Claude Code down?"
+    hidden: true
 ---
 
 ## The context files keep multiplying

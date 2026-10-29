@@ -8,6 +8,10 @@ description: "Agent Router v1.1.0을 쿠버네티스에 올려 MCP 서버 앞에
 summary: "도구 이름만이 아니라 호출할 때 넘긴 값까지 보고 허용 여부를 정할 수 있습니다. 대신 기본 배포에서는 응답이 20ms 가까이 늦어지고 처리량이 초당 100건 근처에서 더 늘지 않는데, 세션 ID를 푸는 반복 횟수 설정 1개가 그 비용의 주인이었습니다. 그리고 문서 예시 그대로 적으면 tools/list가 비어서 에이전트가 도구를 찾지 못하니 CEL을 has()로 감싸면 피할 수 있습니다."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/agent-router-mcp-gateway.jpg"
+    alt: "Agent Router로 MCP 서버를 묶으면 무엇이 달라질까요?"
+    hidden: true
 ---
 
 MCP 서버를 늘려 가다 보면 클라이언트 설정이 서버 수만큼 늘어나고 누가 어떤

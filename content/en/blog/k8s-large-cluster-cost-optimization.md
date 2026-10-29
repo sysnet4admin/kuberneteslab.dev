@@ -9,6 +9,10 @@ summary: "~$3,240/month, ~$38,880/year saved (~49%). Consolidated EKS 1.32/1.33 
 ShowToc: true
 TocOpen: true
 mermaid: true
+cover:
+    image: "/images/og/k8s-large-cluster-cost-optimization.jpg"
+    alt: "49% Cost Reduction on a Large EKS Cluster: Clearing Infrastructure Debt by Decommissioning V1 and Rebuilding V2"
+    hidden: true
 ---
 
 > **Timeline** · Q1 2026  

@@ -8,6 +8,10 @@ description: "MCP 2026-07-28 스테이트리스 개정으로 세션 기반 서�
 summary: "전송 계층을 v2 SDK로 옮기는 일은 대체로 버전만 올리면 됩니다. 진짜 마이그레이션은 세션이 들고 있던 상태를 핸들로 어디에 둘지 정하는 데 있고 파드 메모리에 두면 같은 실패가 HTTP 200 안에 도구 오류로 다시 나타납니다."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/mcp-stateless-migration.jpg"
+    alt: "MCP 서버를 스테이트리스 스펙으로 어떻게 옮기면 될까요?"
+    hidden: true
 ---
 
 MCP 2026-07-28 스테이트리스(stateless) 개정은 프로토콜 수준의 세션을 없앴습니다.

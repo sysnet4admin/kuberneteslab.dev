@@ -9,6 +9,10 @@ summary: "두 클러스터 합산 월 ~$414, 연 ~$5,000 절감(~48%). 프로덕
 ShowToc: true
 TocOpen: true
 mermaid: true
+cover:
+    image: "/images/og/k8s-small-cluster-cost-optimization.jpg"
+    alt: "소규모 Kubernetes 클러스터 비용 48% 절감기: EKS + AKS 듀얼 클라우드 최적화"
+    hidden: true
 ---
 
 > **작업 시점** · 2026년 상반기  

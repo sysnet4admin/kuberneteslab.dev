@@ -9,6 +9,10 @@ summary: "~$414/mo, ~$5,000/yr saved combined (~48%): 39% on production, 61% on 
 ShowToc: true
 TocOpen: true
 mermaid: true
+cover:
+    image: "/images/og/k8s-small-cluster-cost-optimization.jpg"
+    alt: "Cutting a Small Kubernetes Cluster Bill by 48%: A Dual-Cloud EKS + AKS Optimization Story"
+    hidden: true
 ---
 
 > **Timeline** · First half of 2026  

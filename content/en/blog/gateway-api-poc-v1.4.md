@@ -8,6 +8,10 @@ description: "After Ingress NGINX retired, which Gateway API should you move to?
 summary: "We rebuilt last year's Gateway API PoC from the scoring model up and re-measured 7 implementations. All 7 pass official conformance, but the features you can actually use range from 6 to 13."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/gateway-api-poc-v1.4.jpg"
+    alt: "Passing Conformance Isn't Enough: Re-scoring 7 Gateway API Implementations from Scratch"
+    hidden: true
 ---
 
 ## Why Measure Again

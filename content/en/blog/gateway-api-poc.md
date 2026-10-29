@@ -8,6 +8,10 @@ description: "We tested 7 Gateway API implementations (NGINX Gateway Fabric, Env
 summary: "100-round PoC results and selection guide for 7 Kubernetes Gateway API implementations across 17 test scenarios"
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/gateway-api-poc.jpg"
+    alt: "Comparing 7 Kubernetes Gateway API Implementations: Which One Should You Choose?"
+    hidden: true
 ---
 
 ## Ingress NGINX Is Retiring

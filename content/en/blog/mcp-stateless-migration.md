@@ -8,6 +8,10 @@ description: "A walkthrough of migrating a session-based MCP server to the 2026-
 summary: "Porting the transport to the v2 SDK is mostly a version bump. The real migration is deciding where handle state lives, and leaving it in pod memory brings the old failure back behind an HTTP 200 that transport retries never see."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/mcp-stateless-migration.jpg"
+    alt: "Port an MCP server to the stateless spec on Kubernetes: a step-by-step migration"
+    hidden: true
 ---
 
 The MCP 2026-07-28 revision removes protocol-level sessions. The `Mcp-Session-Id`

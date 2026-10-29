@@ -8,6 +8,10 @@ description: "Running Agent Router v1.1.0 on Kubernetes in front of MCP servers 
 summary: "Authorization down to call arguments really does work. It costs about 20ms per response and the default deployment tops out around 100 requests per second, and one iteration-count setting turns out to own that cost. Writing the condition the way the documentation shows leaves tools/list returning nothing, so an agent finds no tools at all: wrap the CEL in has()."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/agent-router-mcp-gateway.jpg"
+    alt: "What changes when you put Agent Router in front of your MCP servers?"
+    hidden: true
 ---
 
 Adding MCP servers one at a time means client configuration grows with the server

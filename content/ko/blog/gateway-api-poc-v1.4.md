@@ -10,6 +10,10 @@ description: "ingress-nginx 사용 중단 후 어떤 Gateway API로 옮길지, �
 summary: "작년 Gateway API PoC를 채점 모델부터 갈아엎고 7개 구현체를 다시 봤습니다. 공식 적합성은 7종 모두 통과했지만 실제 쓸 수 있는 기능은 6개에서 13개까지 갈렸습니다."
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/gateway-api-poc-v1.4.jpg"
+    alt: "공식 인증을 통과해도 기능은 제각각: 채점부터 새로 한 Gateway API 7종 비교"
+    hidden: true
 ---
 
 ## 다시 측정한 이유

@@ -9,8 +9,8 @@ summary: "Putting nine agents through ten Kubernetes incident scenarios under id
 ShowToc: true
 TocOpen: true
 cover:
-    image: "/images/aiops-tier-comparison-by-efficiency.png"
-    alt: "AIOps Agent Benchmark: Processing Efficiency vs Ops_Score (9 agents)"
+    image: "/images/og/aiops-agent-benchmark.jpg"
+    alt: "How well do Claude / Gemini / Codex CLI agents handle Kubernetes incidents? (AIOps Agent Benchmark)"
     hidden: true
 images:
     - /images/aiops-tier-comparison-by-efficiency.png

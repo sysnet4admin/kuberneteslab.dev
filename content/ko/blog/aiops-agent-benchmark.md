@@ -9,8 +9,8 @@ summary: "9개 에이전트를 같은 조건에서 10개 K8s 장애 시나리오
 ShowToc: true
 TocOpen: true
 cover:
-    image: "/images/aiops-tier-comparison-ko-by-efficiency.png"
-    alt: "AIOps Agent Benchmark: 처리속도 vs Ops_Score 점도표 (9개 에이전트)"
+    image: "/images/og/aiops-agent-benchmark.jpg"
+    alt: "Claude / Gemini / Codex CLI 에이전트는 K8s 장애를 얼마나 잘 다룰까? (AIOps Agent Benchmark)"
     hidden: true
 images:
     - /images/aiops-tier-comparison-ko-by-efficiency.png

@@ -9,6 +9,10 @@ summary: "월 ~$3,240, 연 ~$38,880 절감(~49%). EKS 1.32/1.33을 1.35로, Argo
 ShowToc: true
 TocOpen: true
 mermaid: true
+cover:
+    image: "/images/og/k8s-large-cluster-cost-optimization.jpg"
+    alt: "대규모 EKS 클러스터 비용 49% 절감기: V1 폐기와 V2 재구축으로 청산한 인프라 부채"
+    hidden: true
 ---
 
 > **작업 시점** · 2026년 1분기  

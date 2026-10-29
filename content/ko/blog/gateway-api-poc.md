@@ -8,6 +8,10 @@ description: "Ingress NGINX 사용 중단을 앞두고 NGINX Gateway Fabric, Env
 summary: "7개 Kubernetes Gateway API 구현체를 17개 테스트로 100라운드 검증한 PoC 결과와 상황별 선택 가이드"
 ShowToc: true
 TocOpen: true
+cover:
+    image: "/images/og/gateway-api-poc.jpg"
+    alt: "Kubernetes Gateway API 7개 구현체 PoC 비교: 어떤 걸 선택해야 할까?"
+    hidden: true
 ---
 
 ## Ingress NGINX가 사용 중단됩니다

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="arr-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#444"/></marker><marker id="arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#326CE5"/></marker><marker id="arr-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d9822b"/></marker><marker id="arr-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7b8ca5"/></marker><marker id="arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker><marker id="arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2e7d4f"/></marker></defs>
+<rect width="1200" height="520" fill="white"/>
+<text x="600.0" y="34.0" font-size="18" fill="#111" text-anchor="middle" font-weight="bold">What happened while no release followed 2.4.9</text>
+<text x="600.0" y="58.0" font-size="13" fill="#444" text-anchor="middle" font-weight="normal">The Ruby fix and the switch back to MIT both fall in this period, but no Vagrant release includes them yet</text>
+<line x1="60.0" y1="280.0" x2="1150.0" y2="280.0" stroke="#444" stroke-width="1.5" stroke-linecap="round"/>
+<rect x="308.4" y="258.0" width="768.1" height="44.0" rx="6" fill="#fbeee0" stroke="#d9822b" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="692.5" y="285.0" font-size="14" fill="#d9822b" text-anchor="middle" font-weight="bold">No new release (over 14 months)</text>
+<line x1="60.0" y1="302.0" x2="60.0" y2="307.0" stroke="#444" stroke-width="1" stroke-linecap="round"/>
+<text x="60.0" y="326.0" font-size="11.5" fill="#7b8ca5" text-anchor="middle" font-weight="normal">Apr 2025</text>
+<line x1="112.5" y1="302.0" x2="112.5" y2="307.0" stroke="#444" stroke-width="1" stroke-linecap="round"/>
+<line x1="166.7" y1="302.0" x2="166.7" y2="307.0" stroke="#444" stroke-width="1" stroke-linecap="round"/>
+<line x1="219.2" y1="302.0" x2="219.2" y2="307.0" stroke="#444" stroke-width="1" stroke-linecap="round"/>
+<text x="219.2" y="326.0" font-size="11.5" fill="#7b8ca5" text-anchor="middle" font-weight="normal">Jul</text>
+<line x1="273.5" y1="302.0" x2="273.5" y2="307.0" stroke="#444" stroke-width="1" stroke-linecap="round"/>
+<line x1="327.7" y1="302.0" x2="327.7" y2="307.0" stroke="#444" stroke-width="1" stroke-linecap="round"/>
+<line x1="380.2" y1="302.0" x2="380.2" y2="307.0" stroke="#444" stroke-width="1" stroke-linecap="round"/>
+<text x="380.2" y="326.0" font-size="11.5" fill="#7b8ca5" text-anchor="middle" font-weight="normal">Oct</text>
+<line x1="434.4" y1="302.0" x2="434.4" y2="307.0" stroke="#444" stroke-width="1" stroke-linecap="round"/>
+<line x1="486.9" y1="302.0" x2="486.9" y2="307.0" stroke="#444" stroke-width="1" stroke-linecap="round"/>
+<line x1="541.1" y1="302.0" x2="541.1" y2="312.0" stroke="#444" stroke-width="1" stroke-linecap="round"/>
+<text x="541.1" y="326.0" font-size="11.5" fill="#444" text-anchor="middle" font-weight="bold">Jan 2026</text>
+<line x1="595.4" y1="302.0" x2="595.4" y2="307.0" stroke="#444" stroke-width="1" stroke-linecap="round"/>
+<line x1="644.4" y1="302.0" x2="644.4" y2="307.0" stroke="#444" stroke-width="1" stroke-linecap="round"/>
+<line x1="698.6" y1="302.0" x2="698.6" y2="307.0" stroke="#444" stroke-width="1" stroke-linecap="round"/>
+<text x="698.6" y="326.0" font-size="11.5" fill="#7b8ca5" text-anchor="middle" font-weight="normal">Apr</text>
+<line x1="751.1" y1="302.0" x2="751.1" y2="307.0" stroke="#444" stroke-width="1" stroke-linecap="round"/>
+<line x1="805.3" y1="302.0" x2="805.3" y2="307.0" stroke="#444" stroke-width="1" stroke-linecap="round"/>
+<line x1="857.8" y1="302.0" x2="857.8" y2="307.0" stroke="#444" stroke-width="1" stroke-linecap="round"/>
+<text x="857.8" y="326.0" font-size="11.5" fill="#7b8ca5" text-anchor="middle" font-weight="normal">Jul</text>
+<line x1="912.1" y1="302.0" x2="912.1" y2="307.0" stroke="#444" stroke-width="1" stroke-linecap="round"/>
+<line x1="966.3" y1="302.0" x2="966.3" y2="307.0" stroke="#444" stroke-width="1" stroke-linecap="round"/>
+<line x1="1018.8" y1="302.0" x2="1018.8" y2="307.0" stroke="#444" stroke-width="1" stroke-linecap="round"/>
+<text x="1018.8" y="326.0" font-size="11.5" fill="#7b8ca5" text-anchor="middle" font-weight="normal">Oct</text>
+<line x1="1073.0" y1="302.0" x2="1073.0" y2="307.0" stroke="#444" stroke-width="1" stroke-linecap="round"/>
+<line x1="1125.5" y1="302.0" x2="1125.5" y2="307.0" stroke="#444" stroke-width="1" stroke-linecap="round"/>
+<circle cx="147.5" cy="280.0" r="7" fill="#326CE5" stroke="#fff" stroke-width="2"/>
+<line x1="147.5" y1="272.0" x2="147.5" y2="246.0" stroke="#326CE5" stroke-width="1" stroke-linecap="round"/>
+<text x="147.5" y="240.0" font-size="12.5" fill="#326CE5" text-anchor="middle" font-weight="bold">2.4.6</text>
+<circle cx="194.7" cy="280.0" r="7" fill="#326CE5" stroke="#fff" stroke-width="2"/>
+<line x1="194.7" y1="272.0" x2="194.7" y2="224.0" stroke="#326CE5" stroke-width="1" stroke-linecap="round"/>
+<text x="194.7" y="218.0" font-size="12.5" fill="#326CE5" text-anchor="middle" font-weight="bold">2.4.7</text>
+<circle cx="280.4" cy="280.0" r="7" fill="#326CE5" stroke="#fff" stroke-width="2"/>
+<line x1="280.4" y1="272.0" x2="280.4" y2="246.0" stroke="#326CE5" stroke-width="1" stroke-linecap="round"/>
+<text x="280.4" y="240.0" font-size="12.5" fill="#326CE5" text-anchor="middle" font-weight="bold">2.4.8</text>
+<circle cx="308.4" cy="280.0" r="7" fill="#326CE5" stroke="#fff" stroke-width="2"/>
+<line x1="308.4" y1="272.0" x2="308.4" y2="224.0" stroke="#326CE5" stroke-width="1" stroke-linecap="round"/>
+<text x="308.4" y="218.0" font-size="12.5" fill="#326CE5" text-anchor="middle" font-weight="bold">2.4.9</text>
+<text x="226.2" y="172.0" font-size="12.5" fill="#326CE5" text-anchor="middle" font-weight="bold">4 releases in 3 months</text>
+<line x1="661.9" y1="256.0" x2="661.9" y2="170.0" stroke="#7b8ca5" stroke-width="1" stroke-linecap="round" stroke-dasharray="2 3"/>
+<circle cx="661.9" cy="256.0" r="4" fill="#7b8ca5" stroke="#fff" stroke-width="1.5"/>
+<text x="661.9" y="148.0" font-size="12" fill="#7b8ca5" text-anchor="middle" font-weight="bold">Licensor changed</text>
+<text x="661.9" y="163.0" font-size="11.5" fill="#7b8ca5" text-anchor="middle" font-weight="normal">to IBM (#13791)</text>
+<line x1="805.3" y1="304.0" x2="805.3" y2="338.0" stroke="#7b8ca5" stroke-width="1" stroke-linecap="round" stroke-dasharray="2 3"/>
+<circle cx="805.3" cy="304.0" r="4" fill="#7b8ca5" stroke="#fff" stroke-width="1.5"/>
+<text x="805.3" y="352.0" font-size="12" fill="#7b8ca5" text-anchor="middle" font-weight="bold">Last nightly build</text>
+<text x="805.3" y="367.0" font-size="11.5" fill="#7b8ca5" text-anchor="middle" font-weight="normal">2.4.10.dev</text>
+<line x1="920.8" y1="256.0" x2="920.8" y2="216.0" stroke="#444" stroke-width="1" stroke-linecap="round" stroke-dasharray="2 3"/>
+<circle cx="920.8" cy="256.0" r="4" fill="#444" stroke="#fff" stroke-width="1.5"/>
+<text x="920.8" y="194.0" font-size="12" fill="#444" text-anchor="middle" font-weight="bold">Ruby fixes the port check</text>
+<text x="920.8" y="209.0" font-size="11.5" fill="#444" text-anchor="middle" font-weight="normal">ruby/ruby#18203</text>
+<line x1="994.3" y1="304.0" x2="994.3" y2="384.0" stroke="#c0392b" stroke-width="1" stroke-linecap="round" stroke-dasharray="2 3"/>
+<circle cx="994.3" cy="304.0" r="4" fill="#c0392b" stroke="#fff" stroke-width="1.5"/>
+<text x="994.3" y="398.0" font-size="12" fill="#c0392b" text-anchor="middle" font-weight="bold">macOS 26.7 port forwarding</text>
+<text x="994.3" y="413.0" font-size="11.5" fill="#c0392b" text-anchor="middle" font-weight="normal">issue #13845 opened</text>
+<line x1="1004.8" y1="256.0" x2="1004.8" y2="124.0" stroke="#444" stroke-width="1" stroke-linecap="round" stroke-dasharray="2 3"/>
+<circle cx="1004.8" cy="256.0" r="4" fill="#444" stroke="#fff" stroke-width="1.5"/>
+<text x="1004.8" y="102.0" font-size="12" fill="#444" text-anchor="middle" font-weight="bold">Ruby 3.4.11 released</text>
+<text x="1004.8" y="117.0" font-size="11.5" fill="#444" text-anchor="middle" font-weight="normal">with the fix</text>
+<line x1="1074.8" y1="304.0" x2="1074.8" y2="430.0" stroke="#326CE5" stroke-width="1" stroke-linecap="round" stroke-dasharray="2 3"/>
+<circle cx="1074.8" cy="304.0" r="4" fill="#326CE5" stroke="#fff" stroke-width="1.5"/>
+<text x="1074.8" y="444.0" font-size="12" fill="#326CE5" text-anchor="middle" font-weight="bold">main branch switched</text>
+<text x="1074.8" y="459.0" font-size="11.5" fill="#326CE5" text-anchor="middle" font-weight="normal">back to MIT (#13858)</text>
+<text x="1150.0" y="505.0" font-size="11" fill="#7b8ca5" text-anchor="end" font-weight="normal">Dates as of November 3, 2026</text>
+</svg>

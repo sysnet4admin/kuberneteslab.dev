@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="arr-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#444"/></marker><marker id="arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#326CE5"/></marker><marker id="arr-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d9822b"/></marker><marker id="arr-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7b8ca5"/></marker><marker id="arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker><marker id="arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2e7d4f"/></marker></defs>
+<rect width="1200" height="600" fill="white"/>
+<text x="600.0" y="34.0" font-size="18" fill="#111" text-anchor="middle" font-weight="bold">box.kuberneteslab.dev를 거쳐 백엔드로 나누어지는 구성</text>
+<text x="600.0" y="58.0" font-size="13" fill="#444" text-anchor="middle" font-weight="normal">평소에는 R2가 응답하고 R2에 문제가 생기면 전환용 리다이렉트 규칙을 활성화해 GitHub로 넘깁니다</text>
+<rect x="30.0" y="230.0" width="250.0" height="150.0" rx="12" fill="#fff" stroke="#444" stroke-width="1.4"/>
+<text x="155.0" y="256.0" font-size="14" fill="#111" text-anchor="middle" font-weight="bold">사용자</text>
+<text x="48.0" y="284.0" font-size="11.5" fill="#7b8ca5" text-anchor="start" font-weight="normal">Vagrantfile</text>
+<text x="48.0" y="302.0" font-size="11" fill="#444" text-anchor="start" font-weight="normal" font-family="Menlo, monospace">box_url = "https://box.</text>
+<text x="48.0" y="318.0" font-size="11" fill="#444" text-anchor="start" font-weight="normal" font-family="Menlo, monospace">  kuberneteslab.dev/..."</text>
+<text x="48.0" y="342.0" font-size="11.5" fill="#7b8ca5" text-anchor="start" font-weight="normal">또는 환경 변수</text>
+<text x="48.0" y="360.0" font-size="11" fill="#444" text-anchor="start" font-weight="normal" font-family="Menlo, monospace">VAGRANT_SERVER_URL</text>
+<rect x="350.0" y="200.0" width="250.0" height="210.0" rx="14" fill="#fdf5ec" stroke="#d9822b" stroke-width="1.6"/>
+<text x="475.0" y="228.0" font-size="15" fill="#111" text-anchor="middle" font-weight="bold">box.kuberneteslab.dev</text>
+<text x="475.0" y="247.0" font-size="11.5" fill="#7b8ca5" text-anchor="middle" font-weight="normal">클라우드플레어 영역의 자체 도메인</text>
+<rect x="370.0" y="300.0" width="210.0" height="84.0" rx="10" fill="#fff" stroke="#7b8ca5" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="475.0" y="324.0" font-size="12.5" fill="#111" text-anchor="middle" font-weight="bold">전환용 리다이렉트 규칙</text>
+<text x="475.0" y="342.0" font-size="11.5" fill="#7b8ca5" text-anchor="middle" font-weight="normal">평소에는 비활성화</text>
+<rect x="451.0" y="354.0" width="48.0" height="20.0" rx="10" fill="#e6e9ef" stroke="#7b8ca5" stroke-width="1"/>
+<circle cx="463.0" cy="364.0" r="7" fill="#fff" stroke="#7b8ca5" stroke-width="1.5"/>
+<rect x="690.0" y="90.0" width="420.0" height="210.0" rx="14" fill="#fff" stroke="#d9822b" stroke-width="1.8"/>
+<text x="710.0" y="116.0" font-size="15" fill="#d9822b" text-anchor="start" font-weight="bold">Cloudflare R2</text>
+<text x="710.0" y="134.0" font-size="11.5" fill="#7b8ca5" text-anchor="start" font-weight="normal">주 저장소</text>
+<rect x="710.0" y="150.0" width="380.0" height="56.0" rx="8" fill="#fdf5ec"/>
+<text x="726.0" y="172.0" font-size="12.5" fill="#111" text-anchor="start" font-weight="bold">카탈로그  /sysnet4admin/&lt;box&gt;</text>
+<text x="726.0" y="190.0" font-size="11.5" fill="#444" text-anchor="start" font-weight="normal">모든 box. 확장자 없는 주소에 application/json</text>
+<rect x="710.0" y="222.0" width="380.0" height="56.0" rx="8" fill="#fdf5ec"/>
+<text x="726.0" y="244.0" font-size="12.5" fill="#111" text-anchor="start" font-weight="bold">box 파일  /files/...</text>
+<text x="726.0" y="262.0" font-size="11.5" fill="#444" text-anchor="start" font-weight="normal">그룹 1, 2(Ubuntu-k8s, CentOS-k8s)</text>
+<rect x="690.0" y="330.0" width="420.0" height="250.0" rx="14" fill="#fff" stroke="#326CE5" stroke-width="1.8"/>
+<text x="710.0" y="356.0" font-size="15" fill="#326CE5" text-anchor="start" font-weight="bold">GitHub</text>
+<text x="710.0" y="374.0" font-size="11.5" fill="#7b8ca5" text-anchor="start" font-weight="normal">예비 사본</text>
+<rect x="710.0" y="390.0" width="380.0" height="56.0" rx="8" fill="#eef3fd"/>
+<text x="726.0" y="412.0" font-size="12.5" fill="#111" text-anchor="start" font-weight="bold">GitHub Pages  vg-box.github.io/k8s/</text>
+<text x="726.0" y="430.0" font-size="11.5" fill="#444" text-anchor="start" font-weight="normal">모든 box의 카탈로그 사본(.json)</text>
+<rect x="710.0" y="456.0" width="180.0" height="108.0" rx="8" fill="#eef3fd"/>
+<text x="726.0" y="480.0" font-size="12.5" fill="#111" text-anchor="start" font-weight="bold">릴리스 vg-box/k8s</text>
+<text x="726.0" y="500.0" font-size="11.5" fill="#444" text-anchor="start" font-weight="normal">그룹 1, 2 box 사본</text>
+<rect x="910.0" y="456.0" width="180.0" height="108.0" rx="8" fill="#eef3fd"/>
+<text x="926.0" y="480.0" font-size="12.5" fill="#111" text-anchor="start" font-weight="bold">릴리스 vg-box/ansible</text>
+<text x="926.0" y="500.0" font-size="11.5" fill="#444" text-anchor="start" font-weight="normal">그룹 3 box</text>
+<text x="926.0" y="518.0" font-size="11" fill="#7b8ca5" text-anchor="start" font-weight="normal">(네트워크 장비)</text>
+<line x1="282.0" y1="300.0" x2="346.0" y2="300.0" stroke="#444" stroke-width="2" stroke-linecap="round" marker-end="url(#arr-ink)"/>
+<path d="M600,250 C650,250 650,178 706,178" stroke="#d9822b" stroke-width="2.4" fill="none" marker-end="url(#arr-orange)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="640.0" y="206.0" font-size="12" fill="#d9822b" text-anchor="middle" font-weight="bold">평소</text>
+<path d="M1080,186 C1104,200 1104,236 1092,248" stroke="#d9822b" stroke-width="1.8" fill="none" marker-end="url(#arr-orange)" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1092,170 C1160,200 1160,480 1094,510" stroke="#444" stroke-width="1.6" fill="none" marker-end="url(#arr-ink)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="1116.0" y="320.0" font-size="11.5" fill="#444" text-anchor="end" font-weight="bold">그룹 3 box 파일 주소는 평소에도 GitHub 릴리스</text>
+<path d="M600,360 C650,360 650,410 706,410" stroke="#326CE5" stroke-width="2.4" fill="none" stroke-dasharray="7 5" marker-end="url(#arr-blue)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="632.0" y="336.0" font-size="12" fill="#326CE5" text-anchor="middle" font-weight="bold">전환했을 때(302)</text>
+<path d="M800,446 L800,452" stroke="#326CE5" stroke-width="2" fill="none" stroke-dasharray="4 3" marker-end="url(#arr-blue)" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1000,446 L1000,452" stroke="#326CE5" stroke-width="2" fill="none" stroke-dasharray="4 3" marker-end="url(#arr-blue)" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M155,382 C155,470 560,470 706,436" stroke="#7b8ca5" stroke-width="1.8" fill="none" stroke-dasharray="2 5" marker-end="url(#arr-muted)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="380.0" y="492.0" font-size="11.5" fill="#7b8ca5" text-anchor="middle" font-weight="normal">클라우드플레어 자체에 문제가 생기면 Pages 주소로 직접</text>
+<line x1="40.0" y1="584.0" x2="80.0" y2="584.0" stroke="#d9822b" stroke-width="2.4" stroke-linecap="round"/>
+<text x="88.0" y="588.0" font-size="12" fill="#444" text-anchor="start" font-weight="normal">평소</text>
+<line x1="140.0" y1="584.0" x2="180.0" y2="584.0" stroke="#326CE5" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="7 5"/>
+<text x="188.0" y="588.0" font-size="12" fill="#444" text-anchor="start" font-weight="normal">R2에 문제가 생겨 전환했을 때</text>
+<line x1="390.0" y1="584.0" x2="430.0" y2="584.0" stroke="#7b8ca5" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="2 5"/>
+<text x="438.0" y="588.0" font-size="12" fill="#444" text-anchor="start" font-weight="normal">클라우드플레어 장애 시</text>
+</svg>

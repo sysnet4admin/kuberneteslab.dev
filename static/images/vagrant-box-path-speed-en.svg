@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 470" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="arr-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#444"/></marker><marker id="arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#326CE5"/></marker><marker id="arr-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d9822b"/></marker><marker id="arr-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7b8ca5"/></marker><marker id="arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker><marker id="arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2e7d4f"/></marker></defs>
+<rect width="1200" height="470" fill="white"/>
+<text x="600.0" y="34.0" font-size="18" fill="#111" text-anchor="middle" font-weight="bold">Where box requests went and how fast they were, by location (measured)</text>
+<text x="600.0" y="58.0" font-size="13" fill="#444" text-anchor="middle" font-weight="normal">R2 appears to go all the way to the Asia-Pacific bucket because nothing is cached, while a nearby Fastly cache served GitHub</text>
+<text x="40.0" y="96.0" font-size="12.5" fill="#7b8ca5" text-anchor="start" font-weight="bold">Location</text>
+<text x="200.0" y="96.0" font-size="12.5" fill="#d9822b" text-anchor="start" font-weight="bold">Path when downloading from Cloudflare R2</text>
+<text x="610.0" y="96.0" font-size="12.5" fill="#326CE5" text-anchor="start" font-weight="bold">From GitHub</text>
+<text x="820.0" y="96.0" font-size="12.5" fill="#7b8ca5" text-anchor="start" font-weight="bold">Speed (MB/s)</text>
+<rect x="30.0" y="116.0" width="1140.0" height="84.0" rx="12" fill="#f6f8fb"/>
+<text x="40.0" y="148.0" font-size="14" fill="#111" text-anchor="start" font-weight="bold">Seoul</text>
+<text x="40.0" y="166.0" font-size="11.5" fill="#7b8ca5" text-anchor="start" font-weight="normal">office line, 200 MiB</text>
+<line x1="186.0" y1="150.0" x2="198.0" y2="150.0" stroke="#d9822b" stroke-width="2" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<rect x="200.0" y="135.0" width="111.8" height="30.0" rx="15" fill="#fff" stroke="#d9822b" stroke-width="1.4"/>
+<text x="255.9" y="155.0" font-size="12" fill="#111" text-anchor="middle" font-weight="normal">Hong Kong PoP</text>
+<line x1="315.8" y1="150.0" x2="341.8" y2="150.0" stroke="#d9822b" stroke-width="2" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<rect x="347.8" y="135.0" width="151.4" height="30.0" rx="15" fill="#fff" stroke="#d9822b" stroke-width="1.4"/>
+<text x="423.5" y="155.0" font-size="12" fill="#111" text-anchor="middle" font-weight="normal">Asia-Pacific bucket</text>
+<line x1="596.0" y1="150.0" x2="608.0" y2="150.0" stroke="#326CE5" stroke-width="2" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<rect x="612.0" y="135.0" width="158.0" height="30.0" rx="15" fill="#fff" stroke="#326CE5" stroke-width="1.4"/>
+<text x="691.0" y="155.0" font-size="12" fill="#111" text-anchor="middle" font-weight="normal">Fastly Seoul (cache)</text>
+<line x1="830.0" y1="128.0" x2="830.0" y2="172.0" stroke="#dde3ee" stroke-width="1" stroke-linecap="round"/>
+<line x1="936.7" y1="128.0" x2="936.7" y2="172.0" stroke="#dde3ee" stroke-width="1" stroke-linecap="round"/>
+<line x1="1043.3" y1="128.0" x2="1043.3" y2="172.0" stroke="#dde3ee" stroke-width="1" stroke-linecap="round"/>
+<line x1="1150.0" y1="128.0" x2="1150.0" y2="172.0" stroke="#dde3ee" stroke-width="1" stroke-linecap="round"/>
+<line x1="879.8" y1="150.0" x2="883.3" y2="150.0" stroke="#c9d2e0" stroke-width="3" stroke-linecap="round"/>
+<circle cx="879.8" cy="150.0" r="7" fill="#d9822b" stroke="#fff" stroke-width="2"/>
+<circle cx="883.3" cy="150.0" r="7" fill="#326CE5" stroke="#fff" stroke-width="2"/>
+<text x="895.3" y="142.0" font-size="11" fill="#444" text-anchor="start" font-weight="normal">About 14 to 15, the line</text>
+<text x="895.3" y="158.0" font-size="11" fill="#444" text-anchor="start" font-weight="normal">cap hides the difference</text>
+<rect x="30.0" y="216.0" width="1140.0" height="84.0" rx="12" fill="#f6f8fb"/>
+<text x="40.0" y="248.0" font-size="14" fill="#111" text-anchor="start" font-weight="bold">Phoenix</text>
+<text x="40.0" y="266.0" font-size="11.5" fill="#7b8ca5" text-anchor="start" font-weight="normal">US, 955 MB</text>
+<line x1="186.0" y1="250.0" x2="198.0" y2="250.0" stroke="#d9822b" stroke-width="2" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<rect x="200.0" y="235.0" width="84.0" height="30.0" rx="15" fill="#fff" stroke="#d9822b" stroke-width="1.4"/>
+<text x="242.0" y="255.0" font-size="12" fill="#111" text-anchor="middle" font-weight="normal">DFW PoP</text>
+<path d="M288,250 q14,-10 28,0 t28,0" stroke="#d9822b" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#arr-orange)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="316.0" y="228.0" font-size="10.5" fill="#d9822b" text-anchor="middle" font-weight="bold">Crosses the Pacific</text>
+<rect x="348.0" y="235.0" width="151.4" height="30.0" rx="15" fill="#fff" stroke="#d9822b" stroke-width="1.4"/>
+<text x="423.7" y="255.0" font-size="12" fill="#111" text-anchor="middle" font-weight="normal">Asia-Pacific bucket</text>
+<line x1="596.0" y1="250.0" x2="608.0" y2="250.0" stroke="#326CE5" stroke-width="2" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<rect x="612.0" y="235.0" width="140.0" height="30.0" rx="15" fill="#fff" stroke="#326CE5" stroke-width="1.4"/>
+<text x="682.0" y="255.0" font-size="12" fill="#111" text-anchor="middle" font-weight="normal">Fastly IAD, BUR</text>
+<line x1="830.0" y1="228.0" x2="830.0" y2="272.0" stroke="#dde3ee" stroke-width="1" stroke-linecap="round"/>
+<line x1="936.7" y1="228.0" x2="936.7" y2="272.0" stroke="#dde3ee" stroke-width="1" stroke-linecap="round"/>
+<line x1="1043.3" y1="228.0" x2="1043.3" y2="272.0" stroke="#dde3ee" stroke-width="1" stroke-linecap="round"/>
+<line x1="1150.0" y1="228.0" x2="1150.0" y2="272.0" stroke="#dde3ee" stroke-width="1" stroke-linecap="round"/>
+<line x1="990.0" y1="250.0" x2="1014.9" y2="250.0" stroke="#c9d2e0" stroke-width="3" stroke-linecap="round"/>
+<circle cx="990.0" cy="250.0" r="7" fill="#d9822b" stroke="#fff" stroke-width="2"/>
+<circle cx="1014.9" cy="250.0" r="7" fill="#326CE5" stroke="#fff" stroke-width="2"/>
+<text x="990.0" y="274.0" font-size="11.5" fill="#d9822b" text-anchor="middle" font-weight="bold">45</text>
+<text x="1014.9" y="274.0" font-size="11.5" fill="#326CE5" text-anchor="middle" font-weight="bold">52</text>
+<rect x="30.0" y="316.0" width="1140.0" height="84.0" rx="12" fill="#f6f8fb"/>
+<text x="40.0" y="348.0" font-size="14" fill="#111" text-anchor="start" font-weight="bold">Boydton</text>
+<text x="40.0" y="366.0" font-size="11.5" fill="#7b8ca5" text-anchor="start" font-weight="normal">US, 955 MB</text>
+<line x1="186.0" y1="350.0" x2="198.0" y2="350.0" stroke="#d9822b" stroke-width="2" stroke-linecap="round" marker-end="url(#arr-orange)"/>
+<rect x="200.0" y="335.0" width="84.0" height="30.0" rx="15" fill="#fff" stroke="#d9822b" stroke-width="1.4"/>
+<text x="242.0" y="355.0" font-size="12" fill="#111" text-anchor="middle" font-weight="normal">ATL PoP</text>
+<path d="M288,350 q14,-10 28,0 t28,0" stroke="#d9822b" stroke-width="2" fill="none" stroke-dasharray="5 4" marker-end="url(#arr-orange)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="316.0" y="328.0" font-size="10.5" fill="#d9822b" text-anchor="middle" font-weight="bold">Crosses the Pacific</text>
+<rect x="348.0" y="335.0" width="151.4" height="30.0" rx="15" fill="#fff" stroke="#d9822b" stroke-width="1.4"/>
+<text x="423.7" y="355.0" font-size="12" fill="#111" text-anchor="middle" font-weight="normal">Asia-Pacific bucket</text>
+<line x1="596.0" y1="350.0" x2="608.0" y2="350.0" stroke="#326CE5" stroke-width="2" stroke-linecap="round" marker-end="url(#arr-blue)"/>
+<rect x="612.0" y="335.0" width="140.0" height="30.0" rx="15" fill="#fff" stroke="#326CE5" stroke-width="1.4"/>
+<text x="682.0" y="355.0" font-size="12" fill="#111" text-anchor="middle" font-weight="normal">Fastly IAD</text>
+<line x1="830.0" y1="328.0" x2="830.0" y2="372.0" stroke="#dde3ee" stroke-width="1" stroke-linecap="round"/>
+<line x1="936.7" y1="328.0" x2="936.7" y2="372.0" stroke="#dde3ee" stroke-width="1" stroke-linecap="round"/>
+<line x1="1043.3" y1="328.0" x2="1043.3" y2="372.0" stroke="#dde3ee" stroke-width="1" stroke-linecap="round"/>
+<line x1="1150.0" y1="328.0" x2="1150.0" y2="372.0" stroke="#dde3ee" stroke-width="1" stroke-linecap="round"/>
+<line x1="911.8" y1="350.0" x2="1121.6" y2="350.0" stroke="#c9d2e0" stroke-width="3" stroke-linecap="round"/>
+<circle cx="911.8" cy="350.0" r="7" fill="#d9822b" stroke="#fff" stroke-width="2"/>
+<circle cx="1121.6" cy="350.0" r="7" fill="#326CE5" stroke="#fff" stroke-width="2"/>
+<text x="911.8" y="374.0" font-size="11.5" fill="#d9822b" text-anchor="middle" font-weight="bold">23</text>
+<text x="1121.6" y="374.0" font-size="11.5" fill="#326CE5" text-anchor="middle" font-weight="bold">82</text>
+<text x="830.0" y="410.0" font-size="10.5" fill="#7b8ca5" text-anchor="middle" font-weight="normal">0</text>
+<text x="936.7" y="410.0" font-size="10.5" fill="#7b8ca5" text-anchor="middle" font-weight="normal">30</text>
+<text x="1043.3" y="410.0" font-size="10.5" fill="#7b8ca5" text-anchor="middle" font-weight="normal">60</text>
+<text x="1150.0" y="410.0" font-size="10.5" fill="#7b8ca5" text-anchor="middle" font-weight="normal">90</text>
+<circle cx="48.0" cy="452.0" r="6" fill="#d9822b" stroke="#fff" stroke-width="2"/>
+<text x="60.0" y="456.0" font-size="12" fill="#444" text-anchor="start" font-weight="normal">Cloudflare R2</text>
+<circle cx="180.0" cy="452.0" r="6" fill="#326CE5" stroke="#fff" stroke-width="2"/>
+<text x="192.0" y="456.0" font-size="12" fill="#444" text-anchor="start" font-weight="normal">GitHub Releases</text>
+<text x="1160.0" y="456.0" font-size="11" fill="#7b8ca5" text-anchor="end" font-weight="normal">The US runners sit on Microsoft's network and GitHub release assets live in Azure Blob Storage, which may have favored GitHub</text>
+</svg>

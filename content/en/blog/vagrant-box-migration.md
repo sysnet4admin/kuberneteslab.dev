@@ -1,7 +1,7 @@
 ---
 title: "Where should Vagrant boxes go when Vagrant Cloud shuts down?"
-date: 2026-11-03
-draft: true
+date: 2026-11-05T08:25:00+09:00
+draft: false
 tags: ["vagrant", "hcp-vagrant", "box", "cloudflare-r2", "github-releases", "github-pages", "virtualbox"]
 categories: ["Tools"]
 description: "When HCP Vagrant (formerly Vagrant Cloud) shuts down on December 31, 2026, any Vagrantfile that only names a box will fail in every environment that downloads that box for the first time. This post looks at how other projects are responding and where boxes can be hosted, then covers the trade-offs I measured while moving the sysnet4admin boxes to Cloudflare R2 and GitHub (Releases and Pages), what to check before December 31, and what to keep an eye on after the move."
@@ -30,6 +30,8 @@ Let's start with how existing Vagrantfiles behave after the shutdown. I read the
 | `box_url` set to the new catalog URL | Downloads from the new catalog, and SHA-256 checks and `vagrant box outdated` work too |
 | Vagrantfile unchanged, `VAGRANT_SERVER_URL` set to a new address | Works with static hosting alone (when the `/<account>/<box>` path at that address returns the catalog as `application/json`) |
 | Box already downloaded | Keeps working, and a failed update check only prints a warning |
+
+![A flow that asks whether the box is already downloaded, whether box_url is set, and whether VAGRANT_SERVER_URL is set, leading to the result after December 31](/images/vagrant-box-after-shutdown-en.svg "Checking how your Vagrantfile behaves after December 31")
 
 The first case is hit hardest because, given only a box name, Vagrant looks up `{server}/api/v2/vagrant/<name>` and then `{server}/<name>`, and returns an error if both fail. That means any environment downloading the box for the first time fails, such as a new CI runner, a new laptop, or a reinstalled machine. A machine that already has the box is fine for now, but `vagrant box update` keeps looking at the address saved when the box was first added (`~/.vagrant.d/boxes/<name>/metadata_url`), so you need to run `vagrant box add` once from the new catalog to change it.
 
@@ -106,6 +108,8 @@ From these I chose Cloudflare R2 and GitHub (Releases and Pages). Unlike S3, R2 
 
 Somewhat unexpectedly, GitHub was faster in the US. Looking into why, first, Cloudflare says it serves free-plan traffic "wherever there is spare room", and my blog domain is on the free plan too, which appears to be why requests from Korea went to Hong Kong. On top of that, Cloudflare decides what to cache by file extension by default, and `.box`, `.json`, and extensionless files are not on the default list, so they are not cached. Even with a cache rule, the free plan does not cache files over 512 MB, so boxes (0.7 to 1 GB) still are not cached. Each request therefore appears to go all the way to the bucket in the Asia-Pacific region, and from the US, far from the bucket, R2 was slower than GitHub. That said, the runners I used in the US sit on Microsoft's network and GitHub release assets live in Azure Blob Storage, which may have favored GitHub. And in Korea I only measured on the LG U+ corporate network, so other carriers such as KT and SK Broadband were outside what I measured.
 
+![For Seoul, Phoenix, and Boydton, one row each showing the PoP and bucket a request passed through on Cloudflare R2 and GitHub, alongside the measured speed](/images/vagrant-box-path-speed-en.svg "Where box requests went and how fast they were, by location")
+
 If speed was R2's weak point, GitHub's was how it handles requests without login. Vagrant always downloads boxes without logging in, and when GitHub tightened limits on requests without login on May 8, 2025, it did not publish the numbers or say whether Releases and Pages were included. Separately, there were outages that affected only requests without login on December 22, 2025 (31 minutes, requests from inside GitHub Actions), June 8, 2026 (about 2 hours), and August 12 to 13 (about 7.7 hours in total), all in UTC, and for the latter two GitHub said signed-in users were not affected. I could not confirm how the tighter limits apply when dozens of students in a classroom share one public IP and download the same box at once. However, in a test that sent 100 HEAD requests from one IP, 10 at a time, none of the four URLs (Releases, Pages, the R2 catalog, and the R2 box) were blocked.
 
 Downloading a box from GitHub Releases also redirects to a signed URL, and for these box files that URL was valid for one hour. When a transfer breaks, re-running Vagrant requests the original URL again and resumes (per the source), so it gets a fresh URL and continues. I did not test whether a single transfer longer than 60 minutes gets cut off, though. That can happen where many people share one line: downloading 1 GB in 60 minutes needs about 2.2 Mbps, which is roughly what each person gets when 45 people share a 100 Mbps line. There are also reports that the signed URL host changed to `release-assets.githubusercontent.com` around late April 2025, and there were cases where downloads failed on corporate networks that only allow listed hosts. If you cannot download boxes on a school or corporate network, that host change may be the reason.
@@ -119,12 +123,9 @@ So neither side wins on everything, and it makes sense to choose by situation.
 
 ## How I set up the sysnet4admin boxes
 
-So I put the sysnet4admin boxes on both R2 and GitHub, serving them from R2 normally and from GitHub when R2 has trouble. Users connect to a single address, `box.kuberneteslab.dev`, and if something goes wrong I enable failover redirect rules in Cloudflare that I created in advance and keep disabled, which send requests to GitHub. Here is the setup.
+So I put the sysnet4admin boxes on both R2 and GitHub, serving them from R2 normally and from GitHub when R2 has trouble. Users connect to a single address, `box.kuberneteslab.dev`, and if something goes wrong I enable failover redirect rules in Cloudflare that I created in advance and keep disabled, which send requests to GitHub. The figure below shows the setup.
 
-| Path | Normally | After failover |
-|---|---|---|
-| Catalogs for group 1 and 2 boxes (`Ubuntu-k8s`, `CentOS-k8s`) | R2 serves them, and the file URLs in the catalogs point at R2 | Redirected to `.json` catalogs on GitHub Pages, which point at the boxes in GitHub Releases |
-| Catalogs for the group 3 network device boxes | Catalogs are on R2 and the file URLs point at GitHub Releases | Only the catalogs move to GitHub Pages; the files stay on GitHub Releases |
+![Requests go through box.kuberneteslab.dev to Cloudflare R2 normally, to GitHub Pages and Releases after failover, and straight to the Pages URLs if Cloudflare itself is down](/images/vagrant-box-topology-en.svg "How box.kuberneteslab.dev routes requests to the backends")
 
 So you add one line to the Vagrantfile, as below, and where the Vagrantfile cannot be changed, as with printed books, you set `VAGRANT_SERVER_URL=https://box.kuberneteslab.dev`.
 
@@ -153,7 +154,7 @@ There are still two cases where there is no fallback and boxes cannot be downloa
 
 **The first is when the Cloudflare proxy goes down.** The address's domain depends on Cloudflare alone, and the redirect rules run on the same proxy, so I expect I would not be able to fail over to GitHub in that case. For that, the boxes can also be downloaded directly from the GitHub Pages URLs (`vg-box.github.io/k8s/...json`).
 
-**The second is when GitHub has a problem.** The group 3 boxes are only on GitHub, so they cannot be downloaded then, but they are rarely used, so I decided to accept that risk.
+**The second is when GitHub has a problem.** The group 3 boxes are only on GitHub, so they cannot be downloaded then.
 
 ## What to check before December 31
 
@@ -185,9 +186,9 @@ Here is a summary of the above, split into what box publishers and box users sho
 Publishers still have things to look after once the boxes have moved. Most of this was HashiCorp's job while boxes lived on HCP Vagrant, and now publishers have to do all of it themselves.
 
 - Domain renewal: `kuberneteslab.dev` expires on April 8, 2027, so it has to be renewed every year for the address I put in my books to keep working.
-- Payment method: if payment fails, R2 buckets become inaccessible and requests fail, and data may be deleted if the payment method is not updated within 30 days. So when the registered card expires, users may not be able to download boxes. On top of that, the domain renewal uses the same card, so R2 access and the domain renewal could fail together.
+- Payment method: if payment fails, R2 buckets become inaccessible and requests fail, and data may be deleted if the payment method is not updated within 30 days. So when the registered card expires, users may not be able to download boxes, and the domain renewal payment needs checking too.
 - Failover path: enabling the redirect rules needs the Cloudflare dashboard or API, and in the September 12, 2025 outage both the dashboard and the API were down, and in the November 18 outage the dashboard was affected too. So if Cloudflare itself has a problem, I have to point users to the GitHub Pages URLs instead of relying on the rules.
-- Security settings: Vagrant downloads with curl, so it cannot pass a browser challenge. Right now requests with Vagrant's User-Agent get 200, but enabling Cloudflare's bot protection, Bot Fight Mode, or I'm Under Attack mode would likely make `vagrant box add` fail, so it is worth trying a download again after changing those settings.
+- Security settings: Vagrant downloads with curl, so it cannot pass a browser challenge. Enabling Cloudflare's bot protection, Bot Fight Mode, or I'm Under Attack mode can therefore make `vagrant box add` fail, so it is worth downloading a box again after changing security settings.
 - Download counts: GitHub shows `download_count` directly, but in my tests it did not count every GET request either, and the counting rules are not documented, so I treat it as approximate. Normally R2 serves the boxes, though, so I collect R2's numbers separately with the GraphQL Analytics API.
 
 Apart from that, I also keep watching for changes in Vagrant itself. From the [previous post](https://kuberneteslab.dev/en/blog/vagrant-after-hcp-shutdown/), that means a release under the MIT license, what happens to the bug that makes `vagrant up` fail on macOS 26.7 and later, support for the next VirtualBox version, and whether a release with a newer Ruby ships before Ruby 3.3 reaches end of life.

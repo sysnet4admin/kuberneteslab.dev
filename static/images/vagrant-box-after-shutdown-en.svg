@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="arr-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#444"/></marker><marker id="arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#326CE5"/></marker><marker id="arr-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d9822b"/></marker><marker id="arr-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7b8ca5"/></marker><marker id="arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker><marker id="arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2e7d4f"/></marker></defs>
+<rect width="1200" height="560" fill="white"/>
+<text x="600.0" y="34.0" font-size="18" fill="#111" text-anchor="middle" font-weight="bold">What happens to your Vagrantfile after December 31?</text>
+<text x="600.0" y="58.0" font-size="13" fill="#444" text-anchor="middle" font-weight="normal">Answer from the top down to find your case</text>
+<rect x="60.0" y="92.0" width="470.0" height="64.0" rx="32" fill="#fff" stroke="#444" stroke-width="1.4"/>
+<text x="86.0" y="130.0" font-size="14" fill="#111" text-anchor="start" font-weight="bold">Is the box already downloaded on this machine?</text>
+<circle cx="60.0" cy="124.0" r="13" fill="#444" stroke="#fff" stroke-width="2"/>
+<text x="60.0" y="129.0" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">1</text>
+<line x1="536.0" y1="124.0" x2="660.0" y2="124.0" stroke="#2e7d4f" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-green)"/>
+<text x="590.0" y="116.0" font-size="13" fill="#2e7d4f" text-anchor="middle" font-weight="bold">Yes</text>
+<rect x="668.0" y="88.0" width="500.0" height="72.0" rx="10" fill="#eef6f1" stroke="#2e7d4f" stroke-width="1.2"/>
+<path d="M690,114 l7,8 l13,-16" stroke="#2e7d4f" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="724.0" y="118.0" font-size="14" fill="#2e7d4f" text-anchor="start" font-weight="bold">Keeps working</text>
+<text x="690.0" y="138.0" font-size="11.5" fill="#444" text-anchor="start" font-weight="normal">A failed update check only prints a warning. Running vagrant box add</text>
+<text x="690.0" y="153.0" font-size="11.5" fill="#444" text-anchor="start" font-weight="normal">once from the new catalog switches the update check address</text>
+<line x1="130.0" y1="156.0" x2="130.0" y2="204.0" stroke="#444" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-ink)"/>
+<text x="144.0" y="186.0" font-size="13" fill="#444" text-anchor="start" font-weight="bold">No</text>
+<rect x="60.0" y="212.0" width="470.0" height="64.0" rx="32" fill="#fff" stroke="#444" stroke-width="1.4"/>
+<text x="86.0" y="250.0" font-size="14" fill="#111" text-anchor="start" font-weight="bold">Does box_url in the Vagrantfile point at a new catalog?</text>
+<circle cx="60.0" cy="244.0" r="13" fill="#444" stroke="#fff" stroke-width="2"/>
+<text x="60.0" y="249.0" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">2</text>
+<line x1="536.0" y1="244.0" x2="660.0" y2="244.0" stroke="#2e7d4f" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-green)"/>
+<text x="590.0" y="236.0" font-size="13" fill="#2e7d4f" text-anchor="middle" font-weight="bold">Yes</text>
+<rect x="668.0" y="208.0" width="500.0" height="72.0" rx="10" fill="#eef6f1" stroke="#2e7d4f" stroke-width="1.2"/>
+<path d="M690,234 l7,8 l13,-16" stroke="#2e7d4f" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="724.0" y="238.0" font-size="14" fill="#2e7d4f" text-anchor="start" font-weight="bold">Downloads from the new catalog</text>
+<text x="690.0" y="258.0" font-size="11.5" fill="#444" text-anchor="start" font-weight="normal">SHA-256 checks and vagrant box outdated work too.</text>
+<text x="690.0" y="273.0" font-size="11.5" fill="#444" text-anchor="start" font-weight="normal">The catalog name must match config.vm.box, including case</text>
+<line x1="130.0" y1="276.0" x2="130.0" y2="324.0" stroke="#444" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-ink)"/>
+<text x="144.0" y="306.0" font-size="13" fill="#444" text-anchor="start" font-weight="bold">No</text>
+<rect x="60.0" y="332.0" width="470.0" height="64.0" rx="32" fill="#fff" stroke="#444" stroke-width="1.4"/>
+<text x="86.0" y="370.0" font-size="14" fill="#111" text-anchor="start" font-weight="bold">Is VAGRANT_SERVER_URL set to a new address?</text>
+<circle cx="60.0" cy="364.0" r="13" fill="#444" stroke="#fff" stroke-width="2"/>
+<text x="60.0" y="369.0" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">3</text>
+<line x1="536.0" y1="364.0" x2="660.0" y2="364.0" stroke="#2e7d4f" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-green)"/>
+<text x="590.0" y="356.0" font-size="13" fill="#2e7d4f" text-anchor="middle" font-weight="bold">Yes</text>
+<rect x="668.0" y="328.0" width="500.0" height="72.0" rx="10" fill="#eef6f1" stroke="#2e7d4f" stroke-width="1.2"/>
+<path d="M690,354 l7,8 l13,-16" stroke="#2e7d4f" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="724.0" y="358.0" font-size="14" fill="#2e7d4f" text-anchor="start" font-weight="bold">Downloads from the new address</text>
+<text x="690.0" y="378.0" font-size="11.5" fill="#444" text-anchor="start" font-weight="normal">Static hosting is enough when the /&lt;account&gt;/&lt;box&gt; path at that</text>
+<text x="690.0" y="393.0" font-size="11.5" fill="#444" text-anchor="start" font-weight="normal">address returns the catalog as application/json</text>
+<line x1="130.0" y1="396.0" x2="130.0" y2="444.0" stroke="#444" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-ink)"/>
+<text x="144.0" y="426.0" font-size="13" fill="#444" text-anchor="start" font-weight="bold">No</text>
+<rect x="60.0" y="452.0" width="1108.0" height="72.0" rx="10" fill="#fdecea" stroke="#c0392b" stroke-width="1.2"/>
+<path d="M82,474 l16,16 m0,-16 l-16,16" stroke="#c0392b" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="112.0" y="488.0" font-size="14" fill="#c0392b" text-anchor="start" font-weight="bold">Fails wherever the box is downloaded for the first time</text>
+<text x="112.0" y="508.0" font-size="12" fill="#444" text-anchor="start" font-weight="normal">BoxAddShortNotFound. This covers new CI runners, new laptops, and reinstalled machines</text>
+</svg>

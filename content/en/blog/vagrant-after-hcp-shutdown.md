@@ -1,7 +1,7 @@
 ---
 title: "What happens to Vagrant when Vagrant Cloud shuts down?"
-date: 2026-11-03
-draft: true
+date: 2026-11-05T08:20:00+09:00
+draft: false
 tags: ["vagrant", "hcp-vagrant", "hashicorp", "virtualbox", "ruby", "macos", "license", "lima"]
 categories: ["Tools"]
 description: "HCP Vagrant (formerly Vagrant Cloud) shuts down on December 31, 2026, more than five months earlier than first announced. The Vagrant CLI stays, but there has been no release for over 14 months since 2.4.9, and the bug that makes vagrant up fail on macOS 26.7 and later is still open. This post covers the current state of Vagrant, including the switch of the main branch back to MIT on November 2, and what to watch next."
@@ -20,17 +20,13 @@ I publish seven boxes for Kubernetes and Ansible labs under the sysnet4admin acc
 
 The short answer is that the Vagrant CLI stays after the shutdown and boxes you have already downloaded keep working, so you do not lose Vagrant right away. However, if a Vagrantfile only names a box, any environment that downloads that box for the first time after December 31 will fail. And because there has been no release since 2.4.9, it is unclear when problems caused by operating system changes, like the macOS port forwarding bug, will be fixed.
 
-This post looks at where Vagrant stands today and where it may go, and the next post covers where to move boxes. Everything here is as of November 3, 2026.
+This post looks at where Vagrant stands today and where it may go, and the next post covers where to move boxes. Everything here is as of November 3, 2026, and I checked the MIT release and the status of #13845 again on November 5, before publishing.
 
 ## A shutdown schedule moved up by more than five months
 
-Let's start with the schedule. HashiCorp announced the shutdown on August 3, 2026, in an issue on the Vagrant GitHub repository (#13836) and on its official forum, HashiCorp Discuss. A few days earlier, on July 29, the first version of the end-of-life page set the final shutdown for June 7, 2027. Then two PRs merged into HashiCorp's documentation repository on August 31 (web-unified-docs#3256 and #3257) moved every stage forward, as shown below.
+Let's start with the schedule. HashiCorp announced the shutdown on August 3, 2026, in an issue on the Vagrant GitHub repository (#13836) and on its official forum, HashiCorp Discuss. A few days earlier, on July 29, the first version of the end-of-life page set the final shutdown for June 7, 2027. Then two PRs merged into HashiCorp's documentation repository on August 31 (web-unified-docs#3256 and #3257) moved every stage forward, as the figure below shows.
 
-| Stage | First announced | Current |
-|---|---|---|
-| No new boxes | 2026-12-14 | 2026-10-01 |
-| End of support and maintenance | 2027-03-15 | 2026-11-02 |
-| Shutdown, all distributions removed | 2027-06-07 | 2026-12-31 |
+![Two timelines showing that all three stages of the first announced schedule moved earlier, with the shutdown moving from June 7, 2027 to December 31, 2026](/images/vagrant-shutdown-schedule-en.svg "First announced schedule vs. current schedule")
 
 As a result the shutdown came more than five months earlier, and since October 1 HCP Vagrant has rejected not only new boxes but also new versions of existing boxes. Uploads fail with `resource creation is currently disabled`, and AlmaLinux and other publishers reported the same error.
 
@@ -66,7 +62,9 @@ So where does Vagrant itself stand, apart from HCP Vagrant? As the end-of-life p
 
 The release history shows 2.4.6, 2.4.7, 2.4.8, and 2.4.9 within three months from May to August 2025, and then nothing for more than 14 months after 2.4.9 on August 21. Since then there have only been nightly builds (`2.4.10.dev+...`), and the last one is from June 1, 2026.
 
-Development has slowed down a lot while no releases came out. Commits by people, excluding bots, peaked at 44, 44, and 31 per month in March to May 2025 and kept falling after that. In 2026 there have been 24 commits, only one of which changed code. Meanwhile 25 issues were opened in 2026 and 3 were closed, and there are 676 open issues and 83 open PRs. Of the 35 PRs merged since September 2025, 30 were merged by one person at HashiCorp, and the only code changes by people on main in that period are three external contributions (a Hyper-V disk fix, a VirtualBox storage controller fix, and a fix for Ubuntu 24.04 hanging on shutdown), none of them released yet. The `hashicorp/vagrant-installers` repository, which builds the per-OS installers for each release, last had a commit by a person on August 4, 2025.
+![A timeline showing four releases from 2.4.6 to 2.4.9 within three months, followed by more than 14 months with no release, with the Ruby fix, the issue report, and the switch back to MIT marked in between](/images/vagrant-release-gap-en.svg "What happened while no release followed 2.4.9")
+
+Development has slowed down a lot while no releases came out. Commits by people, excluding bots, peaked at 44, 44, and 31 per month in March to May 2025 and kept falling after that. In 2026 there have been 24 commits, only one of which changed code. Meanwhile 25 issues were opened in 2026 and 3 were closed, and there are 676 open issues and 83 open PRs. Of the 35 PRs merged since September 2025, 30 were merged by one person at HashiCorp, and the code changes merged to main in that period include three external contributions (a Hyper-V disk fix, a VirtualBox storage controller fix, and a fix for Ubuntu 24.04 hanging on shutdown) and an Ansible provisioner fix (#13740), none of them released yet. The `hashicorp/vagrant-installers` repository, which builds the per-OS installers for each release, last had a commit by a person on August 4, 2025.
 
 Separately from the slowdown, there are also fewer ways to install Vagrant. Linux distributions did not package 2.4, which moved to the BSL, and the versions available by installation method as of November 2026 are as follows.
 
@@ -82,7 +80,7 @@ The 2.3 versions left in distributions lack box architecture support (2.4.0), Vi
 
 VirtualBox support likewise only arrives with a new Vagrant release. VirtualBox 7.1 was supported from Vagrant 2.4.2 and 7.2 from 2.4.9, so the next minor or major VirtualBox version will also need a new Vagrant release before you can use it. Plugins for other hypervisors are in mixed shape. vagrant-libvirt, which netlab is moving away from, has had no release since June 2023. VMware Workstation Pro and Fusion Pro have been free for everyone since November 2024, but the Vagrant VMware plugin's last release was in April 2025, and an issue about it not recognizing the latest Workstation is still open. On the other hand, some plugins are still releasing, such as vagrant-qemu (0.7.0, October 15), vagrant_utm (0.2.0, October 14), and vagrant-parallels (2.4.10, October 28).
 
-The Ansible provisioner (the feature that applies configuration automatically after a VM is created) is in a similar position (issue #13733). 2.4.9 passes the `--inventory-file` option when it runs Ansible, and from ansible-core 2.19 you get a warning that the option will be removed in 2.23. The fix (#13740) is already on main, but you only get it once it ships in a new release.
+The Ansible provisioner (the feature that applies configuration automatically after a VM is created) is in a similar position. 2.4.9 passes the `--inventory-file` option when it runs Ansible, and from ansible-core 2.19 you get a warning that the option will be removed in 2.23. A fix (#13740) based on an outside contributor's PR (#13733) was merged to main on November 19, 2025, but you only get it once it ships in a new release.
 
 Nor could I find an open source fork that carries Vagrant on in HashiCorp's place. Of the 4,526 forks on GitHub that I checked, the most starred has 14 stars, and Vagrunt, which was announced on Hacker News right after the BSL change in 2023, now returns 404.
 
@@ -93,6 +91,8 @@ If you use macOS, there is also a problem that can affect you right now. Accordi
 The comments on the issue suggest the scope may be wider than first reported. One reports the same failure on an Intel Mac with VirtualBox 7.2.20 (macOS 26.7.1), and one comment says it started after upgrading to macOS 15.8.1 (Sequoia).
 
 The cause appears to be a change in macOS behavior combined with how Ruby checks the result of a connection. Vagrant is written in Ruby, and to check whether a port is free it tries to connect to that port with Ruby's `Socket.tcp`, treating the port as free if the connection is refused. When Ruby makes a connection with a timeout, it starts the connection, waits for it to finish, and then calls `connect` once more to check the result, and if that returns "already connected" (EISCONN) it treats the connection as successful. Starting with the macOS 27 beta, the kernel returns EISCONN even for refused connections, and the same behavior seems to have reached 26.7, so Ruby treats a refused connection as a successful one. In other words, the actual result, the refusal, was recorded in the socket's `SO_ERROR`, but Ruby never read it. The same macOS change made Webots, a robot simulator, wrongly report every TCP port as in use on the macOS 27 beta, so this is not specific to Vagrant.
+
+![A side-by-side sequence diagram: on earlier macOS the kernel returns a refusal and the port is treated as free, while on macOS 26.7 and later it returns EISCONN and the port is treated as in use](/images/vagrant-macos-port-en.svg "How Vagrant checks whether a port is free")
 
 Can you simply wait for Ruby to fix it? Ruby already has. The problem was reported on the macOS 27 beta on July 31 (Bug #22223), and a change merged on August 6 (ruby/ruby#18203) touched seven lines so that Ruby reads `SO_ERROR` first after waiting and raises the error if there is one. That change is in 3.4.11 (September 23), 3.4.12 (October 23), and 4.0. But the Ruby bundled with Vagrant 2.4.9 is 3.3.8. Ruby 3.3 has been in its security-only phase since April 1, 2026, the backport entry for this change was marked "3.3: DONTNEED", and 3.3 itself reaches end of life on March 31, 2027.
 

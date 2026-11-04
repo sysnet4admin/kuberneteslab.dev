@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="arr-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#444"/></marker><marker id="arr-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#326CE5"/></marker><marker id="arr-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d9822b"/></marker><marker id="arr-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7b8ca5"/></marker><marker id="arr-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker><marker id="arr-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2e7d4f"/></marker></defs>
+<rect width="1200" height="560" fill="white"/>
+<text x="600.0" y="34.0" font-size="18" fill="#111" text-anchor="middle" font-weight="bold">12월 31일 이후 내 Vagrantfile은 어떻게 될까요?</text>
+<text x="600.0" y="58.0" font-size="13" fill="#444" text-anchor="middle" font-weight="normal">위에서부터 차례로 답해 보면 어느 경우인지 알 수 있습니다</text>
+<rect x="60.0" y="92.0" width="470.0" height="64.0" rx="32" fill="#fff" stroke="#444" stroke-width="1.4"/>
+<text x="86.0" y="130.0" font-size="14" fill="#111" text-anchor="start" font-weight="bold">이 머신에 그 box를 이미 받았나요?</text>
+<circle cx="60.0" cy="124.0" r="13" fill="#444" stroke="#fff" stroke-width="2"/>
+<text x="60.0" y="129.0" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">1</text>
+<line x1="536.0" y1="124.0" x2="660.0" y2="124.0" stroke="#2e7d4f" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-green)"/>
+<text x="590.0" y="116.0" font-size="13" fill="#2e7d4f" text-anchor="middle" font-weight="bold">예</text>
+<rect x="668.0" y="88.0" width="500.0" height="72.0" rx="10" fill="#eef6f1" stroke="#2e7d4f" stroke-width="1.2"/>
+<path d="M690,114 l7,8 l13,-16" stroke="#2e7d4f" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="724.0" y="118.0" font-size="14" fill="#2e7d4f" text-anchor="start" font-weight="bold">계속 사용할 수 있음</text>
+<text x="690.0" y="138.0" font-size="11.5" fill="#444" text-anchor="start" font-weight="normal">업데이트 확인이 실패해도 경고만 나옵니다. 새 카탈로그에서</text>
+<text x="690.0" y="153.0" font-size="11.5" fill="#444" text-anchor="start" font-weight="normal">vagrant box add를 한 번 하면 업데이트 확인 주소가 바뀝니다</text>
+<line x1="130.0" y1="156.0" x2="130.0" y2="204.0" stroke="#444" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-ink)"/>
+<text x="144.0" y="186.0" font-size="13" fill="#444" text-anchor="start" font-weight="bold">아니요</text>
+<rect x="60.0" y="212.0" width="470.0" height="64.0" rx="32" fill="#fff" stroke="#444" stroke-width="1.4"/>
+<text x="86.0" y="250.0" font-size="14" fill="#111" text-anchor="start" font-weight="bold">Vagrantfile의 box_url에 새 카탈로그 주소가 있나요?</text>
+<circle cx="60.0" cy="244.0" r="13" fill="#444" stroke="#fff" stroke-width="2"/>
+<text x="60.0" y="249.0" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">2</text>
+<line x1="536.0" y1="244.0" x2="660.0" y2="244.0" stroke="#2e7d4f" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-green)"/>
+<text x="590.0" y="236.0" font-size="13" fill="#2e7d4f" text-anchor="middle" font-weight="bold">예</text>
+<rect x="668.0" y="208.0" width="500.0" height="72.0" rx="10" fill="#eef6f1" stroke="#2e7d4f" stroke-width="1.2"/>
+<path d="M690,234 l7,8 l13,-16" stroke="#2e7d4f" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="724.0" y="238.0" font-size="14" fill="#2e7d4f" text-anchor="start" font-weight="bold">새 카탈로그에서 받음</text>
+<text x="690.0" y="258.0" font-size="11.5" fill="#444" text-anchor="start" font-weight="normal">SHA-256 확인과 vagrant box outdated도 동작합니다.</text>
+<text x="690.0" y="273.0" font-size="11.5" fill="#444" text-anchor="start" font-weight="normal">카탈로그의 name은 config.vm.box와 대소문자까지 같아야 합니다</text>
+<line x1="130.0" y1="276.0" x2="130.0" y2="324.0" stroke="#444" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-ink)"/>
+<text x="144.0" y="306.0" font-size="13" fill="#444" text-anchor="start" font-weight="bold">아니요</text>
+<rect x="60.0" y="332.0" width="470.0" height="64.0" rx="32" fill="#fff" stroke="#444" stroke-width="1.4"/>
+<text x="86.0" y="370.0" font-size="14" fill="#111" text-anchor="start" font-weight="bold">VAGRANT_SERVER_URL을 새 주소로 설정했나요?</text>
+<circle cx="60.0" cy="364.0" r="13" fill="#444" stroke="#fff" stroke-width="2"/>
+<text x="60.0" y="369.0" font-size="13" fill="#fff" text-anchor="middle" font-weight="bold">3</text>
+<line x1="536.0" y1="364.0" x2="660.0" y2="364.0" stroke="#2e7d4f" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-green)"/>
+<text x="590.0" y="356.0" font-size="13" fill="#2e7d4f" text-anchor="middle" font-weight="bold">예</text>
+<rect x="668.0" y="328.0" width="500.0" height="72.0" rx="10" fill="#eef6f1" stroke="#2e7d4f" stroke-width="1.2"/>
+<path d="M690,354 l7,8 l13,-16" stroke="#2e7d4f" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="724.0" y="358.0" font-size="14" fill="#2e7d4f" text-anchor="start" font-weight="bold">새 주소에서 받음</text>
+<text x="690.0" y="378.0" font-size="11.5" fill="#444" text-anchor="start" font-weight="normal">그 주소의 /&lt;계정&gt;/&lt;box&gt; 경로가 카탈로그를</text>
+<text x="690.0" y="393.0" font-size="11.5" fill="#444" text-anchor="start" font-weight="normal">application/json으로 응답하면 정적 호스팅만으로 됩니다</text>
+<line x1="130.0" y1="396.0" x2="130.0" y2="444.0" stroke="#444" stroke-width="1.6" stroke-linecap="round" marker-end="url(#arr-ink)"/>
+<text x="144.0" y="426.0" font-size="13" fill="#444" text-anchor="start" font-weight="bold">아니요</text>
+<rect x="60.0" y="452.0" width="1108.0" height="72.0" rx="10" fill="#fdecea" stroke="#c0392b" stroke-width="1.2"/>
+<path d="M82,474 l16,16 m0,-16 l-16,16" stroke="#c0392b" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="112.0" y="488.0" font-size="14" fill="#c0392b" text-anchor="start" font-weight="bold">box를 처음 받는 환경에서 실패</text>
+<text x="112.0" y="508.0" font-size="12" fill="#444" text-anchor="start" font-weight="normal">BoxAddShortNotFound. 새 CI 러너, 새 노트북 그리고 다시 설치한 머신이 여기에 해당합니다</text>
+</svg>

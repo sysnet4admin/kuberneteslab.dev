@@ -29,60 +29,58 @@
 <text x="62.0" y="162.7" font-size="10.5" fill="#59636e" text-anchor="end" font-weight="normal">0.9</text>
 <line x1="70.0" y1="92.0" x2="860.0" y2="92.0" stroke="#d8dee4" stroke-width="1" />
 <text x="62.0" y="96.0" font-size="10.5" fill="#59636e" text-anchor="end" font-weight="normal">1.0</text>
-<circle cx="105.3" cy="94.8" r="5.5" fill="#0969da"/>
+<circle cx="105.3" cy="101.9" r="5.5" fill="#0969da"/>
 <circle cx="70.0" cy="96.2" r="5.5" fill="#0969da"/>
-<circle cx="156.4" cy="105.2" r="5.5" fill="#0969da"/>
-<circle cx="82.3" cy="110.1" r="5.5" fill="#0969da"/>
-<circle cx="218.1" cy="123.4" r="5.5" fill="#0969da"/>
-<circle cx="798.3" cy="135.0" r="5.5" fill="#bc4c00"/>
-<circle cx="489.7" cy="136.9" r="5.5" fill="#bc4c00"/>
-<circle cx="329.2" cy="140.8" r="5.5" fill="#bc4c00"/>
-<circle cx="316.9" cy="172.0" r="5.5" fill="#bc4c00"/>
-<circle cx="428.0" cy="173.2" r="5.5" fill="#bc4c00"/>
-<circle cx="304.5" cy="194.7" r="5.5" fill="#bc4c00"/>
-<circle cx="193.4" cy="366.2" r="5.5" fill="#bc4c00"/>
+<circle cx="156.4" cy="118.0" r="5.5" fill="#0969da"/>
+<circle cx="82.3" cy="111.6" r="5.5" fill="#0969da"/>
+<circle cx="218.1" cy="145.1" r="5.5" fill="#0969da"/>
+<circle cx="798.3" cy="166.2" r="5.5" fill="#bc4c00"/>
+<circle cx="489.7" cy="163.6" r="5.5" fill="#bc4c00"/>
+<circle cx="329.2" cy="183.9" r="5.5" fill="#bc4c00"/>
+<circle cx="316.9" cy="202.2" r="5.5" fill="#bc4c00"/>
+<circle cx="428.0" cy="207.3" r="5.5" fill="#bc4c00"/>
+<circle cx="304.5" cy="202.8" r="5.5" fill="#bc4c00"/>
+<circle cx="193.4" cy="371.6" r="5.5" fill="#bc4c00"/>
 <circle cx="89.0" cy="429.9" r="5.5" fill="#bc4c00"/>
 <circle cx="70.0" cy="431.7" r="5.5" fill="#bc4c00"/>
-<rect x="64.0" y="88.0" width="178.8" height="40.7" fill="none" stroke="#0969da" stroke-width="1" stroke-dasharray="4 3"/>
-<rect x="452.7" y="205.3" width="382.7" height="180.0" fill="#ffffff" stroke="#0969da" stroke-dasharray="4 3"/>
-<text x="462.7" y="223.3" font-size="10.5" fill="#59636e" text-anchor="start" font-weight="normal">상용 모델 확대 (왼쪽 위 점선 상자)</text>
-<line x1="488.7" y1="355.7" x2="825.3" y2="355.7" stroke="#d8dee4" stroke-width="1" />
-<text x="484.7" y="359.7" font-size="9.5" fill="#59636e" text-anchor="end" font-weight="normal">0.95</text>
-<line x1="488.7" y1="332.4" x2="825.3" y2="332.4" stroke="#d8dee4" stroke-width="1" />
-<text x="484.7" y="336.4" font-size="9.5" fill="#59636e" text-anchor="end" font-weight="normal">0.96</text>
-<line x1="488.7" y1="309.2" x2="825.3" y2="309.2" stroke="#d8dee4" stroke-width="1" />
-<text x="484.7" y="313.2" font-size="9.5" fill="#59636e" text-anchor="end" font-weight="normal">0.97</text>
-<line x1="488.7" y1="285.9" x2="825.3" y2="285.9" stroke="#d8dee4" stroke-width="1" />
-<text x="484.7" y="289.9" font-size="9.5" fill="#59636e" text-anchor="end" font-weight="normal">0.98</text>
-<line x1="488.7" y1="262.6" x2="825.3" y2="262.6" stroke="#d8dee4" stroke-width="1" />
-<text x="484.7" y="266.6" font-size="9.5" fill="#59636e" text-anchor="end" font-weight="normal">0.99</text>
-<line x1="488.7" y1="239.3" x2="825.3" y2="239.3" stroke="#d8dee4" stroke-width="1" />
-<text x="484.7" y="243.3" font-size="9.5" fill="#59636e" text-anchor="end" font-weight="normal">1.00</text>
-<text x="502.6" y="381.3" font-size="9.5" fill="#59636e" text-anchor="middle" font-weight="normal">0</text>
-<text x="535.9" y="381.3" font-size="9.5" fill="#59636e" text-anchor="middle" font-weight="normal">1</text>
-<text x="569.1" y="381.3" font-size="9.5" fill="#59636e" text-anchor="middle" font-weight="normal">2</text>
-<text x="602.4" y="381.3" font-size="9.5" fill="#59636e" text-anchor="middle" font-weight="normal">3</text>
-<text x="635.6" y="381.3" font-size="9.5" fill="#59636e" text-anchor="middle" font-weight="normal">4</text>
-<text x="668.8" y="381.3" font-size="9.5" fill="#59636e" text-anchor="middle" font-weight="normal">5</text>
-<text x="702.1" y="381.3" font-size="9.5" fill="#59636e" text-anchor="middle" font-weight="normal">6</text>
-<text x="735.3" y="381.3" font-size="9.5" fill="#59636e" text-anchor="middle" font-weight="normal">7</text>
-<circle cx="550.1" cy="249.0" r="5" fill="#0969da"/>
-<text x="559.1" y="253.0" font-size="10.5" fill="#0969da" text-anchor="start" font-weight="600">gpt-6-luna</text>
-<circle cx="502.6" cy="253.9" r="5" fill="#0969da"/>
-<text x="498.6" y="271.9" font-size="10.5" fill="#0969da" text-anchor="start" font-weight="600">gpt-6-sol</text>
-<circle cx="619.0" cy="285.4" r="5" fill="#0969da"/>
-<text x="628.0" y="289.4" font-size="10.5" fill="#0969da" text-anchor="start" font-weight="600">gpt-5.6-luna</text>
-<circle cx="519.2" cy="302.5" r="5" fill="#0969da"/>
-<text x="528.2" y="306.5" font-size="10.5" fill="#0969da" text-anchor="start" font-weight="600">gpt-5.6-terra</text>
-<circle cx="702.1" cy="348.9" r="5" fill="#0969da"/>
-<text x="693.1" y="352.9" font-size="10.5" fill="#0969da" text-anchor="end" font-weight="600">gpt-5.6-sol</text>
-<text x="789.3" y="139.0" font-size="10.5" fill="#1f2328" text-anchor="end" font-weight="normal">qwen3.8:27b-q8_0</text>
-<text x="498.7" y="152.9" font-size="10.5" fill="#1f2328" text-anchor="start" font-weight="normal">qwen3.8:27b</text>
-<text x="338.2" y="136.8" font-size="10.5" fill="#1f2328" text-anchor="start" font-weight="normal">gemma4:31b</text>
-<text x="325.9" y="168.0" font-size="10.5" fill="#1f2328" text-anchor="start" font-weight="normal">qwen3.6:35b-a3b</text>
-<text x="437.0" y="189.2" font-size="10.5" fill="#1f2328" text-anchor="start" font-weight="normal">qwen3.6:27b-q8_0</text>
-<text x="313.5" y="198.7" font-size="10.5" fill="#1f2328" text-anchor="start" font-weight="normal">gemma4:26b</text>
-<text x="202.4" y="370.2" font-size="10.5" fill="#1f2328" text-anchor="start" font-weight="normal">gpt-oss:20b</text>
+<rect x="64.0" y="88.0" width="178.8" height="60.7" fill="none" stroke="#0969da" stroke-width="1" stroke-dasharray="4 3"/>
+<rect x="452.7" y="232.0" width="382.7" height="193.3" fill="#ffffff" stroke="#0969da" stroke-dasharray="4 3"/>
+<text x="462.7" y="250.0" font-size="10.5" fill="#59636e" text-anchor="start" font-weight="normal">상용 모델 확대 (왼쪽 위 점선 상자)</text>
+<line x1="488.7" y1="399.0" x2="825.3" y2="399.0" stroke="#d8dee4" stroke-width="1" />
+<text x="484.7" y="403.0" font-size="9.5" fill="#59636e" text-anchor="end" font-weight="normal">0.92</text>
+<line x1="488.7" y1="365.8" x2="825.3" y2="365.8" stroke="#d8dee4" stroke-width="1" />
+<text x="484.7" y="369.8" font-size="9.5" fill="#59636e" text-anchor="end" font-weight="normal">0.94</text>
+<line x1="488.7" y1="332.5" x2="825.3" y2="332.5" stroke="#d8dee4" stroke-width="1" />
+<text x="484.7" y="336.5" font-size="9.5" fill="#59636e" text-anchor="end" font-weight="normal">0.96</text>
+<line x1="488.7" y1="299.3" x2="825.3" y2="299.3" stroke="#d8dee4" stroke-width="1" />
+<text x="484.7" y="303.3" font-size="9.5" fill="#59636e" text-anchor="end" font-weight="normal">0.98</text>
+<line x1="488.7" y1="266.0" x2="825.3" y2="266.0" stroke="#d8dee4" stroke-width="1" />
+<text x="484.7" y="270.0" font-size="9.5" fill="#59636e" text-anchor="end" font-weight="normal">1.00</text>
+<text x="502.6" y="421.3" font-size="9.5" fill="#59636e" text-anchor="middle" font-weight="normal">0</text>
+<text x="535.9" y="421.3" font-size="9.5" fill="#59636e" text-anchor="middle" font-weight="normal">1</text>
+<text x="569.1" y="421.3" font-size="9.5" fill="#59636e" text-anchor="middle" font-weight="normal">2</text>
+<text x="602.4" y="421.3" font-size="9.5" fill="#59636e" text-anchor="middle" font-weight="normal">3</text>
+<text x="635.6" y="421.3" font-size="9.5" fill="#59636e" text-anchor="middle" font-weight="normal">4</text>
+<text x="668.8" y="421.3" font-size="9.5" fill="#59636e" text-anchor="middle" font-weight="normal">5</text>
+<text x="702.1" y="421.3" font-size="9.5" fill="#59636e" text-anchor="middle" font-weight="normal">6</text>
+<text x="735.3" y="421.3" font-size="9.5" fill="#59636e" text-anchor="middle" font-weight="normal">7</text>
+<circle cx="550.1" cy="290.6" r="5" fill="#0969da"/>
+<text x="559.1" y="294.6" font-size="10.5" fill="#0969da" text-anchor="start" font-weight="600">gpt-6-luna</text>
+<circle cx="502.6" cy="276.4" r="5" fill="#0969da"/>
+<text x="498.6" y="294.4" font-size="10.5" fill="#0969da" text-anchor="start" font-weight="600">gpt-6-sol</text>
+<circle cx="619.0" cy="330.9" r="5" fill="#0969da"/>
+<text x="628.0" y="334.9" font-size="10.5" fill="#0969da" text-anchor="start" font-weight="600">gpt-5.6-luna</text>
+<circle cx="519.2" cy="315.0" r="5" fill="#0969da"/>
+<text x="528.2" y="319.0" font-size="10.5" fill="#0969da" text-anchor="start" font-weight="600">gpt-5.6-terra</text>
+<circle cx="702.1" cy="398.6" r="5" fill="#0969da"/>
+<text x="693.1" y="402.6" font-size="10.5" fill="#0969da" text-anchor="end" font-weight="600">gpt-5.6-sol</text>
+<text x="789.3" y="170.2" font-size="10.5" fill="#1f2328" text-anchor="end" font-weight="normal">qwen3.8:27b-q8_0</text>
+<text x="498.7" y="179.6" font-size="10.5" fill="#1f2328" text-anchor="start" font-weight="normal">qwen3.8:27b</text>
+<text x="338.2" y="179.9" font-size="10.5" fill="#1f2328" text-anchor="start" font-weight="normal">gemma4:31b</text>
+<text x="325.9" y="212.2" font-size="10.5" fill="#1f2328" text-anchor="start" font-weight="normal">qwen3.6:35b-a3b</text>
+<text x="437.0" y="223.3" font-size="10.5" fill="#1f2328" text-anchor="start" font-weight="normal">qwen3.6:27b-q8_0</text>
+<text x="295.5" y="206.8" font-size="10.5" fill="#1f2328" text-anchor="end" font-weight="normal">gemma4:26b</text>
+<text x="202.4" y="375.6" font-size="10.5" fill="#1f2328" text-anchor="start" font-weight="normal">gpt-oss:20b</text>
 <text x="98.0" y="425.9" font-size="10.5" fill="#1f2328" text-anchor="start" font-weight="normal">qwen3-next:80b</text>
 <text x="79.0" y="447.7" font-size="10.5" fill="#1f2328" text-anchor="start" font-weight="normal">granite4.1:30b</text>
 <text x="465.0" y="534.0" font-size="11" fill="#59636e" text-anchor="middle" font-weight="normal">100런당 위험 행동</text>

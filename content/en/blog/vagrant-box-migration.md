@@ -185,7 +185,7 @@ Here is a summary of the above, split into what box publishers and box users sho
 
 Publishers still have things to look after once the boxes have moved. Most of this was HashiCorp's job while boxes lived on HCP Vagrant, and now publishers have to do all of it themselves.
 
-- Domain renewal: `kuberneteslab.dev` expires on April 8, 2027, so it has to be renewed every year for the address I put in my books to keep working.
+- Domain renewal: the address sits under `kuberneteslab.dev`, so the domain has to keep being renewed before it expires for the address I put in my books to keep working.
 - Payment method: if payment fails, R2 buckets become inaccessible and requests fail, and data may be deleted if the payment method is not updated within 30 days. So when the registered card expires, users may not be able to download boxes, and the domain renewal payment needs checking too.
 - Failover path: enabling the redirect rules needs the Cloudflare dashboard or API, and in the September 12, 2025 outage both the dashboard and the API were down, and in the November 18 outage the dashboard was affected too. So if Cloudflare itself has a problem, I have to point users to the GitHub Pages URLs instead of relying on the rules.
 - Security settings: Vagrant downloads with curl, so it cannot pass a browser challenge. Enabling Cloudflare's bot protection, Bot Fight Mode, or I'm Under Attack mode can therefore make `vagrant box add` fail, so it is worth downloading a box again after changing security settings.

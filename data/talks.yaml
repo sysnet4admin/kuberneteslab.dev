@@ -6,12 +6,22 @@
 # 값이 언어마다 다르면 {ko: ..., en: ...}로 쓴다.
 # sched_site에 행사의 sched 주소를 적어 두면 세션 링크가 공개될 때 발표 링크 감지 워크플로가 이슈로 알린다.
 talks:
+- date: '2026-11-11'
+  event: KubeCon NA (Salt Lake City)
+  title:
+    ko: 'Project Pavilion Tour (CNCF Ambassador 투어 안내)'
+    en: 'Project Pavilion Tour (CNCF Ambassador tour guide)'
+  links:
+  - label: schedule
+    url: https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/?id=1341037
 - date: '2026-11-10'
   event: KubeCon NA (Salt Lake City)
   title: How Far Are Open-Source LLMs from Running Real Kubernetes Operations? A 10-Scenario Benchmark
   links:
   - label: schedule
     url: https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/?id=1246259
+  - label: slides
+    url: https://sessionize.com/download/loywaj~8pZ3dMMC5qVspJbd8uyre.pdf~kccnc-na2026-how-far-are-open-source-llms-from-running-real-kubernetes-operations-a-10-scenario-benchmark_hoon-jokuberneteslab.pdf
 - date: '2026-12-09'
   event: Open Source Summit Japan (Tokyo)
   title: 'One .md File for Every AI Agent: Gains, Losses, and Costs'

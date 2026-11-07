@@ -143,18 +143,18 @@ I split the boxes into three groups by where and how often they are used, as sho
 | Group | Boxes | R2 | GitHub |
 |---|---|---|---|
 | Group 1 (used often) | `Ubuntu-k8s` 1.0.0 (amd64, arm64) | Uploaded | Copy uploaded |
-| Group 2 (used occasionally) | `CentOS-k8s` 0.8.0 | Uploaded | Copy uploaded |
+| Group 2 (used occasionally) | `CentOS-k8s` 0.8.0 | Catalog only | Uploaded |
 | Group 3 (rarely used) | Network device boxes (`nxosv_v7`, `nxosv_v9`, `VyOS`) | Catalog only | Uploaded |
 
-`CentOS-k8s` has the most downloads, but I moved my courses to Ubuntu boxes, so it is in group 2. The network device boxes are mostly used by older Ansible books and courses, so their files are only on GitHub. I did not move `Rocky8`, which none of my books or courses use, and I did not move the Windows box this time; how to provide it is still being decided. I also moved only the latest version of each box, and if a box needs a fix I will publish a new version such as 1.0.1 after 1.0.0 instead of overwriting the existing one. The exception is `nxosv_v9`: its latest version, 9.3.5, is 3.51 GiB and exceeds the GitHub Releases file size limit (under 2 GiB), so I uploaded 9.2.3 instead.
+`CentOS-k8s` has the most downloads, but I moved my courses to Ubuntu boxes, so it is in group 2. The network device boxes are mostly used by older Ansible books and courses, so they are in group 3. As a result, only group 1 keeps its files on R2, and the files for groups 2 and 3 are only on GitHub. I did not move `Rocky8`, which none of my books or courses use. For Windows, instead of moving the old `Windows2016` box, I built a new `Windows2019` box from the Windows Server 2019 evaluation edition, published it on GitHub Releases, and switched my Ansible course and book to it. I also moved only the latest version of each box, and if a box needs a fix I will publish a new version such as 1.0.1 after 1.0.0 instead of overwriting the existing one. The exception is `nxosv_v9`: its latest version, 9.3.5, is 3.51 GiB and exceeds the GitHub Releases file size limit (under 2 GiB), so I uploaded 9.2.3 instead.
 
-On GitHub I created two repositories under the `vg-box` organization. `vg-box/k8s` holds copies of the group 1 and 2 boxes and the failover catalogs (on Pages), and `vg-box/ansible` holds the group 3 boxes, split so that a problem with `vg-box/ansible` does not affect `vg-box/k8s` or R2. Each box version gets one release, tagged `<box>-<version>`, with a `SHA256SUMS` file attached to the same release. On the R2 side, the three box files uploaded so far total 2.63 GB, which is within the free tier, so it costs nothing.
+On GitHub I created two repositories under the `vg-box` organization. `vg-box/k8s` holds the group 1 box copies, the group 2 box, and the failover catalogs (on Pages). `vg-box/ansible` holds the group 3 boxes and `Windows2019`. I split them so that a problem with `vg-box/ansible` does not affect `vg-box/k8s` or R2. Each box version gets one release, tagged `<box>-<version>`, with a `SHA256SUMS` file attached to the same release. On the R2 side, the two group 1 box files uploaded so far total 1.92 GB, which is within the free tier, so it costs nothing.
 
 There are still two cases where there is no fallback and boxes cannot be downloaded.
 
 **The first is when the Cloudflare proxy goes down.** The address's domain depends on Cloudflare alone, and the redirect rules run on the same proxy, so I expect I would not be able to fail over to GitHub in that case. For that, the boxes can also be downloaded directly from the GitHub Pages URLs (`vg-box.github.io/k8s/...json`).
 
-**The second is when GitHub has a problem.** The group 3 boxes are only on GitHub, so they cannot be downloaded then.
+**The second is when GitHub has a problem.** Files for the group 2 and 3 boxes and for `Windows2019` are only on GitHub, so they cannot be downloaded then.
 
 ## What to check before December 31
 

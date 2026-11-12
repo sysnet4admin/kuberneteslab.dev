@@ -34,42 +34,42 @@
 <rect x="807.5" y="145.0" width="32.5" height="18.0" fill="#8c959f" />
 <text x="823.8" y="158.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">1</text>
 <text x="848.0" y="158.0" font-size="10.5" fill="#59636e" text-anchor="start" font-weight="normal">20 runs</text>
-<text x="180.0" y="182.0" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="normal">gemma4:31b</text>
-<rect x="190.0" y="169.0" width="32.5" height="18.0" fill="#1a7f37" />
-<text x="206.2" y="182.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">1</text>
-<rect x="222.5" y="169.0" width="520.0" height="18.0" fill="#d4a72c" />
-<text x="482.5" y="182.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">16</text>
-<rect x="742.5" y="169.0" width="97.5" height="18.0" fill="#fb8f44" />
-<text x="791.2" y="182.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">3</text>
+<text x="180.0" y="182.0" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="normal">qwen3.6:27b-q8_0</text>
+<rect x="190.0" y="169.0" width="130.0" height="18.0" fill="#1a7f37" />
+<text x="255.0" y="182.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">4</text>
+<rect x="320.0" y="169.0" width="455.0" height="18.0" fill="#d4a72c" />
+<text x="547.5" y="182.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">14</text>
+<rect x="775.0" y="169.0" width="32.5" height="18.0" fill="#8c959f" />
+<text x="791.2" y="182.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">1</text>
+<rect x="807.5" y="169.0" width="32.5" height="18.0" fill="#424a53" />
+<text x="823.8" y="182.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">1</text>
 <text x="848.0" y="182.0" font-size="10.5" fill="#59636e" text-anchor="start" font-weight="normal">20 runs</text>
-<text x="180.0" y="206.0" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="normal">qwen3.6:35b-a3b</text>
+<text x="180.0" y="206.0" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="normal">gemma4:31b</text>
 <rect x="190.0" y="193.0" width="32.5" height="18.0" fill="#1a7f37" />
 <text x="206.2" y="206.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">1</text>
-<rect x="222.5" y="193.0" width="552.5" height="18.0" fill="#d4a72c" />
-<text x="498.8" y="206.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">17</text>
-<rect x="775.0" y="193.0" width="65.0" height="18.0" fill="#cf222e" />
-<text x="807.5" y="206.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">2</text>
+<rect x="222.5" y="193.0" width="520.0" height="18.0" fill="#d4a72c" />
+<text x="482.5" y="206.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">16</text>
+<rect x="742.5" y="193.0" width="97.5" height="18.0" fill="#fb8f44" />
+<text x="791.2" y="206.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">3</text>
 <text x="848.0" y="206.0" font-size="10.5" fill="#59636e" text-anchor="start" font-weight="normal">20 runs</text>
-<text x="180.0" y="230.0" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="normal">qwen3.6:27b-q8_0</text>
-<rect x="190.0" y="217.0" width="130.0" height="18.0" fill="#1a7f37" />
-<text x="255.0" y="230.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">4</text>
-<rect x="320.0" y="217.0" width="455.0" height="18.0" fill="#d4a72c" />
-<text x="547.5" y="230.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">14</text>
-<rect x="775.0" y="217.0" width="32.5" height="18.0" fill="#8c959f" />
-<text x="791.2" y="230.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">1</text>
-<rect x="807.5" y="217.0" width="32.5" height="18.0" fill="#424a53" />
-<text x="823.8" y="230.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">1</text>
+<text x="180.0" y="230.0" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="normal">gemma4:26b</text>
+<rect x="190.0" y="217.0" width="32.5" height="18.0" fill="#1a7f37" />
+<text x="206.2" y="230.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">1</text>
+<rect x="222.5" y="217.0" width="65.0" height="18.0" fill="#4ac26b" />
+<text x="255.0" y="230.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">2</text>
+<rect x="287.5" y="217.0" width="455.0" height="18.0" fill="#d4a72c" />
+<text x="515.0" y="230.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">14</text>
+<rect x="742.5" y="217.0" width="32.5" height="18.0" fill="#8c959f" />
+<text x="758.8" y="230.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">1</text>
+<rect x="775.0" y="217.0" width="65.0" height="18.0" fill="#424a53" />
+<text x="807.5" y="230.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">2</text>
 <text x="848.0" y="230.0" font-size="10.5" fill="#59636e" text-anchor="start" font-weight="normal">20 runs</text>
-<text x="180.0" y="254.0" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="normal">gemma4:26b</text>
+<text x="180.0" y="254.0" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="normal">qwen3.6:35b-a3b</text>
 <rect x="190.0" y="241.0" width="32.5" height="18.0" fill="#1a7f37" />
 <text x="206.2" y="254.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">1</text>
-<rect x="222.5" y="241.0" width="65.0" height="18.0" fill="#4ac26b" />
-<text x="255.0" y="254.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">2</text>
-<rect x="287.5" y="241.0" width="455.0" height="18.0" fill="#d4a72c" />
-<text x="515.0" y="254.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">14</text>
-<rect x="742.5" y="241.0" width="32.5" height="18.0" fill="#8c959f" />
-<text x="758.8" y="254.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">1</text>
-<rect x="775.0" y="241.0" width="65.0" height="18.0" fill="#424a53" />
+<rect x="222.5" y="241.0" width="552.5" height="18.0" fill="#d4a72c" />
+<text x="498.8" y="254.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">17</text>
+<rect x="775.0" y="241.0" width="65.0" height="18.0" fill="#cf222e" />
 <text x="807.5" y="254.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">2</text>
 <text x="848.0" y="254.0" font-size="10.5" fill="#59636e" text-anchor="start" font-weight="normal">20 runs</text>
 <text x="180.0" y="278.0" font-size="11.5" fill="#1f2328" text-anchor="end" font-weight="normal">gpt-oss:20b</text>
@@ -98,19 +98,17 @@
 <rect x="793.6" y="313.0" width="46.4" height="18.0" fill="#424a53" />
 <text x="816.8" y="326.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">1</text>
 <text x="848.0" y="326.0" font-size="10.5" fill="#59636e" text-anchor="start" font-weight="normal">14 runs</text>
-<text x="180.0" y="362.0" font-size="11.5" fill="#0969da" text-anchor="end" font-weight="600">gpt-6-luna</text>
+<text x="180.0" y="362.0" font-size="11.5" fill="#0969da" text-anchor="end" font-weight="600">gpt-6-sol</text>
 <rect x="190.0" y="349.0" width="650.0" height="18.0" fill="#1a7f37" />
 <text x="515.0" y="362.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">14</text>
 <text x="848.0" y="362.0" font-size="10.5" fill="#59636e" text-anchor="start" font-weight="normal">14 runs</text>
-<text x="180.0" y="386.0" font-size="11.5" fill="#0969da" text-anchor="end" font-weight="600">gpt-6-sol</text>
+<text x="180.0" y="386.0" font-size="11.5" fill="#0969da" text-anchor="end" font-weight="600">gpt-6-luna</text>
 <rect x="190.0" y="373.0" width="650.0" height="18.0" fill="#1a7f37" />
 <text x="515.0" y="386.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">14</text>
 <text x="848.0" y="386.0" font-size="10.5" fill="#59636e" text-anchor="start" font-weight="normal">14 runs</text>
-<text x="180.0" y="410.0" font-size="11.5" fill="#0969da" text-anchor="end" font-weight="600">gpt-5.6-luna</text>
-<rect x="190.0" y="397.0" width="487.5" height="18.0" fill="#1a7f37" />
-<text x="433.8" y="410.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">15</text>
-<rect x="677.5" y="397.0" width="162.5" height="18.0" fill="#d4a72c" />
-<text x="758.8" y="410.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">5</text>
+<text x="180.0" y="410.0" font-size="11.5" fill="#0969da" text-anchor="end" font-weight="600">gpt-5.6-sol</text>
+<rect x="190.0" y="397.0" width="650.0" height="18.0" fill="#1a7f37" />
+<text x="515.0" y="410.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">20</text>
 <text x="848.0" y="410.0" font-size="10.5" fill="#59636e" text-anchor="start" font-weight="normal">20 runs</text>
 <text x="180.0" y="434.0" font-size="11.5" fill="#0969da" text-anchor="end" font-weight="600">gpt-5.6-terra</text>
 <rect x="190.0" y="421.0" width="552.5" height="18.0" fill="#1a7f37" />
@@ -118,9 +116,11 @@
 <rect x="742.5" y="421.0" width="97.5" height="18.0" fill="#fb8f44" />
 <text x="791.2" y="434.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">3</text>
 <text x="848.0" y="434.0" font-size="10.5" fill="#59636e" text-anchor="start" font-weight="normal">20 runs</text>
-<text x="180.0" y="458.0" font-size="11.5" fill="#0969da" text-anchor="end" font-weight="600">gpt-5.6-sol</text>
-<rect x="190.0" y="445.0" width="650.0" height="18.0" fill="#1a7f37" />
-<text x="515.0" y="458.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">20</text>
+<text x="180.0" y="458.0" font-size="11.5" fill="#0969da" text-anchor="end" font-weight="600">gpt-5.6-luna</text>
+<rect x="190.0" y="445.0" width="487.5" height="18.0" fill="#1a7f37" />
+<text x="433.8" y="458.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">15</text>
+<rect x="677.5" y="445.0" width="162.5" height="18.0" fill="#d4a72c" />
+<text x="758.8" y="458.0" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="600">5</text>
 <text x="848.0" y="458.0" font-size="10.5" fill="#59636e" text-anchor="start" font-weight="normal">20 runs</text>
 <text x="24.0" y="28.0" font-size="14.5" fill="#1f2328" text-anchor="start" font-weight="600">What each model did in 007 (eviction)</text>
 <text x="24.0" y="48.0" font-size="10.5" fill="#59636e" text-anchor="start" font-weight="normal">runs by action. Only 'fixed the cause' and 'temporary fix + named the cause' score 1.0</text>

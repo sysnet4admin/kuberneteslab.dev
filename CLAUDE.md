@@ -87,11 +87,24 @@ title이 없으면 캡션도 번호도 안 붙고 그냥 `<img>`로 나간다. �
 
 - 연구 글은 로컬 초안 저장소의 `<project>/_PUBLISHING/blog/`가 정본이고,
   이 저장소의 content 파일은 렌더링 사본이다. 수정은 정본에서 먼저 한다.
-- 연구를 거치지 않은 글과 매체 기고에서 파생한 글은 이 저장소의 content 파일이 정본이다
-  (예: gateway-api-poc, agentic-ai-gateway). 매체의 재게시 조건과 검수 기록은 저장소 밖 기고 작업 폴더에 둔다(2026-10-21).
+- 연구를 거치지 않은 글과 매체 기고에서 파생한 글은 이 저장소의 content 파일이 정본이다.
+  매체의 재게시 조건과 검수 기록은 저장소 밖 기고 작업 폴더에 둔다(2026-10-21).
 - 새 글은 `draft: true`로 넣고 로컬 확인(`hugo server -D`) 후 발행 시점에 false로 바꾼다.
 - 발행 후 해당 연구 프로젝트의 README(EN/KO)와 Public Research 루트 README에 링크를 추가하고
   `/digest`로 반영한다.
+- 새 글을 발행하면 아래 목록에도 슬러그를 넣는다.
+
+### 글마다 정본이 있는 곳 (2026-11-16)
+
+글을 고치기 전에 여기서 정본을 확인한다. 전체 목록은 이곳에서만 관리한다. 공개 저장소이므로 슬러그만 적고
+연구 글의 정본 위치는 위 형식(`<project>/_PUBLISHING/blog/`)으로만 쓴다.
+
+| 정본 | 슬러그 |
+|---|---|
+| 이 저장소의 content 파일 | k8s-small-cluster-cost-optimization, k8s-large-cluster-cost-optimization, cc-deck, gateway-api-poc, gateway-api-poc-v1.4, aiops-agent-benchmark, agentic-ai-gateway, vagrant-after-hcp-shutdown, vagrant-box-migration |
+| 연구 프로젝트의 `_PUBLISHING/blog/` | agents-md-migration, agents-md-native, mcp-stateless-migration, cni-standing-cost, agentgateway-mcp-enforcement, a2a-when-to-use, agent-router-mcp-gateway, mcp-server-benchmark, aiops-open-weight-benchmark |
+
+이 중 gateway-api-poc와 agentic-ai-gateway는 매체 기고에서 파생한 글이다.
 
 ## 노트 상자 (2026-09-07)
 

@@ -14,6 +14,12 @@ talks:
   links:
   - label: schedule
     url: https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/?id=1341037
+  - label:
+      ko: 후기
+      en: recap
+    url:
+      ko: /ko/archives/recaps/kubecon-na-2026/
+      en: /en/archives/recaps/kubecon-na-2026/
 - date: '2026-11-10'
   event: KubeCon NA (Salt Lake City)
   title: How Far Are Open-Source LLMs from Running Real Kubernetes Operations? A 10-Scenario Benchmark
@@ -22,6 +28,12 @@ talks:
     url: https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/?id=1246259
   - label: slides
     url: https://sessionize.com/download/loywaj~8pZ3dMMC5qVspJbd8uyre.pdf~kccnc-na2026-how-far-are-open-source-llms-from-running-real-kubernetes-operations-a-10-scenario-benchmark_hoon-jokuberneteslab.pdf
+  - label:
+      ko: 후기
+      en: recap
+    url:
+      ko: /ko/archives/recaps/kubecon-na-2026/
+      en: /en/archives/recaps/kubecon-na-2026/
 - date: '2026-12-09'
   event: Open Source Summit Japan (Tokyo)
   title: 'One .md File for Every AI Agent: Gains, Losses, and Costs'

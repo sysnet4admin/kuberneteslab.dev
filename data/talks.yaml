@@ -28,6 +28,8 @@ talks:
     url: https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/program/schedule/?id=1246259
   - label: slides
     url: https://sessionize.com/download/loywaj~8pZ3dMMC5qVspJbd8uyre.pdf~kccnc-na2026-how-far-are-open-source-llms-from-running-real-kubernetes-operations-a-10-scenario-benchmark_hoon-jokuberneteslab.pdf
+  - label: YouTube
+    url: https://youtu.be/0OCPyTOcsl0
   - label:
       ko: 후기
       en: recap

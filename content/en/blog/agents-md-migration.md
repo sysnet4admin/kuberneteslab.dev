@@ -44,13 +44,15 @@ The closest cost signal is cache-write tokens. If the indirection inflated what 
 
 | Model | A (native) | B (import) vs A | C (symlink) vs A |
 |---|---|---|---|
-| Haiku 4.5 | 22,049 | -3% | +1% |
-| Sonnet 4.6 | 14,357 | -3% | -1% |
-| Sonnet 5 | 17,252 | +6% | +6% |
-| Opus 4.8 | 15,542 | -4% | -1% |
-| Fable 5 | 16,357 | -3% | -1% |
+| Haiku 4.5 | 22,049 | -3.1% | +1.3% |
+| Sonnet 4.6 | 14,357 | -2.7% | -1.2% |
+| Sonnet 5 | 17,482 | +4.9% | +4.6% |
+| Opus 4.8 | 15,542 | -3.6% | -1.0% |
+| Fable 5 | 16,357 | -1.0% | -1.2% |
 
-On no model does B systematically exceed the symlink (C). On four models the import came in 3 to 4% lower; on Sonnet 5 it measured +6%, but the symlink moved by the same +6% in the same runs. A symlink cannot mechanically differ from native, so a delta that moves with it is run variance, not a delivery cost.
+The table was corrected on 2026-11-25. In two runs Claude Code emitted two usage reports, and reading only the last one undercounted them. Before the correction it showed +6% and +6% for Sonnet 5 and -3% for the Fable 5 import.
+
+On no model does B systematically exceed the symlink (C). On four models the import came in 1 to 4% lower; on Sonnet 5 it measured +4.9%, but the symlink moved by +4.6% in the same runs. A symlink cannot mechanically differ from native, so a delta that moves with it is run variance, not a delivery cost.
 
 Wall time swings more, but with no direction: B is faster on some models and slower on others, and the largest time gaps come with near-zero token gaps. A delivery-method overhead would push one way consistently; this pattern is the agent taking a slightly different solution path each run. Per-model numbers are in the [README results section](https://github.com/sysnet4admin/Research/tree/main/agents-md-migration).
 
@@ -58,7 +60,7 @@ Wall time swings more, but with no direction: B is faster on some models and slo
 
 The symlink being free is simple: the moment Claude Code opens the `CLAUDE.md` path, the OS resolves the link and returns the content of `AGENTS.md`. From Claude Code's side the read is identical to native; the filesystem does the work. That makes C a built-in control group.
 
-The import never systematically exceeded that control: 3 to 4% below native on four models, and +6% on Sonnet 5 with the control at the same +6%. Either way, the point stands: the workaround is not a tax.
+The import never systematically exceeded that control: 1 to 4% below native on four models, and +4.9% on Sonnet 5 with the control at +4.6%. Either way, the point stands: the workaround is not a tax.
 
 ## What this means for a team
 

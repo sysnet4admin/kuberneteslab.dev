@@ -38,14 +38,18 @@
       rate.textContent = p.max + '%';
       if (ko) {
         state.textContent = days <= 3 ? days + '일 남음' : '진행 중';
-        desc.textContent = p.single && p.bundle
+        desc.textContent = p.single && p.bundle && p.single !== p.bundle
           ? when + '까지 번들 ' + p.bundle + '%, 단일 자격증 ' + p.single + '%. 평소에는 상시 ' + d.standing + '%입니다.'
-          : when + '까지 최대 ' + p.max + '% 할인. 평소에는 상시 ' + d.standing + '%입니다.';
+          : p.single && p.bundle
+            ? when + '까지 번들과 단일 자격증 모두 ' + p.max + '%. 평소에는 상시 ' + d.standing + '%입니다.'
+            : when + '까지 최대 ' + p.max + '% 할인. 평소에는 상시 ' + d.standing + '%입니다.';
       } else {
         state.textContent = days <= 3 ? (days + (days === 1 ? ' day left' : ' days left')) : 'Now on';
-        desc.textContent = p.single && p.bundle
+        desc.textContent = p.single && p.bundle && p.single !== p.bundle
           ? 'Until ' + when + ': ' + p.bundle + '% on bundles, ' + p.single + '% on single certifications. Year-round it is ' + d.standing + '%.'
-          : 'Until ' + when + ': up to ' + p.max + '% off. Year-round it is ' + d.standing + '%.';
+          : p.single && p.bundle
+            ? 'Until ' + when + ': ' + p.max + '% on both bundles and single certifications. Year-round it is ' + d.standing + '%.'
+            : 'Until ' + when + ': up to ' + p.max + '% off. Year-round it is ' + d.standing + '%.';
       }
     })
     .catch(function () {});
